@@ -5,33 +5,66 @@
 - Added optimizer_milp.js script to index.html (was missing)
 - MILP optimizer now connected to UI
 
-## v1.3.4 (2025-04-05)
-- Added Exo PA/PM feature for user-specified base PA/PM
-- Fixed mobile layout issues with CSS media queries
-- Added version badge and "Fait par Nouaman" credit
-- Deployed to GitHub Pages
+## v1.3.4
+- Fix MILP with js-lp-solver
 
-## v1.3.3 (2025-04-05)
-- Fixed element selection visual bug (CSS styling)
-- Attempted GLPK WASM - blocked by CORS/MIME type
+## v1.3.3
+- Debug element selection
 
-## v1.3.2 (2025-04-05)
-- Attempted external MILP solvers (HiGHS, javascript-lp-solver)
-- Both blocked by CORS/MIME type issues
+## v1.3.2
+- Debug element selection visual bug
 
-## v1.3.1 (2025-04-05)
-- Implemented recursive branch and bound MILP
-- Had issues with search space exploration
+## v1.3.1
+- Fix MIN constraints
 
-## v1.3.0 (2025-04-05)
-- First MILP implementation with poor exploration
-- Only tried 1-2 item swaps
+## v1.3.0
+- Add MILP with HiGHS solver
 
-## v1.2.0 (2025-04-05)
-- Fixed level filter reading from wrong input
-- Changed data source from DofusDB to Dofus Retro 1.29
+## v1.2.0
+- Clean up and simplify
 
-## v1.1.0 (2025-04-05)
-- Downloaded and converted Dofus Retro item/set data
-- 1489 items, 108 sets
-- Built Greedy optimizer
+## v1.1.4
+- Debug items with PA
+
+## v1.1.3
+- Show all results
+
+## v1.1.2
+- Search for more PA then filter
+
+## v1.1.1
+- More debug
+
+## v1.1.0
+- Fix syntax error
+
+## v1.0.9
+- Debug items PA
+
+## v1.0.8
+- More debug
+
+## v1.0.7
+- Debug display
+
+## v1.0.6
+- Total PA/PM includes exo
+
+## v1.0.5
+- Fix exo PA/PM to use max only
+
+## v1.0.4
+- Debug exo PA/PM
+
+## v1.0.3
+- Fix exo PA/PM constraints
+
+## v1.0.2
+- Add exo PA/PM feature
+
+## v1.0.1
+- Add version badge and "Fait par Nouaman" credit
+- Mobile layout fixes
+
+## v1.0.0
+- Initial commit - Dofus Retro Equipment Optimizer

@@ -99,7 +99,7 @@ function runOptimization() {
         r.exoPM = exoPM;
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        console.log('Result: itemPA=' + itemPA + ', itemPM=' + itemPM + ', max PA=' + maxPAPool);
+        console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' = total ' + (basePA + exoPA + itemPA));
     });
     displayResults(results);
 }
@@ -107,6 +107,8 @@ function runOptimization() {
 function displayResults(results) {
     const resultsList = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
+    
+    console.log('displayResults: first result basePA=' + results[0]?.basePA + ' exoPA=' + results[0]?.exoPA);
     const emptyState = document.getElementById('emptyState');
 
     if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {
@@ -128,6 +130,8 @@ function displayResults(results) {
         var itemPM = r.items.reduce(function(s,i){return s+(i.pm||0);},0);
         var totalPA = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
         var totalPM = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
+        
+        console.log('DEBUG display: basePA=' + r.basePA + ' exoPA=' + r.exoPA + ' itemPA=' + itemPA + ' totalPA=' + totalPA);
         
         var html = '<div class="result-card-new">';
         html += '<div class="result-header">';

@@ -64,6 +64,8 @@ function setupModal() {
 }
 
 function runOptimization() {
+    console.log('runOptimization started');
+    
     const levelInput = document.getElementById('playerLevel');
     const totalPAInput = document.getElementById('totalPA');
     const totalPMInput = document.getElementById('totalPM');
@@ -91,6 +93,8 @@ function runOptimization() {
     });
     
     const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
+    
+    console.log('optimizeGear returned', results.length, 'results');
     
     results.forEach(r => {
         r.basePA = basePA;

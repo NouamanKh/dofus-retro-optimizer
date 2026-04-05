@@ -29,6 +29,9 @@ function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, i
             .slice(0, 30);
     }
     
+    const itemsWithPA = validItems.filter(i => i.pa > 0);
+    console.log('MILP: Items with PA:', itemsWithPA.length, itemsWithPA.slice(0, 5).map(i => i.name + ' PA:' + i.pa));
+    
     let bestScore = -Infinity;
     let bestItems = [];
     let solutionsFound = 0;

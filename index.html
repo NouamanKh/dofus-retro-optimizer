@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimiseur d'Élément Dofus Retro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-decoration left"></div>
+      <div class="title-wrapper">
+        <h1 class="title">Optimiseur d'Élément Dofus Retro</h1>
+        <span class="data-badge">Données Dofus 1.29</span>
+      </div>
+      <p class="subtitle">Trouvez la meilleure combinaison d'équipement pour maximiser votre pouvoir élémentaire</p>
+      <div class="header-decoration right"></div>
+    </header>
+
+    <main class="main-content">
+      <section class="selection-panel">
+        <div class="panel-section">
+          <h2 class="section-title">Choisissez Votre Élément</h2>
+          <div class="element-grid" id="elementGrid">
+            <button class="element-btn" data-element="vitalite">
+              <div class="element-icon vitalite">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+              <span class="element-name">Vitalité</span>
+            </button>
+            <button class="element-btn" data-element="sagesse">
+              <div class="element-icon sagesse">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <span class="element-name">Sagesse</span>
+            </button>
+            <button class="element-btn" data-element="force">
+              <div class="element-icon force">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                </svg>
+              </div>
+              <span class="element-name">Force</span>
+            </button>
+            <button class="element-btn" data-element="intelligence">
+              <div class="element-icon intelligence">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+                </svg>
+              </div>
+              <span class="element-name">Intelligence</span>
+            </button>
+            <button class="element-btn" data-element="chance">
+              <div class="element-icon chance">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <span class="element-name">Chance</span>
+            </button>
+            <button class="element-btn" data-element="agilite">
+              <div class="element-icon agilite">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                </svg>
+              </div>
+              <span class="element-name">Agilité</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2 class="section-title">Niveau du Personnage</h2>
+          <div class="level-controls">
+            <div class="level-input-group single">
+              <label for="playerLevel">Niveau</label>
+              <input type="number" id="playerLevel" value="100" min="1" max="200">
+            </div>
+            <p class="level-hint">Recherche les équipements jusqu'à ce niveau (incluant)</p>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2 class="section-title">Total PA / PM Souhaité</h2>
+          <div class="level-controls">
+            <div class="level-inputs">
+              <div class="level-input-group">
+                <label for="totalPA">PA Total</label>
+                <input type="number" id="totalPA" value="6" min="6" max="20">
+              </div>
+              <div class="level-input-group">
+                <label for="totalPM">PM Total</label>
+                <input type="number" id="totalPM" value="3" min="3" max="20">
+              </div>
+            </div>
+            <p class="constraint-hint">Base: 6 PA, 3 PM (7 PA à partir du niveau 100)</p>
+          </div>
+        </div>
+
+        <button id="searchBtn" class="search-btn">Rechercher</button>
+      </section>
+
+      <section class="results-panel">
+        <div class="results-header">
+          <h2 class="section-title">Meilleures Combinaisons d'Équipement</h2>
+          <div class="results-count" id="resultsCount"></div>
+        </div>
+        <div class="results-list" id="resultsList">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+              </svg>
+            </div>
+            <p class="empty-text">Sélectionnez un élément pour commencer l'optimisation de votre équipement</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="itemModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/items_retro.js"></script>
+  <script src="data/sets_retro.js"></script>
+  <script src="utils/optimizer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

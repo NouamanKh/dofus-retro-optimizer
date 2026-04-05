@@ -124,8 +124,10 @@ function displayResults(results) {
     for (var i = 0; i < results.length; i++) {
         var r = results[i];
         
-        var totalPA = (r.basePA || 6) + r.items.reduce(function(s,i){return s+(i.pa||0);},0);
-        var totalPM = (r.basePM || 3) + r.items.reduce(function(s,i){return s+(i.pm||0);},0);
+        var itemPA = r.items.reduce(function(s,i){return s+(i.pa||0);},0);
+        var itemPM = r.items.reduce(function(s,i){return s+(i.pm||0);},0);
+        var totalPA = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
+        var totalPM = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
         
         var html = '<div class="result-card-new">';
         html += '<div class="result-header">';

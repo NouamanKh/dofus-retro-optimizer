@@ -107,14 +107,22 @@ function runOptimization() {
         r.exoPM = exoPM;
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' = total ' + (basePA + exoPA + itemPA));
+        console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' total=' + (basePA + exoPA + itemPA));
+    });
+    
+    console.log('Showing all ' + results.length + ' results without filtering');
+    displayResults(results);
+}
     });
     
     const filteredResults = results.filter(r => {
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        return itemPA <= maxPAPool && itemPM <= maxPMPool;
+        console.log('Filtering: itemPA=' + itemPA + ' itemPM=' + itemPM + ' need PA>=' + maxPAPool + ' PM>=' + maxPMPool);
+        return itemPA >= maxPAPool && itemPM >= maxPMPool;
     });
+    
+    console.log('Filtered results: ' + filteredResults.length + ' (from ' + results.length + ')');
     
     console.log('Filtered results: ' + filteredResults.length + ' (from ' + results.length + ')');
     

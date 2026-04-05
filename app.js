@@ -39,11 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupElementButtons() {
     const buttons = document.querySelectorAll('.element-btn');
+    console.log('Found element buttons:', buttons.length);
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
+            console.log('Button clicked:', btn.dataset.element);
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             selectedElement = btn.dataset.element;
+            console.log('selectedElement:', selectedElement);
         });
     });
 }

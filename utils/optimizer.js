@@ -378,41 +378,30 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
     let finalSet = localSearchImprove(currentBest, element, minLevel, maxLevel, minPA, minPM, items);
     finalSet = ensurePAPMConstraint({ selected: finalSet, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
     
-    const results = [createResult(finalSet, element)];
+    const allCombos = new Map();
     
-    const seenKeys = new Set();
-    seenKeys.add(finalSet.map(i => i.id).sort().join(','));
+    function addCombo(items) {
+        const ids = items.map(i => i.id).sort().join('|');
+        if (!allCombos.has(ids)) {
+            const result = createResult(items, element);
+            allCombos.set(ids, result);
+        }
+    }
     
-    for (let r = 0; r < 10; r++) {
+    addCombo(finalSet);
+    
+    for (let r = 0; r < 20; r++) {
         let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, items);
         randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
         let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, items);
         improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
-        
-        const key = improved2.map(i => i.id).sort().join(',');
-        if (!seenKeys.has(key)) {
-            seenKeys.add(key);
-            results.push(createResult(improved2, element));
-        }
+        addCombo(improved2);
     }
     
+    const results = Array.from(allCombos.values());
     results.sort((a, b) => b.totalElement - a.totalElement);
     
-    const uniqueResults = [];
-    const seen = new Set();
-    for (const r of results) {
-        const key = r.items.map(i => i.id).sort().join(',');
-        console.log('Checking:', key.substring(0, 50), 'seen:', seen.has(key));
-        if (!seen.has(key)) {
-            seen.add(key);
-            uniqueResults.push(r);
-            console.log('Added new result, total unique:', uniqueResults.length);
-        }
-    }
-    
-    console.log('Total results before dedup:', results.length, 'after:', uniqueResults.length);
-    
-    return uniqueResults.slice(0, maxResults);
+    return results.slice(0, maxResults);
 }
 
 function addRandomVariation(baseSet, element, minLevel, maxLevel, items) {

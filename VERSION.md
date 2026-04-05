@@ -1,5 +1,8 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.3.7 (2025-04-05)
+- Fix MILP PA/PM constraints (use >= instead of exact match)
+
 ## v1.3.6 (2025-04-05)
 - Replace external solver with custom branch-and-bound implementation
 

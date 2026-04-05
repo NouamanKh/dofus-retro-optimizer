@@ -98,6 +98,10 @@ function runOptimization() {
     
     const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, searchMaxPA, searchMaxPM, ITEMS_RETRO, 10);
     
+    const allItemsWithPA = ITEMS_RETRO.filter(i => i.pa > 0 && i.level <= playerLevel);
+    console.log('Items with PA in range:', allItemsWithPA.length);
+    console.log('Top PA items:', allItemsWithPA.sort((a,b) => b.pa - a.pa).slice(0, 10).map(i => i.name + '(PA:' + i.pa + ', lvl:' + i.level + ')').join(', '));
+    
     console.log('optimizeGear returned', results.length, 'results');
     
     results.forEach(r => {

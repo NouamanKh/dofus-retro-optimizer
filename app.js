@@ -112,11 +112,17 @@ function runOptimization() {
 function displayResults(results) {
     const resultsList = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
+    const emptyState = document.getElementById('emptyState');
     
     console.log('displayResults: first result basePA=' + results[0]?.basePA + ' exoPA=' + results[0]?.exoPA);
-    console.log('All items in first result:', results[0]?.items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
+    if (results[0]?.items) {
+        console.log('All items in first result:', results[0].items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
+    }
     
-    resultsList.innerHTML = '';
+    if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {
+        emptyState.style.display = 'flex';
+        resultsCount.textContent = '0 combinaisons trouvées';
+        resultsList.innerHTML = '';
         resultsList.appendChild(emptyState);
         return;
     }

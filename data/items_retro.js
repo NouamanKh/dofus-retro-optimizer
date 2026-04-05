@@ -64417,4 +64417,3 @@ const ITEMS_RETRO = [
     }
   }
 ];
-module.exports = ITEMS_RETRO;

@@ -84,15 +84,19 @@ function runOptimization() {
     const maxPAPool = Math.max(0, totalPA - basePA - exoPA);
     const maxPMPool = Math.max(0, totalPM - basePM - exoPM);
     
+    const searchMaxPA = Math.min(maxPAPool + 2, 10);
+    const searchMaxPM = Math.min(maxPMPool + 2, 10);
+    
     console.log('Optimization params:', {
         level: playerLevel,
         basePA, basePM,
         totalPA, totalPM,
         exoPA, exoPM,
-        maxPAPool, maxPMPool
+        maxPAPool, maxPMPool,
+        searchMaxPA, searchMaxPM
     });
     
-    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
+    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, searchMaxPA, searchMaxPM, ITEMS_RETRO, 10);
     
     console.log('optimizeGear returned', results.length, 'results');
     
@@ -104,9 +108,17 @@ function runOptimization() {
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
         console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' = total ' + (basePA + exoPA + itemPA));
-        console.log('Items with PA:', r.items.filter(i => i.pa > 0).map(i => i.name + '(PA:' + i.pa + ')').join(', ') || 'NONE');
     });
-    displayResults(results);
+    
+    const filteredResults = results.filter(r => {
+        const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
+        const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
+        return itemPA <= maxPAPool && itemPM <= maxPMPool;
+    });
+    
+    console.log('Filtered results: ' + filteredResults.length + ' (from ' + results.length + ')');
+    
+    displayResults(filteredResults.length > 0 ? filteredResults : results);
 }
 
 function displayResults(results) {

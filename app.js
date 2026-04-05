@@ -81,15 +81,17 @@ function runOptimization() {
     
     const maxItemPA = Math.max(0, totalPA - basePA - exoPA);
     const maxItemPM = Math.max(0, totalPM - basePM - exoPM);
+    const minItemPA = maxItemPA;
+    const minItemPM = maxItemPM;
     
     const selectedOptimizer = document.querySelector('input[name="optimizer"]:checked').value;
     
     let results;
     
     if (selectedOptimizer === 'milp') {
-        results = await optimizeMilp(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+        results = await optimizeMilp(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
     } else {
-        results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+        results = optimizeGear(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
     }
     
     results.forEach(r => {

@@ -47,24 +47,24 @@ async function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, ma
         rowIdx++;
     }
     
-    if (maxPA > 0) {
+    if (minPA > 0) {
         const row = [];
         for (let j = 0; j < n; j++) {
             row.push(validItems[j].pa || 0);
         }
         a.push(row);
-        b.push(maxPA);
-        types.push('U');
+        b.push(minPA);
+        types.push('L');
     }
     
-    if (maxPM > 0) {
+    if (minPM > 0) {
         const row = [];
         for (let j = 0; j < n; j++) {
             row.push(validItems[j].pm || 0);
         }
         a.push(row);
-        b.push(maxPM);
-        types.push('U');
+        b.push(minPM);
+        types.push('L');
     }
     
     console.log('MILP: Setting up model...');

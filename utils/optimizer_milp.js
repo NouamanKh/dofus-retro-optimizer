@@ -65,8 +65,8 @@ function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, i
     
     function isValid(items) {
         const { pa, pm } = getPAPM(items);
-        const paValid = minPA <= pa && (maxPA === undefined || pa <= maxPA);
-        const pmValid = minPM <= pm && (maxPM === undefined || pm <= maxPM);
+        const paValid = pa >= minPA;
+        const pmValid = pm >= minPM;
         return paValid && pmValid;
     }
     

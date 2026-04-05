@@ -1,5 +1,8 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.3.6 (2025-04-05)
+- Replace external solver with custom branch-and-bound implementation
+
 ## v1.3.5 (2025-04-05)
 - Fixed module.exports error in items_retro.js causing "module is not defined"
 - Added optimizer_milp.js script to index.html (was missing)

@@ -92,7 +92,7 @@ function runOptimization() {
     let results;
     
     if (selectedOptimizer === 'milp') {
-        results = await optimizeMilp(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+        results = optimizeMilp(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
     } else {
         results = optimizeGear(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
     }
@@ -102,7 +102,6 @@ function runOptimization() {
         r.basePM = basePM;
         r.exoPA = exoPA;
         r.exoPM = exoPM;
-        r.optimizer = selectedOptimizer;
     });
     
     displayResults(results);

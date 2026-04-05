@@ -1,5 +1,5 @@
 /**
- * MILP Optimizer using HiGHS solver (WASM)
+ * MILP Optimizer using javascript-lp-solver
  */
 
 const SLOT_LIMITS_MILP = { "weapon": 1, "hat": 1, "cloak": 1, "amulet": 1, "ring": 2, "belt": 1, "boots": 1 };
@@ -9,8 +9,8 @@ function getItemElementValue(item, element) {
     return item.elements[element] || 0;
 }
 
-async function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items, maxResults = 10) {
-    console.log('MILP (HiGHS): Starting for', element);
+function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items, maxResults = 10) {
+    console.log('MILP: Starting for', element);
     
     const validItems = items.filter(item => 
         EQUIPMENT_SLOTS_MILP.includes(item.type) && 
@@ -20,91 +20,72 @@ async function optimizeMilp(element, minLevel, maxLevel, minPA, minPM, maxPA, ma
     
     console.log('MILP: Valid items:', validItems.length);
     
-    const n = validItems.length;
-    const itemIndex = {};
-    validItems.forEach((item, idx) => itemIndex[item.id] = idx);
-    
-    const numVars = n;
-    const numConstraints = 7 + 1 + 1;
-    
-    const a = [];
-    const b = [];
-    const c = validItems.map(item => getItemElementValue(item, element));
-    const types = [];
-    const names = validItems.map(item => 'x_' + item.id);
-    const integrality = new Array(n).fill('I');
-    
-    let rowIdx = 0;
+    const model = {
+        optimize: 'value',
+        opType: 'max',
+        constraints: {},
+        variables: {},
+        ints: {}
+    };
     
     for (const slot of EQUIPMENT_SLOTS_MILP) {
-        const row = [];
-        for (let j = 0; j < n; j++) {
-            row.push(validItems[j].type === slot ? 1 : 0);
-        }
-        a.push(row);
-        b.push(SLOT_LIMITS_MILP[slot]);
-        types.push('U');
-        rowIdx++;
+        model.constraints['slot_' + slot] = { max: SLOT_LIMITS_MILP[slot] };
     }
     
     if (minPA > 0) {
-        const row = [];
-        for (let j = 0; j < n; j++) {
-            row.push(validItems[j].pa || 0);
-        }
-        a.push(row);
-        b.push(minPA);
-        types.push('L');
+        model.constraints.pa_min = { min: minPA };
     }
     
     if (minPM > 0) {
-        const row = [];
-        for (let j = 0; j < n; j++) {
-            row.push(validItems[j].pm || 0);
-        }
-        a.push(row);
-        b.push(minPM);
-        types.push('L');
+        model.constraints.pm_min = { min: minPM };
     }
     
-    console.log('MILP: Setting up model...');
+    model.constraints.max_items = { max: 10 };
     
-    try {
-        const model = {
-            num_var: numVars,
-            num_constr: numConstraints,
-            a: a.flat(),
-            b: b,
-            c: c,
-            types: types,
-            names: names,
-            integrality: integrality
+    for (const item of validItems) {
+        const varName = 'item_' + item.id;
+        
+        model.variables[varName] = {
+            value: getItemElementValue(item, element),
+            slot: 1,
+            max_items: 1,
+            ['slot_' + item.type]: 1
         };
         
-        const solution = await highs.solve(model);
+        if (item.pa > 0) {
+            model.variables[varName].pa_min = item.pa;
+        }
+        if (item.pm > 0) {
+            model.variables[varName].pm_min = item.pm;
+        }
         
-        console.log('MILP: Solution status:', solution.Status);
+        model.ints[varName] = 1;
+    }
+    
+    console.log('MILP: Model ready, solving...');
+    console.log('MILP: Constraints:', model.constraints);
+    
+    try {
+        const result = solver.Solve(model);
+        console.log('MILP: Result status:', result.status);
         
-        if (solution.Status === 'Optimal' || solution.Status === 'Feasible') {
+        if (result.status === 'Optimal' || result.result !== undefined) {
             const selectedItems = [];
             
-            for (let j = 0; j < n; j++) {
-                const val = solution.primal_solution?.[j] || solution.value?.[j] || 0;
-                if (val > 0.5) {
-                    selectedItems.push(validItems[j]);
+            for (const [varName, value] of Object.entries(result)) {
+                if (varName.startsWith('item_') && value >= 1) {
+                    const itemId = varName.replace('item_', '');
+                    const item = validItems.find(i => i.id === itemId);
+                    if (item) selectedItems.push(item);
                 }
             }
             
             console.log('MILP: Selected items:', selectedItems.length);
             
-            const itemPA = selectedItems.reduce((s, i) => s + (i.pa || 0), 0);
-            const itemPM = selectedItems.reduce((s, i) => s + (i.pm || 0), 0);
-            console.log('MILP: itemPA =', itemPA, ', itemPM =', itemPM);
-            
             return [createMilpResult(selectedItems, element)];
         }
         
-        console.log('MILP: No feasible solution');
+        console.log('MILP: No solution found');
         return [];
         
     } catch (e) {

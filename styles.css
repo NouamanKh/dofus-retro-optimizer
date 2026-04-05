@@ -109,6 +109,16 @@ body {
   .main-content {
     grid-template-columns: 1fr;
   }
+  
+  .selection-panel {
+    position: relative;
+    top: 0;
+    margin-bottom: 24px;
+  }
+  
+  .results-panel {
+    padding-bottom: 100px;
+  }
 }
 
 /* Selection Panel */

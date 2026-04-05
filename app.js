@@ -84,6 +84,15 @@ function runOptimization() {
     const maxPAPool = minPAPool;
     const maxPMPool = minPMPool;
     
+    console.log('Optimization params:', {
+        level: playerLevel,
+        basePA, basePM,
+        totalPA, totalPM,
+        exoPA, exoPM,
+        minPAPool, minPMPool,
+        maxPAPool, maxPMPool
+    });
+    
     const results = optimizeGear(selectedElement, 1, playerLevel, minPAPool, minPMPool, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
     
     results.forEach(r => {
@@ -91,6 +100,9 @@ function runOptimization() {
         r.basePM = basePM;
         r.exoPA = exoPA;
         r.exoPM = exoPM;
+        const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
+        const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
+        console.log('Result: itemPA=' + itemPA + ', itemPM=' + itemPM + ', target PA=[' + minPAPool + ',' + maxPAPool + ']');
     });
     displayResults(results);
 }

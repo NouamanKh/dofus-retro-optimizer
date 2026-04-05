@@ -64,8 +64,6 @@ function setupModal() {
 }
 
 function runOptimization() {
-    console.log('runOptimization started');
-    
     const levelInput = document.getElementById('playerLevel');
     const totalPAInput = document.getElementById('totalPA');
     const totalPMInput = document.getElementById('totalPM');
@@ -81,71 +79,25 @@ function runOptimization() {
     const basePA = playerLevel >= 100 ? 7 : 6;
     const basePM = 3;
     
-    const maxPAPool = Math.max(0, totalPA - basePA - exoPA);
-    const maxPMPool = Math.max(0, totalPM - basePM - exoPM);
+    const maxItemPA = Math.max(0, totalPA - basePA - exoPA);
+    const maxItemPM = Math.max(0, totalPM - basePM - exoPM);
     
-    const searchMaxPA = Math.min(maxPAPool + 2, 10);
-    const searchMaxPM = Math.min(maxPMPool + 2, 10);
-    
-    console.log('Optimization params:', {
-        level: playerLevel,
-        basePA, basePM,
-        totalPA, totalPM,
-        exoPA, exoPM,
-        maxPAPool, maxPMPool,
-        searchMaxPA, searchMaxPM
-    });
-    
-    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, searchMaxPA, searchMaxPM, ITEMS_RETRO, 10);
-    
-    const allItemsWithPA = ITEMS_RETRO.filter(i => i.pa > 0 && i.level <= playerLevel);
-    console.log('Items with PA in range:', allItemsWithPA.length);
-    console.log('Top PA items:', allItemsWithPA.sort((a,b) => b.pa - a.pa).slice(0, 10).map(i => i.name + '(PA:' + i.pa + ', lvl:' + i.level + ')').join(', '));
-    
-    console.log('optimizeGear returned', results.length, 'results');
+    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
     
     results.forEach(r => {
         r.basePA = basePA;
         r.basePM = basePM;
         r.exoPA = exoPA;
         r.exoPM = exoPM;
-        const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
-        const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' total=' + (basePA + exoPA + itemPA));
     });
     
-    console.log('Showing all ' + results.length + ' results without filtering');
     displayResults(results);
-}
-    });
-    
-    const filteredResults = results.filter(r => {
-        const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
-        const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        console.log('Filtering: itemPA=' + itemPA + ' itemPM=' + itemPM + ' need PA>=' + maxPAPool + ' PM>=' + maxPMPool);
-        return itemPA >= maxPAPool && itemPM >= maxPMPool;
-    });
-    
-    console.log('Filtered results: ' + filteredResults.length + ' (from ' + results.length + ')');
-    
-    console.log('Filtered results: ' + filteredResults.length + ' (from ' + results.length + ')');
-    
-    displayResults(filteredResults.length > 0 ? filteredResults : results);
 }
 
 function displayResults(results) {
     const resultsList = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
     const emptyState = document.getElementById('emptyState');
-    
-    console.log('displayResults called, results:', results ? results.length : 'undefined');
-    console.log('results[0]:', results[0]);
-    if (results && results[0]) {
-        console.log('results[0].items:', results[0].items);
-        if (results[0].items) {
-            console.log('All items in first result:', results[0].items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
-        }
-    }
     
     if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {
         emptyState.style.display = 'flex';
@@ -166,8 +118,6 @@ function displayResults(results) {
         var itemPM = r.items.reduce(function(s,i){return s+(i.pm||0);},0);
         var totalPA = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
         var totalPM = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
-        
-        console.log('DEBUG display: basePA=' + r.basePA + ' exoPA=' + r.exoPA + ' itemPA=' + itemPA + ' totalPA=' + totalPA);
         
         var html = '<div class="result-card-new">';
         html += '<div class="result-header">';

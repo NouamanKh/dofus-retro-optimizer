@@ -92,6 +92,38 @@ body {
   border: 1px solid var(--secondary);
 }
 
+.version-badge {
+  background: linear-gradient(135deg, #2ECC71, #27AE60);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  border: 1px solid #2ECC71;
+}
+
+.header-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.made-by {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.made-by a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.made-by a:hover {
+  text-decoration: underline;
+}
+
 .subtitle {
   color: var(--text-secondary);
   font-size: 1rem;

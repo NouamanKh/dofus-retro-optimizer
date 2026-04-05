@@ -81,12 +81,16 @@ function runOptimization() {
     
     const minPAPool = Math.max(0, totalPA - basePA - exoPA);
     const minPMPool = Math.max(0, totalPM - basePM - exoPM);
+    const maxPAPool = minPAPool;
+    const maxPMPool = minPMPool;
     
-    const results = optimizeGear(selectedElement, 1, playerLevel, minPAPool, minPMPool, ITEMS_RETRO, 10);
+    const results = optimizeGear(selectedElement, 1, playerLevel, minPAPool, minPMPool, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
     
     results.forEach(r => {
         r.basePA = basePA;
         r.basePM = basePM;
+        r.exoPA = exoPA;
+        r.exoPM = exoPM;
     });
     displayResults(results);
 }

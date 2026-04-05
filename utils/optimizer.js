@@ -121,7 +121,7 @@ function getSetBonusDetails(setItems) {
     return bonuses;
 }
 
-function greedySelectItems(element, minLevel, maxLevel, minPA, minPM, items) {
+function greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items) {
     const bySlot = getItemsBySlot(items);
     const selected = [];
     const slotCounts = {};
@@ -163,6 +163,11 @@ function greedySelectItems(element, minLevel, maxLevel, minPA, minPM, items) {
             
             for (const item of remaining) {
                 const testSelection = [...selected, item];
+                const testPA = testSelection.reduce((s, i) => s + (i.pa || 0), 0);
+                const testPM = testSelection.reduce((s, i) => s + (i.pm || 0), 0);
+                
+                if (testPA > maxPA || testPM > maxPM) continue;
+                
                 const baseScore = testSelection.reduce((sum, i) => sum + getItemElementValue(i, element), 0);
                 const setBonus = calculateSetBonus(testSelection, element);
                 const totalScore = baseScore + setBonus;
@@ -183,16 +188,18 @@ function greedySelectItems(element, minLevel, maxLevel, minPA, minPM, items) {
     return { selected, itemsBySlot };
 }
 
-function ensurePAPMConstraint(result, minPA, minPM) {
+function ensurePAPMConstraint(result, minPA, minPM, maxPA, maxPM) {
     const { selected, itemsBySlot } = result;
     
     const totalItemPA = selected.reduce((sum, i) => sum + (i.pa || 0), 0);
     const totalItemPM = selected.reduce((sum, i) => sum + (i.pm || 0), 0);
     
+    if (totalItemPA >= minPA && totalItemPM >= minPM && totalItemPA <= maxPA && totalItemPM <= maxPM) {
+        return selected;
+    }
+    
     let needsPA = minPA - totalItemPA;
     let needsPM = minPM - totalItemPM;
-    
-    if (needsPA <= 0 && needsPM <= 0) return selected;
     
     for (const slot of EQUIPMENT_SLOTS) {
         if (needsPA <= 0 && needsPM <= 0) break;
@@ -205,6 +212,11 @@ function ensurePAPMConstraint(result, minPA, minPM) {
         
         for (const item of slotItems) {
             if (currentItem && item.id === currentItem.id) continue;
+            
+            const newPA = totalItemPA - (currentItem ? (currentItem.pa || 0) : 0) + (item.pa || 0);
+            const newPM = totalItemPM - (currentItem ? (currentItem.pm || 0) : 0) + (item.pm || 0);
+            
+            if (newPA > maxPA || newPM > maxPM) continue;
             
             const gainPA = (item.pa || 0) - (currentItem ? (currentItem.pa || 0) : 0);
             const gainPM = (item.pm || 0) - (currentItem ? (currentItem.pm || 0) : 0);
@@ -236,7 +248,75 @@ function ensurePAPMConstraint(result, minPA, minPM) {
     return selected;
 }
 
-function localSearchImprove(selected, element, minLevel, maxLevel, minPA, minPM, items) {
+function checkPAPMBetween(selected, minPA, minPM, maxPA, maxPM) {
+    const totalPA = selected.reduce((sum, i) => sum + (i.pa || 0), 0);
+    const totalPM = selected.reduce((sum, i) => sum + (i.pm || 0), 0);
+    return totalPA >= minPA && totalPA <= maxPA && totalPM >= minPM && totalPM <= maxPM;
+}
+
+function enforcePAPMLimit(selected, minPA, minPM, maxPA, maxPM, items) {
+    let result = [...selected];
+    const bySlot = getItemsBySlot(items);
+    
+    let totalPA = result.reduce((s, i) => s + (i.pa || 0), 0);
+    let totalPM = result.reduce((s, i) => s + (i.pm || 0), 0);
+    
+    while (totalPA > maxPA || totalPM > maxPM) {
+        let worstItem = null;
+        let worstGain = Infinity;
+        
+        for (const item of result) {
+            const gain = (item.pa || 0) + (item.pm || 0);
+            if (gain < worstGain) {
+                worstGain = gain;
+                worstItem = item;
+            }
+        }
+        
+        if (worstItem) {
+            result = result.filter(i => i.id !== worstItem.id);
+            totalPA -= (worstItem.pa || 0);
+            totalPM -= (worstItem.pm || 0);
+        } else {
+            break;
+        }
+    }
+    
+    while (totalPA < minPA || totalPM < minPM) {
+        let bestItem = null;
+        let bestGain = -Infinity;
+        
+        for (const slot of EQUIPMENT_SLOTS) {
+            const slotItems = bySlot[slot] || [];
+            for (const item of slotItems) {
+                if (result.some(r => r.id === item.id)) continue;
+                
+                const newPA = totalPA + (item.pa || 0);
+                const newPM = totalPM + (item.pm || 0);
+                
+                if (newPA > maxPA || newPM > maxPM) continue;
+                
+                const gain = (item.pa || 0) + (item.pm || 0);
+                if (gain > bestGain) {
+                    bestGain = gain;
+                    bestItem = item;
+                }
+            }
+        }
+        
+        if (bestItem) {
+            result.push(bestItem);
+            totalPA += (bestItem.pa || 0);
+            totalPM += (bestItem.pm || 0);
+        } else {
+            break;
+        }
+    }
+    
+    return result;
+}
+
+function localSearchImprove(selected, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items) {
     let best = [...selected];
     let improved = true;
     let iterations = 0;
@@ -264,6 +344,11 @@ function localSearchImprove(selected, element, minLevel, maxLevel, minPA, minPM,
             
             for (const candidate of slotItems) {
                 const testSet = [...otherItems, candidate];
+                const testPA = testSet.reduce((s, it) => s + (it.pa || 0), 0);
+                const testPM = testSet.reduce((s, it) => s + (it.pm || 0), 0);
+                
+                if (testPA > maxPA || testPM > maxPM) continue;
+                
                 const testScore = calculateTotalScore(testSet, element);
                 
                 if (testScore > currentScore) {
@@ -360,11 +445,11 @@ function tryAddSetPiece(selected, element, minLevel, maxLevel, items) {
     return null;
 }
 
-function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResults = 10) {
-    const greedyResult = greedySelectItems(element, minLevel, maxLevel, minPA, minPM, items);
-    let currentItems = ensurePAPMConstraint(greedyResult, minPA, minPM);
-    let improved = localSearchImprove(currentItems, element, minLevel, maxLevel, minPA, minPM, items);
-    improved = ensurePAPMConstraint({ selected: improved, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
+function optimizeGear(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items, maxResults = 10) {
+    const greedyResult = greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+    let currentItems = ensurePAPMConstraint(greedyResult, minPA, minPM, maxPA, maxPM);
+    let improved = localSearchImprove(currentItems, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+    improved = ensurePAPMConstraint({ selected: improved, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
     
     let currentBest = improved;
     
@@ -375,44 +460,49 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
         }
     }
     
-    let finalSet = localSearchImprove(currentBest, element, minLevel, maxLevel, minPA, minPM, items);
-    finalSet = ensurePAPMConstraint({ selected: finalSet, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
+    let finalSet = localSearchImprove(currentBest, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+    finalSet = ensurePAPMConstraint({ selected: finalSet, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+    
+    if (!checkPAPMBetween(finalSet, minPA, minPM, maxPA, maxPM)) {
+        finalSet = enforcePAPMLimit(finalSet, minPA, minPM, maxPA, maxPM, items);
+    }
     
     const allCombos = new Map();
     
     function addCombo(items) {
+        const totalPA = items.reduce((s, i) => s + (i.pa || 0), 0);
+        const totalPM = items.reduce((s, i) => s + (i.pm || 0), 0);
+        
+        if (totalPA > maxPA || totalPM > maxPM) return;
+        if (totalPA < minPA || totalPM < minPM) return;
+        
         const ids = items.map(i => i.id).sort().join('|');
         if (!allCombos.has(ids)) {
             const result = createResult(items, element);
             allCombos.set(ids, result);
-            console.log('Added unique combo:', ids.substring(0, 80));
-        } else {
-            console.log('Duplicate combo skipped:', ids.substring(0, 80));
         }
     }
     
     addCombo(finalSet);
     
     for (let r = 0; r < 20; r++) {
-        let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, items);
-        randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
-        let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, items);
-        improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
-        addCombo(improved2);
+        let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+        randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+        let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+        improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+        
+        if (checkPAPMBetween(improved2, minPA, minPM, maxPA, maxPM)) {
+            addCombo(improved2);
+        }
     }
     
     const results = Array.from(allCombos.values());
     results.sort((a, b) => b.totalElement - a.totalElement);
     
-    console.log('Total unique combos:', allCombos.size);
-    allCombos.forEach((v, k) => {
-        console.log('Combo key:', k);
-    });
-    
     return results.slice(0, maxResults);
 }
 
-function addRandomVariation(baseSet, element, minLevel, maxLevel, items) {
+function addRandomVariation(baseSet, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items) {
     const bySlot = getItemsBySlot(items);
     const result = [...baseSet];
     
@@ -430,11 +520,19 @@ function addRandomVariation(baseSet, element, minLevel, maxLevel, items) {
         
         if (slotItems.length > 0 && Math.random() > 0.3) {
             const randomItem = slotItems[Math.floor(Math.random() * slotItems.length)];
-            if (currentItem) {
-                const idx = result.findIndex(s => s.id === currentItem.id);
-                result[idx] = randomItem;
-            } else {
-                result.push(randomItem);
+            
+            const currentPA = result.reduce((s, i) => s + (i.pa || 0), 0);
+            const currentPM = result.reduce((s, i) => s + (i.pm || 0), 0);
+            const newPA = currentPA - (currentItem ? (currentItem.pa || 0) : 0) + (randomItem.pa || 0);
+            const newPM = currentPM - (currentItem ? (currentItem.pm || 0) : 0) + (randomItem.pm || 0);
+            
+            if (newPA <= maxPA && newPM <= maxPM) {
+                if (currentItem) {
+                    const idx = result.findIndex(s => s.id === currentItem.id);
+                    result[idx] = randomItem;
+                } else {
+                    result.push(randomItem);
+                }
             }
         }
     }

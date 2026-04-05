@@ -114,9 +114,13 @@ function displayResults(results) {
     const resultsCount = document.getElementById('resultsCount');
     const emptyState = document.getElementById('emptyState');
     
-    console.log('displayResults: first result basePA=' + results[0]?.basePA + ' exoPA=' + results[0]?.exoPA);
-    if (results[0]?.items) {
-        console.log('All items in first result:', results[0].items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
+    console.log('displayResults called, results:', results ? results.length : 'undefined');
+    console.log('results[0]:', results[0]);
+    if (results && results[0]) {
+        console.log('results[0].items:', results[0].items);
+        if (results[0].items) {
+            console.log('All items in first result:', results[0].items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
+        }
     }
     
     if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {

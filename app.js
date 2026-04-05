@@ -82,13 +82,22 @@ function runOptimization() {
     const maxItemPA = Math.max(0, totalPA - basePA - exoPA);
     const maxItemPM = Math.max(0, totalPM - basePM - exoPM);
     
-    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+    const selectedOptimizer = document.querySelector('input[name="optimizer"]:checked').value;
+    
+    let results;
+    
+    if (selectedOptimizer === 'milp') {
+        results = await optimizeMilp(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+    } else {
+        results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
+    }
     
     results.forEach(r => {
         r.basePA = basePA;
         r.basePM = basePM;
         r.exoPA = exoPA;
         r.exoPM = exoPM;
+        r.optimizer = selectedOptimizer;
     });
     
     displayResults(results);
@@ -108,7 +117,8 @@ function displayResults(results) {
     }
 
     emptyState.style.display = 'none';
-    resultsCount.textContent = results.length + ' combinaisons trouvées';
+    const optimizerName = results[0]?.optimizer === 'milp' ? ' (MILP Optimal)' : ' (Greedy)';
+    resultsCount.textContent = results.length + ' combinaisons trouvées' + optimizerName;
     
     resultsList.innerHTML = '';
     for (var i = 0; i < results.length; i++) {

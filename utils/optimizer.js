@@ -390,7 +390,17 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
     
     results.sort((a, b) => b.totalElement - a.totalElement);
     
-    return results.slice(0, maxResults);
+    const uniqueResults = [];
+    const seen = new Set();
+    for (const r of results) {
+        const key = r.items.map(i => i.id).sort().join(',');
+        if (!seen.has(key)) {
+            seen.add(key);
+            uniqueResults.push(r);
+        }
+    }
+    
+    return uniqueResults.slice(0, maxResults);
 }
 
 function addRandomVariation(baseSet, element, minLevel, maxLevel, items) {
@@ -424,8 +434,24 @@ function addRandomVariation(baseSet, element, minLevel, maxLevel, items) {
 }
 
 function createResult(items, element) {
-    const baseScore = items.reduce((sum, item) => sum + getItemElementValue(item, element), 0);
-    const setBonus = calculateSetBonus(items, element);
+    const elements = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
+    
+    const baseStats = { vitalite: 0, sagesse: 0, force: 0, intelligence: 0, chance: 0, agilite: 0 };
+    items.forEach(item => {
+        elements.forEach(el => {
+            baseStats[el] += item.elements[el] || 0;
+        });
+    });
+    
+    const setBonuses = calculateAllSetBonuses(items);
+    
+    const totalStats = {};
+    elements.forEach(el => {
+        totalStats[el] = baseStats[el] + (setBonuses[el] || 0);
+    });
+    
+    const baseScore = baseStats[element];
+    const setBonus = setBonuses[element] || 0;
     const setDetails = getSetBonusDetails(items);
     const avgLevel = items.length > 0 ? Math.round(items.reduce((sum, item) => sum + item.level, 0) / items.length) : 0;
     
@@ -435,6 +461,40 @@ function createResult(items, element) {
         baseElement: baseScore,
         setBonus,
         setDetails,
-        avgLevel
+        avgLevel,
+        baseStats,
+        setBonuses,
+        totalStats
     };
+}
+
+function calculateAllSetBonuses(items) {
+    const elements = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
+    const setCounts = {};
+    items.forEach(item => {
+        if (item.set) {
+            setCounts[item.set] = (setCounts[item.set] || 0) + 1;
+        }
+    });
+    
+    const bonuses = { vitalite: 0, sagesse: 0, force: 0, intelligence: 0, chance: 0, agilite: 0 };
+    
+    Object.entries(setCounts).forEach(([setName, count]) => {
+        if (count >= 2) {
+            const setData = SET_BONUSES[setName];
+            if (setData) {
+                const tiers = Object.keys(setData).map(Number).sort((a, b) => b - a);
+                for (const tier of tiers) {
+                    if (tier <= count) {
+                        elements.forEach(el => {
+                            bonuses[el] += setData[tier][el] || 0;
+                        });
+                        break;
+                    }
+                }
+            }
+        }
+    });
+    
+    return bonuses;
 }

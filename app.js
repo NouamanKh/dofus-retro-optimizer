@@ -127,6 +127,24 @@ function displayResults(results) {
         }
         html += '</div>';
         
+        html += '<div class="result-all-stats">';
+        const elements = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
+        elements.forEach(function(el) {
+            const total = r.totalStats[el] || 0;
+            if (total !== 0) {
+                const base = r.baseStats[el] || 0;
+                const setB = r.setBonuses[el] || 0;
+                let statText = '<span class="all-stat" style="color:' + ELEMENT_COLORS[el] + ';">';
+                statText += ELEMENT_NAMES[el] + ': ' + (total > 0 ? '+' : '') + total;
+                if (setB > 0) {
+                    statText += ' <small>(' + base + ' + ' + setB + ' set)</small>';
+                }
+                statText += '</span>';
+                html += statText;
+            }
+        });
+        html += '</div>';
+        
         html += '<div class="result-items-grid">';
         for (var j = 0; j < r.items.length; j++) {
             var item = r.items[j];

@@ -855,6 +855,29 @@ body {
   color: #9B59B6;
 }
 
+.result-all-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.all-stat {
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.all-stat small {
+  font-weight: normal;
+  opacity: 0.8;
+}
+
 .result-items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

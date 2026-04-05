@@ -380,12 +380,20 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
     
     const results = [createResult(finalSet, element)];
     
-    for (let r = 0; r < 3; r++) {
+    const seenKeys = new Set();
+    seenKeys.add(finalSet.map(i => i.id).sort().join(','));
+    
+    for (let r = 0; r < 10; r++) {
         let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, items);
         randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
         let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, items);
         improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(items) }, minPA, minPM);
-        results.push(createResult(improved2, element));
+        
+        const key = improved2.map(i => i.id).sort().join(',');
+        if (!seenKeys.has(key)) {
+            seenKeys.add(key);
+            results.push(createResult(improved2, element));
+        }
     }
     
     results.sort((a, b) => b.totalElement - a.totalElement);
@@ -394,11 +402,15 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
     const seen = new Set();
     for (const r of results) {
         const key = r.items.map(i => i.id).sort().join(',');
+        console.log('Checking:', key.substring(0, 50), 'seen:', seen.has(key));
         if (!seen.has(key)) {
             seen.add(key);
             uniqueResults.push(r);
+            console.log('Added new result, total unique:', uniqueResults.length);
         }
     }
+    
+    console.log('Total results before dedup:', results.length, 'after:', uniqueResults.length);
     
     return uniqueResults.slice(0, maxResults);
 }

@@ -17,7 +17,7 @@
         <h1 class="title">Optimiseur d'Élément Dofus Retro</h1>
         <div class="header-badges">
           <span class="data-badge">Données Dofus 1.29</span>
-          <span class="version-badge">v1.0.1</span>
+          <span class="version-badge">v1.0.2</span>
         </div>
       </div>
       <p class="subtitle">Trouvez la meilleure combinaison d'équipement pour maximiser votre pouvoir élémentaire</p>
@@ -105,7 +105,17 @@
                 <input type="number" id="totalPM" value="3" min="3" max="20">
               </div>
             </div>
-            <p class="constraint-hint">Base: 6 PA, 3 PM (7 PA à partir du niveau 100)</p>
+            <div class="level-inputs exo-inputs">
+              <div class="level-input-group">
+                <label for="exoPA">Exo PA</label>
+                <input type="number" id="exoPA" value="0" min="0" max="10">
+              </div>
+              <div class="level-input-group">
+                <label for="exoPM">Exo PM</label>
+                <input type="number" id="exoPM" value="0" min="0" max="10">
+              </div>
+            </div>
+            <p class="constraint-hint">Base: 6 PA, 3 PM (7 PA à partir du niveau 100). Exo = bonus déjà possédé.</p>
           </div>
         </div>
 

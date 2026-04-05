@@ -67,16 +67,20 @@ function runOptimization() {
     const levelInput = document.getElementById('playerLevel');
     const totalPAInput = document.getElementById('totalPA');
     const totalPMInput = document.getElementById('totalPM');
+    const exoPAInput = document.getElementById('exoPA');
+    const exoPMInput = document.getElementById('exoPM');
     
     const playerLevel = parseInt(levelInput.value) || 100;
     const totalPA = parseInt(totalPAInput.value) || 6;
     const totalPM = parseInt(totalPMInput.value) || 3;
+    const exoPA = parseInt(exoPAInput.value) || 0;
+    const exoPM = parseInt(exoPMInput.value) || 0;
     
     const basePA = playerLevel >= 100 ? 7 : 6;
     const basePM = 3;
     
-    const minPAPool = Math.max(0, totalPA - basePA);
-    const minPMPool = Math.max(0, totalPM - basePM);
+    const minPAPool = Math.max(0, totalPA - basePA - exoPA);
+    const minPMPool = Math.max(0, totalPM - basePM - exoPM);
     
     const results = optimizeGear(selectedElement, 1, playerLevel, minPAPool, minPMPool, ITEMS_RETRO, 10);
     

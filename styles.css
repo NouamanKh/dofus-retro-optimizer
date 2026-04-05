@@ -438,10 +438,21 @@ body {
 }
 
 .constraint-hint {
-  font-size: 0.75rem;
   color: var(--text-secondary);
-  font-style: italic;
-  margin-top: 8px;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.exo-inputs {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.exo-inputs input {
+  background: rgba(46, 204, 113, 0.1);
+  border-color: rgba(46, 204, 113, 0.5);
 }
 
 .level-hint {

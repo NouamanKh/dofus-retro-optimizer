@@ -104,6 +104,7 @@ function runOptimization() {
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
         console.log('Result: basePA=' + basePA + ' exoPA=' + exoPA + ' itemPA=' + itemPA + ' = total ' + (basePA + exoPA + itemPA));
+        console.log('Items with PA:', r.items.filter(i => i.pa > 0).map(i => i.name + '(PA:' + i.pa + ')').join(', ') || 'NONE');
     });
     displayResults(results);
 }
@@ -113,12 +114,9 @@ function displayResults(results) {
     const resultsCount = document.getElementById('resultsCount');
     
     console.log('displayResults: first result basePA=' + results[0]?.basePA + ' exoPA=' + results[0]?.exoPA);
-    const emptyState = document.getElementById('emptyState');
-
-    if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {
-        emptyState.style.display = 'flex';
-        resultsCount.textContent = '0 combinaisons trouvées';
-        resultsList.innerHTML = '';
+    console.log('All items in first result:', results[0]?.items.map(i => i.name + '(PA:' + i.pa + ', PM:' + i.pm + ')').join(', '));
+    
+    resultsList.innerHTML = '';
         resultsList.appendChild(emptyState);
         return;
     }

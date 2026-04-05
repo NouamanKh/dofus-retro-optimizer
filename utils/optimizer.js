@@ -385,6 +385,9 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
         if (!allCombos.has(ids)) {
             const result = createResult(items, element);
             allCombos.set(ids, result);
+            console.log('Added unique combo:', ids.substring(0, 80));
+        } else {
+            console.log('Duplicate combo skipped:', ids.substring(0, 80));
         }
     }
     
@@ -400,6 +403,11 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, items, maxResul
     
     const results = Array.from(allCombos.values());
     results.sort((a, b) => b.totalElement - a.totalElement);
+    
+    console.log('Total unique combos:', allCombos.size);
+    allCombos.forEach((v, k) => {
+        console.log('Combo key:', k);
+    });
     
     return results.slice(0, maxResults);
 }

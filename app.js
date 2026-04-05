@@ -79,21 +79,18 @@ function runOptimization() {
     const basePA = playerLevel >= 100 ? 7 : 6;
     const basePM = 3;
     
-    const minPAPool = Math.max(0, totalPA - basePA - exoPA);
-    const minPMPool = Math.max(0, totalPM - basePM - exoPM);
-    const maxPAPool = minPAPool;
-    const maxPMPool = minPMPool;
+    const maxPAPool = Math.max(0, totalPA - basePA - exoPA);
+    const maxPMPool = Math.max(0, totalPM - basePM - exoPM);
     
     console.log('Optimization params:', {
         level: playerLevel,
         basePA, basePM,
         totalPA, totalPM,
         exoPA, exoPM,
-        minPAPool, minPMPool,
         maxPAPool, maxPMPool
     });
     
-    const results = optimizeGear(selectedElement, 1, playerLevel, minPAPool, minPMPool, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
+    const results = optimizeGear(selectedElement, 1, playerLevel, 0, 0, maxPAPool, maxPMPool, ITEMS_RETRO, 10);
     
     results.forEach(r => {
         r.basePA = basePA;
@@ -102,7 +99,7 @@ function runOptimization() {
         r.exoPM = exoPM;
         const itemPA = r.items.reduce((s, i) => s + (i.pa || 0), 0);
         const itemPM = r.items.reduce((s, i) => s + (i.pm || 0), 0);
-        console.log('Result: itemPA=' + itemPA + ', itemPM=' + itemPM + ', target PA=[' + minPAPool + ',' + maxPAPool + ']');
+        console.log('Result: itemPA=' + itemPA + ', itemPM=' + itemPM + ', max PA=' + maxPAPool);
     });
     displayResults(results);
 }

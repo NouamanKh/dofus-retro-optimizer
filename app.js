@@ -63,6 +63,7 @@ function setupElementButtons() {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             selectedElement = btn.dataset.element;
+            gtag('event', 'select_element', { element: selectedElement });
         });
     });
 }
@@ -113,6 +114,15 @@ async function runOptimization() {
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const results = await response.json();
         results.forEach(r => { r.basePA = basePA; r.basePM = basePM; r.exoPA = exoPA; r.exoPM = exoPM; });
+
+        gtag('event', 'search', {
+            element: selectedElement,
+            level: playerLevel,
+            total_pa: totalPA,
+            total_pm: totalPM,
+            result_score: results[0]?.totalElement ?? 0
+        });
+
         displayResults(results);
     } catch (err) {
         console.error('Optimization error:', err);
@@ -302,7 +312,11 @@ function displayResults(results) {
     });
 
     resultsList.querySelectorAll('.result-card-new').forEach(card => {
-        card.addEventListener('click', () => openModal(results[parseInt(card.dataset.resultIdx)]));
+        card.addEventListener('click', () => {
+            const idx = parseInt(card.dataset.resultIdx);
+            gtag('event', 'view_result', { element: selectedElement, score: results[idx]?.totalElement });
+            openModal(results[idx]);
+        });
     });
 }
 

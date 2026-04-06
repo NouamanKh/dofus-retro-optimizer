@@ -133,17 +133,13 @@ function greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, max
 
     const itemsBySlot = {};
     Object.entries(bySlot).forEach(([slot, slotItems]) => {
-        const filtered = slotItems.filter(item => 
-            item.level >= minLevel && 
-            item.level <= maxLevel &&
-            getItemElementValue(item, element) >= -100
-        );
-        itemsBySlot[slot] = filtered
-            .map(item => ({
-                ...item,
-                elementValue: getItemElementValue(item, element)
-            }))
-            .sort((a, b) => b.elementValue - a.elementValue);
+        itemsBySlot[slot] = slotItems
+            .filter(item =>
+                item.level >= minLevel &&
+                item.level <= maxLevel &&
+                getItemElementValue(item, element) >= -100
+            )
+            .sort((a, b) => getItemElementValue(b, element) - getItemElementValue(a, element));
     });
 
     for (let iteration = 0; iteration < 3; iteration++) {
@@ -447,7 +443,7 @@ function tryAddSetPiece(selected, element, minLevel, maxLevel, items) {
 }
 
 function optimizeGear(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items, maxResults = 10) {
-    // Pre-filter by level once so every downstream function works on a clean list
+    // Pre-filter by level once — every downstream function receives only valid items
     const filteredItems = items.filter(item => item.level >= minLevel && item.level <= maxLevel);
 
     const greedyResult = greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
@@ -473,16 +469,19 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, i
     
     const allCombos = new Map();
     
-    function addCombo(items) {
-        const totalPA = items.reduce((s, i) => s + (i.pa || 0), 0);
-        const totalPM = items.reduce((s, i) => s + (i.pm || 0), 0);
+    function addCombo(combo) {
+        const totalPA = combo.reduce((s, i) => s + (i.pa || 0), 0);
+        const totalPM = combo.reduce((s, i) => s + (i.pm || 0), 0);
         
         if (totalPA > maxPA || totalPM > maxPM) return;
         if (totalPA < minPA || totalPM < minPM) return;
+
+        // Hard safety: drop any item that slipped past the level filter
+        const safeCombo = combo.filter(i => i.level >= minLevel && i.level <= maxLevel);
         
-        const ids = items.map(i => i.id).sort().join('|');
+        const ids = safeCombo.map(i => i.id).sort().join('|');
         if (!allCombos.has(ids)) {
-            const result = createResult(items, element);
+            const result = createResult(safeCombo, element);
             allCombos.set(ids, result);
         }
     }

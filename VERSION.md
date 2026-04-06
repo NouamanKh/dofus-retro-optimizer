@@ -1,6 +1,9 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.4.1 (2026-04-06)
+## v1.4.2 (2026-04-06)
+- Fix greedy level filter more robustly: removed spread copies in itemsBySlot (eliminated elementValue mutation), added hard safety filter on all output combos to guarantee no over-level items slip through
+
+
 - Fix greedy returning items above the character's level (enforcePAPMLimit and ensurePAPMConstraint were using the unfiltered item list)
 
 

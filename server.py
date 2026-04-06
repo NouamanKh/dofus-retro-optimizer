@@ -133,7 +133,6 @@ def solve_milp(element, min_level, max_level, min_pa, min_pm, max_pa, max_pm):
         if item['type'] in SLOT_LIMITS
         and min_level <= item['level'] <= max_level
     }
-
     if not valid_items:
         return None
 

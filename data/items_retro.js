@@ -14,6 +14,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 15,
+      "pct_res_earth": 25,
+      "res_water": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -68,6 +73,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -88,6 +96,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 18,
+      "pct_res_air": 18,
+      "res_neutral": 5,
+      "res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -142,6 +156,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 8,
+      "res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -188,6 +206,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 25,
+      "pct_res_earth": 10,
+      "res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -246,6 +269,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -284,6 +310,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 25,
+      "pct_res_fire": 25,
+      "pct_res_earth": 20,
+      "res_water": 15,
+      "res_air": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -342,6 +375,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_air": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -384,6 +420,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 9,
+      "res_air": 9,
+      "res_earth": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -430,6 +471,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -472,6 +516,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 15,
+      "pct_res_water": 15,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -526,6 +575,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 12,
+      "pct_res_earth": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -576,6 +629,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 3,
+      "pct_res_fire": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -596,6 +653,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 18,
+      "pct_res_water": 18
+    },
     "set": null,
     "recipe": [
       {
@@ -650,6 +711,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 12,
+      "res_air": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -692,6 +757,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -734,6 +802,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -776,6 +847,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 3,
+      "pct_res_water": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -796,6 +871,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -830,6 +908,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 12,
+      "pct_res_air": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -880,6 +962,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 25,
+      "res_air": 15
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -934,6 +1020,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 8,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -980,6 +1070,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 10,
+      "pct_res_air": 10,
+      "res_neutral": 10,
+      "res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -1030,6 +1126,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_air": 3,
+      "pct_res_fire": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1050,6 +1150,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 8,
+      "res_fire": 10
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -1096,6 +1200,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 8,
+      "res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -1142,6 +1250,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 20,
+      "res_earth": 15
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -1192,6 +1304,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 18,
+      "res_water": 10
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -1242,6 +1358,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 3,
+      "pct_res_earth": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1262,6 +1382,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 15,
+      "res_fire": 7,
+      "res_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -1312,6 +1437,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 15,
+      "pct_res_water": 15,
+      "res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -1362,6 +1492,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 20,
+      "pct_res_fire": 20,
+      "res_earth": 10,
+      "res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -1416,6 +1552,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 30,
+      "pct_res_fire": 30,
+      "res_fire": 15,
+      "res_air": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1436,6 +1578,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1456,6 +1599,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 20,
+      "pct_res_fire": 15,
+      "pct_res_air": 20,
+      "res_water": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -1514,6 +1663,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -1552,6 +1704,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 25,
+      "pct_res_water": 25,
+      "res_earth": 15,
+      "res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -1606,6 +1764,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 25,
+      "res_fire": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -1656,6 +1818,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -1696,6 +1861,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1722,6 +1891,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -1762,6 +1934,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -1802,6 +1977,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -1842,6 +2020,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -1882,6 +2063,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 50
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -1908,6 +2092,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 50
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -1938,6 +2125,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -1986,6 +2177,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2034,6 +2228,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -2073,6 +2270,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2121,6 +2321,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2169,6 +2372,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -2217,6 +2423,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2265,6 +2474,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -2313,6 +2525,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2361,6 +2576,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -2413,6 +2631,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -2465,6 +2686,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -2517,6 +2741,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -2569,6 +2796,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -2621,6 +2851,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -2673,6 +2907,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -2725,6 +2962,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -2777,6 +3017,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -2833,6 +3076,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -2885,6 +3131,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -2945,6 +3195,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 12
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -2980,6 +3233,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -3036,6 +3293,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -3092,6 +3352,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -3148,6 +3411,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -3204,6 +3471,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -3260,6 +3530,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -3320,6 +3593,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -3376,6 +3652,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12,
+      "res_earth": 1,
+      "res_neutral": 1,
+      "res_water": 1,
+      "res_air": 1,
+      "res_fire": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -3432,6 +3716,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -3488,6 +3775,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -3548,6 +3838,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -3595,6 +3889,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -3630,6 +3927,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 42,
+      "heals": 42
+    },
     "set": null,
     "recipe": [
       {
@@ -3677,6 +3978,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 18,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -3740,6 +4045,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16
+    },
     "set": null,
     "recipe": [
       {
@@ -3800,6 +4108,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14,
+      "res_earth": 2,
+      "res_neutral": 2,
+      "res_water": 2,
+      "res_air": 2,
+      "res_fire": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -3856,6 +4172,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -3908,6 +4228,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 19
+    },
     "set": null,
     "recipe": [
       {
@@ -3968,6 +4291,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16,
+      "res_earth": 2,
+      "res_neutral": 2,
+      "res_water": 2,
+      "res_air": 2,
+      "res_fire": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -4028,6 +4359,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 15,
+      "res_earth": 3,
+      "res_neutral": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -4079,6 +4415,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 10,
+      "dmg_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -4126,6 +4466,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 21
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -4161,6 +4504,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "dmg": 3,
+      "crit": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -4221,6 +4569,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "res_earth": 3,
+      "res_neutral": 3,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -4281,6 +4637,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 30,
+      "heals": 13
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -4307,6 +4667,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_neutral": 4,
+      "summons": 2,
+      "dmg": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -4358,6 +4723,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21,
+      "dmg": 4,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -4418,6 +4788,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -4478,6 +4852,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 20
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -4513,6 +4890,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "steal_air": 5,
+      "dmg": 2
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -4564,6 +4946,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23,
+      "dmg": 4,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -4624,6 +5011,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22,
+      "crit": 5,
+      "pct_dmg": 6,
+      "range": 1,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [
       {
@@ -4688,6 +5082,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 4,
+      "dmg_water": 4,
+      "dmg_fire": 4,
+      "dmg_earth": 4
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -4735,6 +5135,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "dmg": 5,
+      "crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -4795,6 +5200,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 12,
+      "dmg_water": 12,
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -4859,6 +5269,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29,
+      "crit": 4,
+      "pct_dmg": 15,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -4923,6 +5339,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12,
+      "dmg_air": 12,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -4983,6 +5404,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31,
+      "initiative": 100,
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5047,6 +5475,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31,
+      "range": 1,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -5111,6 +5544,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23,
+      "steal_air": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -5179,6 +5616,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 15,
+      "dmg_neutral": 15,
+      "initiative": 250,
+      "res_neutral": 8,
+      "res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -5246,6 +5690,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 13,
+      "dmg_neutral": 13,
+      "crit": 5,
+      "prospection": 15,
+      "pct_res_neutral": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5310,6 +5762,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 33,
+      "dmg": 10,
+      "range": 1,
+      "prospection": 10,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5382,6 +5841,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 14,
+      "dmg_neutral": 14,
+      "dmg": 8,
+      "range": 1,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -5454,6 +5920,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "steal_fire": 3,
+      "pa_drain": 1,
+      "dmg": 10,
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5525,6 +5999,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 42,
+      "pct_dmg": 20,
+      "dmg": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -5605,6 +6084,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 33,
+      "pct_dmg": 10,
+      "dmg": 10,
+      "crit": 5,
+      "prospection": 15,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5669,6 +6156,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "steal_water": 3,
+      "pct_dmg": 15,
+      "range": 1,
+      "prospection": 15,
+      "res_neutral": 10,
+      "res_water": 10,
+      "pct_res_water": 10
+    },
     "set": "Panoplie Baveuse",
     "recipe": [
       {
@@ -5733,6 +6230,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_water": 6,
+      "pa_drain": 3,
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -5804,6 +6306,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "steal_air": 4,
+      "crit": 6,
+      "dmg": 7,
+      "pct_res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -5871,6 +6380,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27,
+      "dmg_fire": 7,
+      "prospection": 15,
+      "range": 1,
+      "initiative": 200,
+      "dmg": 6,
+      "pct_res_water": 8,
+      "pct_res_earth": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -5943,6 +6462,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_water": 20,
+      "steal_air": 20,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -6014,6 +6538,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13,
+      "dmg_fire": 13,
+      "dmg_air": 13,
+      "dmg": 10,
+      "pct_res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -6090,6 +6621,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "crit": 5,
+      "dmg": 10,
+      "prospection": 20,
+      "res_fire": 10,
+      "res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -6154,6 +6693,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 19,
+      "dmg_fire": 19,
+      "dmg": 7,
+      "range": 1,
+      "initiative": 400,
+      "prospection": 20,
+      "pct_res_fire": 6,
+      "pct_res_air": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -6222,6 +6771,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 21,
+      "dmg_fire": 21,
+      "crit": 4,
+      "dmg": 7,
+      "initiative": 400,
+      "prospection": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -6290,6 +6847,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -6310,6 +6868,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6339,6 +6898,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -6368,6 +6928,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6397,6 +6958,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -6417,6 +6979,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6446,6 +7009,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6475,6 +7039,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6504,6 +7069,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6533,6 +7099,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6562,6 +7129,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1
+    },
     "set": "Panoplie du Boune",
     "recipe": [],
     "requirements": [],
@@ -6582,6 +7152,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6611,6 +7182,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6640,6 +7212,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6669,6 +7242,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6698,6 +7272,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6727,6 +7302,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6756,6 +7332,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 50
+    },
     "set": "Panoplie Arakné",
     "recipe": [
       {
@@ -6785,6 +7364,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6814,6 +7394,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6843,6 +7424,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6872,6 +7454,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5,
+      "pct_weak_fire": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -6901,6 +7487,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6930,6 +7517,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6959,6 +7547,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -6988,6 +7577,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Champêtre",
     "recipe": [
       {
@@ -7021,6 +7611,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 200
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -7041,6 +7634,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "crit": 1,
+      "pct_weak_fire": 10,
+      "pct_weak_water": 10
+    },
     "set": "Panoplie Bandit",
     "recipe": [
       {
@@ -7074,6 +7673,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -7107,6 +7707,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 1
+    },
     "set": "Panoplie Sanglier",
     "recipe": [
       {
@@ -7140,6 +7743,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -7177,6 +7783,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 2,
+      "res_air": 2,
+      "res_fire": 2
+    },
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -7214,6 +7825,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Paysan",
     "recipe": [
       {
@@ -7251,6 +7863,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 500
+    },
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -7288,6 +7903,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 200
+    },
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -7325,6 +7943,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -7362,6 +7981,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -7399,6 +8021,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -7436,6 +8059,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 4,
+      "pm_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -7477,6 +8104,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 2,
+      "pct_weak_neutral": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -7523,6 +8154,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -7560,6 +8194,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -7580,6 +8217,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -7621,6 +8262,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "initiative": 65
+    },
     "set": null,
     "recipe": [
       {
@@ -7662,6 +8307,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "initiative": 65
+    },
     "set": "Panoplie du Bois de l'Est",
     "recipe": [],
     "requirements": [],
@@ -7682,6 +8331,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1
+    },
     "set": "Panoplie Prespic",
     "recipe": [
       {
@@ -7723,6 +8375,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "pct_dmg": 15,
+      "initiative": 60
+    },
     "set": null,
     "recipe": [
       {
@@ -7764,6 +8421,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -7805,6 +8465,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -7851,6 +8512,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pods": 500
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -7892,6 +8557,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 300,
+      "pct_res_air": 2,
+      "pct_weak_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -7941,6 +8611,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 300,
+      "pct_res_water": 2,
+      "pct_weak_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -7990,6 +8665,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8010,6 +8688,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "pct_dmg_trap": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -8051,6 +8733,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "pct_dmg_trap": 10
+    },
     "set": "Panoplie de Peggy la Porkass",
     "recipe": [],
     "requirements": [],
@@ -8071,6 +8757,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8091,6 +8781,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 2,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -8132,6 +8826,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 150,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -8173,6 +8871,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 2,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -8214,6 +8916,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 2,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Kwak Vent",
     "recipe": [
       {
@@ -8255,6 +8961,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 2,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -8296,6 +9006,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "pct_weak_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -8342,6 +9056,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -8383,6 +9100,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "summons": 1,
+      "initiative": 100,
+      "prospection": 10
+    },
     "set": "Panoplie Scara Noire",
     "recipe": [
       {
@@ -8424,6 +9147,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 150,
+      "pct_res_neutral": 6
+    },
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -8465,6 +9192,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8485,6 +9217,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8505,6 +9243,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 300,
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -8546,6 +9290,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8566,6 +9313,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Scara Blanc",
     "recipe": [
       {
@@ -8607,6 +9360,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8627,6 +9386,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Scara Vert",
     "recipe": [
       {
@@ -8668,6 +9433,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Scara Bleue",
     "recipe": [
       {
@@ -8709,6 +9480,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Scara Rouge",
     "recipe": [
       {
@@ -8750,6 +9527,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg_trap": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8770,6 +9551,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8790,6 +9574,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -8831,6 +9618,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -8851,6 +9641,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -8892,6 +9685,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -8933,6 +9730,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "fail_crit": 2,
+      "crit": 7,
+      "range": 1,
+      "pct_res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -8974,6 +9777,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -9015,6 +9821,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "summons": 1,
+      "pods": 400,
+      "pct_dmg_trap": 15
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -9056,6 +9868,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pods": 300
+    },
     "set": "Panoplie Blop Griotte",
     "recipe": [
       {
@@ -9101,6 +9917,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pods": 300
+    },
     "set": "Panoplie Blop Indigo",
     "recipe": [
       {
@@ -9146,6 +9966,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pods": 300
+    },
     "set": "Panoplie Blop Coco",
     "recipe": [
       {
@@ -9191,6 +10015,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pods": 300
+    },
     "set": "Panoplie Blop Reinette",
     "recipe": [
       {
@@ -9236,6 +10064,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10,
+      "range": 1,
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -9281,6 +10116,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 11,
+      "crit": 3,
+      "prospection": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -9326,6 +10166,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3,
+      "res_earth": 3
+    },
     "set": "Panoplie Scara Dorée",
     "recipe": [
       {
@@ -9371,6 +10218,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 800,
+      "crit": 5,
+      "dmg": 2
+    },
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -9416,6 +10268,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 150,
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -9440,6 +10299,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 150,
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -9464,6 +10329,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 200
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -9484,6 +10352,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 8,
+      "res_water": 8,
+      "res_air": 8,
+      "res_fire": 8,
+      "res_earth": 8,
+      "res_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -9529,6 +10405,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 6,
+      "initiative": 100,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -9574,6 +10455,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 6,
+      "initiative": 100,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -9619,6 +10505,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 6,
+      "initiative": 100,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -9664,6 +10555,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 6,
+      "initiative": 100,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -9709,6 +10605,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 200,
+      "initiative": 250,
+      "prospection": 15
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -9754,6 +10655,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 9,
+      "prospection": 10
+    },
     "set": "Panoplie Wabbit",
     "recipe": [
       {
@@ -9799,6 +10704,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -9844,6 +10750,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "pct_dmg": 15,
+      "pct_res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -9889,6 +10801,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "pct_dmg": 5,
+      "summons": 1,
+      "pods": 250,
+      "pct_res_air": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -9934,6 +10853,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -9979,6 +10902,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "prospection": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Chef Croco",
     "recipe": [
       {
@@ -10024,6 +10953,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 500,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -10069,6 +11002,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "summons": 3,
+      "pct_res_neutral": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -10118,6 +11057,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pods": 400,
+      "prospection": 10,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Blop Indigo Royale",
     "recipe": [
       {
@@ -10167,6 +11112,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pods": 400,
+      "prospection": 10,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Blop Griotte Royale",
     "recipe": [
       {
@@ -10216,6 +11167,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pods": 400,
+      "prospection": 10,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Blop Reinette Royale",
     "recipe": [
       {
@@ -10265,6 +11222,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pods": 400,
+      "prospection": 10,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Blop Coco Royale",
     "recipe": [
       {
@@ -10314,6 +11277,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 5,
+      "prospection": 5,
+      "res_air": 3,
+      "res_water": 3,
+      "res_fire": 3,
+      "pct_res_fire": 5,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie de Shika",
     "recipe": [
       {
@@ -10363,6 +11335,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "summons": 1,
+      "pods": 300,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -10412,6 +11390,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -10465,6 +11446,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 5,
+      "prospection": 5,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3,
+      "pct_res_air": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie de Farle",
     "recipe": [
       {
@@ -10514,6 +11505,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "heals": 5,
+      "dmg": 5,
+      "res_neutral": 5,
+      "res_fire": 5
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -10563,6 +11561,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 200,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -10612,6 +11615,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "dmg": 8,
+      "crit": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -10661,6 +11669,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 35,
+      "dmg": 8,
+      "pct_res_earth": 3
+    },
     "set": "Panoplie Blop Multicolore Royale",
     "recipe": [
       {
@@ -10710,6 +11723,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "pct_dmg": 10,
+      "prospection": 10,
+      "pct_res_neutral": 7,
+      "pct_res_air": 7
+    },
     "set": "Panoplie Sombre",
     "recipe": [
       {
@@ -10759,6 +11779,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 15,
+      "pct_res_fire": 5,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -10808,6 +11835,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg": 4,
+      "prospection": 5,
+      "pct_res_air": 5,
+      "pct_weak_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -10828,6 +11863,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "range": 1,
+      "dmg_trap": 10,
+      "pct_dmg_trap": 25,
+      "initiative": 200,
+      "pct_res_neutral": 6
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -10877,6 +11920,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "crit": 4,
+      "prospection": 10,
+      "pct_res_earth": 6
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -10926,6 +11975,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "dmg": 6,
+      "crit": 4,
+      "res_earth": 6,
+      "res_air": 6,
+      "res_water": 6,
+      "res_fire": 6,
+      "res_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -10975,6 +12034,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 3,
+      "prospection": 20,
+      "res_air": 8,
+      "res_fire": 8,
+      "heals": 7
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -11024,6 +12090,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 330,
+      "pct_res_air": 5,
+      "prospection": 10,
+      "pct_res_earth": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -11077,6 +12150,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 8,
+      "pct_res_earth": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5,
+      "prospection": 13,
+      "res_water": 10,
+      "res_air": 10,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -11130,6 +12213,19 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 500,
+      "dmg": 4,
+      "crit": 3,
+      "prospection": 20,
+      "initiative": 200,
+      "res_air": 5,
+      "res_water": 5,
+      "pct_res_earth": 6,
+      "res_fire": 5,
+      "res_neutral": 5,
+      "res_earth": 5
+    },
     "set": "Panoplie Dragoeuf",
     "recipe": [
       {
@@ -11183,6 +12279,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 20,
+      "pct_dmg_trap": 20,
+      "prospection": 20,
+      "res_neutral": 12,
+      "pct_res_neutral": 7,
+      "pct_res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -11236,6 +12340,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "dmg": 6,
+      "range": 1,
+      "pct_res_neutral": 4,
+      "pct_res_water": 4,
+      "pct_weak_air": 7
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -11289,6 +12401,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "initiative": 300,
+      "prospection": 20,
+      "pct_res_neutral": 5,
+      "pct_res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -11342,6 +12462,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10,
+      "initiative": 300,
+      "prospection": 20,
+      "pct_res_neutral": 10,
+      "pct_res_fire": 10
+    },
     "set": "Panoplie Claire",
     "recipe": [
       {
@@ -11395,6 +12522,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "initiative": 600,
+      "res_air": 15,
+      "res_water": 15,
+      "res_fire": 15,
+      "res_earth": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -11448,6 +12583,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -11501,6 +12637,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -11554,6 +12691,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10
+    },
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -11607,6 +12747,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 20
+    },
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -11660,6 +12803,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -11713,6 +12857,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Enutrof",
     "recipe": [
       {
@@ -11766,6 +12911,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sacrieur",
     "recipe": [
       {
@@ -11819,6 +12965,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -11872,6 +13019,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Crâ",
     "recipe": [
       {
@@ -11925,6 +13073,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -11978,6 +13127,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 50
+    },
     "set": "Panoplie Classe Eniripsa",
     "recipe": [
       {
@@ -12031,6 +13183,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -12084,6 +13237,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "pods": 500,
+      "summons": 1,
+      "pct_dmg": 10,
+      "dmg": 10,
+      "res_water": 10,
+      "res_neutral": 10,
+      "pct_res_water": 8
+    },
     "set": "Panoplie Céremoniale",
     "recipe": [
       {
@@ -12137,6 +13300,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "crit": 4,
+      "dmg": 10,
+      "heals": 4,
+      "range": 1,
+      "pods": 600,
+      "initiative": 200,
+      "res_air": 10,
+      "res_neutral": 10
+    },
     "set": "Panoplie Chene Mou",
     "recipe": [
       {
@@ -12190,6 +13364,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "heals": 5,
+      "dmg": 5,
+      "initiative": 300,
+      "prospection": 20,
+      "pct_res_air": 10,
+      "pct_res_earth": 10,
+      "pct_res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -12243,6 +13427,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 25,
+      "pods": 500,
+      "pct_dmg": 15,
+      "heals": 8,
+      "res_neutral": 6,
+      "res_air": 6,
+      "res_earth": 6,
+      "summons": 1
+    },
     "set": "Panoplie Minotot",
     "recipe": [
       {
@@ -12296,6 +13490,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "crit": 4,
+      "pct_dmg": 25,
+      "dmg": 10,
+      "prospection": 20,
+      "res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -12349,6 +13551,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg": 5,
+      "summons": 1,
+      "initiative": 500,
+      "prospection": 20,
+      "res_water": 10,
+      "res_earth": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -12402,6 +13614,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 10,
+      "summons": 1,
+      "prospection": 30,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -12455,6 +13674,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 5,
+      "heals": 5,
+      "range": 1,
+      "pct_dmg": 10,
+      "prospection": 20,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie du Bworker Gladiateur",
     "recipe": [
       {
@@ -12508,6 +13737,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 6,
+      "dmg": 7,
+      "pct_dmg": 15,
+      "range": 1,
+      "prospection": 15,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -12561,6 +13799,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 40,
+      "range": 1,
+      "summons": 2,
+      "prospection": 20,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie Ougah",
     "recipe": [
       {
@@ -12614,6 +13860,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 10,
+      "dmg": 5,
+      "initiative": 300,
+      "prospection": 20,
+      "pct_res_fire": 7,
+      "pct_res_earth": 7
+    },
     "set": "Panoplie Tue-Mouche",
     "recipe": [
       {
@@ -12667,6 +13922,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -12696,6 +13952,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -12716,6 +13973,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -12736,6 +13994,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12765,6 +14024,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12794,6 +14054,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12823,6 +14084,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12852,6 +14114,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12881,6 +14144,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 1
+    },
     "set": "Panoplie du Boune",
     "recipe": [],
     "requirements": [],
@@ -12901,6 +14167,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -12930,6 +14197,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -12959,6 +14229,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -12979,6 +14250,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13008,6 +14280,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13037,6 +14310,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13066,6 +14340,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13095,6 +14370,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13124,6 +14400,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13153,6 +14430,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13182,6 +14460,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13211,6 +14490,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13240,6 +14520,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -13273,6 +14554,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13302,6 +14584,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13331,6 +14614,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13360,6 +14644,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13389,6 +14674,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13418,6 +14704,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13447,6 +14734,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13476,6 +14764,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13505,6 +14794,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Champêtre",
     "recipe": [
       {
@@ -13538,6 +14828,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13571,6 +14862,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -13591,6 +14883,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13624,6 +14917,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13657,6 +14951,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -13690,6 +14987,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Moskito",
     "recipe": [
       {
@@ -13723,6 +15021,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -13756,6 +15057,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_weak_neutral": 10
+    },
     "set": "Panoplie Bandit",
     "recipe": [
       {
@@ -13789,6 +15094,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13822,6 +15128,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -13855,6 +15164,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -13888,6 +15198,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -13921,6 +15234,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "initiative": 50
+    },
     "set": null,
     "recipe": [
       {
@@ -13958,6 +15275,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3
+    },
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -13995,6 +15317,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -14032,6 +15357,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -14065,6 +15391,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3
+    },
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -14102,6 +15431,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14135,6 +15465,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14177,6 +15508,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14214,6 +15546,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -14247,6 +15582,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 50
+    },
     "set": "Panoplie Kitsou",
     "recipe": [
       {
@@ -14284,6 +15622,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Larvesque",
     "recipe": [
       {
@@ -14321,6 +15660,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14362,6 +15702,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -14399,6 +15742,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14436,6 +15780,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14473,6 +15818,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 50
+    },
     "set": null,
     "recipe": [
       {
@@ -14514,6 +15862,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 3,
+      "pct_res_water": 3,
+      "pct_res_fire": 3,
+      "pct_res_earth": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -14559,6 +15913,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -14600,6 +15957,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -14641,6 +16001,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -14682,6 +16045,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -14723,6 +16089,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5,
+      "pct_weak_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -14764,6 +16134,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "res_water": 2,
+      "res_air": 2,
+      "res_fire": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -14805,6 +16181,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 1,
+      "range": 1
+    },
     "set": "Panoplie Fourbasse",
     "recipe": [
       {
@@ -14846,6 +16226,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 10,
+      "res_air": 10,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -14887,6 +16272,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -14907,6 +16293,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10,
+      "res_water": 1,
+      "res_air": 1,
+      "res_fire": 1,
+      "res_earth": 1,
+      "res_neutral": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -14948,6 +16342,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -14989,6 +16384,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "pct_weak_air": 10,
+      "pct_weak_water": 10,
+      "pct_weak_fire": 10,
+      "pct_weak_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -15031,6 +16433,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -15072,6 +16477,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15113,6 +16522,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": "Panoplie Vegatatif",
     "recipe": [
       {
@@ -15154,6 +16566,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -15195,6 +16610,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15228,6 +16646,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15269,6 +16690,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 2
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -15310,6 +16735,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3,
+      "pct_res_neutral": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -15351,6 +16783,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15392,6 +16827,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5,
+      "crit": 2
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -15433,6 +16872,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15474,6 +16917,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5,
+      "crit": 2
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -15515,6 +16962,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5,
+      "crit": 2
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -15556,6 +17007,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 2,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -15576,6 +17032,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -15617,6 +17074,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -15637,6 +17097,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -15657,6 +17123,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -15698,6 +17167,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -15739,6 +17211,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -15780,6 +17255,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -15821,6 +17299,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "pct_weak_air": 10,
+      "pct_weak_fire": 10,
+      "pct_weak_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -15862,6 +17346,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 8,
+      "res_air": 8,
+      "res_fire": 8,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -15903,6 +17393,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -15944,6 +17437,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -15964,6 +17460,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -15984,6 +17483,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -16025,6 +17529,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -16066,6 +17571,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -16107,6 +17615,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": "Panoplie Blop Griotte",
     "recipe": [
       {
@@ -16152,6 +17663,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -16197,6 +17709,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": "Panoplie Blop Coco",
     "recipe": [
       {
@@ -16242,6 +17757,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": "Panoplie Blop Reinette",
     "recipe": [
       {
@@ -16287,6 +17805,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5
+    },
     "set": "Panoplie Blop Indigo",
     "recipe": [
       {
@@ -16332,6 +17853,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -16385,6 +17909,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -16430,6 +17958,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 8,
+      "res_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -16475,6 +18007,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 5,
+      "pct_res_neutral": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -16520,6 +18057,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "res_fire": 5,
+      "res_air": 5,
+      "res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -16565,6 +18108,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 5,
+      "prospection": 10
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -16610,6 +18158,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 4,
+      "pct_res_earth": 4
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -16655,6 +18207,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 5,
+      "range": 1,
+      "summons": 1,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -16700,6 +18258,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 400,
+      "range": 2,
+      "summons": 2
+    },
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -16745,6 +18308,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -16790,6 +18356,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -16835,6 +18402,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -16880,6 +18451,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 3,
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_earth": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -16925,6 +18502,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -16970,6 +18552,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "prospection": 15
+    },
     "set": "Panoplie O'Boule",
     "recipe": [
       {
@@ -17015,6 +18600,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "summons": 1
+    },
     "set": "Panoplie Blop Indigo Royale",
     "recipe": [
       {
@@ -17064,6 +18654,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 3,
+      "summons": 1,
+      "prospection": 7
+    },
     "set": "Panoplie de Shika",
     "recipe": [
       {
@@ -17113,6 +18709,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -17162,6 +18762,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "summons": 1
+    },
     "set": "Panoplie Blop Reinette Royale",
     "recipe": [
       {
@@ -17211,6 +18816,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 3,
+      "summons": 1,
+      "prospection": 7
+    },
     "set": "Panoplie de Farle",
     "recipe": [
       {
@@ -17260,6 +18871,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "summons": 1
+    },
     "set": "Panoplie Blop Coco Royale",
     "recipe": [
       {
@@ -17309,6 +18925,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "summons": 1
+    },
     "set": "Panoplie Blop Griotte Royale",
     "recipe": [
       {
@@ -17358,6 +18979,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 10,
+      "res_air": 10,
+      "res_fire": 10,
+      "res_earth": 10,
+      "res_neutral": 10,
+      "pct_res_air": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -17407,6 +19038,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -17456,6 +19091,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 10,
+      "pct_res_fire": 3,
+      "pct_res_water": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -17505,6 +19145,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "crit": 10,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -17554,6 +19199,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "pct_dmg": 30,
+      "pct_res_fire": 3
+    },
     "set": "Panoplie Blop Multicolore Royale",
     "recipe": [
       {
@@ -17603,6 +19253,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "pct_res_air": 10
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -17652,6 +19306,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 8,
+      "dmg": 4,
+      "prospection": 15,
+      "res_neutral": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -17701,6 +19362,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "prospection": 15,
+      "res_water": 10,
+      "res_air": 10,
+      "res_fire": 10,
+      "pct_dmg": 15,
+      "pct_res_water": 5,
+      "pct_res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -17750,6 +19421,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 5,
+      "prospection": 15,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -17799,6 +19476,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pct_dmg": 20,
+      "heals": 5,
+      "dmg": 5,
+      "pct_res_air": 6,
+      "pct_res_earth": 6
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -17848,6 +19533,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "initiative": 100,
+      "pct_res_air": 5,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -17868,6 +19560,10 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "initiative": 200
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -17917,6 +19613,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 10,
+      "pct_dmg_trap": 25,
+      "res_fire": 6
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -17966,6 +19667,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 6,
+      "prospection": 15,
+      "res_fire": 10
+    },
     "set": "panoplie Vassale",
     "recipe": [
       {
@@ -18015,6 +19721,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "dmg": 6,
+      "res_fire": 7,
+      "pct_res_fire": 10
+    },
     "set": "Panoplie Abra Ancestral",
     "recipe": [
       {
@@ -18064,6 +19776,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 3,
+      "heals": 6,
+      "prospection": 15
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -18113,6 +19830,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "range": 2,
+      "prospection": 15,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -18166,6 +19890,15 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 7,
+      "pct_dmg_trap": 20,
+      "res_fire": 6,
+      "pct_res_fire": 6,
+      "initiative": 300,
+      "prospection": 25
+    },
     "set": "Panoplie Dragoeuf",
     "recipe": [
       {
@@ -18219,6 +19952,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "pct_res_air": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -18272,6 +20010,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "prospection": 15,
+      "pct_res_earth": 5,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -18325,6 +20069,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 1,
+    "stats": {
+      "range": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -18345,6 +20092,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "initiative": 400,
+      "prospection": 15,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Céremoniale",
     "recipe": [
       {
@@ -18398,6 +20151,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 10,
+      "res_fire": 13,
+      "res_earth": 13,
+      "pct_res_air": 7,
+      "pct_res_water": 7
+    },
     "set": "Panoplie d'Elya Wood",
     "recipe": [
       {
@@ -18451,6 +20211,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "dmg": 10,
+      "heals": 8,
+      "initiative": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -18504,6 +20270,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "crit": 3,
+      "prospection": 20,
+      "pct_res_air": 10,
+      "pct_res_water": 10,
+      "dmg": 4
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -18557,6 +20331,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "heals": 10,
+      "dmg": 10,
+      "initiative": 700,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -18610,6 +20391,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "dmg": 10,
+      "crit": 4,
+      "prospection": 25,
+      "pct_dmg": 15
+    },
     "set": "Panoplie Minotot",
     "recipe": [
       {
@@ -18663,6 +20451,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 50,
+      "heals": 10,
+      "prospection": 20,
+      "pct_res_neutral": 10,
+      "pct_res_fire": 10,
+      "crit": 5,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -18716,6 +20514,13 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 40,
+      "initiative": 600,
+      "prospection": 20,
+      "pct_res_water": 10
+    },
     "set": "Panoplie Ougah",
     "recipe": [
       {
@@ -18769,6 +20574,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 10,
+      "pct_dmg_trap": 20,
+      "initiative": 400,
+      "prospection": 20,
+      "res_fire": 10
+    },
     "set": "Panoplie du Bworker Berserker",
     "recipe": [
       {
@@ -18822,6 +20635,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 10,
+      "heals": 10,
+      "prospection": 20,
+      "res_fire": 10,
+      "res_earth": 10
+    },
     "set": "Panoplie Tue-Mouche",
     "recipe": [
       {
@@ -18875,6 +20696,15 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "heals": 10,
+      "dmg": 15,
+      "pct_dmg": 30,
+      "range": 2,
+      "summons": 2,
+      "prospection": 30
+    },
     "set": "Panoplie Ventouse",
     "recipe": [
       {
@@ -18928,6 +20758,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -18957,6 +20788,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -18986,6 +20818,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19015,6 +20848,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -19044,6 +20878,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19073,6 +20908,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19102,6 +20938,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -19122,6 +20959,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19151,6 +20989,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19180,6 +21019,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19209,6 +21049,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19238,6 +21079,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19267,6 +21109,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19296,6 +21139,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19325,6 +21169,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 1
+    },
     "set": "Panoplie du Boune",
     "recipe": [],
     "requirements": [],
@@ -19345,6 +21192,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -19365,6 +21213,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19394,6 +21243,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19423,6 +21273,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19452,6 +21303,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19481,6 +21333,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19510,6 +21363,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19539,6 +21393,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19568,6 +21423,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 3,
+      "res_neutral": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -19597,6 +21456,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -19626,6 +21490,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -19646,6 +21511,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Arakné",
     "recipe": [
       {
@@ -19675,6 +21541,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "range": -1
+    },
     "set": null,
     "recipe": [
       {
@@ -19708,6 +21577,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19737,6 +21607,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19766,6 +21637,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19795,6 +21667,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19824,6 +21697,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19861,6 +21735,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19890,6 +21765,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -19919,6 +21795,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -19952,6 +21829,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Champêtre",
     "recipe": [
       {
@@ -19985,6 +21863,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -20005,6 +21886,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20038,6 +21920,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 1,
+      "summons": 1,
+      "pct_weak_air": 5
+    },
     "set": "Panoplie du Paysan",
     "recipe": [
       {
@@ -20071,6 +21958,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20104,6 +21992,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20137,6 +22026,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20170,6 +22060,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20203,6 +22094,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20236,6 +22128,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20269,6 +22162,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": "Panoplie Bandit",
     "recipe": [
       {
@@ -20302,6 +22198,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20335,6 +22232,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Sanglier",
     "recipe": [
       {
@@ -20368,6 +22266,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20405,6 +22304,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Citronoplie",
     "recipe": [],
     "requirements": [],
@@ -20425,6 +22325,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 35,
+      "dmg": 1
+    },
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -20462,6 +22366,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -20499,6 +22404,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 1
+    },
     "set": "Panoplie Moskito",
     "recipe": [
       {
@@ -20536,6 +22444,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -20565,6 +22474,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20602,6 +22512,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -20639,6 +22554,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 5,
+      "res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -20676,6 +22595,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -20713,6 +22635,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20754,6 +22677,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -20795,6 +22719,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -20836,6 +22761,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "fail_crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -20877,6 +22806,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "summons": 1
+    },
     "set": "Panoplie Fourbasse",
     "recipe": [
       {
@@ -20918,6 +22851,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": "Panoplie de l'Empire",
     "recipe": [],
     "requirements": [],
@@ -20938,6 +22874,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -20979,6 +22919,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 150,
+      "res_water": 10
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -21016,6 +22960,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 5,
+      "res_earth": 5
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -21057,6 +23005,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1
+    },
     "set": "Panoplie Prespic",
     "recipe": [
       {
@@ -21098,6 +23049,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -21123,6 +23075,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -21143,6 +23098,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -21184,6 +23142,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -21225,6 +23186,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": "Panoplie de Peggy la Porkass",
     "recipe": [],
     "requirements": [],
@@ -21245,6 +23209,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5,
+      "pct_dmg": 10
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -21286,6 +23254,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5,
+      "pct_dmg": 10
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -21327,6 +23299,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "pct_dmg": 10
+    },
     "set": "Panoplie Kwak Vent",
     "recipe": [
       {
@@ -21368,6 +23344,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5,
+      "pct_dmg": 10
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -21409,6 +23389,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Scara Rouge",
     "recipe": [
       {
@@ -21450,6 +23436,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -21491,6 +23483,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Scara Vert",
     "recipe": [
       {
@@ -21532,6 +23530,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 4,
+      "dmg": 4
+    },
     "set": "Panoplie Scara Dorée",
     "recipe": [
       {
@@ -21577,6 +23579,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Scara Blanc",
     "recipe": [
       {
@@ -21618,6 +23626,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -21638,6 +23649,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 5,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3,
+      "pct_res_air": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -21679,6 +23697,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -21720,6 +23741,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -21740,6 +23767,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "range": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -21760,6 +23791,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "initiative": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -21801,6 +23836,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -21842,6 +23881,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 4,
+      "pct_res_neutral": 3
+    },
     "set": "Panoplie Scara Noire",
     "recipe": [
       {
@@ -21883,6 +23927,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "res_earth": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -21924,6 +23972,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -21961,6 +24010,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 5,
+      "res_air": 5,
+      "res_water": 5,
+      "res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -22002,6 +24057,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "range": 1,
+      "summons": 1
+    },
     "set": "Panoplie Blop Coco",
     "recipe": [
       {
@@ -22047,6 +24107,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Dindo",
     "recipe": [
       {
@@ -22092,6 +24153,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "initiative": 150,
+      "res_air": 5,
+      "res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -22137,6 +24204,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "range": 1,
+      "summons": 1
+    },
     "set": "Panoplie Blop Griotte",
     "recipe": [
       {
@@ -22182,6 +24254,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "range": 1,
+      "summons": 1
+    },
     "set": "Panoplie Blop Indigo",
     "recipe": [
       {
@@ -22227,6 +24304,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "range": 1,
+      "summons": 1
+    },
     "set": "Panoplie Blop Reinette",
     "recipe": [
       {
@@ -22272,6 +24354,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 2,
+      "summons": 1,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -22317,6 +24405,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "res_fire": 6
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -22362,6 +24454,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5,
+      "res_fire": 4,
+      "res_air": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -22407,6 +24504,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "summons": 1,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -22452,6 +24554,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 3,
+      "pct_res_earth": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -22497,6 +24603,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_air": 6,
+      "res_water": 6,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Kitsou",
     "recipe": [
       {
@@ -22542,6 +24653,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 3,
+      "prospection": 10
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -22587,6 +24702,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -22632,6 +24751,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "dmg_trap": 5,
+      "pct_dmg_trap": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -22677,6 +24801,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 4,
+      "initiative": 150,
+      "res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -22722,6 +24852,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -22771,6 +24904,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "prospection": 3,
+      "pct_res_fire": 3,
+      "pct_res_water": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -22816,6 +24955,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5,
+      "res_water": 5,
+      "pct_res_water": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -22861,6 +25005,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -22906,6 +25051,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 170,
+      "pct_weak_air": 5,
+      "pct_weak_water": 5,
+      "pct_weak_fire": 5,
+      "pct_weak_earth": 5,
+      "pct_weak_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -22951,6 +25107,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 8,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -22996,6 +25156,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "summons": 1,
+      "pct_res_fire": 2,
+      "pct_res_water": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -23041,6 +25208,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "prospection": 5,
+      "pct_res_fire": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Chef Croco",
     "recipe": [
       {
@@ -23086,6 +25259,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 50,
+      "prospection": 10,
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "res_earth": 5,
+      "res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -23131,6 +25313,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -23176,6 +25363,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "initiative": 200,
+      "prospection": 10
+    },
     "set": "Panoplie Blop Coco Royale",
     "recipe": [
       {
@@ -23225,6 +25417,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "initiative": 200,
+      "pct_res_earth": 3,
+      "prospection": 15,
+      "pct_res_air": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -23274,6 +25473,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "initiative": 200,
+      "prospection": 10
+    },
     "set": "Panoplie Blop Griotte Royale",
     "recipe": [
       {
@@ -23323,6 +25527,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "initiative": 200,
+      "prospection": 10
+    },
     "set": "Panoplie Blop Indigo Royale",
     "recipe": [
       {
@@ -23372,6 +25581,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -23421,6 +25635,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "pct_res_air": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie de Shika",
     "recipe": [
       {
@@ -23470,6 +25689,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "initiative": 200,
+      "prospection": 10
+    },
     "set": "Panoplie Blop Reinette Royale",
     "recipe": [
       {
@@ -23519,6 +25743,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -23568,6 +25797,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 5,
+      "pct_res_water": 10
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -23617,6 +25851,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 4,
+      "initiative": 100,
+      "prospection": 15,
+      "pct_res_water": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -23670,6 +25911,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "prospection": 10,
+      "dmg": 4,
+      "pct_dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -23719,6 +25966,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "prospection": 10,
+      "pct_res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -23768,6 +26021,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "pct_dmg": 25,
+      "summons": 1,
+      "pct_res_air": 3
+    },
     "set": "Panoplie Blop Multicolore Royale",
     "recipe": [
       {
@@ -23817,6 +26076,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "pct_dmg": 5,
+      "dmg_trap": 8,
+      "pct_dmg_trap": 20,
+      "initiative": 150,
+      "prospection": 5
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -23866,6 +26133,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5,
+      "pct_dmg": 5,
+      "prospection": 7,
+      "res_water": 7,
+      "res_air": 7,
+      "res_fire": 7,
+      "res_earth": 7,
+      "res_neutral": 7,
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -23886,6 +26165,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "res_air": 6,
+      "res_water": 6,
+      "res_fire": 6,
+      "res_neutral": 6,
+      "res_earth": 6
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -23935,6 +26222,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "summons": 2,
+      "res_air": 6,
+      "res_fire": 6,
+      "initiative": 100
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -23984,6 +26278,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "crit": 4,
+      "pct_dmg": 5,
+      "initiative": 150,
+      "dmg": 5
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -24033,6 +26334,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "pct_res_water": 6,
+      "pct_res_earth": 6
+    },
     "set": "Panoplie Abra Ancestral",
     "recipe": [
       {
@@ -24082,6 +26388,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 6,
+      "prospection": 15,
+      "res_fire": 12,
+      "res_earth": 12,
+      "pct_res_fire": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie d'Elya Wood",
     "recipe": [
       {
@@ -24135,6 +26449,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 6,
+      "prospection": 10,
+      "res_water": 7,
+      "pct_res_water": 7
+    },
     "set": "Panoplie Baveuse",
     "recipe": [
       {
@@ -24188,6 +26509,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 200,
+      "prospection": 15,
+      "dmg": 5,
+      "res_neutral": 6,
+      "range": 1,
+      "pct_res_fire": 7
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -24241,6 +26570,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 25,
+      "prospection": 15,
+      "summons": 1,
+      "heals": 6,
+      "dmg": 6
+    },
     "set": "Panoplie Dragoeuf",
     "recipe": [
       {
@@ -24294,6 +26630,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10,
+      "prospection": 15,
+      "crit": 4,
+      "dmg": 6,
+      "res_fire": 7,
+      "res_earth": 7,
+      "pct_res_air": 7
+    },
     "set": "Panoplie Céremoniale",
     "recipe": [
       {
@@ -24347,6 +26692,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "prospection": 10,
+      "dmg": 6,
+      "pct_res_fire": 6,
+      "pct_res_earth": 6,
+      "pct_res_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -24400,6 +26753,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Enutrof",
     "recipe": [
       {
@@ -24453,6 +26807,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -24506,6 +26861,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -24559,6 +26915,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sacrieur",
     "recipe": [
       {
@@ -24612,6 +26969,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Crâ",
     "recipe": [
       {
@@ -24665,6 +27023,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -24718,6 +27077,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -24771,6 +27131,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -24824,6 +27187,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -24877,6 +27241,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 25
+    },
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -24930,6 +27297,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Eniripsa",
     "recipe": [
       {
@@ -24983,6 +27351,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -25036,6 +27407,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "pct_dmg": 10,
+      "dmg": 6,
+      "heals": 6,
+      "res_fire": 7,
+      "res_earth": 7,
+      "pct_res_water": 6,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -25089,6 +27470,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "prospection": 15,
+      "res_water": 10,
+      "res_earth": 10,
+      "pct_res_earth": 7,
+      "range": 1
+    },
     "set": "Panoplie Souveraine",
     "recipe": [
       {
@@ -25142,6 +27531,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 10,
+      "initiative": 400,
+      "prospection": 20,
+      "res_fire": 10,
+      "pct_res_fire": 10
+    },
     "set": "Panoplie du Bworker Berserker",
     "recipe": [
       {
@@ -25195,6 +27592,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 10,
+      "initiative": 400,
+      "prospection": 20,
+      "res_earth": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie du Bworker Gladiateur",
     "recipe": [
       {
@@ -25248,6 +27653,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "crit": 4,
+      "prospection": 20,
+      "res_water": 10,
+      "res_earth": 10,
+      "pct_res_earth": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Panoplycelium",
     "recipe": [
       {
@@ -25301,6 +27715,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "heals": 10,
+      "summons": 2,
+      "prospection": 15,
+      "res_neutral": 10,
+      "res_water": 10,
+      "pct_res_air": 10
+    },
     "set": "Panoplie Tue-Mouche",
     "recipe": [
       {
@@ -25354,6 +27777,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "range": 1,
+      "dmg_trap": 20,
+      "prospection": 20,
+      "res_neutral": 10,
+      "res_water": 10,
+      "res_earth": 10,
+      "pct_res_water": 10
+    },
     "set": "Panoplignon",
     "recipe": [
       {
@@ -25407,6 +27840,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 20,
+      "initiative": 700,
+      "prospection": 15,
+      "res_fire": 10,
+      "res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -25460,6 +27901,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 10,
+      "dmg": 6,
+      "range": 1,
+      "prospection": 10,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Ventouse",
     "recipe": [
       {
@@ -25513,6 +27963,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -25537,6 +27988,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -25557,6 +28009,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25586,6 +28039,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -25615,6 +28069,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Ananas",
     "recipe": [],
     "requirements": [],
@@ -25635,6 +28090,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -25655,6 +28111,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -25679,6 +28136,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25708,6 +28166,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pm_drain": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -25728,6 +28189,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25757,6 +28219,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25786,6 +28249,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25815,6 +28279,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25848,6 +28313,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25877,6 +28343,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -25897,6 +28366,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -25930,6 +28400,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -25950,6 +28421,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -25978,6 +28450,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26011,6 +28484,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26040,6 +28514,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26073,6 +28548,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -26102,6 +28581,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 300
+    },
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -26143,6 +28625,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26176,6 +28659,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26205,6 +28689,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 100
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -26225,6 +28712,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 25
+    },
     "set": "Panoplie Champêtre",
     "recipe": [
       {
@@ -26258,6 +28748,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26291,6 +28782,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26324,6 +28816,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -26344,6 +28837,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26377,6 +28871,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26410,6 +28905,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26443,6 +28939,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26476,6 +28973,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -26509,6 +29009,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26542,6 +29043,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26579,6 +29081,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -26616,6 +29119,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 50,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -26636,6 +29143,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -26673,6 +29181,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -26710,6 +29221,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 4,
+      "res_neutral": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -26747,6 +29262,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -26784,6 +29302,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -26821,6 +29342,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 7,
+      "res_air": 7,
+      "res_fire": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -26858,6 +29384,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pods": 200,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -26895,6 +29425,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": "Citronoplie",
     "recipe": [],
     "requirements": [],
@@ -26915,6 +29448,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -26952,6 +29488,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -26972,6 +29511,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Wa",
     "recipe": [],
     "requirements": [],
@@ -26992,6 +29532,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -27037,6 +29580,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "summons": 1
+    },
     "set": "Panoplie Bzz",
     "recipe": [],
     "requirements": [],
@@ -27057,6 +29604,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -27098,6 +29648,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -27139,6 +29692,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -27159,6 +29715,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 12,
+      "res_neutral": 12,
+      "pm_drain": 1,
+      "res_water": 12,
+      "res_air": 12,
+      "res_fire": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -27196,6 +29760,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "summons": 1
+    },
     "set": "Panoplie Fourbasse",
     "recipe": [
       {
@@ -27237,6 +29805,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 7,
+      "res_air": 7,
+      "res_fire": 7,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -27278,6 +29852,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -27319,6 +29894,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -27356,6 +29932,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -27397,6 +29976,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 200
+    },
     "set": "Panoplie du Bois de l'Est",
     "recipe": [],
     "requirements": [],
@@ -27417,6 +29999,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": "Panoplie Prespic",
     "recipe": [
       {
@@ -27458,6 +30043,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": "Panoplie de Peggy la Porkass",
     "recipe": [],
     "requirements": [],
@@ -27478,6 +30066,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "initiative": 30,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -27519,6 +30112,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pa_drain": 1,
+      "res_water": 20,
+      "res_air": 20,
+      "res_fire": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -27560,6 +30159,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "initiative": 30,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -27601,6 +30205,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "initiative": 30,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -27642,6 +30251,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -27683,6 +30295,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "initiative": 30,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -27724,6 +30341,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -27744,6 +30365,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -27785,6 +30409,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -27826,6 +30451,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -27867,6 +30495,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 7,
+      "dmg": 2
+    },
     "set": "Panoplie Corbac",
     "recipe": [
       {
@@ -27908,6 +30540,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Scara Vert",
     "recipe": [
       {
@@ -27949,6 +30585,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Scara Blanc",
     "recipe": [
       {
@@ -27990,6 +30630,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28010,6 +30654,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Scara Rouge",
     "recipe": [
       {
@@ -28051,6 +30699,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "dmg": 3
+    },
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -28092,6 +30744,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Scara Bleue",
     "recipe": [
       {
@@ -28133,6 +30789,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28153,6 +30813,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28173,6 +30837,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28193,6 +30861,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 10,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -28234,6 +30906,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 6,
+      "res_air": 6,
+      "res_fire": 6,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -28275,6 +30953,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "heals": 1,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28295,6 +30978,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -28336,6 +31022,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28356,6 +31046,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "initiative": 75
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28376,6 +31070,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28396,6 +31093,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5,
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -28446,6 +31149,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 35
+    },
     "set": null,
     "recipe": [
       {
@@ -28491,6 +31197,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 8
+    },
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -28536,6 +31245,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Dindo",
     "recipe": [
       {
@@ -28581,6 +31291,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "pct_dmg_trap": 20,
+      "pct_res_neutral": 5
+    },
     "set": "Panoplie Scara Noire",
     "recipe": [
       {
@@ -28626,6 +31341,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10,
+      "dmg": 5,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [
       {
@@ -28667,6 +31387,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "range": 1,
+      "summons": 1,
+      "res_earth": 6,
+      "res_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -28712,6 +31438,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -28732,6 +31461,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 4,
+      "initiative": 300
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -28777,6 +31510,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 30
+    },
     "set": "Panoplie Vegatatif",
     "recipe": [
       {
@@ -28818,6 +31555,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "range": 1,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -28863,6 +31605,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -28908,6 +31653,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "range": 2
+    },
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -28953,6 +31702,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5,
+      "crit": 5
+    },
     "set": "Panoplie Tortue",
     "recipe": [
       {
@@ -28998,6 +31751,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "dmg": 3,
+      "res_earth": 5,
+      "res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -29043,6 +31802,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 10,
+      "pct_res_neutral": 10,
+      "prospection": -3
+    },
     "set": null,
     "recipe": [
       {
@@ -29093,6 +31857,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 10,
+      "res_fire": 10,
+      "res_earth": 10
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -29138,6 +31907,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Kitsou",
     "recipe": [
       {
@@ -29183,6 +31956,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 10,
+      "initiative": 200,
+      "res_water": 7,
+      "res_earth": 7
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -29228,6 +32007,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -29282,6 +32065,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 8,
+      "range": 1,
+      "prospection": 5
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -29327,6 +32115,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 4,
+      "prospection": 10,
+      "res_fire": 8,
+      "res_water": 8
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -29372,6 +32166,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg": 5
+    },
     "set": "Panoplie O'Boule",
     "recipe": [
       {
@@ -29417,6 +32215,11 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -29437,6 +32240,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -29486,6 +32292,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Crâ",
     "recipe": [
       {
@@ -29535,6 +32342,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -29584,6 +32392,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 40
+    },
     "set": "Panoplie Classe Enutrof",
     "recipe": [
       {
@@ -29633,6 +32444,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -29682,6 +32494,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -29731,6 +32544,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sacrieur",
     "recipe": [
       {
@@ -29780,6 +32594,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Eniripsa",
     "recipe": [
       {
@@ -29829,6 +32644,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -29878,6 +32694,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 8,
+      "range": 2,
+      "res_water": 15,
+      "res_air": 15,
+      "res_fire": 15
+    },
     "set": "Panoplie d'Elya Wood",
     "recipe": [
       {
@@ -29927,6 +32750,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -29976,6 +32802,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 55
+    },
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -30025,6 +32854,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "pods": 250,
+      "res_air": 3,
+      "res_water": 3,
+      "res_fire": 3,
+      "res_neutral": 3,
+      "res_earth": 3,
+      "pct_res_fire": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie de Shika",
     "recipe": [
       {
@@ -30074,6 +32914,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1,
+      "pods": 250,
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3,
+      "res_earth": 3,
+      "res_neutral": 3,
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie de Farle",
     "recipe": [
       {
@@ -30123,6 +32974,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -30172,6 +33024,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "prospection": 5,
+      "res_fire": 6,
+      "res_air": 6
+    },
     "set": "Panoplie du Craq Légendaire",
     "recipe": [
       {
@@ -30221,6 +33079,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "summons": 3,
+      "pct_res_fire": 9,
+      "pct_res_neutral": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -30270,6 +33134,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "res_water": 5,
+      "res_earth": 5,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -30319,6 +33190,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10,
+      "summons": 1,
+      "initiative": -101,
+      "prospection": 15,
+      "res_neutral": 10,
+      "res_earth": 10
+    },
     "set": "panoplie Vassale",
     "recipe": [
       {
@@ -30368,6 +33247,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "prospection": 5,
+      "res_water": 4,
+      "res_air": 4,
+      "res_fire": 4,
+      "res_earth": 4,
+      "res_neutral": 4,
+      "pct_res_air": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -30388,6 +33279,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "res_air": 6,
+      "res_neutral": 6,
+      "pct_res_fire": 6
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -30437,6 +33334,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "dmg": 6,
+      "pct_res_fire": 6,
+      "res_air": 5,
+      "res_water": 5,
+      "fail_crit": 4,
+      "pct_res_air": 6,
+      "res_fire": 5,
+      "res_neutral": 5,
+      "res_earth": 5
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -30486,6 +33395,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "dmg_trap": 8,
+      "pct_dmg_trap": 20,
+      "pct_res_neutral": 6
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -30535,6 +33450,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 10,
+      "prospection": 15,
+      "res_fire": 10,
+      "res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -30584,6 +33505,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "summons": 4,
+      "heals": 6,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -30633,6 +33560,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -30682,6 +33612,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "pct_dmg": 10,
+      "initiative": 200,
+      "prospection": 10,
+      "pct_res_air": 10,
+      "pct_res_water": 10
+    },
     "set": "Panoplie Abra Ancestral",
     "recipe": [
       {
@@ -30731,6 +33669,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 10,
+      "pct_res_earth": 10,
+      "pct_res_fire": 10,
+      "pct_res_water": 10,
+      "pct_dmg": 20,
+      "res_water": 15,
+      "res_air": 15,
+      "res_fire": 15,
+      "res_earth": 15,
+      "res_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -30784,6 +33734,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "prospection": -11,
+      "pct_res_fire": 10,
+      "pct_res_air": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -30837,6 +33793,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 25,
+      "range": 1,
+      "summons": 3,
+      "dmg": 6,
+      "pct_res_air": 8,
+      "pct_res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -30890,6 +33854,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "pct_res_neutral": 10,
+      "prospection": 10,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -30943,6 +33914,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "range": 1,
+      "dmg": 6,
+      "heals": 6,
+      "res_air": 6,
+      "res_fire": 6,
+      "pct_res_air": 7,
+      "pct_res_fire": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -30996,6 +33977,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "crit": 3,
+      "dmg": 7,
+      "prospection": 20,
+      "initiative": 400,
+      "pct_res_neutral": 7,
+      "pct_res_fire": 10
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -31049,6 +34039,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "prospection": 15,
+      "res_earth": 7,
+      "res_fire": 7,
+      "pct_res_air": 6,
+      "pct_res_water": 6,
+      "pct_res_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -31102,6 +34101,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "prospection": 20,
+      "pct_dmg_trap": 15,
+      "res_neutral": 10,
+      "res_fire": 10,
+      "pct_res_fire": 10,
+      "pct_res_air": 10,
+      "crit": 3,
+      "pct_weak_water": 8,
+      "initiative": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -31155,6 +34166,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 1,
+      "dmg": 7,
+      "prospection": 15,
+      "res_water": 10,
+      "pct_res_neutral": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -31208,6 +34227,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "prospection": 30,
+      "dmg": 10
+    },
     "set": "Panoplie Minotot",
     "recipe": [
       {
@@ -31261,6 +34285,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 10,
+      "dmg": 10,
+      "pct_dmg": 10,
+      "prospection": 15,
+      "res_fire": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -31314,6 +34346,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 10,
+      "prospection": 30,
+      "res_fire": 10,
+      "pct_res_earth": 10,
+      "res_neutral": 10
+    },
     "set": "Panoplignon",
     "recipe": [
       {
@@ -31367,6 +34407,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "pct_dmg": 10,
+      "range": 1,
+      "pct_dmg_trap": 30,
+      "prospection": 30,
+      "pct_res_water": 10
+    },
     "set": "Panoplie du Bworker Berserker",
     "recipe": [
       {
@@ -31420,6 +34468,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "dmg": 7,
+      "heals": 7,
+      "initiative": 500,
+      "prospection": 20,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Tue-Mouche",
     "recipe": [
       {
@@ -31473,6 +34530,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_res_water": 10,
+      "pct_res_air": 10,
+      "pct_res_fire": 10,
+      "range": 1,
+      "crit": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -31526,6 +34591,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -31550,6 +34616,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31587,6 +34654,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -31616,6 +34684,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -31636,6 +34705,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31665,6 +34735,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31694,6 +34765,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31723,6 +34795,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -31743,6 +34818,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31772,6 +34848,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [
@@ -31796,6 +34873,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 3,
+      "res_air": 3,
+      "res_fire": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -31825,6 +34907,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31854,6 +34937,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31883,6 +34967,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 3,
+      "res_neutral": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -31912,6 +35000,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -31941,6 +35030,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Ananas",
     "recipe": [],
     "requirements": [],
@@ -31961,6 +35051,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1
+    },
     "set": "Panoplie du Boune",
     "recipe": [],
     "requirements": [],
@@ -31981,6 +35074,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -32010,6 +35104,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32030,6 +35125,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -32059,6 +35155,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32079,6 +35178,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 30,
+      "range": -2
+    },
     "set": null,
     "recipe": [
       {
@@ -32108,6 +35211,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32128,6 +35232,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -32152,6 +35259,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Champchamp",
     "recipe": [
       {
@@ -32181,6 +35289,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": "Panoplie Champêtre",
     "recipe": [
       {
@@ -32214,6 +35325,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -32251,6 +35363,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "range": 1,
+      "pct_weak_air": 5,
+      "pct_weak_water": 5,
+      "pct_weak_fire": 5,
+      "pct_weak_neutral": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32271,6 +35391,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Moskito",
     "recipe": [
       {
@@ -32304,6 +35425,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -32341,6 +35465,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Paysan",
     "recipe": [
       {
@@ -32374,6 +35499,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32394,6 +35520,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32414,6 +35543,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 10,
+      "res_air": 10,
+      "res_fire": 10,
+      "res_earth": 10,
+      "res_neutral": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32434,6 +35570,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -32471,6 +35608,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -32508,6 +35648,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32528,6 +35671,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -32565,6 +35709,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32585,6 +35730,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -32626,6 +35772,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -32663,6 +35810,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32683,6 +35831,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -32720,6 +35869,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie O'Boule",
     "recipe": [
       {
@@ -32757,6 +35907,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -32798,6 +35951,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -32835,6 +35991,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Wa",
     "recipe": [],
     "requirements": [],
@@ -32855,6 +36012,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10
+    },
     "set": "Citronoplie",
     "recipe": [],
     "requirements": [],
@@ -32875,6 +36035,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Toady",
     "recipe": [
       {
@@ -32916,6 +36077,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -32936,6 +36100,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -32981,6 +36148,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33001,6 +36171,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "initiative": 200
+    },
     "set": "Panoplie Fourbasse",
     "recipe": [
       {
@@ -33042,6 +36216,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33062,6 +36239,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33103,6 +36281,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33123,6 +36302,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33143,6 +36325,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -33184,6 +36369,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -33225,6 +36413,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33245,6 +36434,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg_trap": 3
+    },
     "set": "Panoplie Larvesque",
     "recipe": [
       {
@@ -33286,6 +36479,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -33327,6 +36523,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33347,6 +36544,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33388,6 +36586,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": "Panoplie Prespic",
     "recipe": [
       {
@@ -33429,6 +36630,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33470,6 +36672,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33490,6 +36693,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": "Panoplie de Peggy la Porkass",
     "recipe": [],
     "requirements": [],
@@ -33510,6 +36716,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33551,6 +36758,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bzz",
     "recipe": [],
     "requirements": [],
@@ -33571,6 +36779,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33591,6 +36802,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33611,6 +36823,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33656,6 +36869,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -33697,6 +36911,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33717,6 +36935,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "heals": 3,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -33737,6 +36960,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -33778,6 +37004,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -33819,6 +37048,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -33860,6 +37090,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -33901,6 +37132,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -33942,6 +37174,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 25
+    },
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -33983,6 +37218,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Sacrieur",
     "recipe": [
       {
@@ -34024,6 +37260,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -34065,6 +37304,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10
+    },
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -34106,6 +37348,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10
+    },
     "set": "Panoplie Vegatatif",
     "recipe": [
       {
@@ -34147,6 +37392,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 20,
+      "heals": 30
+    },
     "set": "Panoplie Classe Enutrof",
     "recipe": [
       {
@@ -34188,6 +37437,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34208,6 +37460,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Classe Crâ",
     "recipe": [
       {
@@ -34249,6 +37502,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 100
+    },
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -34290,6 +37546,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34310,6 +37569,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10
+    },
     "set": "Panoplie du Bois de l'Est",
     "recipe": [],
     "requirements": [],
@@ -34330,6 +37592,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 15
+    },
     "set": "Panoplie Classe Eniripsa",
     "recipe": [
       {
@@ -34371,6 +37636,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -34412,6 +37680,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -34453,6 +37724,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -34494,6 +37768,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -34535,6 +37812,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pct_dmg": 15,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34555,6 +37837,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "fail_crit": 13
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34575,6 +37860,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34595,6 +37883,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -34636,6 +37927,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -34677,6 +37972,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Scara Rouge",
     "recipe": [
       {
@@ -34718,6 +38016,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5
+    },
     "set": "Panoplie Scara Blanc",
     "recipe": [
       {
@@ -34759,6 +38060,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34779,6 +38083,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5
+    },
     "set": "Panoplie Scara Bleue",
     "recipe": [
       {
@@ -34820,6 +38127,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34840,6 +38150,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Scara Vert",
     "recipe": [
       {
@@ -34881,6 +38194,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34901,6 +38217,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "res_earth": 6,
+      "res_neutral": 6
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -34942,6 +38263,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -34962,6 +38286,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20,
+      "initiative": 210
+    },
     "set": "Panoplie Corbac",
     "recipe": [
       {
@@ -35003,6 +38331,9 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "pm_drain": 1
+    },
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -35044,6 +38375,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20,
+      "initiative": 210
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -35064,6 +38399,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -35105,6 +38443,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_fire": 5,
+      "res_earth": 5
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -35146,6 +38488,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -35187,6 +38532,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -35207,6 +38555,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -35248,6 +38599,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "pct_dmg": 25,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -35268,6 +38624,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -35288,6 +38647,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -35333,6 +38693,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -35378,6 +38739,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 2,
+      "dmg": 5,
+      "crit": 5,
+      "pct_dmg": 30
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -35398,6 +38765,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_earth": 8,
+      "res_neutral": 8,
+      "res_water": 8,
+      "res_air": 8,
+      "res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -35443,6 +38817,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "dmg": 4
+    },
     "set": "Panoplie Dindo",
     "recipe": [
       {
@@ -35488,6 +38866,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "range": 1
+    },
     "set": "Panoplie Scara Noire",
     "recipe": [
       {
@@ -35533,6 +38915,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -35578,6 +38963,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 5,
+      "res_air": 5,
+      "res_fire": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -35623,6 +39014,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "summons": 2,
+      "prospection": 10,
+      "pct_res_neutral": 5
+    },
     "set": "Panoplie Scara Dorée",
     "recipe": [
       {
@@ -35668,6 +39065,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg": 6,
+      "summons": 1
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -35713,6 +39115,7 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Tortue",
     "recipe": [
       {
@@ -35758,6 +39161,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 8,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Wabbit",
     "recipe": [
       {
@@ -35803,6 +39210,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20
+    },
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -35848,6 +39258,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Kitsou",
     "recipe": [
       {
@@ -35893,6 +39304,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "summons": 1,
+      "prospection": 10
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -35938,6 +39354,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "res_neutral": 8,
+      "res_air": 8
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -35983,6 +39404,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "summons": 1,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Chef Croco",
     "recipe": [
       {
@@ -36028,6 +39454,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 3,
+      "summons": 2,
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -36073,6 +39506,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "summons": 2,
+      "pct_res_air": 5,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -36118,6 +39557,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "summons": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -36167,6 +39610,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "prospection": 5,
+      "res_fire": 5,
+      "res_air": 5
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -36212,6 +39661,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_water": 8,
+      "res_earth": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -36257,6 +39710,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 6,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -36277,6 +39734,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "range": 1,
+      "initiative": 300,
+      "res_earth": 6,
+      "pct_res_earth": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -36322,6 +39786,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 200,
+      "res_fire": 7,
+      "res_air": 7
+    },
     "set": "Panoplie du Craq Légendaire",
     "recipe": [
       {
@@ -36371,6 +39843,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "range": 1,
+      "prospection": 10,
+      "pct_res_air": 5
+    },
     "set": "Panoplie de Shika",
     "recipe": [
       {
@@ -36420,6 +39898,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 2,
+      "range": 1,
+      "prospection": 10,
+      "pct_res_water": 5
+    },
     "set": "Panoplie de Farle",
     "recipe": [
       {
@@ -36469,6 +39953,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 6,
+      "res_water": 10,
+      "res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -36518,6 +40007,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_neutral": 5,
+      "pct_res_fire": 5,
+      "res_neutral": 10,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -36538,6 +40033,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 10,
+      "range": 1,
+      "prospection": 15,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -36587,6 +40089,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "dmg": 6,
+      "initiative": 250,
+      "crit": 2,
+      "pct_res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -36636,6 +40145,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "prospection": 10,
+      "pct_res_water": 7
+    },
     "set": "Panoplie Sombre",
     "recipe": [
       {
@@ -36685,6 +40199,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "pct_res_fire": 10,
+      "pct_res_air": 10
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -36734,6 +40253,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg": 6,
+      "res_air": 10,
+      "res_water": 10,
+      "pct_res_water": 6,
+      "prospection": 10,
+      "res_fire": 10,
+      "res_earth": 10,
+      "res_neutral": 10
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -36783,6 +40313,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2,
+      "range": 2,
+      "heals": 10,
+      "initiative": 2000
+    },
     "set": null,
     "recipe": [
       {
@@ -36832,6 +40368,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "range": 1,
+      "pct_res_air": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -36852,6 +40395,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 35,
+      "dmg": 6,
+      "summons": 1,
+      "heals": 6,
+      "pct_res_earth": 6,
+      "pct_res_water": 6,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -36901,6 +40453,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "dmg_trap": 10,
+      "pct_dmg": 10,
+      "pct_dmg_trap": 25,
+      "res_air": 6,
+      "res_earth": 6
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -36950,6 +40510,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1,
+      "prospection": 15,
+      "dmg": 5,
+      "pct_res_fire": 5,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -36999,6 +40567,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 6,
+      "dmg": 6,
+      "pct_res_neutral": 10
+    },
     "set": "panoplie Vassale",
     "recipe": [
       {
@@ -37048,6 +40621,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 6,
+      "pct_dmg": 10,
+      "initiative": 200,
+      "res_fire": 6
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -37097,6 +40677,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 10,
+      "res_water": 10,
+      "pct_res_neutral": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37146,6 +40732,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 15,
+      "pct_res_air": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37195,6 +40786,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 25,
+      "summons": 1,
+      "initiative": 300,
+      "prospection": 20,
+      "res_fire": 7,
+      "crit": 3,
+      "pct_res_fire": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -37244,6 +40844,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 6,
+      "dmg": 8,
+      "pct_res_water": 8,
+      "pct_res_earth": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -37293,6 +40899,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 10,
+      "pct_res_air": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37342,6 +40953,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 10,
+      "prospection": 10,
+      "pct_res_fire": 7
+    },
     "set": "Panoplie Abra Ancestral",
     "recipe": [
       {
@@ -37391,6 +41008,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "prospection": 15,
+      "pct_res_air": 5,
+      "pct_res_neutral": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -37444,6 +41068,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 7,
+      "dmg": 10,
+      "initiative": 1500
+    },
     "set": null,
     "recipe": [
       {
@@ -37497,6 +41126,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 7,
+      "dmg": 10,
+      "dmg_trap": 30,
+      "pct_dmg": 25,
+      "initiative": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -37550,6 +41186,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 20,
+      "res_water": 10,
+      "pct_res_air": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37603,6 +41245,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_trap": 15,
+      "pct_dmg_trap": 15,
+      "prospection": 20,
+      "pct_res_air": 8,
+      "pct_res_earth": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -37656,6 +41305,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "heals": 10,
+      "pct_res_fire": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37709,6 +41364,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4,
+      "res_water": 10,
+      "res_earth": 10,
+      "pct_res_air": 10,
+      "pct_res_fire": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Baveuse",
     "recipe": [
       {
@@ -37762,6 +41425,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "prospection": 20,
+      "res_neutral": 10,
+      "res_air": 10,
+      "pct_res_air": 10,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Zoth Zotheur",
     "recipe": [
       {
@@ -37815,6 +41486,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 13,
+      "pct_res_water": 13,
+      "pct_res_fire": 13,
+      "pct_res_neutral": 13,
+      "pct_res_earth": 13
+    },
     "set": "Panoplie Dragoeuf",
     "recipe": [
       {
@@ -37868,6 +41546,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 6,
+      "range": 1,
+      "prospection": 15,
+      "pct_weak_air": 10,
+      "pct_res_fire": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -37921,6 +41607,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pa_drain": 1,
+      "pct_weak_earth": 8,
+      "pct_res_air": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -37974,6 +41665,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 30,
+      "dmg": 10,
+      "pct_res_neutral": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -38027,6 +41724,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20,
+      "initiative": 400,
+      "range": 1,
+      "crit": 5,
+      "prospection": 15,
+      "pct_res_neutral": 7,
+      "dmg": 10,
+      "pct_weak_water": 6,
+      "pct_weak_earth": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -38080,6 +41788,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 7,
+      "initiative": 400,
+      "prospection": 20,
+      "pct_weak_neutral": 10,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -38133,6 +41850,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "dmg": 6,
+      "pct_dmg": 15,
+      "heals": 7,
+      "res_earth": 6,
+      "res_water": 6,
+      "pct_res_earth": 7,
+      "pct_res_water": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -38186,6 +41913,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "prospection": 10,
+      "pct_weak_neutral": 10,
+      "res_earth": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie Zothicien",
     "recipe": [
       {
@@ -38239,6 +41973,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 8,
+      "prospection": 15,
+      "pct_dmg": 15,
+      "pct_res_air": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie Claire",
     "recipe": [
       {
@@ -38292,6 +42033,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20,
+      "dmg": 10,
+      "prospection": 20,
+      "crit": 4,
+      "pct_res_neutral": 4
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -38345,6 +42093,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 20,
+      "initiative": 300,
+      "prospection": 25,
+      "res_fire": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -38398,6 +42152,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 10,
+      "pct_dmg": 20,
+      "dmg": 8,
+      "heals": 5,
+      "crit": 5,
+      "pct_res_earth": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -38451,6 +42214,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 600,
+      "prospection": 10,
+      "res_fire": 10,
+      "res_air": 10,
+      "pct_res_water": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -38504,6 +42275,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 30,
+      "res_fire": 15,
+      "res_air": 15,
+      "pct_res_fire": 8,
+      "pct_res_air": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -38557,6 +42335,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "heals": 7,
+      "dmg": 7,
+      "summons": 5,
+      "initiative": 100,
+      "pct_res_neutral": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -38610,6 +42397,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "range": 1,
+      "initiative": 300,
+      "prospection": 20,
+      "res_fire": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -38663,6 +42458,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 7,
+      "dmg": 7,
+      "prospection": 20,
+      "res_air": 6,
+      "res_water": 6,
+      "res_fire": 6,
+      "res_neutral": 6,
+      "res_earth": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -38716,6 +42521,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "pct_dmg": 25,
+      "heals": 10,
+      "dmg": 10,
+      "range": 1,
+      "prospection": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -38769,6 +42582,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 25,
+      "heals": 8,
+      "crit": 5,
+      "initiative": 200,
+      "prospection": 25,
+      "pct_res_fire": 6
+    },
     "set": "Panoplie Minotot",
     "recipe": [
       {
@@ -38822,6 +42643,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 15,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 500,
+      "prospection": 20,
+      "pct_res_water": 14,
+      "res_water": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -38875,6 +42706,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 15,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 500,
+      "prospection": 20,
+      "pct_res_fire": 14,
+      "res_fire": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -38928,6 +42769,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 15,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 500,
+      "prospection": 20,
+      "pct_res_air": 14,
+      "res_air": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -38981,6 +42832,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 15,
+      "pct_dmg": 15,
+      "range": 1,
+      "initiative": 500,
+      "prospection": 20,
+      "pct_res_earth": 14,
+      "res_earth": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -39034,6 +42895,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "prospection": 15,
+      "res_air": 12,
+      "res_fire": 12,
+      "pct_res_air": 12,
+      "pct_res_fire": 12,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -39087,6 +42957,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 7,
+      "dmg": 7,
+      "summons": 2,
+      "prospection": 15,
+      "pct_res_air": 7,
+      "pct_res_water": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -39140,6 +43018,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "prospection": 30,
+      "res_air": 8,
+      "res_water": 8,
+      "res_fire": 8,
+      "res_neutral": 8,
+      "res_earth": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -39193,6 +43079,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 400,
+      "prospection": 20,
+      "res_fire": 10,
+      "res_air": 10,
+      "pct_res_air": 7,
+      "pct_res_water": 7
+    },
     "set": "Panoplie Souveraine",
     "recipe": [
       {
@@ -39246,6 +43140,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -39299,6 +43196,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 50,
+      "prospection": 30,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Ougah",
     "recipe": [
       {
@@ -39352,6 +43255,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 20,
+      "prospection": 25,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -39405,6 +43315,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 10,
+      "pct_dmg": 20,
+      "summons": 1,
+      "initiative": 300,
+      "prospection": 15,
+      "pct_res_air": 10,
+      "pct_res_fire": 10
+    },
     "set": "Panoplignon",
     "recipe": [
       {
@@ -39458,6 +43378,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "heals": 10,
+      "dmg": 10,
+      "prospection": 30,
+      "summons": 2,
+      "res_water": 10
+    },
     "set": "Panoplie du Bworker Gladiateur",
     "recipe": [
       {
@@ -39511,6 +43439,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 7,
+      "dmg": 10,
+      "summons": 1,
+      "prospection": 25,
+      "res_air": 10,
+      "res_earth": 10,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -39564,6 +43501,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Jeune Aventurier",
     "recipe": [
       {
@@ -39593,6 +43531,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39622,6 +43561,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "res_neutral": 1
+    },
     "set": "Panoplie du Boune",
     "recipe": [],
     "requirements": [],
@@ -39642,6 +43584,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39671,6 +43614,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Ananas",
     "recipe": [],
     "requirements": [],
@@ -39691,6 +43635,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39720,6 +43665,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pm_drain": 1,
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -39740,6 +43689,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39769,6 +43719,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39798,6 +43749,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39827,6 +43779,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39856,6 +43809,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39885,6 +43839,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39914,6 +43869,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39943,6 +43899,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -39972,6 +43929,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40001,6 +43959,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40030,6 +43989,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40059,6 +44019,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40088,6 +44049,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40117,6 +44079,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40146,6 +44109,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40175,6 +44139,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40204,6 +44169,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15
+    },
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -40241,6 +44209,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40274,6 +44243,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -40294,6 +44264,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40327,6 +44298,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "initiative": 100
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -40347,6 +44321,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40380,6 +44355,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40413,6 +44389,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40446,6 +44423,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40479,6 +44457,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Paysan",
     "recipe": [
       {
@@ -40512,6 +44491,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40545,6 +44525,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": "Panoplie Homme Ours",
     "recipe": [
       {
@@ -40582,6 +44565,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40619,6 +44603,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40656,6 +44641,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40693,6 +44679,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 1
+    },
     "set": "Panoplie Sanglier",
     "recipe": [
       {
@@ -40726,6 +44715,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -40763,6 +44755,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Tofu",
     "recipe": [
       {
@@ -40800,6 +44793,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -40837,6 +44833,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -40874,6 +44873,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -40911,6 +44913,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -40948,6 +44951,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -40985,6 +44991,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -41026,6 +45033,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -41067,6 +45077,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie du Bois de l'Est",
     "recipe": [],
     "requirements": [],
@@ -41087,6 +45098,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -41128,6 +45142,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3
+    },
     "set": "Panoplie Larvesque",
     "recipe": [
       {
@@ -41169,6 +45186,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": "Panoplie Bzz",
     "recipe": [],
     "requirements": [],
@@ -41189,6 +45209,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2
+    },
     "set": "Panoplie Fourbasse",
     "recipe": [
       {
@@ -41230,6 +45253,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -41271,6 +45297,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": "Panoplie Akwadala",
     "recipe": [
       {
@@ -41312,6 +45341,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -41353,6 +45385,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": -1,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -41394,6 +45430,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20,
+      "res_neutral": 5
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -41435,6 +45475,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -41476,6 +45519,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_water": 5,
+      "pct_weak_fire": 5,
+      "summons": 1,
+      "initiative": 50
+    },
     "set": null,
     "recipe": [
       {
@@ -41522,6 +45571,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "pct_res_fire": 5
+    },
     "set": "Panoplie Kwak Flamme",
     "recipe": [
       {
@@ -41563,6 +45616,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 3,
+      "pct_dmg": 15,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41583,6 +45641,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -41624,6 +45686,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "summons": 2
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41644,6 +45709,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -41685,6 +45754,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 1,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -41726,6 +45799,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5,
+      "range": -1
+    },
     "set": null,
     "recipe": [
       {
@@ -41767,6 +45844,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -41808,6 +45886,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -41833,6 +45914,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 1,
+      "pct_dmg": 15,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41853,6 +45939,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "range": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41873,6 +45962,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41893,6 +45988,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41913,6 +46014,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 3,
+      "dmg": 2,
+      "summons": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41933,6 +46039,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 4
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41953,6 +46062,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 4,
+      "pct_dmg": 10,
+      "initiative": 100,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -41973,6 +46088,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "pct_dmg": 15
+    },
     "set": "Panoplie Corbac",
     "recipe": [
       {
@@ -42014,6 +46133,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -42055,6 +46177,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Abraknyde",
     "recipe": [
       {
@@ -42096,6 +46219,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 2,
+      "pct_dmg": 15,
+      "range": 1
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -42116,6 +46244,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 10,
+      "res_earth": 8,
+      "res_neutral": 8,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -42157,6 +46291,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -42198,6 +46335,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 4
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -42218,6 +46358,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "summons": 1,
+      "initiative": 150,
+      "prospection": 5
+    },
     "set": "Panoplie Blop Indigo",
     "recipe": [
       {
@@ -42263,6 +46409,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "summons": 1,
+      "initiative": 150,
+      "prospection": 5
+    },
     "set": "Panoplie Blop Coco",
     "recipe": [
       {
@@ -42308,6 +46460,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "summons": 1,
+      "initiative": 150,
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -42353,6 +46511,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 15,
+      "summons": 1,
+      "initiative": 150,
+      "prospection": 5
+    },
     "set": "Panoplie Blop Reinette",
     "recipe": [
       {
@@ -42398,6 +46562,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -42443,6 +46610,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 8
+    },
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -42488,6 +46658,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 6,
+      "dmg": 6,
+      "summons": 1
+    },
     "set": "Panoplie Dindo",
     "recipe": [
       {
@@ -42533,6 +46708,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -42574,6 +46752,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "summons": 1,
+      "res_water": 8,
+      "res_air": 8,
+      "res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -42619,6 +46803,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -42664,6 +46851,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "res_air": 3,
+      "res_fire": 3,
+      "res_earth": 3,
+      "res_water": 3
+    },
     "set": "Panoplie Scara Dorée",
     "recipe": [
       {
@@ -42709,6 +46902,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -42754,6 +46948,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 4
+    },
     "set": "Panoplie Aerdala",
     "recipe": [
       {
@@ -42799,6 +46996,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -42844,6 +47044,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 2,
+      "pct_res_neutral": 5
+    },
     "set": "Panoplie Koalak",
     "recipe": [
       {
@@ -42889,6 +47093,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {},
     "set": "Panoplie Tortue",
     "recipe": [
       {
@@ -42934,6 +47139,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 15
+    },
     "set": "Panoplie Gelax",
     "recipe": [
       {
@@ -42979,6 +47187,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg": 5,
+      "initiative": 100,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Wabbit",
     "recipe": [
       {
@@ -43024,6 +47237,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "res_earth": 5,
+      "res_neutral": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -43069,6 +47287,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -43114,6 +47335,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -43159,6 +47384,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -43204,6 +47432,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 3,
+      "prospection": 10
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -43249,6 +47481,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pct_res_air": 5,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Chef Croco",
     "recipe": [
       {
@@ -43294,6 +47530,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 7,
+      "res_air": 10,
+      "res_earth": 10
+    },
     "set": "Panoplie du Koulosse",
     "recipe": [],
     "requirements": [],
@@ -43314,6 +47555,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -43359,6 +47604,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pct_res_fire": 5,
+      "pct_res_air": 5
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -43404,6 +47653,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 6,
+      "dmg": 4,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -43453,6 +47707,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 3,
+      "pct_res_earth": 5,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -43498,6 +47757,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 3,
+      "range": 1,
+      "summons": 1,
+      "pct_res_air": 8
+    },
     "set": "Panoplie Blop Coco Royale",
     "recipe": [
       {
@@ -43547,6 +47812,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 3,
+      "range": 1,
+      "summons": 1,
+      "pct_res_fire": 8
+    },
     "set": "Panoplie Blop Griotte Royale",
     "recipe": [
       {
@@ -43596,6 +47867,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 3,
+      "range": 1,
+      "summons": 1,
+      "pct_res_earth": 8
+    },
     "set": "Panoplie Blop Reinette Royale",
     "recipe": [
       {
@@ -43645,6 +47922,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 2,
+      "dmg": 2,
+      "res_air": 4,
+      "res_water": 4,
+      "res_fire": 4,
+      "pct_res_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -43694,6 +47979,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 3,
+      "range": 1,
+      "summons": 1,
+      "pct_res_water": 8
+    },
     "set": "Panoplie Blop Indigo Royale",
     "recipe": [
       {
@@ -43743,6 +48034,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 2,
+      "dmg": 2,
+      "res_water": 4,
+      "res_air": 4,
+      "res_fire": 4,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -43792,6 +48091,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 4,
+      "dmg": 6,
+      "pct_dmg": 15,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -43812,6 +48117,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 5,
+      "dmg": 5,
+      "res_water": 7,
+      "res_earth": 7
+    },
     "set": "Panoplie du Craq Légendaire",
     "recipe": [
       {
@@ -43861,6 +48172,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "pct_dmg": 30,
+      "res_air": 10,
+      "res_water": 10,
+      "res_fire": 10,
+      "res_earth": 10,
+      "pct_res_water": 3
+    },
     "set": "Panoplie Blop Multicolore Royale",
     "recipe": [
       {
@@ -43910,6 +48229,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "summons": 1,
+      "dmg": 3,
+      "prospection": 10,
+      "res_air": 10,
+      "res_water": 10,
+      "res_fire": 10
+    },
     "set": "Panoplie Dragon Cochon",
     "recipe": [
       {
@@ -43959,6 +48286,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "res_earth": 10,
+      "res_neutral": 10,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -44008,6 +48340,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 10,
+      "pct_res_air": 3
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -44057,6 +48393,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "crit": 8,
+      "dmg": 6,
+      "res_water": 12,
+      "res_air": 12,
+      "res_fire": 12,
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -44106,6 +48450,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 5,
+      "range": 1,
+      "prospection": 10,
+      "pct_res_water": 6
+    },
     "set": "panoplie Vassale",
     "recipe": [
       {
@@ -44155,6 +48505,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 30
+    },
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -44204,6 +48557,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -44253,6 +48607,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -44302,6 +48657,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -44351,6 +48709,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -44400,6 +48759,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Crâ",
     "recipe": [
       {
@@ -44449,6 +48809,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -44498,6 +48861,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10
+    },
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -44547,6 +48913,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -44596,6 +48963,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 30
+    },
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -44645,6 +49015,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Sacrieur",
     "recipe": [
       {
@@ -44694,6 +49065,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 5,
+      "pct_res_air": 5,
+      "pct_res_water": 5,
+      "pct_res_earth": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [],
@@ -44714,6 +49091,7 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {},
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -44763,6 +49141,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_trap": 10,
+      "pct_dmg_trap": 25,
+      "pct_res_fire": 4
+    },
     "set": "Panoplie Rat Noir",
     "recipe": [
       {
@@ -44812,6 +49195,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 6,
+      "prospection": 15,
+      "pct_res_fire": 7
+    },
     "set": "Panoplie Abra Ancestral",
     "recipe": [
       {
@@ -44861,6 +49249,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 15,
+      "summons": 3,
+      "heals": 5,
+      "res_earth": 6,
+      "res_neutral": 6,
+      "pct_res_water": 5
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -44910,6 +49306,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 15,
+      "pct_res_air": 5,
+      "pct_res_water": 5,
+      "pct_res_fire": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -44963,6 +49366,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10,
+      "prospection": 10,
+      "res_water": 15,
+      "res_air": 15,
+      "res_fire": 15,
+      "pct_res_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -45016,6 +49427,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 15,
+      "pct_res_neutral": 7,
+      "pct_res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -45069,6 +49485,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "initiative": 300,
+      "prospection": 10,
+      "pct_res_fire": 8,
+      "dmg": 10,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -45122,6 +49545,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "crit": 4,
+      "dmg": 6,
+      "prospection": 20,
+      "heals": 5,
+      "pods": 300,
+      "pct_res_earth": 8,
+      "pct_res_water": 8
+    },
     "set": "Panoplie Dragoeuf",
     "recipe": [
       {
@@ -45175,6 +49607,22 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 15,
+      "res_air": 8,
+      "res_water": 8,
+      "crit": 3,
+      "pct_dmg": 5,
+      "summons": 2,
+      "pct_res_air": 9,
+      "pct_res_water": 9,
+      "pct_weak_earth": 7,
+      "initiative": 200,
+      "pods": 300,
+      "res_fire": 8,
+      "res_neutral": 8,
+      "res_earth": 8
+    },
     "set": "Panoplie Meulou",
     "recipe": [
       {
@@ -45228,6 +49676,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 10,
+      "dmg": 7,
+      "heals": 7,
+      "res_neutral": 6,
+      "pct_res_neutral": 6,
+      "pct_res_earth": 6
+    },
     "set": "Panoplie Céremoniale",
     "recipe": [
       {
@@ -45281,6 +49737,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10,
+      "pct_dmg": 10,
+      "prospection": 10,
+      "res_neutral": 10,
+      "pct_res_fire": 6,
+      "pct_res_earth": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -45334,6 +49798,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 8,
+      "res_neutral": 10,
+      "res_water": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -45387,6 +49857,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "heals": 6,
+      "dmg": 6,
+      "dmg_trap": 25,
+      "prospection": 20,
+      "pct_res_fire": 5,
+      "pct_weak_air": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -45440,6 +49918,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "range": 1,
+      "dmg": 10,
+      "heals": 6,
+      "prospection": 20,
+      "pct_weak_air": 6
+    },
     "set": "Panoplie Minotot",
     "recipe": [
       {
@@ -45493,6 +49978,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 7,
+      "pct_dmg": 10,
+      "range": 1,
+      "initiative": 700,
+      "prospection": 30,
+      "pct_res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -45546,6 +50039,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10,
+      "prospection": 10,
+      "res_fire": 10,
+      "res_air": 10,
+      "pct_res_earth": 10
+    },
     "set": "Panoplie Panoplycelium",
     "recipe": [
       {
@@ -45599,6 +50099,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "prospection": 10,
+      "dmg": 10,
+      "heals": 10,
+      "summons": 2,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie du Bworker Gladiateur",
     "recipe": [
       {
@@ -45652,6 +50159,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg": 10,
+      "crit": 4,
+      "prospection": 20,
+      "pct_res_earth": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -45705,6 +50219,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -45731,6 +50249,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -45764,6 +50286,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -45797,6 +50323,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_neutral": 60
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -45823,6 +50352,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -45863,6 +50395,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -45903,6 +50438,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -45943,6 +50481,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -45983,6 +50524,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "heals": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -46042,6 +50586,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -46090,6 +50637,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -46134,6 +50684,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16
+    },
     "set": null,
     "recipe": [
       {
@@ -46178,6 +50731,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -46226,6 +50782,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -46274,6 +50833,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17
+    },
     "set": null,
     "recipe": [
       {
@@ -46318,6 +50880,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -46366,6 +50931,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18
+    },
     "set": null,
     "recipe": [
       {
@@ -46410,6 +50978,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -46458,6 +51029,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -46506,6 +51080,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -46550,6 +51127,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -46598,6 +51178,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -46646,6 +51229,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -46694,6 +51280,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -46742,6 +51332,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -46790,6 +51383,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10,
+      "crit": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -46838,6 +51435,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -46886,6 +51486,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -46938,6 +51541,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35
+    },
     "set": null,
     "recipe": [
       {
@@ -46990,6 +51596,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -47042,6 +51651,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -47094,6 +51706,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22
+    },
     "set": null,
     "recipe": [
       {
@@ -47146,6 +51761,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27
+    },
     "set": null,
     "recipe": [
       {
@@ -47194,6 +51812,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29
+    },
     "set": null,
     "recipe": [
       {
@@ -47242,6 +51863,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -47294,6 +51918,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 24
+    },
     "set": null,
     "recipe": [
       {
@@ -47346,6 +51973,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -47398,6 +52028,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31
+    },
     "set": null,
     "recipe": [
       {
@@ -47446,6 +52079,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 26
+    },
     "set": null,
     "recipe": [
       {
@@ -47498,6 +52134,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -47550,6 +52189,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "crit": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -47602,6 +52245,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 17
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -47637,6 +52283,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -47689,6 +52338,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -47749,6 +52402,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -47788,6 +52445,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 30,
+      "crit": 4,
+      "initiative": 100
+    },
     "set": "Panoplie Craqueleur",
     "recipe": [
       {
@@ -47835,6 +52497,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": "Panoplie de l'Empire",
     "recipe": [],
     "requirements": [
@@ -47874,6 +52539,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22
+    },
     "set": null,
     "recipe": [
       {
@@ -47926,6 +52594,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -47986,6 +52657,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 24
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -48021,6 +52695,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -48081,6 +52758,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 25,
+      "crit": 3,
+      "prospection": 2
+    },
     "set": "Panoplie Kwak Terre",
     "recipe": [
       {
@@ -48137,6 +52819,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 25,
+      "crit": 3,
+      "prospection": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -48193,6 +52880,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 25,
+      "crit": 3,
+      "prospection": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -48249,6 +52941,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 25,
+      "crit": 3,
+      "prospection": 2
+    },
     "set": "Panoplie Kwak Glace",
     "recipe": [
       {
@@ -48305,6 +53002,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22
+    },
     "set": null,
     "recipe": [
       {
@@ -48365,6 +53065,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 28
+    },
     "set": null,
     "recipe": [
       {
@@ -48417,6 +53120,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 50,
+      "pa_drain": 1,
+      "pm_drain": 1
+    },
     "set": "Panoplie Corbac",
     "recipe": [
       {
@@ -48464,6 +53172,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -48511,6 +53222,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 24
+    },
     "set": null,
     "recipe": [
       {
@@ -48571,6 +53285,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 33
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -48606,6 +53323,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 26
+    },
     "set": null,
     "recipe": [
       {
@@ -48666,6 +53386,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 33
+    },
     "set": null,
     "recipe": [
       {
@@ -48713,6 +53436,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40
+    },
     "set": null,
     "recipe": [
       {
@@ -48777,6 +53503,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 36
+    },
     "set": null,
     "recipe": [
       {
@@ -48824,6 +53553,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -48850,6 +53582,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -48885,6 +53620,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 35
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -48920,6 +53658,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 45,
+      "dmg": 6,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -48980,6 +53723,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 39
+    },
     "set": null,
     "recipe": [
       {
@@ -49027,6 +53773,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37,
+      "crit": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -49083,6 +53833,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "initiative": 300
+    },
     "set": null,
     "recipe": [
       {
@@ -49147,6 +53901,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 8,
+      "dmg_water": 8,
+      "dmg_fire": 8,
+      "dmg_earth": 8
+    },
     "set": "Panoplie Bouftou Royal",
     "recipe": [
       {
@@ -49198,6 +53958,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 8,
+      "dmg_water": 8,
+      "dmg_fire": 8,
+      "dmg_earth": 8
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49245,6 +54011,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "steal_neutral": 2,
+      "summons": 1
+    },
     "set": "Panoplie Chef Croco",
     "recipe": [
       {
@@ -49309,6 +54080,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22,
+      "dmg_air": 10,
+      "dmg_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -49373,6 +54149,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "prospection": -31
+    },
     "set": null,
     "recipe": [
       {
@@ -49433,6 +54213,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 30,
+      "steal_fire": 3,
+      "pa_drain": 1,
+      "crit": 3
+    },
     "set": "Panoplie Feudala",
     "recipe": [
       {
@@ -49493,6 +54279,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 99
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49532,6 +54321,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 41,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -49592,6 +54385,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "dmg": 10,
+      "pct_weak_water": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -49652,6 +54450,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "steal_air": 4,
+      "pct_dmg": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -49712,6 +54515,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "initiative": 400,
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -49780,6 +54588,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "initiative": 400,
+      "prospection": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49819,6 +54632,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49850,6 +54666,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49881,6 +54700,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49912,6 +54734,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 50
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49943,6 +54768,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 39
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -49974,6 +54802,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50005,6 +54836,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 33
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50036,6 +54870,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50067,6 +54904,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 50
+    },
     "set": null,
     "recipe": [
       {
@@ -50127,6 +54967,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50158,6 +55001,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50189,6 +55035,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 41
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50220,6 +55069,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -50251,6 +55103,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 65,
+      "pct_res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -50315,6 +55171,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 57,
+      "dmg": 3,
+      "prospection": 10,
+      "pct_res_water": 5
+    },
     "set": "Panoplie du Chef Bwork",
     "recipe": [],
     "requirements": [
@@ -50354,6 +55216,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37,
+      "crit": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -50418,6 +55284,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 38,
+      "steal_neutral": 5,
+      "crit": 4,
+      "dmg": 3
+    },
     "set": "Panoplie Rat Blanc",
     "recipe": [
       {
@@ -50482,6 +55354,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 48,
+      "dmg": 5,
+      "pct_res_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -50546,6 +55423,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 32,
+      "dmg_neutral": 20,
+      "pct_dmg": 20,
+      "prospection": 15,
+      "pct_res_fire": 6,
+      "pct_res_air": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -50617,6 +55502,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 25,
+      "dmg_air": 25,
+      "prospection": 10,
+      "pct_res_air": 8,
+      "pct_res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -50685,6 +55577,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "dmg_air": 20,
+      "pa_drain": 1,
+      "initiative": 300,
+      "pct_res_neutral": 7,
+      "pct_res_fire": 7,
+      "pct_res_water": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -50757,6 +55658,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "steal_fire": 6,
+      "initiative": 400,
+      "dmg": 10,
+      "res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -50834,6 +55742,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 60,
+      "steal_earth": 5,
+      "crit": 4,
+      "dmg": 8,
+      "pct_dmg": 50,
+      "pct_res_fire": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -50902,6 +55818,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_neutral": 47,
+      "steal_air": 6,
+      "dmg": 8,
+      "pct_res_neutral": 7,
+      "pct_res_air": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -50973,6 +55896,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 28,
+      "dmg_fire": 28,
+      "heals": 8,
+      "range": 1,
+      "pct_res_air": 8,
+      "pct_res_fire": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -51041,6 +55972,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 50,
+      "steal_earth": 4,
+      "prospection": 20,
+      "dmg": 10,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -51109,6 +56047,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_neutral": 30,
+      "crit": 6,
+      "initiative": 200,
+      "res_neutral": 10,
+      "res_earth": 10,
+      "pct_res_air": 8,
+      "pct_res_fire": 8,
+      "pct_res_water": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -51173,6 +56121,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 42,
+      "crit": 3,
+      "dmg": 7,
+      "prospection": 15,
+      "initiative": 500,
+      "res_neutral": 10,
+      "pct_res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -51241,6 +56198,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 28,
+      "dmg_air": 28,
+      "initiative": 700,
+      "dmg": 10,
+      "range": 1,
+      "pct_res_air": 10,
+      "pct_res_water": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -51309,6 +56275,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 50,
+      "steal_air": 8,
+      "steal_water": 8,
+      "pa_drain": 1,
+      "dmg": 5,
+      "prospection": 15,
+      "pct_res_water": 7,
+      "pct_res_air": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -51381,6 +56357,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 18,
+      "dmg_water": 18,
+      "dmg_fire": 18,
+      "dmg_neutral": 18,
+      "dmg_earth": 18,
+      "pct_res_air": 5,
+      "pct_res_water": 5,
+      "pct_res_fire": 5,
+      "pct_res_neutral": 5,
+      "pct_res_earth": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -51440,6 +56428,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -51475,6 +56466,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -51505,6 +56499,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 3,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -51531,6 +56529,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -51571,6 +56572,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -51606,6 +56610,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -51641,6 +56648,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -51685,6 +56695,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -51729,6 +56742,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -51773,6 +56789,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 7,
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -51825,6 +56845,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -51873,6 +56896,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -51921,6 +56947,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -51973,6 +57002,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -52021,6 +57053,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -52064,6 +57099,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -52112,6 +57150,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -52160,6 +57201,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 20
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -52195,6 +57239,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -52247,6 +57295,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -52303,6 +57354,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 18
+    },
     "set": null,
     "recipe": [
       {
@@ -52351,6 +57405,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -52398,6 +57455,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 24
+    },
     "set": null,
     "recipe": [
       {
@@ -52454,6 +57514,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 23
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -52489,6 +57552,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22
+    },
     "set": null,
     "recipe": [
       {
@@ -52541,6 +57607,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -52601,6 +57670,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 28
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -52636,6 +57708,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "initiative": 50
+    },
     "set": null,
     "recipe": [
       {
@@ -52696,6 +57772,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -52752,6 +57831,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 35,
+      "crit": 3
+    },
     "set": "Panoplie Mulou",
     "recipe": [
       {
@@ -52803,6 +57886,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27,
+      "initiative": -100
+    },
     "set": null,
     "recipe": [
       {
@@ -52867,6 +57954,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37,
+      "dmg": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -52927,6 +58018,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 30
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -52962,6 +58056,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 45,
+      "crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -53026,6 +58124,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 28
+    },
     "set": null,
     "recipe": [
       {
@@ -53082,6 +58183,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30
+    },
     "set": null,
     "recipe": [
       {
@@ -53146,6 +58250,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "range": -2
+    },
     "set": null,
     "recipe": [
       {
@@ -53206,6 +58314,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 8,
+      "dmg_water": 8,
+      "dmg_fire": 8,
+      "dmg_earth": 8
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -53253,6 +58367,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -53321,6 +58439,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 32
+    },
     "set": null,
     "recipe": [
       {
@@ -53389,6 +58510,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17,
+      "dmg_water": 17,
+      "prospection": 10,
+      "initiative": 200
+    },
     "set": null,
     "recipe": [
       {
@@ -53449,6 +58576,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29,
+      "initiative": -101
+    },
     "set": null,
     "recipe": [
       {
@@ -53517,6 +58648,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 35,
+      "steal_fire": 4,
+      "crit": 4,
+      "pct_dmg": 20,
+      "pct_res_neutral": 5
+    },
     "set": "Panoplie Terrdala",
     "recipe": [
       {
@@ -53572,6 +58710,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 45,
+      "crit": 6,
+      "dmg": 3,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [
       {
@@ -53627,6 +58771,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 32
+    },
     "set": null,
     "recipe": [
       {
@@ -53691,6 +58838,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35
+    },
     "set": null,
     "recipe": [
       {
@@ -53755,6 +58905,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "initiative": -500
+    },
     "set": null,
     "recipe": [
       {
@@ -53823,6 +58977,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "crit": 10,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -53891,6 +59050,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37
+    },
     "set": null,
     "recipe": [
       {
@@ -53951,6 +59113,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "dmg_fire": 25,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -54019,6 +59186,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -54083,6 +59254,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "steal_earth": 5,
+      "pct_dmg": 25,
+      "dmg": 6,
+      "prospection": 10,
+      "summons": 2
+    },
     "set": "Panoplie Minotoror",
     "recipe": [
       {
@@ -54138,6 +59317,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 38,
+      "initiative": 400,
+      "range": 1,
+      "crit": 3,
+      "pct_dmg": 10,
+      "res_neutral": 6,
+      "res_fire": 6,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -54202,6 +59391,17 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 32,
+      "dmg_air": 16,
+      "dmg": 6,
+      "prospection": 15,
+      "res_air": 10,
+      "res_water": 10,
+      "res_fire": 10,
+      "res_neutral": 10,
+      "res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -54266,6 +59466,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37,
+      "steal_water": 6,
+      "crit": 4,
+      "prospection": 15,
+      "dmg": 6,
+      "res_air": 7,
+      "res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -54334,6 +59543,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 42,
+      "dmg": 10,
+      "heals": 6,
+      "prospection": 10,
+      "pct_res_fire": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -54406,6 +59622,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 22,
+      "dmg_fire": 22,
+      "steal_earth": 4,
+      "steal_fire": 4,
+      "prospection": 10,
+      "pct_res_fire": 10,
+      "pct_res_earth": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -54465,6 +59690,14 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "dmg_air": 13,
+      "dmg_water": 13,
+      "dmg_fire": 13,
+      "dmg_neutral": 13,
+      "dmg": 4,
+      "prospection": 15
+    },
     "set": "Panoplie Zothicien",
     "recipe": [
       {
@@ -54533,6 +59766,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 19,
+      "dmg_fire": 19,
+      "dmg_water": 19,
+      "range": 1,
+      "prospection": 20,
+      "pct_res_air": 7,
+      "pct_res_water": 7,
+      "pct_res_fire": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -54605,6 +59848,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_earth": 10,
+      "dmg_neutral": 30,
+      "crit": 7,
+      "dmg": 10,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -54673,6 +59923,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 23,
+      "dmg_neutral": 23,
+      "crit": 4,
+      "range": 1,
+      "dmg": 10,
+      "prospection": 20,
+      "res_earth": 10
+    },
     "set": "Panoplie Sous Bois",
     "recipe": [
       {
@@ -54737,6 +59996,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -54763,6 +60026,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -54807,6 +60073,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -54851,6 +60120,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -54895,6 +60167,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -54939,6 +60214,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 18
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -54965,6 +60243,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55013,6 +60294,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55061,6 +60345,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 9
+    },
     "set": null,
     "recipe": [
       {
@@ -55105,6 +60392,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -55153,6 +60443,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55201,6 +60494,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55249,6 +60545,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -55297,6 +60596,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55345,6 +60647,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -55393,6 +60698,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -55445,6 +60753,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -55497,6 +60808,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 16
+    },
     "set": null,
     "recipe": [
       {
@@ -55553,6 +60867,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -55605,6 +60922,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -55648,6 +60968,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -55700,6 +61024,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -55752,6 +61079,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -55804,6 +61134,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -55856,6 +61190,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -55908,6 +61245,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -55960,6 +61301,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -56012,6 +61356,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -56047,6 +61394,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -56099,6 +61449,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -56151,6 +61504,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -56203,6 +61560,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -56255,6 +61615,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -56307,6 +61670,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21
+    },
     "set": null,
     "recipe": [
       {
@@ -56359,6 +61725,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -56415,6 +61785,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -56471,6 +61844,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22
+    },
     "set": null,
     "recipe": [
       {
@@ -56523,6 +61899,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 20
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -56558,6 +61937,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -56614,6 +61997,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23
+    },
     "set": null,
     "recipe": [
       {
@@ -56666,6 +62052,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 18
+    },
     "set": null,
     "recipe": [
       {
@@ -56718,6 +62107,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -56774,6 +62167,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -56830,6 +62227,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 25
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -56865,6 +62265,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -56921,6 +62325,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -56973,6 +62380,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -57033,6 +62444,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29
+    },
     "set": null,
     "recipe": [
       {
@@ -57093,6 +62507,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_neutral": 10,
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -57149,6 +62567,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -57205,6 +62627,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 35
+    },
     "set": null,
     "recipe": [
       {
@@ -57264,6 +62689,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -57320,6 +62749,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 23
+    },
     "set": null,
     "recipe": [
       {
@@ -57376,6 +62808,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 26,
+      "pm_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -57440,6 +62876,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 26
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -57475,6 +62914,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -57531,6 +62974,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12,
+      "dmg_fire": 12,
+      "range": 1,
+      "crit": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -57591,6 +63040,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 7,
+      "dmg_water": 7,
+      "dmg_fire": 7,
+      "dmg_earth": 7
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -57638,6 +63093,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 24,
+      "steal_water": 3,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -57694,6 +63154,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 40,
+      "heals": 80
+    },
     "set": null,
     "recipe": [
       {
@@ -57754,6 +63218,12 @@ const ITEMS_RETRO = [
     },
     "pa": 1,
     "pm": 0,
+    "stats": {
+      "crit": 5,
+      "dmg_water": 13,
+      "summons": 1,
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -57810,6 +63280,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 35
+    },
     "set": null,
     "recipe": [
       {
@@ -57870,6 +63343,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 13,
+      "dmg_neutral": 13,
+      "dmg": 6,
+      "range": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -57934,6 +63413,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 37,
+      "initiative": 250,
+      "prospection": 10,
+      "res_earth": 10,
+      "res_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -57998,6 +63484,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "steal_water": 8,
+      "range": 1,
+      "summons": 1,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58066,6 +63559,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16,
+      "steal_water": 6,
+      "pct_dmg": 10,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58134,6 +63633,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 41,
+      "range": 1,
+      "prospection": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58202,6 +63706,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_water": 15,
+      "prospection": 15,
+      "initiative": 150
+    },
     "set": null,
     "recipe": [
       {
@@ -58262,6 +63771,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21,
+      "dmg_water": 21,
+      "crit": 8,
+      "initiative": 400,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -58334,6 +63850,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 43,
+      "dmg": 10,
+      "pct_dmg": 15,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -58410,6 +63932,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 33,
+      "steal_neutral": 6,
+      "prospection": 15,
+      "dmg": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -58478,6 +64006,18 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14,
+      "dmg_water": 8,
+      "prospection": 15,
+      "pct_dmg": 10,
+      "dmg": 5,
+      "res_air": 7,
+      "res_water": 7,
+      "pct_weak_fire": 7,
+      "pct_weak_neutral": 7,
+      "res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -58546,6 +64086,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 34,
+      "steal_air": 6,
+      "crit": 5,
+      "dmg": 5,
+      "pct_dmg": 10,
+      "prospection": 20,
+      "res_air": 7,
+      "pct_res_air": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -58614,6 +64164,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 43,
+      "steal_water": 7,
+      "pct_dmg": 20,
+      "prospection": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -58682,6 +64238,16 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 27,
+      "dmg_earth": 27,
+      "heals": 7,
+      "summons": 2,
+      "initiative": 300,
+      "prospection": 20,
+      "pct_res_fire": 7,
+      "pct_res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -58750,6 +64316,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 10,
+      "dmg_water": 30,
+      "dmg": 10,
+      "range": 1,
+      "prospection": 15,
+      "pct_res_fire": 8,
+      "pct_res_water": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -58818,6 +64393,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 26,
+      "dmg_neutral": 18,
+      "dmg": 10,
+      "prospection": 30,
+      "pct_res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58882,6 +64464,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 3,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58917,6 +64503,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -58961,6 +64550,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -58996,6 +64589,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 1,
+      "dmg_water": 1,
+      "dmg_fire": 1,
+      "dmg_earth": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -59035,6 +64634,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 1,
+      "dmg_water": 1,
+      "dmg_fire": 1,
+      "dmg_earth": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -59074,6 +64679,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 1,
+      "dmg_water": 1,
+      "dmg_fire": 1,
+      "dmg_earth": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -59113,6 +64724,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 1,
+      "dmg_water": 1,
+      "dmg_fire": 1,
+      "dmg_earth": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -59152,6 +64769,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 1,
+      "dmg_water": 1,
+      "dmg_fire": 1,
+      "dmg_earth": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -59191,6 +64814,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59226,6 +64853,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59261,6 +64892,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -59300,6 +64934,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 1,
+      "initiative": -10,
+      "fail_crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -59335,6 +64974,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [],
     "requirements": [],
@@ -59361,6 +65004,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59396,6 +65043,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59431,6 +65082,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 4,
+      "initiative": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59466,6 +65121,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -59510,6 +65168,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -59554,6 +65215,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 8
+    },
     "set": null,
     "recipe": [
       {
@@ -59598,6 +65262,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 8,
+      "dmg_earth": 8,
+      "summons": 1
+    },
     "set": "Panoplie Bouftou",
     "recipe": [
       {
@@ -59637,6 +65306,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16
+    },
     "set": null,
     "recipe": [
       {
@@ -59685,6 +65357,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -59733,6 +65408,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -59781,6 +65459,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17
+    },
     "set": null,
     "recipe": [
       {
@@ -59829,6 +65510,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18
+    },
     "set": null,
     "recipe": [
       {
@@ -59877,6 +65561,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 11
+    },
     "set": null,
     "recipe": [
       {
@@ -59925,6 +65612,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 12,
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -59964,6 +65655,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -60012,6 +65706,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 12
+    },
     "set": null,
     "recipe": [
       {
@@ -60060,6 +65757,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -60108,6 +65808,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -60156,6 +65859,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -60204,6 +65910,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -60252,6 +65961,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 13
+    },
     "set": null,
     "recipe": [
       {
@@ -60300,6 +66012,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -60352,6 +66068,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17
+    },
     "set": null,
     "recipe": [
       {
@@ -60400,6 +66119,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 17
+    },
     "set": null,
     "recipe": [
       {
@@ -60452,6 +66174,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -60504,6 +66229,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14
+    },
     "set": null,
     "recipe": [
       {
@@ -60552,6 +66280,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 19
+    },
     "set": null,
     "recipe": [
       {
@@ -60600,6 +66331,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -60652,6 +66386,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -60700,6 +66437,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -60752,6 +66492,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": "Panoplie Bzz",
     "recipe": [],
     "requirements": [
@@ -60787,6 +66530,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 13
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -60822,6 +66568,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 16
+    },
     "set": null,
     "recipe": [
       {
@@ -60870,6 +66619,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17,
+      "res_earth": 1,
+      "res_neutral": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -60922,6 +66676,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 20,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -60978,6 +66736,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_earth": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -61034,6 +66795,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 24,
+      "dmg": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -61086,6 +66851,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "res_earth": 1,
+      "res_neutral": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -61138,6 +66908,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 18,
+      "crit": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -61194,6 +66968,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61246,6 +67024,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 15
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -61281,6 +67062,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 19,
+      "res_earth": 1,
+      "res_neutral": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -61333,6 +67119,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 12,
+      "dmg_water": 12,
+      "summons": 1,
+      "res_air": 5,
+      "res_water": 5
+    },
     "set": "Panoplie Boufcool",
     "recipe": [
       {
@@ -61380,6 +67173,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "res_earth": 2,
+      "res_neutral": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61432,6 +67230,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 19,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61488,6 +67290,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27,
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61540,6 +67346,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -61596,6 +67405,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61652,6 +67465,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "dmg": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61704,6 +67521,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25,
+      "dmg": 1,
+      "pct_dmg": 5,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [
       {
@@ -61760,6 +67583,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 18
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -61795,6 +67621,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_fire": 7,
+      "heals": 11,
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61846,6 +67677,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21,
+      "crit": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -61902,6 +67737,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 13,
+      "range": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -61962,6 +67801,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -62022,6 +67864,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "steal_neutral": 4,
+      "summons": 1,
+      "pct_dmg": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -62073,6 +67920,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 30,
+      "pm_drain": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -62124,6 +67975,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 9,
+      "dmg_neutral": 9,
+      "pct_dmg": 7,
+      "summons": 1,
+      "initiative": 100
+    },
     "set": null,
     "recipe": [
       {
@@ -62184,6 +68042,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 27
+    },
     "set": null,
     "recipe": [
       {
@@ -62244,6 +68105,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 22
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -62279,6 +68143,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 29
+    },
     "set": null,
     "recipe": [
       {
@@ -62339,6 +68206,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 23,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -62403,6 +68274,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 31
+    },
     "set": null,
     "recipe": [
       {
@@ -62463,6 +68337,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 5,
+      "dmg_water": 5,
+      "dmg_fire": 5,
+      "dmg_earth": 5
+    },
     "set": null,
     "recipe": [],
     "requirements": [
@@ -62510,6 +68390,10 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 50,
+      "range": -1
+    },
     "set": null,
     "recipe": [
       {
@@ -62570,6 +68454,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 12,
+      "dmg_water": 12,
+      "dmg_fire": 12,
+      "dmg": 3,
+      "summons": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -62625,6 +68516,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 38,
+      "summons": 2,
+      "prospection": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -62689,6 +68585,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20
+    },
     "set": null,
     "recipe": [
       {
@@ -62749,6 +68648,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 24,
+      "dmg_neutral": 14,
+      "dmg": 5,
+      "pct_dmg": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -62813,6 +68718,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 38,
+      "crit": 3,
+      "range": 1,
+      "dmg": 4
+    },
     "set": null,
     "recipe": [
       {
@@ -62877,6 +68788,9 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 25
+    },
     "set": null,
     "recipe": [
       {
@@ -62945,6 +68859,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 14,
+      "dmg_fire": 14,
+      "summons": 1,
+      "heals": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -63009,6 +68929,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_water": 16,
+      "dmg_air": 16,
+      "dmg": 3
+    },
     "set": null,
     "recipe": [
       {
@@ -63077,6 +69002,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 10,
+      "dmg_fire": 10,
+      "steal_neutral": 6,
+      "range": 1,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -63141,6 +69073,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 15,
+      "dmg_water": 15,
+      "dmg": 5,
+      "range": 1,
+      "summons": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -63209,6 +69148,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "heals": 80,
+      "summons": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -63279,6 +69223,12 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 17,
+      "dmg_fire": 17,
+      "pa_drain": 1,
+      "crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63347,6 +69297,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 15,
+      "steal_fire": 4,
+      "pa_drain": 2
+    },
     "set": null,
     "recipe": [
       {
@@ -63414,6 +69369,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 42,
+      "steal_neutral": 6,
+      "dmg": 9,
+      "range": 1,
+      "summons": 3,
+      "prospection": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63482,6 +69446,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 42,
+      "prospection": 10,
+      "res_water": 8,
+      "res_air": 8,
+      "res_fire": 8,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63550,6 +69523,15 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 46,
+      "pct_dmg": 15,
+      "prospection": 10,
+      "res_earth": 8,
+      "res_neutral": 8,
+      "pct_res_fire": 5,
+      "pct_res_water": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63618,6 +69600,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "steal_fire": 5,
+      "crit": 4,
+      "heals": 8,
+      "res_fire": 10
+    },
     "set": null,
     "recipe": [
       {
@@ -63686,6 +69675,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 22,
+      "dmg_fire": 22,
+      "res_neutral": 7,
+      "res_fire": 7,
+      "pct_res_neutral": 5,
+      "pct_res_fire": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63750,6 +69747,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "steal_air": 8,
+      "steal_water": 8,
+      "dmg": 5,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -63822,6 +69826,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 30,
+      "steal_water": 10,
+      "prospection": 15
+    },
     "set": null,
     "recipe": [
       {
@@ -63886,6 +69895,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 1,
+    "stats": {
+      "dmg_earth": 32,
+      "dmg": 10,
+      "initiative": 200,
+      "prospection": 15,
+      "summons": 1,
+      "crit": 5
+    },
     "set": null,
     "recipe": [
       {
@@ -63954,6 +69971,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_air": 18,
+      "dmg_neutral": 18,
+      "dmg": 10,
+      "range": 1,
+      "prospection": 15,
+      "pct_res_neutral": 10
+    },
     "set": "Panoplie Zoth Zotheur",
     "recipe": [
       {
@@ -64022,6 +70047,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 21,
+      "dmg_water": 21,
+      "range": 1,
+      "res_neutral": 7,
+      "pct_res_neutral": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -64090,6 +70122,14 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_fire": 23,
+      "dmg_water": 23,
+      "pct_dmg": 25,
+      "dmg": 10,
+      "pct_res_neutral": 7,
+      "pct_res_earth": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -64158,6 +70198,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 20,
+      "dmg_air": 20,
+      "steal_air": 7,
+      "crit": 6,
+      "dmg": 6
+    },
     "set": null,
     "recipe": [
       {
@@ -64225,6 +70272,11 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 36,
+      "steal_fire": 8,
+      "pa_drain": 1
+    },
     "set": null,
     "recipe": [
       {
@@ -64299,6 +70351,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 43,
+      "steal_fire": 6,
+      "summons": 2,
+      "dmg": 7,
+      "heals": 7
+    },
     "set": null,
     "recipe": [
       {
@@ -64367,6 +70426,13 @@ const ITEMS_RETRO = [
     },
     "pa": 0,
     "pm": 0,
+    "stats": {
+      "dmg_neutral": 35,
+      "steal_water": 7,
+      "dmg": 10,
+      "pct_dmg": 40,
+      "prospection": 10
+    },
     "set": "Panoplie Ougah",
     "recipe": [
       {
@@ -64417,3 +70483,53 @@ const ITEMS_RETRO = [
     }
   }
 ];
+const STAT_LABELS = {
+  "pct_res_neutral": "% Rés. Neutre",
+  "pct_res_earth": "% Rés. Terre",
+  "res_water": "Rés. Eau",
+  "pct_res_water": "% Rés. Eau",
+  "pct_res_fire": "% Rés. Feu",
+  "pct_res_air": "% Rés. Air",
+  "res_neutral": "Rés. Neutre",
+  "res_air": "Rés. Air",
+  "res_earth": "Rés. Terre",
+  "res_fire": "Rés. Feu",
+  "dmg_neutral": "Dommages Neutre",
+  "vitalite": "Vitalité",
+  "initiative": "Initiative",
+  "intelligence": "Intelligence",
+  "dmg_earth": "Dommages Terre",
+  "force": "Force",
+  "dmg_air": "Dommages Air",
+  "agilite": "Agilité",
+  "dmg_water": "Dommages Eau",
+  "chance": "Chance",
+  "crit": "Coups Critiques",
+  "sagesse": "Sagesse",
+  "pa": "PA",
+  "range": "Portée",
+  "summons": "Invocations",
+  "dmg_fire": "Dommages Feu",
+  "heals": "Soins",
+  "pct_dmg": "% Dommages",
+  "dmg": "Dommages",
+  "steal_neutral": "Vol Neutre",
+  "steal_air": "Vol Air",
+  "prospection": "Prospection",
+  "steal_fire": "Vol Feu",
+  "pa_drain": "PA Retirés",
+  "steal_water": "Vol Eau",
+  "steal": "Vol",
+  "pct_weak_fire": "% Faiblesse Feu",
+  "pods": "Pods",
+  "pct_weak_water": "% Faiblesse Eau",
+  "pm_drain": "PM Retirés",
+  "pct_weak_neutral": "% Faiblesse Neutre",
+  "pct_weak_earth": "% Faiblesse Terre",
+  "pct_dmg_trap": "% Dommages Pièges",
+  "dmg_trap": "Dommages Pièges",
+  "fail_crit": "Échec Critique",
+  "pct_weak_air": "% Faiblesse Air",
+  "pm": "PM",
+  "steal_earth": "Vol Terre"
+};

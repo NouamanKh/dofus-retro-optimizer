@@ -119,10 +119,76 @@ function showError(msg) {
     document.getElementById('resultsList').innerHTML = `<div class="error-state"><p>${msg}</p></div>`;
 }
 
-// Returns "+X" or "-X" string, colored span
-function statSpan(val, color) {
-    const prefix = val > 0 ? '+' : '';
-    return `<span style="color:${color};font-weight:600;">${prefix}${val}</span>`;
+// Ordered display groups for extra stats
+const STAT_DISPLAY_ORDER = [
+    // Damages
+    'pct_dmg', 'dmg', 'dmg_fire', 'dmg_water', 'dmg_earth', 'dmg_air', 'dmg_neutral', 'dmg_trap', 'pct_dmg_trap',
+    // Resistances %
+    'pct_res_neutral', 'pct_res_earth', 'pct_res_fire', 'pct_res_water', 'pct_res_air',
+    // Resistances flat
+    'res_neutral', 'res_earth', 'res_fire', 'res_water', 'res_air',
+    // Weaknesses
+    'pct_weak_neutral', 'pct_weak_earth', 'pct_weak_fire', 'pct_weak_water', 'pct_weak_air',
+    // Steal
+    'steal', 'steal_fire', 'steal_water', 'steal_earth', 'steal_air', 'steal_neutral',
+    // Combat
+    'crit', 'fail_crit', 'dmg_return', 'pa_drain', 'pm_drain', 'heals', 'range',
+    // Misc
+    'initiative', 'prospection', 'pods', 'summons'
+];
+
+const STAT_LABELS_JS = {
+    pct_dmg: '% Dommages', dmg: 'Dommages',
+    dmg_fire: 'Dom. Feu', dmg_water: 'Dom. Eau', dmg_earth: 'Dom. Terre',
+    dmg_air: 'Dom. Air', dmg_neutral: 'Dom. Neutre',
+    dmg_trap: 'Dom. Pièges', pct_dmg_trap: '% Dom. Pièges',
+    pct_res_neutral: '% Rés. Neutre', pct_res_earth: '% Rés. Terre',
+    pct_res_fire: '% Rés. Feu', pct_res_water: '% Rés. Eau', pct_res_air: '% Rés. Air',
+    res_neutral: 'Rés. Neutre', res_earth: 'Rés. Terre',
+    res_fire: 'Rés. Feu', res_water: 'Rés. Eau', res_air: 'Rés. Air',
+    pct_weak_neutral: '% Faib. Neutre', pct_weak_earth: '% Faib. Terre',
+    pct_weak_fire: '% Faib. Feu', pct_weak_water: '% Faib. Eau', pct_weak_air: '% Faib. Air',
+    steal: 'Vol', steal_fire: 'Vol Feu', steal_water: 'Vol Eau',
+    steal_earth: 'Vol Terre', steal_air: 'Vol Air', steal_neutral: 'Vol Neutre',
+    crit: 'Coups Critiques', fail_crit: 'Échec Critique',
+    dmg_return: 'Renvoi Dom.', pa_drain: 'PA Retirés', pm_drain: 'PM Retirés',
+    heals: 'Soins', range: 'Portée', initiative: 'Initiative',
+    prospection: 'Prospection', pods: 'Pods', summons: 'Invocations'
+};
+
+const STAT_COLORS = {
+    pct_dmg: '#E67E22', dmg: '#E67E22',
+    dmg_fire: '#E74C3C', dmg_water: '#3498DB', dmg_earth: '#8B6914',
+    dmg_air: '#F1C40F', dmg_neutral: '#95A5A6', dmg_trap: '#E67E22', pct_dmg_trap: '#E67E22',
+    pct_res_neutral: '#2ECC71', pct_res_earth: '#2ECC71', pct_res_fire: '#2ECC71',
+    pct_res_water: '#2ECC71', pct_res_air: '#2ECC71',
+    res_neutral: '#27AE60', res_earth: '#27AE60', res_fire: '#27AE60',
+    res_water: '#27AE60', res_air: '#27AE60',
+    pct_weak_neutral: '#E74C3C', pct_weak_earth: '#E74C3C', pct_weak_fire: '#E74C3C',
+    pct_weak_water: '#E74C3C', pct_weak_air: '#E74C3C',
+    steal: '#9B59B6', steal_fire: '#9B59B6', steal_water: '#9B59B6',
+    steal_earth: '#9B59B6', steal_air: '#9B59B6', steal_neutral: '#9B59B6',
+    crit: '#F1C40F', fail_crit: '#E74C3C', dmg_return: '#E67E22',
+    pa_drain: '#3498DB', pm_drain: '#2ECC71',
+    heals: '#2ECC71', range: '#F4E4BC', initiative: '#F4E4BC',
+    prospection: '#F1C40F', pods: '#F4E4BC', summons: '#9B59B6'
+};
+
+function renderExtraStats(stats, compact = false) {
+    if (!stats || Object.keys(stats).length === 0) return '';
+    const rows = STAT_DISPLAY_ORDER
+        .filter(k => stats[k] !== undefined && stats[k] !== 0)
+        .map(k => {
+            const val = stats[k];
+            const label = STAT_LABELS_JS[k] || k;
+            const color = STAT_COLORS[k] || '#F4E4BC';
+            const prefix = val > 0 ? '+' : '';
+            if (compact) {
+                return `<div class="istat"><span class="istat-name" style="color:${color};">${label}</span><span class="istat-val" style="color:${color};">${prefix}${val}</span></div>`;
+            }
+            return `<div class="modal-stat-row"><span style="color:${color};">${label}</span><span style="color:${color};font-weight:600;">${prefix}${val}</span></div>`;
+        });
+    return rows.join('');
 }
 
 function displayResults(results) {
@@ -188,6 +254,8 @@ function displayResults(results) {
                     ${ws.critical_hit_prob ? `<span class="wtag">CC: 1/${ws.critical_hit_prob} (+${ws.critical_hit_bonus || 0})</span>` : ''}
                 </div>` : '';
 
+            const extraStats = renderExtraStats(item.stats, true);
+
             return `
                 <div class="item-card-full">
                     <div class="item-header">
@@ -197,7 +265,7 @@ function displayResults(results) {
                     <div class="item-name">${item.name}</div>
                     ${item.set ? `<div class="item-set">${item.set}</div>` : ''}
                     ${weaponHtml}
-                    <div class="item-stats-list">${paPm}${elStats}</div>
+                    <div class="item-stats-list">${paPm}${elStats}${extraStats}</div>
                 </div>`;
         }).join('');
 
@@ -343,6 +411,6 @@ function createModalItem(item) {
             </div>
             ${reqHtml}
             ${weaponHtml}
-            <div class="modal-stat-list">${paPm}${elStats}</div>
+            <div class="modal-stat-list">${paPm}${elStats}${renderExtraStats(item.stats)}</div>
         </div>`;
 }

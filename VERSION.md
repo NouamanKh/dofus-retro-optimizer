@@ -1,6 +1,12 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.5.2 (2026-04-06)
+## v1.5.3 (2026-04-06)
+- Show all item stats: damages, % damages, resistances (% and flat), steal, crit, heals, range, initiative, prospection, pods, etc.
+- Updated convert_retro_data.py to extract all stat types from raw data (was only extracting 6 elements + PA/PM)
+- Regenerated items_retro.js with full stats field per item
+- Stats displayed in logical groups with color coding on item cards and in modal
+
+
 - Show all 6 element stats in result card summary grid (always visible, even zeros)
 - Item cards now show all non-zero stats with proper +/- coloring
 - Weapon stats (AP cost, range, crit) shown on weapon items

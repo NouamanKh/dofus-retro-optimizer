@@ -403,6 +403,7 @@ body {
 
 .server-status.online  { color: #2ECC71; }
 .server-status.offline { color: #E74C3C; }
+.server-status:not(.online):not(.offline) { color: #F1C40F; }
 
 .error-state {
   padding: 40px;

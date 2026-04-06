@@ -36,16 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function checkServerStatus() {
     const el = document.getElementById('serverStatus');
-    try {
-        const res = await fetch(`${API_URL}/api/health`);
-        if (res.ok) {
-            el.textContent = '⬤ Serveur connecté';
-            el.className = 'server-status online';
-        } else throw new Error();
-    } catch {
-        el.textContent = '⬤ Serveur hors ligne';
-        el.className = 'server-status offline';
+    // Retry once — Render free tier may need a moment to wake up
+    for (let attempt = 1; attempt <= 2; attempt++) {
+        try {
+            const res = await fetch(`${API_URL}/api/health`);
+            if (res.ok) {
+                el.textContent = '⬤ Serveur connecté';
+                el.className = 'server-status online';
+                return;
+            }
+        } catch {
+            if (attempt === 1) {
+                el.textContent = '⬤ Réveil du serveur...';
+                await new Promise(r => setTimeout(r, 5000));
+            }
+        }
     }
+    el.textContent = '⬤ Serveur hors ligne';
+    el.className = 'server-status offline';
 }
 
 function setupElementButtons() {

@@ -1,6 +1,13 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.5.1 (2026-04-06)
+## v1.5.2 (2026-04-06)
+- Show all 6 element stats in result card summary grid (always visible, even zeros)
+- Item cards now show all non-zero stats with proper +/- coloring
+- Weapon stats (AP cost, range, crit) shown on weapon items
+- Modal: full totals table with set bonus breakdown per element, item requirements, weapon stats
+- Set detail bonuses now show all elements (not just the optimized one)
+
+
 - MILP now returns only the single optimal solution (removed multi-result re-solve logic — suboptimal alternatives don't make sense for an exact solver)
 
 

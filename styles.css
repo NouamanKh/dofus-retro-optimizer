@@ -1274,3 +1274,183 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Result summary grid (6 elements always shown) ── */
+.result-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .result-summary-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.summary-stat {
+  text-align: center;
+  padding: 8px 4px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+}
+
+.summary-stat-name {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.summary-stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.summary-set-note {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ── Item cards (full stats) ── */
+.item-card-full {
+  background: #16213e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px;
+  transition: border-color 0.2s;
+}
+
+.item-card-full:hover { border-color: #9B59B6; }
+
+.item-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.istat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.istat-name { color: var(--text-secondary); }
+.istat-val  { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+
+/* ── Weapon stats tags ── */
+.weapon-stats, .modal-weapon-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+.wtag {
+  background: rgba(52,152,219,0.15);
+  color: #3498DB;
+  border: 1px solid rgba(52,152,219,0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* ── Modal totals ── */
+.modal-totals {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.95rem;
+}
+
+.modal-totals-label { color: var(--text-secondary); }
+.modal-totals-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.05rem; }
+
+.modal-items-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+/* ── Modal item stat list ── */
+.modal-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.modal-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.modal-item-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-item-level {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.modal-item-set {
+  font-size: 0.75rem;
+  color: #9B59B6;
+  background: rgba(155,89,182,0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* ── Requirements ── */
+.modal-requirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+.req-tag {
+  background: rgba(231,76,60,0.15);
+  color: #E74C3C;
+  border: 1px solid rgba(231,76,60,0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+}
+
+/* ── Set detail bonuses ── */
+.set-detail-bonuses {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  font-weight: 600;
+}

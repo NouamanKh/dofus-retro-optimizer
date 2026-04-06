@@ -17,7 +17,9 @@ const ELEMENT_NAMES = {
 };
 
 const ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
-const API_URL = 'http://localhost:5000';
+// Set to your Render URL after deploying, e.g. 'https://dofus-retro-optimizer-api.onrender.com'
+// For local dev keep as 'http://localhost:5000'
+const API_URL = 'https://dofus-retro-optimizer-api.onrender.com';
 
 let selectedElement = null;
 

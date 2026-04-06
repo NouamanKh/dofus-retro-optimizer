@@ -16,11 +16,14 @@ const ELEMENT_NAMES = {
     agilite: 'Agilité'
 };
 
+const API_URL = 'http://localhost:5000';
+
 let selectedElement = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     setupElementButtons();
     setupModal();
+    checkServerStatus();
 
     const searchBtn = document.getElementById('searchBtn');
     if (searchBtn) {
@@ -29,6 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+async function checkServerStatus() {
+    const el = document.getElementById('serverStatus');
+    try {
+        const res = await fetch(`${API_URL}/api/health`);
+        if (res.ok) {
+            el.textContent = '⬤ Serveur connecté';
+            el.className = 'server-status online';
+        } else {
+            throw new Error();
+        }
+    } catch {
+        el.textContent = '⬤ Serveur hors ligne';
+        el.className = 'server-status offline';
+    }
+}
 
 function setupElementButtons() {
     const buttons = document.querySelectorAll('.element-btn');
@@ -62,12 +81,12 @@ function setLoading(isLoading) {
     if (spinner) spinner.style.display = isLoading ? 'flex' : 'none';
 }
 
-function runOptimization() {
+async function runOptimization() {
     const playerLevel = parseInt(document.getElementById('playerLevel').value) || 100;
-    const totalPA = parseInt(document.getElementById('totalPA').value) || 6;
-    const totalPM = parseInt(document.getElementById('totalPM').value) || 3;
-    const exoPA = parseInt(document.getElementById('exoPA').value) || 0;
-    const exoPM = parseInt(document.getElementById('exoPM').value) || 0;
+    const totalPA     = parseInt(document.getElementById('totalPA').value) || 6;
+    const totalPM     = parseInt(document.getElementById('totalPM').value) || 3;
+    const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
+    const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
 
     const basePA = playerLevel >= 100 ? 7 : 6;
     const basePM = 3;
@@ -77,43 +96,56 @@ function runOptimization() {
     const minItemPA = maxItemPA;
     const minItemPM = maxItemPM;
 
-    const selectedOptimizer = document.querySelector('input[name="optimizer"]:checked').value;
-
     setLoading(true);
 
-    // Use setTimeout to let the UI update before the heavy computation
-    setTimeout(() => {
-        let results;
-        try {
-            if (selectedOptimizer === 'milp') {
-                results = optimizeMilp(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
-            } else {
-                results = optimizeGear(selectedElement, 1, playerLevel, minItemPA, minItemPM, maxItemPA, maxItemPM, ITEMS_RETRO, 10);
-            }
+    try {
+        const response = await fetch(`${API_URL}/api/optimize`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                element: selectedElement,
+                maxLevel: playerLevel,
+                minPA: minItemPA,
+                minPM: minItemPM,
+                maxPA: maxItemPA,
+                maxPM: maxItemPM,
+                maxResults: 10
+            })
+        });
 
-            results.forEach(r => {
-                r.basePA = basePA;
-                r.basePM = basePM;
-                r.exoPA = exoPA;
-                r.exoPM = exoPM;
-                r.optimizer = selectedOptimizer;
-            });
-        } catch (e) {
-            console.error('Optimization error:', e);
-            results = [];
-        }
+        if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
+        const results = await response.json();
+
+        results.forEach(r => {
+            r.basePA = basePA;
+            r.basePM = basePM;
+            r.exoPA  = exoPA;
+            r.exoPM  = exoPM;
+        });
+
+        displayResults(results);
+    } catch (err) {
+        console.error('Optimization error:', err);
+        showError('Impossible de contacter le serveur. Assurez-vous que server.py tourne sur le port 5000.');
+    } finally {
         setLoading(false);
-        displayResults(results, selectedOptimizer);
-    }, 20);
+    }
 }
 
-function displayResults(results, optimizerName) {
+function showError(msg) {
+    const resultsList = document.getElementById('resultsList');
+    const resultsCount = document.getElementById('resultsCount');
+    resultsCount.textContent = 'Erreur';
+    resultsList.innerHTML = `<div class="error-state"><p>${msg}</p></div>`;
+}
+
+function displayResults(results) {
     const resultsList = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
     const emptyState = document.getElementById('emptyState');
 
-    if (!results || results.length === 0 || !results[0] || !results[0].items || results[0].items.length === 0) {
+    if (!results || results.length === 0 || !results[0]?.items?.length) {
         emptyState.style.display = 'flex';
         resultsCount.textContent = '0 combinaisons trouvées';
         resultsList.innerHTML = '';
@@ -122,24 +154,23 @@ function displayResults(results, optimizerName) {
     }
 
     emptyState.style.display = 'none';
-    const label = optimizerName === 'milp' ? ' (MILP Optimal)' : ' (Greedy)';
-    resultsCount.textContent = results.length + ' combinaisons trouvées' + label;
+    resultsCount.textContent = `${results.length} combinaisons trouvées (MILP Optimal)`;
 
     resultsList.innerHTML = '';
     results.forEach((r, i) => {
-        const itemPA = r.items.reduce((s, it) => s + (it.pa || 0), 0);
-        const itemPM = r.items.reduce((s, it) => s + (it.pm || 0), 0);
-        const totalPA = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
-        const totalPM = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
+        const itemPA   = r.items.reduce((s, it) => s + (it.pa || 0), 0);
+        const itemPM   = r.items.reduce((s, it) => s + (it.pm || 0), 0);
+        const totalPA  = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
+        const totalPM  = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
 
         const elements = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
 
         const allStatsHtml = elements
             .filter(el => (r.totalStats[el] || 0) !== 0)
             .map(el => {
-                const total = r.totalStats[el] || 0;
-                const base = r.baseStats[el] || 0;
-                const setB = r.setBonuses[el] || 0;
+                const total  = r.totalStats[el] || 0;
+                const base   = r.baseStats[el] || 0;
+                const setB   = r.setBonuses[el] || 0;
                 const prefix = total > 0 ? '+' : '';
                 const setNote = setB > 0 ? ` <small>(${base} + ${setB} set)</small>` : '';
                 return `<span class="all-stat" style="color:${ELEMENT_COLORS[el]};">${ELEMENT_NAMES[el]}: ${prefix}${total}${setNote}</span>`;
@@ -158,7 +189,7 @@ function displayResults(results, optimizerName) {
                 : '';
 
             return `
-                <div class="item-card" data-result-idx="${i}" title="Cliquer pour détails">
+                <div class="item-card">
                     <div class="item-header">
                         <span class="item-type">${getTypeAbbrev(item.type)}</span>
                         <span class="item-level">Lvl ${item.level}</span>
@@ -193,7 +224,6 @@ function displayResults(results, optimizerName) {
         resultsList.insertAdjacentHTML('beforeend', html);
     });
 
-    // Attach modal click handlers to result cards
     resultsList.querySelectorAll('.result-card-new').forEach(card => {
         card.addEventListener('click', () => {
             const idx = parseInt(card.dataset.resultIdx);
@@ -222,7 +252,7 @@ function openModal(result) {
     const content = document.getElementById('modalContent');
     const overlay = document.getElementById('modalOverlay');
 
-    const setDetailsHtml = result.setDetails && result.setDetails.length > 0 ? `
+    const setDetailsHtml = result.setDetails?.length > 0 ? `
         <div class="modal-set-details">
             <h4>Bonus des Sets</h4>
             ${result.setDetails.map(set => `

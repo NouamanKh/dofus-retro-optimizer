@@ -378,63 +378,40 @@ body {
 
 .optimizer-selector {
   display: flex;
-  gap: 16px;
-  margin: 16px 0;
-  justify-content: center;
-}
-
-.selector-option {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
+  justify-content: space-between;
+  margin: 16px 0;
   padding: 10px 16px;
   border-radius: 8px;
   background: var(--background);
   border: 1px solid var(--border);
-  transition: all 0.2s;
+  font-size: 0.85rem;
 }
 
-.selector-option:hover {
-  border-color: var(--secondary);
-}
-
-.selector-option input {
-  display: none;
-}
-
-.selector-option input:checked + .selector-label {
-  color: var(--secondary);
-}
-
-.selector-option:has(input:checked) {
-  background: var(--primary);
-  border-color: var(--secondary);
-}
-
-.selector-label {
-  font-size: 0.9rem;
-  font-weight: 600;
+.optimizer-label {
   color: var(--text-secondary);
 }
 
-.optimizer-badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  margin-left: 8px;
+.optimizer-label strong {
+  color: var(--secondary);
 }
 
-.optimizer-badge.greedy {
-  background: rgba(241, 196, 15, 0.3);
-  color: #F1C40F;
+.server-status {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.optimizer-badge.milp {
-  background: rgba(46, 204, 113, 0.3);
-  color: #2ECC71;
+.server-status.online  { color: #2ECC71; }
+.server-status.offline { color: #E74C3C; }
+
+.error-state {
+  padding: 40px;
+  text-align: center;
+  color: #E74C3C;
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 12px;
+  font-size: 0.95rem;
 }
 
 .constraint-hint {

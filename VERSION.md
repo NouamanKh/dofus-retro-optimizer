@@ -1,6 +1,15 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.4.2 (2026-04-06)
+## v1.5.0 (2026-04-06)
+- Replace all JS optimizers (greedy + JS branch-and-bound) with Python PuLP MILP via server.py
+- Frontend now calls server.py API — exact optimal solution guaranteed, no level filter bugs possible
+- server.py: added shield slot, max PA/PM constraints, full set bonus logic for all elements, multiple diverse results via exclusion re-solve
+- Added server health check indicator in UI
+- Added error state when server is unreachable
+- Removed data/items_retro.js, sets_retro.js, optimizer.js, optimizer_milp.js from frontend (no longer needed)
+- Requires: pip install flask flask-cors pulp
+
+
 - Fix greedy level filter more robustly: removed spread copies in itemsBySlot (eliminated elementValue mutation), added hard safety filter on all output combos to guarantee no over-level items slip through
 
 

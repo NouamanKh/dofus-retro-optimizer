@@ -17,7 +17,7 @@
         <h1 class="title">Optimiseur d'Élément Dofus Retro</h1>
         <div class="header-badges">
           <span class="data-badge">Données Dofus 1.29</span>
-          <span class="version-badge">v1.4.2</span>
+          <span class="version-badge">v1.5.0</span>
         </div>
       </div>
       <p class="subtitle">Trouvez la meilleure combinaison d'équipement pour maximiser votre pouvoir élémentaire</p>
@@ -120,14 +120,8 @@
         </div>
 
         <div class="optimizer-selector">
-          <label class="selector-option">
-            <input type="radio" name="optimizer" value="greedy" checked>
-            <span class="selector-label">Greedy</span>
-          </label>
-          <label class="selector-option">
-            <input type="radio" name="optimizer" value="milp">
-            <span class="selector-label">MILP</span>
-          </label>
+          <span class="optimizer-label">Optimiseur: <strong>MILP (PuLP)</strong></span>
+          <span class="server-status" id="serverStatus">⬤ Vérification...</span>
         </div>
         <button id="searchBtn" class="search-btn">Rechercher</button>
         <div id="loadingSpinner" class="loading-spinner" style="display:none;">
@@ -162,10 +156,6 @@
     </div>
   </div>
 
-  <script src="data/items_retro.js"></script>
-  <script src="data/sets_retro.js"></script>
-  <script src="utils/optimizer.js"></script>
-  <script src="utils/optimizer_milp.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

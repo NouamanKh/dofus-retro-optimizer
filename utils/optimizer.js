@@ -447,25 +447,28 @@ function tryAddSetPiece(selected, element, minLevel, maxLevel, items) {
 }
 
 function optimizeGear(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items, maxResults = 10) {
-    const greedyResult = greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
+    // Pre-filter by level once so every downstream function works on a clean list
+    const filteredItems = items.filter(item => item.level >= minLevel && item.level <= maxLevel);
+
+    const greedyResult = greedySelectItems(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
     let currentItems = ensurePAPMConstraint(greedyResult, minPA, minPM, maxPA, maxPM);
-    let improved = localSearchImprove(currentItems, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
-    improved = ensurePAPMConstraint({ selected: improved, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+    let improved = localSearchImprove(currentItems, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
+    improved = ensurePAPMConstraint({ selected: improved, itemsBySlot: getItemsBySlot(filteredItems) }, minPA, minPM, maxPA, maxPM);
     
     let currentBest = improved;
     
     for (let i = 0; i < 5; i++) {
-        const newPiece = tryAddSetPiece(currentBest, element, minLevel, maxLevel, items);
+        const newPiece = tryAddSetPiece(currentBest, element, minLevel, maxLevel, filteredItems);
         if (newPiece) {
             currentBest = [...currentBest, newPiece];
         }
     }
     
-    let finalSet = localSearchImprove(currentBest, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
-    finalSet = ensurePAPMConstraint({ selected: finalSet, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+    let finalSet = localSearchImprove(currentBest, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
+    finalSet = ensurePAPMConstraint({ selected: finalSet, itemsBySlot: getItemsBySlot(filteredItems) }, minPA, minPM, maxPA, maxPM);
     
     if (!checkPAPMBetween(finalSet, minPA, minPM, maxPA, maxPM)) {
-        finalSet = enforcePAPMLimit(finalSet, minPA, minPM, maxPA, maxPM, items);
+        finalSet = enforcePAPMLimit(finalSet, minPA, minPM, maxPA, maxPM, filteredItems);
     }
     
     const allCombos = new Map();
@@ -487,10 +490,10 @@ function optimizeGear(element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, i
     addCombo(finalSet);
     
     for (let r = 0; r < 20; r++) {
-        let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
-        randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
-        let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, items);
-        improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(items) }, minPA, minPM, maxPA, maxPM);
+        let randomized = addRandomVariation(finalSet, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
+        randomized = ensurePAPMConstraint({ selected: randomized, itemsBySlot: getItemsBySlot(filteredItems) }, minPA, minPM, maxPA, maxPM);
+        let improved2 = localSearchImprove(randomized, element, minLevel, maxLevel, minPA, minPM, maxPA, maxPM, filteredItems);
+        improved2 = ensurePAPMConstraint({ selected: improved2, itemsBySlot: getItemsBySlot(filteredItems) }, minPA, minPM, maxPA, maxPM);
         
         if (checkPAPMBetween(improved2, minPA, minPM, maxPA, maxPM)) {
             addCombo(improved2);

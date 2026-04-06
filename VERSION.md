@@ -1,6 +1,9 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.4.0 (2026-04-06)
+## v1.4.1 (2026-04-06)
+- Fix greedy returning items above the character's level (enforcePAPMLimit and ensurePAPMConstraint were using the unfiltered item list)
+
+
 - Add shield slot to optimizer (was excluded from all optimization)
 - Fix MILP: tighter upper bound (no more hardcoded +50), significantly faster
 - Fix MILP: now returns up to 10 diverse results (was always 1)

@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupElementButtons();
     setupModal();
     checkServerStatus();
+    // Keep server alive during the session — ping every 10 minutes
+    setInterval(() => fetch(`${API_URL}/api/health`).catch(() => {}), 10 * 60 * 1000);
 
     const searchBtn = document.getElementById('searchBtn');
     if (searchBtn) {
@@ -84,6 +86,24 @@ function setLoading(isLoading) {
     if (spinner) spinner.style.display = isLoading ? 'flex' : 'none';
 }
 
+async function fetchWithRetry(url, options, retries = 2) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(url, options);
+            if (res.ok) return res;
+            throw new Error(`HTTP ${res.status}`);
+        } catch (err) {
+            if (i < retries - 1) {
+                const waitMsg = document.getElementById('searchBtn');
+                waitMsg.textContent = 'Nouvelle tentative...';
+                await new Promise(r => setTimeout(r, 3000));
+            } else {
+                throw err;
+            }
+        }
+    }
+}
+
 async function runOptimization() {
     const playerLevel = parseInt(document.getElementById('playerLevel').value) || 100;
     const totalPA     = parseInt(document.getElementById('totalPA').value) || 6;
@@ -98,7 +118,7 @@ async function runOptimization() {
 
     setLoading(true);
     try {
-        const response = await fetch(`${API_URL}/api/optimize`, {
+        const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -110,8 +130,6 @@ async function runOptimization() {
                 maxPM: maxItemPM
             })
         });
-
-        if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const results = await response.json();
         results.forEach(r => { r.basePA = basePA; r.basePM = basePM; r.exoPA = exoPA; r.exoPM = exoPM; });
 
@@ -126,7 +144,7 @@ async function runOptimization() {
         displayResults(results);
     } catch (err) {
         console.error('Optimization error:', err);
-        showError('Impossible de contacter le serveur. Assurez-vous que server.py tourne sur le port 5000.');
+        showError('Le serveur ne répond pas. Il est peut-être en train de redémarrer — réessayez dans 30 secondes.');
     } finally {
         setLoading(false);
     }

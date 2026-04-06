@@ -3,7 +3,7 @@ services:
     name: dofus-retro-optimizer-api
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python server.py
+    startCommand: gunicorn server:app
     plan: free
     envVars:
       - key: PYTHON_VERSION

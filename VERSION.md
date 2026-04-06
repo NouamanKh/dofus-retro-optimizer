@@ -1,5 +1,18 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.4.0 (2026-04-06)
+- Add shield slot to optimizer (was excluded from all optimization)
+- Fix MILP: tighter upper bound (no more hardcoded +50), significantly faster
+- Fix MILP: now returns up to 10 diverse results (was always 1)
+- Fix modal: result cards are now clickable and open item detail modal
+- Fix duplicate createItemChip function (second definition silently overrode first)
+- Add loading spinner and disable search button during optimization
+- Add Escape key to close modal
+- Remove all debug console.log statements from production code
+- Remove dead code: createResultCard, calculateAllStats, unused createItemChip variant
+- PA/PM now shown in modal item details
+- Consistent template literal usage throughout app.js
+
 ## v1.3.8 (2025-04-05)
 - Add debug logging for PA items in MILP
 

@@ -1,4 +1,4 @@
-const EQUIPMENT_SLOTS = ['weapon', 'hat', 'cloak', 'amulet', 'ring', 'belt', 'boots'];
+const EQUIPMENT_SLOTS = ['weapon', 'hat', 'cloak', 'amulet', 'ring', 'belt', 'boots', 'shield'];
 
 const SLOT_LIMITS = {
     weapon: 1,
@@ -7,7 +7,8 @@ const SLOT_LIMITS = {
     amulet: 1,
     ring: 2,
     belt: 1,
-    boots: 1
+    boots: 1,
+    shield: 1
 };
 
 // Convert SETS_RETRO to a more usable format

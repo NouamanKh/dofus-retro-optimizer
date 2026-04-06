@@ -1,6 +1,9 @@
 # Dofus Retro Optimizer - Version History
 
-## v1.5.0 (2026-04-06)
+## v1.5.1 (2026-04-06)
+- MILP now returns only the single optimal solution (removed multi-result re-solve logic — suboptimal alternatives don't make sense for an exact solver)
+
+
 - Replace all JS optimizers (greedy + JS branch-and-bound) with Python PuLP MILP via server.py
 - Frontend now calls server.py API — exact optimal solution guaranteed, no level filter bugs possible
 - server.py: added shield slot, max PA/PM constraints, full set bonus logic for all elements, multiple diverse results via exclusion re-solve

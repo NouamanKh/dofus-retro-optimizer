@@ -108,8 +108,7 @@ async function runOptimization() {
                 minPA: minItemPA,
                 minPM: minItemPM,
                 maxPA: maxItemPA,
-                maxPM: maxItemPM,
-                maxResults: 10
+                maxPM: maxItemPM
             })
         });
 
@@ -154,7 +153,7 @@ function displayResults(results) {
     }
 
     emptyState.style.display = 'none';
-    resultsCount.textContent = `${results.length} combinaisons trouvées (MILP Optimal)`;
+    resultsCount.textContent = `Meilleure combinaison (MILP Optimal)`;
 
     resultsList.innerHTML = '';
     results.forEach((r, i) => {

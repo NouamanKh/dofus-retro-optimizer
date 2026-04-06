@@ -124,20 +124,14 @@ def build_result(selected_items, element, set_bonuses_map):
     }
 
 
-def solve_milp(element, min_level, max_level, min_pa, min_pm, max_pa, max_pm, excluded_ids=None):
-    """
-    Solve one MILP instance. Returns list of selected item dicts, or None if infeasible.
-    excluded_ids: set of item IDs to force out (for diversity in multiple results).
-    """
-    if excluded_ids is None:
-        excluded_ids = set()
+def solve_milp(element, min_level, max_level, min_pa, min_pm, max_pa, max_pm):
+    """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible."""
 
     # Filter items by level upfront
     valid_items = {
         item['id']: item for item in ITEMS
         if item['type'] in SLOT_LIMITS
         and min_level <= item['level'] <= max_level
-        and item['id'] not in excluded_ids
     }
 
     if not valid_items:
@@ -206,13 +200,18 @@ def solve_milp(element, min_level, max_level, min_pa, min_pm, max_pa, max_pm, ex
             # Tier can only be active if enough set pieces are selected
             model += var * tier <= set_selected, f"tier_req_{re.sub(r'[^a-zA-Z0-9_]', '_', set_name)}_{tier}"
 
-    # Suppress solver output
-    model.solve(pulp.PULP_CBC_CMD(msg=0))
+    # Solver output — set msg=0 to suppress
+    model.solve(pulp.PULP_CBC_CMD(msg=1))
 
-    if pulp.LpStatus[model.status] != 'Optimal':
+    status = pulp.LpStatus[model.status]
+    print(f"\n[MILP] Status: {status} | Element: {element} | Level: ≤{max_level} | PA: {min_pa}-{max_pa} | PM: {min_pm}-{max_pm}")
+
+    if status != 'Optimal':
         return None
 
     selected = [valid_items[iid] for iid, var in x.items() if var.value() and var.value() > 0.5]
+    total_el = sum(i['elements'].get(element, 0) for i in selected)
+    print(f"[MILP] {len(selected)} items | {element}: {total_el} | {[i['name'] for i in selected]}")
     return selected
 
 
@@ -226,32 +225,14 @@ def optimize():
     min_pm    = int(data.get('minPM', 0))
     max_pa    = int(data.get('maxPA', 99))
     max_pm    = int(data.get('maxPM', 99))
-    max_results = int(data.get('maxResults', 10))
 
-    results = []
-    seen_keys = set()
-    excluded_ids = set()
+    selected = solve_milp(element, 1, max_level, min_pa, min_pm, max_pa, max_pm)
 
-    # Find best solution, then generate alternatives by excluding items from previous bests
-    for _ in range(max_results * 3):
-        if len(results) >= max_results:
-            break
+    if not selected:
+        return jsonify([])
 
-        selected = solve_milp(element, 1, max_level, min_pa, min_pm, max_pa, max_pm, excluded_ids)
-        if not selected:
-            break
-
-        key = '|'.join(sorted(i['id'] for i in selected))
-        if key not in seen_keys:
-            seen_keys.add(key)
-            results.append(build_result(selected, element, SET_BONUSES))
-
-        # Exclude one item from this solution to force diversity in next run
-        # Exclude the highest-value item for the chosen element
-        best_item = max(selected, key=lambda i: i['elements'].get(element, 0))
-        excluded_ids.add(best_item['id'])
-
-    return jsonify(results)
+    result = build_result(selected, element, SET_BONUSES)
+    return jsonify([result])
 
 
 @app.route('/api/health', methods=['GET'])

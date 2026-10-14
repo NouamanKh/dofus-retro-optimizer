@@ -1,0 +1,642 @@
+{
+  "_sources": {
+    "pets": "https://www.millenium.org/guide/345339.html — max bonus per feeding (Dofus 1.29); one option is active at a time",
+    "mounts": "https://www.tofus.fr/fiches/dinde — bonus at mount level 100 (pre-2.47 values); initiative, invocations, PO, puissance and résistances not modelled",
+    "mount_level": "60 = character level required to ride (forum source, unverified)"
+  },
+  "pets": [
+    {
+      "name": "Chacha",
+      "options": [
+        {
+          "intelligence": 80
+        },
+        {
+          "agilite": 80
+        },
+        {
+          "force": 80
+        },
+        {
+          "vitalite": 80
+        }
+      ]
+    },
+    {
+      "name": "Bouloute",
+      "options": [
+        {
+          "vitalite": 150
+        }
+      ]
+    },
+    {
+      "name": "Bwak de Terre",
+      "options": [
+        {
+          "force": 80
+        },
+        {
+          "vitalite": 80
+        }
+      ]
+    },
+    {
+      "name": "Bwak de Feu",
+      "options": [
+        {
+          "intelligence": 80
+        },
+        {
+          "vitalite": 80
+        }
+      ]
+    },
+    {
+      "name": "Bwak d'Eau",
+      "options": [
+        {
+          "chance": 80
+        },
+        {
+          "vitalite": 80
+        }
+      ]
+    },
+    {
+      "name": "Bwak d'Air",
+      "options": [
+        {
+          "agilite": 80
+        },
+        {
+          "vitalite": 80
+        }
+      ]
+    },
+    {
+      "name": "Koalak Sanguin",
+      "options": [
+        {
+          "sagesse": 50
+        }
+      ]
+    },
+    {
+      "name": "Nomoon",
+      "options": [
+        {
+          "prospection": 80
+        }
+      ]
+    },
+    {
+      "name": "Péki",
+      "options": [
+        {
+          "vitalite": 300
+        }
+      ]
+    },
+    {
+      "name": "Vilain petit Corbac",
+      "options": [
+        {
+          "prospection": 40
+        }
+      ]
+    },
+    {
+      "name": "Wabbit",
+      "options": [
+        {
+          "agilite": 80
+        },
+        {
+          "force": 80
+        },
+        {
+          "chance": 80
+        },
+        {
+          "sagesse": 27
+        }
+      ]
+    },
+    {
+      "name": "Kouin-Kouin",
+      "options": [
+        {
+          "prospection": 10
+        }
+      ]
+    },
+    {
+      "name": "Pioute Bleue",
+      "options": [
+        {
+          "chance": 80
+        }
+      ]
+    },
+    {
+      "name": "Pioute Jaune",
+      "options": [
+        {
+          "force": 80
+        }
+      ]
+    },
+    {
+      "name": "Pioute Verte",
+      "options": [
+        {
+          "agilite": 80
+        }
+      ]
+    },
+    {
+      "name": "Pioute Rouge",
+      "options": [
+        {
+          "intelligence": 80
+        }
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "name": "Dragodinde Rousse",
+      "bonus": {
+        "vitalite": 100
+      }
+    },
+    {
+      "name": "Dragodinde Dorée",
+      "bonus": {
+        "vitalite": 50,
+        "sagesse": 40
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Rousse",
+      "bonus": {
+        "vitalite": 100
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Dorée",
+      "bonus": {
+        "vitalite": 50,
+        "sagesse": 25
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Rousse",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25
+      }
+    },
+    {
+      "name": "Dragodinde Ebène",
+      "bonus": {
+        "vitalite": 50,
+        "agilite": 80
+      }
+    },
+    {
+      "name": "Dragodinde Indigo",
+      "bonus": {
+        "vitalite": 50,
+        "chance": 80
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Ebène",
+      "bonus": {
+        "vitalite": 50,
+        "agilite": 60
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Indigo",
+      "bonus": {
+        "vitalite": 50,
+        "chance": 60
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Rousse",
+      "bonus": {
+        "vitalite": 150,
+        "agilite": 60
+      }
+    },
+    {
+      "name": "Dragodinde Indigo/Rousse",
+      "bonus": {
+        "vitalite": 150,
+        "chance": 60
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Ebène",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25,
+        "agilite": 60
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Indigo",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25,
+        "chance": 60
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Indigo",
+      "bonus": {
+        "vitalite": 100,
+        "chance": 50,
+        "agilite": 50
+      }
+    },
+    {
+      "name": "Dragodinde Pourpre",
+      "bonus": {
+        "vitalite": 50,
+        "force": 80
+      }
+    },
+    {
+      "name": "Dragodinde Orchidée",
+      "bonus": {
+        "vitalite": 50,
+        "intelligence": 80
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Pourpre",
+      "bonus": {
+        "vitalite": 50,
+        "force": 60
+      }
+    },
+    {
+      "name": "Dragodinde Amande/Orchidée",
+      "bonus": {
+        "vitalite": 50,
+        "intelligence": 60
+      }
+    },
+    {
+      "name": "Dragodinde Pourpre/Rousse",
+      "bonus": {
+        "vitalite": 150,
+        "force": 60
+      }
+    },
+    {
+      "name": "Dragodinde Rousse/Orchidée",
+      "bonus": {
+        "vitalite": 150,
+        "intelligence": 60
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25,
+        "force": 60
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Orchidée",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25,
+        "intelligence": 60
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "agilite": 50,
+        "force": 50
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Orchidée",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 50,
+        "agilite": 50
+      }
+    },
+    {
+      "name": "Dragodinde Indigo/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "chance": 50,
+        "force": 50
+      }
+    },
+    {
+      "name": "Dragodinde Indigo/Orchidée",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 50,
+        "chance": 50
+      }
+    },
+    {
+      "name": "Dragodinde Orchidée/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 50,
+        "force": 50
+      }
+    },
+    {
+      "name": "Dragodinde Ivoire",
+      "bonus": {
+        "vitalite": 50
+      }
+    },
+    {
+      "name": "Dragodinde Turquoise",
+      "bonus": {
+        "vitalite": 50,
+        "prospection": 80
+      }
+    },
+    {
+      "name": "Dragodinde Ivoire/Amande",
+      "bonus": {
+        "vitalite": 50
+      }
+    },
+    {
+      "name": "Dragodinde Turquoise/Amande",
+      "bonus": {
+        "vitalite": 50,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Ivoire/Rousse",
+      "bonus": {
+        "vitalite": 200
+      }
+    },
+    {
+      "name": "Dragodinde Turquoise/Rousse",
+      "bonus": {
+        "vitalite": 200,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Ivoire",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25
+      }
+    },
+    {
+      "name": "Dragodinde Dorée/Turquoise",
+      "bonus": {
+        "vitalite": 100,
+        "prospection": 40,
+        "sagesse": 25
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Ivoire",
+      "bonus": {
+        "vitalite": 100,
+        "agilite": 40
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Turquoise",
+      "bonus": {
+        "vitalite": 100,
+        "agilite": 60,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Indigo/Ivoire",
+      "bonus": {
+        "vitalite": 100,
+        "chance": 40
+      }
+    },
+    {
+      "name": "Dragodinde Indigo/Turquoise",
+      "bonus": {
+        "vitalite": 100,
+        "chance": 60,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Ivoire/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "force": 40
+      }
+    },
+    {
+      "name": "Dragodinde Turquoise/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "force": 60,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Orchidée/Ivoire",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 40
+      }
+    },
+    {
+      "name": "Dragodinde Turquoise/Orchidée",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 60,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Ivoire/Turquoise",
+      "bonus": {
+        "vitalite": 100,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Prune",
+      "bonus": {
+        "vitalite": 200
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude",
+      "bonus": {
+        "vitalite": 200,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Amande",
+      "bonus": {
+        "vitalite": 200
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Amande",
+      "bonus": {
+        "vitalite": 100,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Rousse",
+      "bonus": {
+        "vitalite": 300
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Rousse",
+      "bonus": {
+        "vitalite": 300,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Dorée",
+      "bonus": {
+        "vitalite": 200,
+        "sagesse": 25
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Dorée",
+      "bonus": {
+        "vitalite": 100,
+        "sagesse": 25,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Prune",
+      "bonus": {
+        "vitalite": 200,
+        "agilite": 60
+      }
+    },
+    {
+      "name": "Dragodinde Ebène/Emeraude",
+      "bonus": {
+        "vitalite": 100,
+        "agilite": 30,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Indigo",
+      "bonus": {
+        "vitalite": 200,
+        "chance": 60
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Indigo",
+      "bonus": {
+        "vitalite": 100,
+        "chance": 30,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Pourpre",
+      "bonus": {
+        "vitalite": 200,
+        "force": 60
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Pourpre",
+      "bonus": {
+        "vitalite": 100,
+        "force": 30,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Orchidée",
+      "bonus": {
+        "vitalite": 200,
+        "intelligence": 60
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Orchidée",
+      "bonus": {
+        "vitalite": 100,
+        "intelligence": 30,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Ivoire",
+      "bonus": {
+        "vitalite": 200
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Ivoire",
+      "bonus": {
+        "vitalite": 100,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Turquoise",
+      "bonus": {
+        "vitalite": 200,
+        "prospection": 40
+      }
+    },
+    {
+      "name": "Dragodinde Emeraude/Turquoise",
+      "bonus": {
+        "vitalite": 100,
+        "prospection": 40,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde Prune/Emeraude",
+      "bonus": {
+        "vitalite": 200,
+        "pm": 1
+      }
+    },
+    {
+      "name": "Dragodinde à Plumes",
+      "bonus": {
+        "vitalite": 100
+      }
+    }
+  ]
+}

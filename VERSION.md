@@ -1,5 +1,13 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.8.0 (2026-10-14)
+- New slots: Familier (pet) and Monture (mount); a build gets at most one of the two, as in game
+- Pets: every feeding option at its max bonus is a separate choice, so the solver picks the best feeding for the target (source: millenium.org guide 345339)
+- Mounts: Dragodindes at mount level 100, ridable from character level 60; mount PM counts toward PM (source: tofus.fr/fiches/dinde)
+- Pet/mount data lives in dofus-retro-companions.json (hand-curated, sources inside) and is merged by convert_retro_data.py
+- Fix every search after the first failing with "Le serveur ne répond pas": displayResults cleared the results list, deleting #emptyState, then crashed on it next time (the error was reported as a server failure). The no-result message is now rendered directly
+- Fix search button staying disabled after an update: browsers could pair the new index.html with a cached old app.js that never enables it. styles.css and app.js are now loaded with ?v=<version> (bump it with each release)
+
 ## v1.7.0 (2026-10-14)
 - New target: Prospection (score = prospection + Chance ÷ 10, rounded down, from items and set bonuses)
 - Fix set bonus tiers: a 2-piece bonus now applies at 2 pieces and full-set bonuses can activate (were shifted up one piece)

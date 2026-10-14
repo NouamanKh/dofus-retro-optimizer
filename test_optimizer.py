@@ -69,6 +69,15 @@ class OptimizeTest(unittest.TestCase):
         self.assertEqual(sorted(i['id'] for i in build['items']), ['A', 'D'])
         self.assertEqual(build['totalElement'], 35)
 
+    def test_pet_or_mount_never_both(self):
+        cat = Catalog(
+            [item('P', 'pet', vitalite=100),
+             item('M', 'mount', level=60, vitalite=100),
+             item('H', 'hat', vitalite=10)], [])
+        ids = sorted(i['id'] for i in optimize(cat, 'vitalite', level=100, total_pa=6, total_pm=3)['items'])
+        self.assertEqual(len(set(ids) & {'P', 'M'}), 1)
+        self.assertIn('H', ids)
+
     def test_prospection_counts_chance_tenth(self):
         cat = Catalog([item('P', 'hat', prospection=6), item('Q', 'hat', chance=75)], [])
         build = optimize(cat, 'prospection', level=50, total_pa=6, total_pm=3)
@@ -82,6 +91,10 @@ class RealDataTest(unittest.TestCase):
         self.assertEqual(max(cat.set_bonuses['Panoplie Champchamp']), 4)
         self.assertTrue(any('prospection' in i['elements'] for i in cat.items))
         self.assertFalse(any('prospection' in i['stats'] for i in cat.items))
+        pets = {i['name']: i for i in cat.items if i['type'] == 'pet'}
+        mounts = {i['name']: i for i in cat.items if i['type'] == 'mount'}
+        self.assertEqual(pets['Nomoon']['elements']['prospection'], 80)
+        self.assertEqual(mounts['Dragodinde Emeraude/Rousse']['pm'], 1)
 
 
 class AdapterTest(unittest.TestCase):

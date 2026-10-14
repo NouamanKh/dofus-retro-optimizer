@@ -230,17 +230,13 @@ function itemCard(item, showRequirements) {
 function displayResults(results) {
     const resultsList  = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
-    const emptyState   = document.getElementById('emptyState');
 
     if (!results || results.length === 0 || !results[0]?.items?.length) {
-        emptyState.style.display = 'flex';
         resultsCount.textContent = '0 combinaisons trouvées';
-        resultsList.innerHTML = '';
-        resultsList.appendChild(emptyState);
+        resultsList.innerHTML = '<div class="empty-state"><p>Aucune combinaison ne respecte ces PA/PM à ce niveau.</p></div>';
         return;
     }
 
-    emptyState.style.display = 'none';
     resultsCount.textContent = 'Solution optimale (MILP)';
     resultsList.innerHTML = '';
 
@@ -288,7 +284,7 @@ function displayResults(results) {
 }
 
 function getTypeName(type) {
-    const names = { weapon: 'Arme', hat: 'Chapeau', cloak: 'Cape', amulet: 'Amulette', ring: 'Anneau', belt: 'Ceinture', boots: 'Bottes', shield: 'Bouclier' };
+    const names = { weapon: 'Arme', hat: 'Chapeau', cloak: 'Cape', amulet: 'Amulette', ring: 'Anneau', belt: 'Ceinture', boots: 'Bottes', shield: 'Bouclier', pet: 'Familier', mount: 'Monture' };
     return names[type] || type;
 }
 

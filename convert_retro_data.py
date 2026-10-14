@@ -216,6 +216,33 @@ for category_obj in raw_items:
         })
         item_id += 1
 
+# Pets and mounts (hand-curated, see _sources in the file). Each pet feeding is its own item,
+# so the solver picks the best feeding; mounts are level-100 Dragodindes, ridable from level 60.
+with open('dofus-retro-companions.json', 'r', encoding='utf-8') as f:
+    companions = json.load(f)
+
+ELEMENT_LABELS = {'vitalite': 'Vitalité', 'sagesse': 'Sagesse', 'force': 'Force', 'intelligence': 'Intelligence',
+                  'chance': 'Chance', 'agilite': 'Agilité', 'prospection': 'Prospection'}
+
+def companion_item(name, item_type, level, bonus):
+    return {
+        'id': f'retro_{item_id}', 'name': name, 'type': item_type, 'level': level,
+        'elements': {el: bonus.get(el, 0) for el in ELEMENT_LABELS},
+        'pa': bonus.get('pa', 0), 'pm': bonus.get('pm', 0), 'stats': {}, 'set': None,
+        'recipe': [], 'requirements': [], 'weapon_stats': None,
+    }
+
+for pet in companions['pets']:
+    for option in pet['options']:
+        label = ', '.join(f'{v} {ELEMENT_LABELS[k]}' for k, v in option.items())
+        name = f"{pet['name']} ({label})" if len(pet['options']) > 1 else pet['name']
+        items.append(companion_item(name, 'pet', 1, option))
+        item_id += 1
+
+for mount in companions['mounts']:
+    items.append(companion_item(mount['name'], 'mount', 60, mount['bonus']))
+    item_id += 1
+
 sets = [
     {'name': s.get('name', ''), 'items': s.get('items', []), 'bonuses': decode_set_bonuses(s.get('bonus', []))}
     for s in raw_sets

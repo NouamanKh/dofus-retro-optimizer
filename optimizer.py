@@ -9,7 +9,7 @@ from catalog import ALL_ELEMENTS
 
 SLOT_LIMITS = {
     "weapon": 1, "hat": 1, "cloak": 1, "amulet": 1,
-    "ring": 2, "belt": 1, "boots": 1, "shield": 1
+    "ring": 2, "belt": 1, "boots": 1, "shield": 1, "pet": 1, "mount": 1
 }
 BASE_PM = 3
 
@@ -88,6 +88,8 @@ def _solve(catalog, element, level, gear_pa, gear_pm):
         slot_ids = [iid for iid, item in valid_items.items() if item['type'] == slot]
         if slot_ids:
             model += pulp.lpSum(x[iid] for iid in slot_ids) <= limit, f"slot_{slot}"
+    # The game allows a pet or a mount, never both
+    model += pulp.lpSum(x[iid] for iid, item in valid_items.items() if item['type'] in ('pet', 'mount')) <= 1, "pet_or_mount"
 
     # --- PA/PM minimum from gear (items + set bonuses) ---
     pa_expr = pulp.lpSum((item.get('pa', 0) or 0) * x[iid] for iid, item in valid_items.items())

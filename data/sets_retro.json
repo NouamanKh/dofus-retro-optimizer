@@ -1,0 +1,3573 @@
+[
+  {
+    "name": "Panoplie du Boune",
+    "items": [
+      "Cape S'loque",
+      "Le Floude",
+      "Le Plussain",
+      "Les Incrustes",
+      "Le S'mesme",
+      "La Spamette"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 5,
+        "intelligence": 5,
+        "agilite": 5,
+        "chance": 5,
+        "sagesse": 5,
+        "vitalite": 5
+      },
+      "3": {
+        "force": 10,
+        "intelligence": 10,
+        "agilite": 10,
+        "chance": 10,
+        "sagesse": 10,
+        "vitalite": 10
+      },
+      "4": {
+        "force": 15,
+        "intelligence": 15,
+        "agilite": 15,
+        "chance": 15,
+        "sagesse": 15,
+        "vitalite": 15
+      },
+      "5": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20,
+        "vitalite": 20
+      },
+      "6": {
+        "force": 25,
+        "intelligence": 25,
+        "agilite": 25,
+        "chance": 25,
+        "sagesse": 25,
+        "vitalite": 25
+      }
+    }
+  },
+  {
+    "name": "Panoplie Champchamp",
+    "items": [
+      "Cape du champchamp",
+      "Champcoiffe",
+      "Anneau du champchamp",
+      "Alliance du champchamp"
+    ],
+    "bonuses": {
+      "2": {
+        "sagesse": 10,
+        "intelligence": 5
+      },
+      "3": {
+        "sagesse": 20,
+        "intelligence": 10
+      },
+      "4": {
+        "sagesse": 30,
+        "intelligence": 15
+      }
+    }
+  },
+  {
+    "name": "Panoplie Arakné",
+    "items": [
+      "Araknoton",
+      "Araknoture",
+      "Araknacoiffe",
+      "La Trancheuse d'Arakné"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10,
+        "vitalite": 5
+      },
+      "3": {
+        "agilite": 20,
+        "vitalite": 10
+      },
+      "4": {
+        "agilite": 30,
+        "vitalite": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Kwak Vent",
+    "items": [
+      "Kwakoiffe de Vent",
+      "Kwape de Vent",
+      "Kwakanneau de vent",
+      "Kwakture de vent",
+      "Amukwak de Vent",
+      "Kwakobottes de Vent",
+      "Kwaklame de Vent",
+      "Bwak d'Air"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 15,
+        "vitalite": 15
+      },
+      "3": {
+        "agilite": 20,
+        "vitalite": 20,
+        "force": 10
+      },
+      "4": {
+        "agilite": 25,
+        "vitalite": 25,
+        "force": 15,
+        "sagesse": 5
+      },
+      "5": {
+        "agilite": 30,
+        "vitalite": 30,
+        "force": 20,
+        "sagesse": 10
+      },
+      "6": {
+        "agilite": 35,
+        "vitalite": 35,
+        "force": 25,
+        "sagesse": 15,
+        "pm": 1
+      },
+      "7": {
+        "agilite": 45,
+        "vitalite": 45,
+        "force": 30,
+        "sagesse": 20,
+        "pm": 1,
+        "pa": 1
+      },
+      "8": {
+        "agilite": 55,
+        "vitalite": 55,
+        "force": 30,
+        "sagesse": 25,
+        "pm": 1
+      },
+      "9": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Bandit",
+    "items": [
+      "Ceinture du Bandit",
+      "Amulette du Bandit",
+      "Anneau du Bandit",
+      "Dagues du Bandit"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 30
+      },
+      "3": {
+        "vitalite": 40
+      },
+      "4": {
+        "vitalite": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Corbac",
+    "items": [
+      "Corbottes",
+      "Corbacoiffe",
+      "Corbacape",
+      "Corbalame"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "pa": 1
+      },
+      "4": {
+        "pa": 1,
+        "pm": 1
+      },
+      "5": {
+        "pa": 1,
+        "pm": 1,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Bouftou",
+    "items": [
+      "Cape Bouffante",
+      "Coiffe du Bouftou",
+      "Anneau de Bouze le Clerc",
+      "Boufbottes",
+      "Amulette du Bouftou",
+      "Ceinture du Bouftou",
+      "Marteau du Bouftou"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 5,
+        "intelligence": 5
+      },
+      "3": {
+        "force": 10,
+        "intelligence": 10
+      },
+      "4": {
+        "force": 10,
+        "intelligence": 10
+      },
+      "5": {
+        "force": 30,
+        "intelligence": 30
+      },
+      "6": {
+        "force": 40,
+        "intelligence": 40
+      },
+      "7": {
+        "force": 50,
+        "intelligence": 50,
+        "sagesse": 20,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Champêtre",
+    "items": [
+      "Capouze des Champs",
+      "Coiffe Champêtre",
+      "Anneau Champêtre",
+      "Bottes Champêtre",
+      "Amulette des Champs",
+      "Ceinture Fleurie",
+      "La Plantouze des Champs"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 5,
+        "agilite": 5
+      },
+      "3": {
+        "vitalite": 10,
+        "agilite": 10,
+        "intelligence": 5
+      },
+      "4": {
+        "vitalite": 15,
+        "agilite": 15,
+        "intelligence": 10
+      },
+      "5": {
+        "vitalite": 20,
+        "agilite": 20,
+        "intelligence": 15
+      },
+      "6": {
+        "vitalite": 25,
+        "agilite": 25,
+        "intelligence": 20
+      },
+      "7": {},
+      "8": {
+        "vitalite": 30,
+        "agilite": 30,
+        "intelligence": 25
+      },
+      "9": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Jeune Aventurier",
+    "items": [
+      "Cape de l'Aventurier",
+      "Chapeau de l'Aventurier",
+      "Anneau de l'Aventurier",
+      "Bottes de l'Aventurier",
+      "Amulette de l'Aventurier",
+      "Ceinture de l'Aventurier"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10,
+        "vitalite": 10,
+        "force": 10,
+        "intelligence": 10,
+        "agilite": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "chance": 15,
+        "vitalite": 15,
+        "force": 15,
+        "intelligence": 15,
+        "agilite": 15,
+        "sagesse": 15
+      },
+      "4": {
+        "chance": 20,
+        "vitalite": 20,
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "sagesse": 20
+      },
+      "5": {
+        "chance": 25,
+        "vitalite": 25,
+        "force": 25,
+        "intelligence": 25,
+        "agilite": 25,
+        "sagesse": 25
+      },
+      "6": {
+        "chance": 40,
+        "vitalite": 40,
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "sagesse": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Kwak Flamme",
+    "items": [
+      "Kwakoiffe de Flammes",
+      "Kwape de Flammes",
+      "Kwakanneau de Flammes",
+      "Kwakture de Flammes",
+      "Amukwak de Flammes",
+      "Kwakobottes de Flammes",
+      "Kwaklame de Flamme",
+      "Bwak de Feu"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 15,
+        "vitalite": 15
+      },
+      "3": {
+        "intelligence": 20,
+        "vitalite": 20,
+        "agilite": 10
+      },
+      "4": {
+        "intelligence": 25,
+        "vitalite": 25,
+        "agilite": 15,
+        "sagesse": 5
+      },
+      "5": {
+        "intelligence": 30,
+        "vitalite": 30,
+        "agilite": 20,
+        "sagesse": 10
+      },
+      "6": {
+        "intelligence": 35,
+        "vitalite": 35,
+        "agilite": 25,
+        "sagesse": 15,
+        "pm": 1
+      },
+      "7": {
+        "intelligence": 45,
+        "vitalite": 45,
+        "agilite": 30,
+        "sagesse": 20,
+        "pm": 1,
+        "pa": 1
+      },
+      "8": {
+        "intelligence": 55,
+        "vitalite": 55,
+        "agilite": 35,
+        "sagesse": 25
+      },
+      "9": {
+        "pm": 1,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Kwak Glace",
+    "items": [
+      "Kwakoiffe de Glace",
+      "Kwape de Glace",
+      "Kwakanneau de Glace",
+      "Kwakture de Glace",
+      "Amukwak de Glace",
+      "Kwakobottes de Glace",
+      "Kwaklame de Glace",
+      "Bwak d'eau"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 15,
+        "vitalite": 15
+      },
+      "3": {
+        "chance": 20,
+        "vitalite": 20,
+        "intelligence": 10
+      },
+      "4": {
+        "chance": 25,
+        "vitalite": 25,
+        "intelligence": 15,
+        "sagesse": 5
+      },
+      "5": {
+        "chance": 30,
+        "vitalite": 30,
+        "intelligence": 20,
+        "sagesse": 10
+      },
+      "6": {
+        "chance": 35,
+        "vitalite": 35,
+        "intelligence": 25,
+        "sagesse": 15
+      },
+      "7": {
+        "chance": 45,
+        "vitalite": 45,
+        "intelligence": 30,
+        "sagesse": 20,
+        "pm": 1,
+        "pa": 1
+      },
+      "8": {
+        "chance": 55,
+        "vitalite": 55,
+        "intelligence": 35,
+        "sagesse": 25,
+        "pm": 1,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Fourbasse",
+    "items": [
+      "Fourballiance",
+      "Ceinture Fourbuissante",
+      "Fourbabottes",
+      "Fourbamulette",
+      "Fourbacoiffe",
+      "Fourbacapa",
+      "Fourbasse-Ton"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 30
+      },
+      "5": {
+        "vitalite": 40
+      },
+      "6": {
+        "vitalite": 50,
+        "pm": 1
+      },
+      "7": {
+        "vitalite": 60,
+        "pm": 1,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Prespic",
+    "items": [
+      "Anneau du Prespic",
+      "Ceinture du Prespic",
+      "Cape du Prespic",
+      "Coiffe du Prespic"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "sagesse": 15
+      },
+      "4": {
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Larvesque",
+    "items": [
+      "Larvabottes",
+      "Larvamulette",
+      "Larvacoiffe",
+      "Larvasac",
+      "Baguette Larvesque"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20,
+        "intelligence": 10
+      },
+      "3": {
+        "vitalite": 40,
+        "intelligence": 20
+      },
+      "4": {
+        "vitalite": 60,
+        "intelligence": 40
+      },
+      "5": {
+        "vitalite": 80,
+        "intelligence": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Akwadala",
+    "items": [
+      "Chapeau Akwadala",
+      "Cape Akwadala",
+      "Bouclier Akwadala",
+      "Geta Akwadala",
+      "Alliance Akwadala",
+      "Amulette Akwadala",
+      "Ceinture Akwadala",
+      "Bâton Akwadala"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 5,
+        "chance": 5
+      },
+      "3": {
+        "vitalite": 10,
+        "chance": 10
+      },
+      "4": {
+        "vitalite": 20,
+        "chance": 15
+      },
+      "5": {
+        "chance": 20
+      },
+      "6": {
+        "vitalite": 60,
+        "chance": 30,
+        "prospection": 10
+      },
+      "7": {
+        "vitalite": 80,
+        "chance": 40,
+        "prospection": 20,
+        "sagesse": 20,
+        "pa": 1
+      },
+      "8": {
+        "vitalite": 100,
+        "chance": 60,
+        "prospection": 30,
+        "sagesse": 30,
+        "pa": 1,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Kwak Terre",
+    "items": [
+      "Kwakoiffe de Terre",
+      "Kwape de Terre",
+      "Kwakanneau de Terre",
+      "Kwakture de Terre",
+      "Amukwak de Terre",
+      "Kwakobottes de Terre",
+      "Kwaklame de Terre",
+      "Bwak de Terre"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 15,
+        "vitalite": 15
+      },
+      "3": {
+        "force": 20,
+        "chance": 10
+      },
+      "4": {
+        "force": 25,
+        "vitalite": 25,
+        "chance": 15,
+        "sagesse": 5
+      },
+      "5": {
+        "force": 30,
+        "vitalite": 30,
+        "chance": 20,
+        "sagesse": 10
+      },
+      "6": {
+        "force": 35,
+        "vitalite": 35,
+        "chance": 25,
+        "sagesse": 15,
+        "pm": 1
+      },
+      "7": {
+        "force": 45,
+        "vitalite": 45,
+        "chance": 30,
+        "sagesse": 20,
+        "pm": 1,
+        "pa": 1
+      },
+      "8": {
+        "force": 55,
+        "vitalite": 55,
+        "chance": 30,
+        "sagesse": 25,
+        "pm": 1
+      },
+      "9": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Citronoplie",
+    "items": [
+      "Borsitrono",
+      "Cape Grume",
+      "Anneau Zest",
+      "Pailleton"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10,
+        "intelligence": 10
+      },
+      "3": {
+        "chance": 20,
+        "intelligence": 20
+      },
+      "4": {
+        "chance": 30,
+        "intelligence": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Bois de l'Est",
+    "items": [
+      "Chapeau du Bois de l'Est",
+      "Cape du Bois de l'Est",
+      "Ceinture du Bois de l'Est",
+      "Bottes du Bois de l'Est"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10,
+        "agilite": 10
+      },
+      "3": {
+        "vitalite": 20,
+        "agilite": 20
+      },
+      "4": {
+        "vitalite": 30,
+        "agilite": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie de Peggy la Porkass",
+    "items": [
+      "Cochobits",
+      "Cape Bouchon",
+      "Jambanneau",
+      "Ceinture Lardière"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 30,
+        "sagesse": 10
+      }
+    }
+  },
+  {
+    "name": "Panoplie Ananas",
+    "items": [
+      "Maskananas",
+      "Capananas",
+      "Bottananas"
+    ],
+    "bonuses": {
+      "2": {
+        "prospection": 10
+      },
+      "3": {
+        "prospection": 20
+      }
+    }
+  },
+  {
+    "name": "Pompanoplie",
+    "items": [
+      "Pompocoiffe",
+      "Pompocape",
+      "Pompamulette",
+      "Pompanneau"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Bzz",
+    "items": [
+      "Caskabeille",
+      "Cape Kifébzz",
+      "Pantoufrelons",
+      "masse O'Dard"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie de l'Empire",
+    "items": [
+      "Caskotar",
+      "Sac de Bouba le Prophète",
+      "Anneau de la Mort",
+      "Sabroh"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10,
+        "force": 10
+      },
+      "3": {
+        "vitalite": 20,
+        "force": 20
+      },
+      "4": {
+        "vitalite": 30,
+        "force": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Osamodas",
+    "items": [
+      "Capuche Apin",
+      "Cape Lyne",
+      "Bottes Swana",
+      "Ceinture Bodiézèle",
+      "Bague Héra"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Crâ",
+    "items": [
+      "Coiffe de Robbie Capuche",
+      "Cape Hulco",
+      "Bottes Deuradi",
+      "Sangle Cible",
+      "Anneau Bhli"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Ecaflip",
+    "items": [
+      "Chapeau Leufère",
+      "Cape Aillé",
+      "Charentaises à Poils",
+      "Ceinture Buhlent",
+      "Bague Houx"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Pandawa",
+    "items": [
+      "Chapeau Lithique",
+      "Cape Wéra",
+      "Getas Bernacle",
+      "Sangle Huée",
+      "Anneau Raille"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Enutrof",
+    "items": [
+      "Chapeau Taufeu",
+      "Cape Haharnum",
+      "Chaussures Lepont Davignon",
+      "Ceinture Gessant",
+      "Anneau Stalgik"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Sacrieur",
+    "items": [
+      "Bonnet Spairance",
+      "Cape Ytale",
+      "Tong Aclou",
+      "Sangle Hans",
+      "Anneau Pitale"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Eniripsa",
+    "items": [
+      "Coiffe Fère",
+      "Cape Sulhit",
+      "Bottes Ulsime",
+      "Sangle Holon",
+      "Anneau Zamour"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Sram",
+    "items": [
+      "Chapeau Grave",
+      "Cape Routh",
+      "Bottes Hox",
+      "Sangle Glinglin",
+      "Anneau Hell"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Sadida",
+    "items": [
+      "Chapeau Tyron",
+      "Cape Hitton",
+      "Bottes Hanik",
+      "Ceinture Luthe",
+      "Anneau Pwal"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Feca",
+    "items": [
+      "Bonnet Toual",
+      "Cape Hadosse",
+      "Bottes Antouche",
+      "Gaine Hage",
+      "Anneau Tassion"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Xelor",
+    "items": [
+      "Bonnet Nufar",
+      "Cape Huchon",
+      "Botte Hairo",
+      "Ceinture Lupine",
+      "Anneau Tilus"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Classe Iop",
+    "items": [
+      "Casque Keutumedi",
+      "Cape Aurale",
+      "Bottes Antrin",
+      "Sangle Hynère",
+      "Bague Harre"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 20,
+        "intelligence": 20,
+        "agilite": 20,
+        "chance": 20,
+        "sagesse": 20
+      },
+      "3": {
+        "vitalite": 100,
+        "prospection": 10
+      },
+      "4": {
+        "force": 40,
+        "intelligence": 40,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 40
+      },
+      "5": {
+        "vitalite": 200,
+        "prospection": 20
+      },
+      "6": {
+        "force": 70,
+        "intelligence": 70,
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 70
+      },
+      "7": {
+        "vitalite": 500,
+        "prospection": 30
+      },
+      "8": {},
+      "9": {
+        "force": 100,
+        "intelligence": 100,
+        "agilite": 100,
+        "chance": 100,
+        "sagesse": 100
+      },
+      "10": {
+        "vitalite": 800,
+        "prospection": 40
+      },
+      "11": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Ventouse",
+    "items": [
+      "Anolamour",
+      "Kralano",
+      "Kralamansion"
+    ],
+    "bonuses": {
+      "2": {
+        "sagesse": 20
+      },
+      "3": {
+        "pa": 1,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplignon",
+    "items": [
+      "Chapignon",
+      "Anneau Colerette",
+      "Caprin",
+      "Couteaux à Champignon"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10
+      },
+      "3": {
+        "agilite": 20,
+        "sagesse": 10
+      },
+      "4": {
+        "pa": 1,
+        "agilite": 40
+      },
+      "5": {
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Bworker Gladiateur",
+    "items": [
+      "Casque Harnage",
+      "Bottes Répané",
+      "Ceinture Toré",
+      "Anneau Bliteré"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 15,
+        "agilite": 15
+      },
+      "3": {
+        "force": 30,
+        "agilite": 30
+      },
+      "4": {
+        "pa": 1,
+        "force": 50,
+        "agilite": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Tue-Mouche",
+    "items": [
+      "Alliance Boletée",
+      "Amunite",
+      "Capignon",
+      "String Tue-Mouche"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 20,
+        "sagesse": 5
+      },
+      "3": {
+        "intelligence": 30,
+        "sagesse": 10
+      },
+      "4": {
+        "pa": 1,
+        "intelligence": 40,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Souveraine",
+    "items": [
+      "Capuche Souveraine du Roissingue",
+      "Cape Souverraine du Roissingue",
+      "Sceau Souverain du Roissingue"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 30,
+        "sagesse": 10,
+        "prospection": 5
+      },
+      "3": {
+        "vitalite": 60,
+        "sagesse": 20,
+        "prospection": 10
+      }
+    }
+  },
+  {
+    "name": "Panoplie Sous Bois",
+    "items": [
+      "Bottines des Sous Bois",
+      "Tranche des Sous Bois",
+      "Hache à Lamelles"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 15
+      },
+      "3": {
+        "chance": 30,
+        "prospection": 15
+      }
+    }
+  },
+  {
+    "name": "Panoplie Panoplycelium",
+    "items": [
+      "Chaussons Pignons",
+      "Ceinture Myconsine",
+      "Anneau Chevelu"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10
+      },
+      "3": {
+        "force": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Bworker Berserker",
+    "items": [
+      "Cape Erforée",
+      "Amulette Ripage",
+      "Bracelet Ventré",
+      "Lame Assacre"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 15,
+        "chance": 15
+      },
+      "3": {
+        "intelligence": 30,
+        "chance": 30
+      },
+      "4": {
+        "pm": 1,
+        "intelligence": 50,
+        "chance": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Chene Mou",
+    "items": [
+      "Cape Usées du Chene Mou",
+      "Coiffe du Chene Mou",
+      "Anneau du Chene Mou",
+      "Talisman du Chene Mou",
+      "Tongues du Dimanche du Chene Mou",
+      "String Automnal du Chêne Mou"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 40
+      },
+      "4": {
+        "vitalite": 60,
+        "sagesse": 10
+      },
+      "5": {
+        "vitalite": 80,
+        "sagesse": 20
+      },
+      "6": {
+        "vitalite": 100,
+        "sagesse": 30,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Minotot",
+    "items": [
+      "Cape du Minotot",
+      "Coiffe du Minotot",
+      "Anneau du Minotot",
+      "Collier du Minotot",
+      "Ceinture du Minotot",
+      "Sandales du Minotot",
+      "Spectre du Minotot"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10,
+        "intelligence": 10
+      },
+      "3": {
+        "chance": 20,
+        "intelligence": 20
+      },
+      "4": {
+        "chance": 30,
+        "intelligence": 30
+      },
+      "5": {
+        "chance": 40,
+        "intelligence": 40,
+        "sagesse": 10
+      },
+      "6": {
+        "chance": 50,
+        "intelligence": 50,
+        "sagesse": 20
+      },
+      "7": {
+        "chance": 60,
+        "intelligence": 60,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Zothuliste",
+    "items": [
+      "Coiffe du Maitre Zoth",
+      "Baton du Maitre Zoth"
+    ],
+    "bonuses": {}
+  },
+  {
+    "name": "Panoplie Ougah",
+    "items": [
+      "Ougalurette",
+      "Ougature",
+      "Ougamulette",
+      "Ougarteau"
+    ],
+    "bonuses": {
+      "2": {
+        "prospection": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "prospection": 20,
+        "sagesse": 20
+      },
+      "4": {
+        "prospection": 30,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Zothicien",
+    "items": [
+      "Casque du Guerrier Zoth",
+      "Hache du Guerrier Zoth"
+    ],
+    "bonuses": {
+      "2": {}
+    }
+  },
+  {
+    "name": "Panoplie Meulou",
+    "items": [
+      "Coiffe du Meulou",
+      "Cape du Meulou",
+      "Bottes du Meulou",
+      "Anneau du Meulou",
+      "La Meulette",
+      "Ceinture du Meulou"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 40
+      },
+      "4": {
+        "vitalite": 60
+      },
+      "5": {
+        "vitalite": 80
+      },
+      "6": {
+        "pa": 1,
+        "vitalite": 100
+      }
+    }
+  },
+  {
+    "name": "Panoplie Claire",
+    "items": [
+      "Masque de l'Abrakleur Clair",
+      "Bottes de l'Abrakleur Claire",
+      "Ceinture Claire en Abrakleur",
+      "Branche de l'Abrakleur Claire"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 30
+      },
+      "3": {
+        "vitalite": 50
+      },
+      "4": {
+        "vitalite": 80,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Abra Ancestral",
+    "items": [
+      "Abracapa Ancestrale",
+      "Abracaska Ancestral",
+      "Anneau Ancestral",
+      "Torque Ancestral",
+      "Protège-Tibias Ancestraux",
+      "Abrature Ancestral"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {},
+      "6": {}
+    }
+  },
+  {
+    "name": "Panoplie Dragoeuf",
+    "items": [
+      "Cape du Dragoeuf",
+      "Casque Dragoeuf",
+      "Anneau du Dragoeuf",
+      "Amulette du Dragoeuf",
+      "Bottes du Dragoeuf",
+      "Ceinture du Dragoeuf"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 5,
+        "agilite": 5,
+        "intelligence": 5,
+        "chance": 5
+      },
+      "3": {},
+      "4": {
+        "force": 20,
+        "agilite": 20,
+        "intelligence": 20,
+        "chance": 20
+      },
+      "5": {},
+      "6": {
+        "force": 30,
+        "agilite": 30,
+        "intelligence": 30,
+        "chance": 30
+      },
+      "7": {
+        "sagesse": 10
+      },
+      "8": {
+        "force": 40,
+        "agilite": 40,
+        "intelligence": 40,
+        "chance": 40
+      },
+      "9": {
+        "sagesse": 20
+      },
+      "10": {
+        "pm": 1,
+        "force": 50,
+        "agilite": 50,
+        "intelligence": 50,
+        "chance": 50
+      },
+      "11": {
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Baveuse",
+    "items": [
+      "Kaskargo",
+      "Anneau Skargo",
+      "Kask'Arc Go"
+    ],
+    "bonuses": {}
+  },
+  {
+    "name": "Panoplie Zoth Zotheur",
+    "items": [
+      "Chapeau de la Gamine Zoth",
+      "Marteau de la Gamine Zoth"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 80
+      }
+    }
+  },
+  {
+    "name": "Panoplie Céremoniale",
+    "items": [
+      "Cape Ceremoniale du Seigneur des Rats",
+      "Masque Ceremonial du Seigneur des Rats",
+      "Anneau Cérémonial du Seigneur des Rats",
+      "Bottes Cérémoniales du Seigneur des Rats",
+      "Collier Cérémonial du Seigneur des Rats",
+      "Ceinture Cérémoniale du Seigneur des Rats"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 40,
+        "intelligence": 10,
+        "agilite": 10
+      },
+      "4": {
+        "vitalite": 60,
+        "intelligence": 20,
+        "agilite": 20
+      },
+      "5": {
+        "vitalite": 80,
+        "intelligence": 35,
+        "agilite": 35,
+        "sagesse": 10
+      },
+      "6": {
+        "pm": 1,
+        "vitalite": 100,
+        "intelligence": 50,
+        "agilite": 50,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie d'Elya Wood",
+    "items": [
+      "Cape d'Elya Wood",
+      "Alliance d'Elya Wood",
+      "Talisman d'Elya Wood",
+      "Baguette d'Elya Wood"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 60
+      },
+      "3": {
+        "vitalite": 100,
+        "intelligence": 40
+      },
+      "4": {
+        "vitalite": 150,
+        "intelligence": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Minotoror",
+    "items": [
+      "Cape du Minotoror",
+      "Minotokorno",
+      "Anneau du Minotoror",
+      "Collier du Minotoror",
+      "Ceinture du minotoror",
+      "Bottes du Minotoror",
+      "Hache du Minotoror"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 40
+      },
+      "4": {
+        "vitalite": 60
+      },
+      "5": {
+        "vitalite": 100
+      },
+      "6": {
+        "vitalite": 150,
+        "sagesse": 10
+      },
+      "7": {
+        "pa": 1,
+        "vitalite": 200,
+        "sagesse": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Rat Blanc",
+    "items": [
+      "Cape du Rat Blanc",
+      "Coiffe du Rat Blanc",
+      "Gantelet du Rat Blanc",
+      "Collier du Rat Blanc",
+      "Ceinture du Rat Blanc",
+      "Bottes du Rat Blanc",
+      "Epée du Rat Blanc"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 15,
+        "force": 10,
+        "agilite": 10
+      },
+      "4": {
+        "vitalite": 20,
+        "force": 15,
+        "agilite": 15
+      },
+      "5": {
+        "vitalite": 30,
+        "force": 20,
+        "agilite": 20
+      },
+      "6": {
+        "vitalite": 40,
+        "force": 30,
+        "agilite": 30
+      },
+      "7": {
+        "pa": 1,
+        "vitalite": 50,
+        "force": 40,
+        "agilite": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Feudala",
+    "items": [
+      "Chapeau Feudala",
+      "Cape Feudala",
+      "Bouclier Feudala",
+      "Geta Feudala",
+      "Alliance Feudala",
+      "Amulette Feudala",
+      "Ceinture Feudala",
+      "Sabre Feudala"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 30
+      },
+      "5": {
+        "vitalite": 40
+      },
+      "6": {
+        "vitalite": 50,
+        "intelligence": 20,
+        "sagesse": 10
+      },
+      "7": {
+        "vitalite": 60,
+        "intelligence": 40,
+        "sagesse": 20
+      },
+      "8": {
+        "vitalite": 80,
+        "intelligence": 80,
+        "sagesse": 40,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Chef Bwork",
+    "items": [
+      "Slip du Chef Bwork",
+      "Amulette du Chef Bwork",
+      "Cape du Chef Bwork",
+      "Bottes du Chef Bwork",
+      "Casque du Chef Bwork",
+      "Bracelet du Chef Bwork",
+      "Lame du Chef Bwork"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 40,
+        "force": 20
+      },
+      "5": {
+        "vitalite": 400,
+        "force": 40,
+        "agilite": 20
+      },
+      "6": {
+        "vitalite": 80,
+        "force": 60,
+        "agilite": 40,
+        "sagesse": 10
+      },
+      "7": {
+        "vitalite": 100,
+        "force": 80,
+        "agilite": 60,
+        "sagesse": 20,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "panoplie Vassale",
+    "items": [
+      "Cape de la Ouassingue",
+      "Capuche de la Ouassingue",
+      "Bottes Horchons",
+      "Ouassulette"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 5,
+        "agilite": 5
+      },
+      "3": {
+        "intelligence": 10,
+        "agilite": 10,
+        "sagesse": 10
+      },
+      "4": {
+        "intelligence": 20,
+        "agilite": 20,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Dragon Cochon",
+    "items": [
+      "Cape du Dragon Cochon",
+      "Coiffe du Dragon Cochon",
+      "Anneau du Dragon Cochon",
+      "Collier du Dragon Cochon",
+      "Mules du Dragon Cochon",
+      "Ceinture Dracochoune"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 30,
+        "sagesse": 10
+      },
+      "3": {
+        "vitalite": 40,
+        "sagesse": 20,
+        "agilite": 10,
+        "chance": 10
+      },
+      "4": {
+        "vitalite": 40,
+        "sagesse": 20,
+        "agilite": 10,
+        "chance": 10
+      },
+      "5": {
+        "vitalite": 50,
+        "sagesse": 30,
+        "agilite": 20,
+        "chance": 20,
+        "prospection": 10
+      },
+      "6": {
+        "vitalite": 60,
+        "sagesse": 40,
+        "agilite": 30,
+        "chance": 30,
+        "prospection": 15
+      },
+      "7": {
+        "pm": 1,
+        "vitalite": 120,
+        "sagesse": 60,
+        "agilite": 50,
+        "chance": 50,
+        "prospection": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Rat Noir",
+    "items": [
+      "Cape du Rat Noir",
+      "Masque du Rat Noir",
+      "Anneau du Rat Noir",
+      "Collier du Rat Noir",
+      "Ceinture du Rat Noir",
+      "Bottes du Rat Noir",
+      "Dague du Rat Noir"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10,
+        "agilite": 5
+      },
+      "3": {
+        "vitalite": 20,
+        "agilite": 10
+      },
+      "4": {
+        "vitalite": 30,
+        "agilite": 20
+      },
+      "5": {
+        "vitalite": 50,
+        "agilite": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Sombre",
+    "items": [
+      "Masque de l'Abrakleur Sombre",
+      "Ceinture Sombre en Abrakleur",
+      "Branche de l'Abrakleur Sombre"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Multicolore Royale",
+    "items": [
+      "Amublop Multicolore Royale",
+      "Blopanneau Multicolore Royal",
+      "Blopture Multicolore Royale",
+      "Bloptes Multicolores Royales"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Craq Légendaire",
+    "items": [
+      "Craquelocape Légendaire",
+      "Anneau du Craqueuleur Légendaire",
+      "Bottes du Craqueleur Légendaire",
+      "Amulette du Craqueuleur Légendaire",
+      "Ceinture du Craqueleur",
+      "Casque du Craqueleur Légendaire",
+      "Marteau du Craqueleur"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10
+      },
+      "3": {},
+      "4": {},
+      "5": {
+        "sagesse": 10
+      },
+      "6": {
+        "sagesse": 20
+      },
+      "7": {
+        "sagesse": 30,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Terrdala",
+    "items": [
+      "Chapeau Terrdala",
+      "Cape Terrdala",
+      "Bouclier Terrdala",
+      "Geta Terrdala",
+      "Alliance Terrdala",
+      "Amulette Terrdala",
+      "Ceinture Terrdala",
+      "Hache Terrdala"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10
+      },
+      "3": {
+        "vitalite": 20
+      },
+      "4": {
+        "vitalite": 40,
+        "force": 10
+      },
+      "5": {
+        "vitalite": 60,
+        "force": 20
+      },
+      "6": {
+        "vitalite": 100,
+        "force": 40
+      },
+      "7": {
+        "vitalite": 150,
+        "force": 60
+      },
+      "8": {
+        "vitalite": 250,
+        "force": 80,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Griotte Royale",
+    "items": [
+      "Blopanneau Griotte Royal",
+      "Amublop Griotte Royale",
+      "Blopture Griotte Royale",
+      "Bloptes Griotte Royales"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "intelligence": 20,
+        "sagesse": 20
+      },
+      "4": {
+        "intelligence": 30,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Indigo Royale",
+    "items": [
+      "Blopanneau Indigo Royal",
+      "Amublop Indigo Royale",
+      "Blopture Indigo Royale",
+      "Bloptes Indigo Royales"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "chance": 20,
+        "sagesse": 20
+      },
+      "4": {
+        "chance": 30,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Koulosse",
+    "items": [
+      "Bottes du Koulosse",
+      "Sac du Koulosse",
+      "Coiffe du Koulousse",
+      "Baton du Koulosse"
+    ],
+    "bonuses": {
+      "2": {
+        "sagesse": 20
+      },
+      "3": {
+        "sagesse": 40
+      },
+      "4": {
+        "sagesse": 60,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Coco Royale",
+    "items": [
+      "Blopanneau Coco Royal",
+      "Amublop Coco Royale",
+      "Blopture Coco Royale",
+      "Bloptes Coco Royales"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "agilite": 20,
+        "sagesse": 20
+      },
+      "4": {
+        "agilite": 30,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Reinette Royale",
+    "items": [
+      "Blopanneau Reinette Royal",
+      "Amublop Reinette Royale",
+      "Blopture Reinette Royale",
+      "Bloptes Reinette Royales"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10,
+        "sagesse": 10
+      },
+      "3": {
+        "force": 20,
+        "sagesse": 20
+      },
+      "4": {
+        "force": 30,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie de Farle",
+    "items": [
+      "Epis de Farle",
+      "Bracelet de Farle",
+      "Sabot de Farle",
+      "Farlature",
+      "Farlacoiffe",
+      "Cape de Farle",
+      "Bâton de Farle"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10,
+        "vitalite": 10
+      },
+      "3": {
+        "force": 20,
+        "vitalite": 20,
+        "agilite": 10
+      },
+      "4": {
+        "force": 30,
+        "vitalite": 30,
+        "agilite": 20
+      },
+      "5": {
+        "force": 40,
+        "vitalite": 40,
+        "agilite": 30
+      },
+      "6": {},
+      "7": {
+        "force": 50,
+        "vitalite": 50,
+        "agilite": 40,
+        "sagesse": 20
+      },
+      "8": {},
+      "9": {
+        "force": 60,
+        "vitalite": 60,
+        "agilite": 50,
+        "sagesse": 30
+      },
+      "10": {
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie O'Boule",
+    "items": [
+      "Crystal O'boul",
+      "Cape du Désir O'Boul",
+      "La Doubitch O'boul",
+      "Kryst O'Boul"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20,
+        "intelligence": 10,
+        "sagesse": 5
+      },
+      "3": {
+        "vitalite": 40,
+        "intelligence": 20,
+        "sagesse": 10
+      },
+      "4": {
+        "vitalite": 80,
+        "intelligence": 40,
+        "sagesse": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Chef Croco",
+    "items": [
+      "Amulettes du Chef Crocodaille",
+      "Pantoufles Crochues du Chef Crocodaille",
+      "Coiffe du Chef Crocodaille",
+      "Petit Sac d'Ecolier du Chef Crocodaille",
+      "Bracelet du Chef Crocodaille",
+      "Ceinture du Chef Crocodaille",
+      "Lame du chef crocodaille"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 15,
+        "agilite": 15
+      },
+      "3": {
+        "vitalite": 20,
+        "agilite": 20,
+        "chance": 20
+      },
+      "4": {
+        "vitalite": 30,
+        "agilite": 25,
+        "chance": 25
+      },
+      "5": {
+        "vitalite": 40,
+        "agilite": 30,
+        "chance": 30
+      },
+      "6": {
+        "vitalite": 50,
+        "agilite": 35,
+        "chance": 35
+      },
+      "7": {},
+      "8": {
+        "pa": 1,
+        "vitalite": 60,
+        "agilite": 40,
+        "chance": 40,
+        "sagesse": 20
+      },
+      "9": {}
+    }
+  },
+  {
+    "name": "Panoplie de Shika",
+    "items": [
+      "Cape de Shika",
+      "Shikacoiffe",
+      "Bracelet Magique de Shika",
+      "Sabot de Shika",
+      "Epis de Shika",
+      "Shikature",
+      "Baton de Shika"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10,
+        "intelligence": 10
+      },
+      "3": {
+        "vitalite": 20,
+        "intelligence": 20,
+        "chance": 10
+      },
+      "4": {
+        "vitalite": 30,
+        "intelligence": 30,
+        "chance": 20
+      },
+      "5": {
+        "vitalite": 40,
+        "intelligence": 40,
+        "chance": 30
+      },
+      "6": {},
+      "7": {
+        "vitalite": 50,
+        "intelligence": 50,
+        "chance": 40
+      },
+      "8": {
+        "sagesse": 20
+      },
+      "9": {
+        "vitalite": 60,
+        "intelligence": 60,
+        "chance": 50
+      },
+      "10": {
+        "sagesse": 30,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Aerdala",
+    "items": [
+      "Chapeau Aerdala",
+      "Cape Aerdala",
+      "Bouclier Aerdala",
+      "Geta Aerdala",
+      "Alliance Aerdala",
+      "Amulette Aerdala",
+      "Ceinture Aerdala",
+      "Dagues Aerdala"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10,
+        "vitalite": 10
+      },
+      "3": {
+        "agilite": 20,
+        "vitalite": 20
+      },
+      "4": {
+        "agilite": 30,
+        "vitalite": 30
+      },
+      "5": {
+        "agilite": 40,
+        "vitalite": 40
+      },
+      "6": {
+        "agilite": 50,
+        "vitalite": 50,
+        "sagesse": 5
+      },
+      "7": {
+        "agilite": 60,
+        "vitalite": 60,
+        "sagesse": 15
+      },
+      "8": {
+        "agilite": 80,
+        "sagesse": 30,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Bouftou Royal",
+    "items": [
+      "Boufbottes Royales",
+      "Ceinture Royale du Bouftou",
+      "Boufcoiffe Royale",
+      "Cape Bouffante Royale",
+      "Anneau Royal du Bouftou",
+      "Amulette Royale du Bouftou",
+      "Epée Royale du Bouftou"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 30
+      },
+      "4": {
+        "vitalite": 40,
+        "force": 40
+      },
+      "5": {
+        "vitalite": 50,
+        "force": 50
+      },
+      "6": {
+        "vitalite": 60,
+        "force": 60,
+        "intelligence": 60
+      },
+      "7": {
+        "vitalite": 70,
+        "force": 70,
+        "intelligence": 70,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Mulou",
+    "items": [
+      "Cape du Mulou",
+      "Coiffe du Mulou",
+      "Anneau du Mulou",
+      "Bottines du Mulou",
+      "Amuloumulette",
+      "String du Mulou",
+      "Hache du Mulou"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10,
+        "vitalite": 10
+      },
+      "3": {
+        "force": 20,
+        "vitalite": 20
+      },
+      "4": {
+        "force": 30,
+        "vitalite": 30,
+        "prospection": 5
+      },
+      "5": {
+        "force": 40,
+        "vitalite": 40,
+        "prospection": 10
+      },
+      "6": {
+        "force": 60,
+        "vitalite": 60,
+        "prospection": 15
+      },
+      "7": {
+        "force": 80,
+        "vitalite": 80,
+        "prospection": 15
+      }
+    }
+  },
+  {
+    "name": "Panoplie Koalak",
+    "items": [
+      "Coiffe du Koalak",
+      "Cape du Koalak",
+      "Bottes du Koalak",
+      "Anneau du Koalak",
+      "Amulette du Koalak",
+      "Ceinture du Koalak",
+      "Arc du Koalak",
+      "Koalak Sanguin"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 20
+      },
+      "3": {
+        "agilite": 30,
+        "sagesse": 5
+      },
+      "4": {
+        "agilite": 40,
+        "sagesse": 10
+      },
+      "5": {
+        "agilite": 60,
+        "sagesse": 15
+      },
+      "6": {
+        "agilite": 80,
+        "sagesse": 20
+      },
+      "7": {
+        "agilite": 100,
+        "sagesse": 30,
+        "vitalite": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Kitsou",
+    "items": [
+      "Anneau du Kitsou",
+      "Amulette du kitsou",
+      "Coiffe du kitsou",
+      "Cape du kitsou"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 40
+      },
+      "3": {
+        "vitalite": 40,
+        "sagesse": 10
+      },
+      "4": {
+        "pa": 1,
+        "vitalite": 80,
+        "sagesse": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Tortue",
+    "items": [
+      "Caracoiffe",
+      "Carabottes",
+      "Caracape",
+      "Atouin"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 50,
+        "prospection": 10
+      },
+      "3": {
+        "chance": 70,
+        "prospection": 20
+      },
+      "4": {
+        "chance": 80,
+        "prospection": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Vegatatif",
+    "items": [
+      "Végacoiffe",
+      "Vegacape",
+      "Vegamu"
+    ],
+    "bonuses": {
+      "2": {
+        "prospection": 15
+      },
+      "3": {
+        "pa": 1,
+        "prospection": 15
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Dorée",
+    "items": [
+      "Scaracapes Dorée",
+      "Scaracoiffe Dorée",
+      "Anneau du Scarabosse Doré",
+      "Scarabottes Dorées",
+      "Amulette du Scarabosse Doré",
+      "Scarature Dorée",
+      "Baguette du Scarabosse Doré"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 20
+      },
+      "3": {
+        "vitalite": 30
+      },
+      "4": {
+        "vitalite": 40
+      },
+      "5": {
+        "vitalite": 50,
+        "sagesse": 20
+      },
+      "6": {
+        "vitalite": 60,
+        "sagesse": 40
+      },
+      "7": {
+        "vitalite": 80,
+        "sagesse": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Gelax",
+    "items": [
+      "Gelocape",
+      "Gelocoiffe",
+      "Gelano",
+      "Gelobottes",
+      "Gelamu",
+      "Geloture"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 20
+      },
+      "3": {
+        "intelligence": 30
+      },
+      "4": {
+        "intelligence": 40,
+        "prospection": 10
+      },
+      "5": {
+        "intelligence": 40,
+        "prospection": 20
+      },
+      "6": {
+        "intelligence": 50,
+        "prospection": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie Wabbit",
+    "items": [
+      "Sac-Cawotte",
+      "Tongues Wabbits",
+      "Amulette \"Dents de Wabbits\"",
+      "Slip Kangouwou du Wabbit GM",
+      "Oreilles de Wabbits",
+      "Bâton du wobot"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {},
+      "4": {
+        "prospection": 10
+      },
+      "5": {
+        "prospection": 10,
+        "pm": 1
+      },
+      "6": {
+        "prospection": 10,
+        "pm": 1
+      },
+      "7": {
+        "prospection": 16,
+        "pm": 2
+      }
+    }
+  },
+  {
+    "name": "Panoplie Craqueleur",
+    "items": [
+      "Craquelocape",
+      "Bottes du Craqueleur",
+      "Craquamulette",
+      "Ceinture du Craqueleur",
+      "Casque du Craqueleur",
+      "Lame du Craqueleur"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10
+      },
+      "3": {
+        "force": 20
+      },
+      "4": {
+        "force": 30
+      },
+      "5": {},
+      "6": {
+        "force": 40
+      },
+      "7": {},
+      "8": {
+        "force": 50
+      },
+      "9": {}
+    }
+  },
+  {
+    "name": "Panoplie Dindo",
+    "items": [
+      "Chapodindo",
+      "Capodindo",
+      "Anodindo",
+      "Botodindo"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 40,
+        "vitalite": 40
+      },
+      "3": {
+        "agilite": 50,
+        "vitalite": 50,
+        "prospection": 20
+      },
+      "4": {
+        "agilite": 60,
+        "vitalite": 60,
+        "prospection": 20,
+        "pm": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Boufcool",
+    "items": [
+      "Coiffe du Boufcoul",
+      "Cape du Boufcoul",
+      "Bottes du Boufcoul",
+      "Anneau du Boufcoul",
+      "Amulette du Boufcoul",
+      "Ceinture du Boufcoul",
+      "Marteau du Boufcoul"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 5,
+        "chance": 5
+      },
+      "3": {
+        "agilite": 10,
+        "chance": 10
+      },
+      "4": {
+        "agilite": 20,
+        "chance": 20
+      },
+      "5": {
+        "agilite": 30,
+        "chance": 30
+      },
+      "6": {
+        "agilite": 40,
+        "chance": 40
+      },
+      "7": {
+        "agilite": 70,
+        "chance": 70,
+        "sagesse": 30,
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Noire",
+    "items": [
+      "Scaracape Noire",
+      "Scaracoiffe Noire",
+      "Scaranneau Noir",
+      "Scarature Noire"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 25
+      },
+      "3": {
+        "vitalite": 50
+      },
+      "4": {
+        "vitalite": 100
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Coco",
+    "items": [
+      "Blopanneau Coco",
+      "Amublop Coco",
+      "Blopture Coco",
+      "Bloptes Coco"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 10,
+        "agilite": 10
+      },
+      "4": {},
+      "5": {
+        "vitalite": 30,
+        "agilite": 30
+      },
+      "6": {
+        "pa": 1
+      },
+      "7": {
+        "vitalite": 50,
+        "agilite": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Reinette",
+    "items": [
+      "Blopanneau Reinette",
+      "Amublop Reinette",
+      "Blopture Reinette",
+      "Bloptes Reinette"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 10,
+        "force": 10
+      },
+      "4": {},
+      "5": {
+        "vitalite": 30,
+        "force": 30
+      },
+      "6": {
+        "pa": 1
+      },
+      "7": {
+        "vitalite": 50,
+        "force": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Griotte",
+    "items": [
+      "Blopanneau Griotte",
+      "Amublop Griotte",
+      "Bloptes Griotte",
+      "Blopture Griotte"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 10,
+        "intelligence": 10
+      },
+      "4": {},
+      "5": {
+        "vitalite": 30,
+        "intelligence": 30
+      },
+      "6": {
+        "pa": 1
+      },
+      "7": {
+        "vitalite": 50,
+        "intelligence": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Blop Indigo",
+    "items": [
+      "Blopanneau Indigo",
+      "Amublop Indigo",
+      "Blopture Indigo",
+      "Bloptes Indigo"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "vitalite": 10,
+        "chance": 10
+      },
+      "4": {},
+      "5": {
+        "vitalite": 30,
+        "chance": 30
+      },
+      "6": {
+        "pa": 1
+      },
+      "7": {
+        "vitalite": 50,
+        "chance": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Vioutifule",
+    "items": [
+      "Les Bottes Vioutifoule",
+      "Le Casque Vioutifoule",
+      "La Ceinture Vioutifoule",
+      "La Cape Vioutifoule"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 10
+      },
+      "3": {
+        "vitalite": 40,
+        "intelligence": 40
+      },
+      "4": {
+        "vitalite": 80,
+        "intelligence": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Vert",
+    "items": [
+      "Scaracoiffe Verte",
+      "Scaracape Verte",
+      "Scaranneau Vert",
+      "Scarature Verte"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10
+      },
+      "3": {
+        "force": 40,
+        "vitalite": 40
+      },
+      "4": {
+        "force": 60,
+        "vitalite": 80
+      }
+    }
+  },
+  {
+    "name": "Panoplie Megamane",
+    "items": [
+      "La Mégacape",
+      "La Mégacoiffe",
+      "La Mégature",
+      "Les Mégabottes"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10
+      },
+      "3": {
+        "vitalite": 40,
+        "chance": 40
+      },
+      "4": {
+        "vitalite": 80,
+        "chance": 60
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Rouge",
+    "items": [
+      "Scaracoiffe Rouge",
+      "Scaracape Rouge",
+      "Scaranneau Rouge",
+      "Scarature Rouge"
+    ],
+    "bonuses": {
+      "2": {
+        "intelligence": 10
+      },
+      "3": {
+        "intelligence": 40,
+        "vitalite": 40
+      },
+      "4": {
+        "intelligence": 60,
+        "vitalite": 80
+      }
+    }
+  },
+  {
+    "name": "Panoplie Toady",
+    "items": [
+      "Toady",
+      "Bâton Carnivore"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 50
+      }
+    }
+  },
+  {
+    "name": "Panoplie Abraknyde",
+    "items": [
+      "Abracapa",
+      "Abracaska",
+      "Anobra",
+      "Abrabottes",
+      "L'Araknamu",
+      "Abrature",
+      "Abraton"
+    ],
+    "bonuses": {
+      "2": {
+        "force": 10
+      },
+      "3": {
+        "force": 10
+      },
+      "4": {
+        "force": 20
+      },
+      "5": {
+        "force": 30
+      },
+      "6": {
+        "force": 40
+      },
+      "7": {},
+      "8": {
+        "force": 50
+      },
+      "9": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Bleue",
+    "items": [
+      "Scaracoiffe Bleue",
+      "Scaracape Bleue",
+      "Scaranneau Bleue",
+      "Scarature Bleue"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10
+      },
+      "3": {
+        "chance": 40,
+        "vitalite": 40
+      },
+      "4": {
+        "chance": 60,
+        "vitalite": 80
+      }
+    }
+  },
+  {
+    "name": "Panoplie Scara Blanc",
+    "items": [
+      "Scaracoiffe Blanche",
+      "Scaracape Blanche",
+      "Scaranneau Blanc",
+      "Scarature Blanche"
+    ],
+    "bonuses": {
+      "2": {
+        "agilite": 10
+      },
+      "3": {
+        "agilite": 40,
+        "vitalite": 40
+      },
+      "4": {
+        "agilite": 60,
+        "vitalite": 80
+      }
+    }
+  },
+  {
+    "name": "Panoplie Sanglier",
+    "items": [
+      "Pieds du Sanglier",
+      "Sanglature",
+      "Anneau du Sanglier"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 30
+      },
+      "3": {
+        "vitalite": 40
+      }
+    }
+  },
+  {
+    "name": "Panoplie Tofu",
+    "items": [
+      "Cape du Tofu",
+      "Kaskofu",
+      "Anneau du Tofu",
+      "Pantoufles du Tofu",
+      "Amulette du Tofu",
+      "Ceinture du Tofu",
+      "Baguette du Tofu"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {
+        "agilite": 5,
+        "vitalite": 5
+      },
+      "4": {
+        "agilite": 10,
+        "vitalite": 10
+      },
+      "5": {
+        "agilite": 20,
+        "vitalite": 20
+      },
+      "6": {
+        "agilite": 40,
+        "vitalite": 40,
+        "sagesse": 15
+      },
+      "7": {
+        "agilite": 60,
+        "vitalite": 60,
+        "sagesse": 30
+      }
+    }
+  },
+  {
+    "name": "Panoplie Homme Ours",
+    "items": [
+      "Cape de l'Homme Ours",
+      "Coiffe de l'Homme Ours",
+      "Alliance de l'Homme Ours",
+      "Bottes de l'Homme Ours",
+      "Amulette de l'Homme Ours",
+      "Ceinture de l'Homme Ours",
+      "Bâton de l'Homme Ours"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 5,
+        "agilite": 5
+      },
+      "3": {
+        "vitalite": 10,
+        "agilite": 10
+      },
+      "4": {
+        "vitalite": 15,
+        "agilite": 15
+      },
+      "5": {
+        "vitalite": 20,
+        "agilite": 20
+      },
+      "6": {},
+      "7": {
+        "vitalite": 25,
+        "agilite": 25
+      },
+      "8": {},
+      "9": {
+        "vitalite": 30,
+        "agilite": 30
+      },
+      "10": {
+        "pa": 1
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Wa",
+    "items": [
+      "Cape du Wa Wabbit",
+      "Couronne du Wa Wabbit",
+      "Bâton du Wa Wabbit"
+    ],
+    "bonuses": {
+      "2": {},
+      "3": {}
+    }
+  },
+  {
+    "name": "Panoplie Moskito",
+    "items": [
+      "Moskitogalurette",
+      "Sac du Petit Moskito",
+      "Amulette du Moskito",
+      "Mos Kitano"
+    ],
+    "bonuses": {
+      "2": {
+        "chance": 10,
+        "vitalite": 5
+      },
+      "3": {
+        "chance": 30,
+        "vitalite": 10
+      },
+      "4": {
+        "chance": 40,
+        "vitalite": 20
+      }
+    }
+  },
+  {
+    "name": "Panoplie du Paysan",
+    "items": [
+      "Sac du Paysan",
+      "Bob du Paysan",
+      "Mitaines Mitées du Paysan",
+      "Bottes paysannes",
+      "Amulette du Paysan",
+      "Ceinturemuda du Paysan",
+      "Faux du usée du Paysan"
+    ],
+    "bonuses": {
+      "2": {
+        "vitalite": 10,
+        "chance": 5
+      },
+      "3": {
+        "vitalite": 20,
+        "chance": 10
+      },
+      "4": {
+        "vitalite": 30,
+        "chance": 15
+      },
+      "5": {
+        "vitalite": 40,
+        "chance": 20,
+        "sagesse": 10
+      },
+      "6": {
+        "vitalite": 50,
+        "chance": 25,
+        "sagesse": 20
+      },
+      "7": {
+        "vitalite": 60,
+        "chance": 30,
+        "sagesse": 40
+      }
+    }
+  }
+]

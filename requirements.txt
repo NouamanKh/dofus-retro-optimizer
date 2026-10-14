@@ -1,4 +1,4 @@
 flask
 flask-cors
-pulp
+pulp<4  # 4.x drops PULP_CBC_CMD and the bundled CBC solver
 gunicorn

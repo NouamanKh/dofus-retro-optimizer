@@ -144,6 +144,25 @@ def parse_all_stats(bonuses):
         stats[key] = stats.get(key, 0) + val
     return stats
 
+def decode_set_bonuses(raw_bonus):
+    """Decode raw set tiers into {"pieces": {stat: value}} for the 7 target stats plus PA/PM."""
+    targets = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection', 'pa', 'pm']
+    bonuses = {}
+    for idx, arr in enumerate(raw_bonus):
+        tier = {}
+        for b in arr:
+            r = classify(b.get('type', ''))
+            if r is None or r[0] not in targets:
+                continue
+            try:
+                value = int(b.get('value', 0))
+            except (TypeError, ValueError):
+                value = 0
+            tier[r[0]] = tier.get(r[0], 0) + value
+        if idx > 0:  # bonus[0] is the empty 1-piece slot; keep empty tiers, they replace the previous one
+            bonuses[str(idx + 1)] = tier
+    return bonuses
+
 def build_set_lookup():
     lookup = {}
     for s in raw_sets:
@@ -174,6 +193,7 @@ for category_obj in raw_items:
             'intelligence': all_stats.pop('intelligence', 0),
             'chance':       all_stats.pop('chance', 0),
             'agilite':      all_stats.pop('agilite', 0),
+            'prospection':  all_stats.pop('prospection', 0),
         }
         pa = all_stats.pop('pa', 0)
         pm = all_stats.pop('pm', 0)
@@ -196,23 +216,15 @@ for category_obj in raw_items:
         })
         item_id += 1
 
-# Build stat label map for the frontend
-STAT_LABELS = {}
-for category_obj in raw_items:
-    for item_list in category_obj.values():
-        for item in item_list:
-            for bonus in item.get('bonus', []):
-                result = classify(bonus.get('type', ''))
-                if result:
-                    key, label = result
-                    STAT_LABELS[key] = label
+sets = [
+    {'name': s.get('name', ''), 'items': s.get('items', []), 'bonuses': decode_set_bonuses(s.get('bonus', []))}
+    for s in raw_sets
+]
 
-with open('data/items_retro.js', 'w', encoding='utf-8') as f:
-    f.write(f"const ITEMS_RETRO = {json.dumps(items, indent=2, ensure_ascii=False)};\n")
-    f.write(f"const STAT_LABELS = {json.dumps(STAT_LABELS, indent=2, ensure_ascii=False)};\n")
+with open('data/items_retro.json', 'w', encoding='utf-8') as f:
+    json.dump(items, f, ensure_ascii=False, indent=2)
 
-with open('data/sets_retro.js', 'w', encoding='utf-8') as f:
-    f.write(f"const SETS_RETRO = {json.dumps(raw_sets, indent=2, ensure_ascii=False)};\n")
+with open('data/sets_retro.json', 'w', encoding='utf-8') as f:
+    json.dump(sets, f, ensure_ascii=False, indent=2)
 
-print(f"Converted {len(items)} items")
-print(f"Stat types found: {sorted(STAT_LABELS.keys())}")
+print(f"Converted {len(items)} items, {len(sets)} sets")

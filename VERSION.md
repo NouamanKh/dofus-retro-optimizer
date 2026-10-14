@@ -1,5 +1,18 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.7.0 (2026-10-14)
+- New target: Prospection (score = prospection + Chance ÷ 10, rounded down, from items and set bonuses)
+- Fix set bonus tiers: a 2-piece bonus now applies at 2 pieces and full-set bonuses can activate (were shifted up one piece)
+- Set bonuses now apply exactly as in game (highest tier reached, even when it lowers the score)
+- Set bonus PA/PM now count toward the build's PA/PM
+- PA/PM inputs are now minimums ("PA Min" / "PM Min"); builds may exceed them when it scores better
+- Backend split: catalog.py (data), optimizer.py (MILP + PA/PM budget + totals), server.py (HTTP only)
+- API: POST /api/optimize now takes raw player inputs {element, level, totalPA, totalPM, exoPA, exoPM}; returned totalPA/totalPM are final totals
+- Data: convert_retro_data.py now writes data/items_retro.json + data/sets_retro.json (set bonuses pre-decoded)
+- Added test_optimizer.py (python -m unittest)
+- Pinned pulp<4 (4.x removed the bundled CBC solver)
+- Removed unused optimizers, debug/check scripts and old API data (~1,900 lines)
+
 ## v1.5.3 (2026-04-06)
 - Show all item stats: damages, % damages, resistances (% and flat), steal, crit, heals, range, initiative, prospection, pods, etc.
 - Updated convert_retro_data.py to extract all stat types from raw data (was only extracting 6 elements + PA/PM)

@@ -1,22 +1,15 @@
-const ELEMENT_COLORS = {
-    vitalite: '#E74C3C',
-    sagesse: '#9B59B6',
-    force: '#E67E22',
-    intelligence: '#3498DB',
-    chance: '#2ECC71',
-    agilite: '#F1C40F'
-};
-
+// Element colours live in styles.css as var(--<element>)
 const ELEMENT_NAMES = {
     vitalite: 'Vitalité',
     sagesse: 'Sagesse',
     force: 'Force',
     intelligence: 'Intelligence',
     chance: 'Chance',
-    agilite: 'Agilité'
+    agilite: 'Agilité',
+    prospection: 'Prospection'
 };
 
-const ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite'];
+const ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection'];
 const API_URL = 'https://dofus-retro-optimizer.onrender.com';
 
 let selectedElement = null;
@@ -43,18 +36,18 @@ async function checkServerStatus() {
         try {
             const res = await fetch(`${API_URL}/api/health`);
             if (res.ok) {
-                el.textContent = '⬤ Serveur connecté';
+                el.textContent = 'Serveur connecté';
                 el.className = 'server-status online';
                 return;
             }
         } catch {
             if (attempt === 1) {
-                el.textContent = '⬤ Réveil du serveur...';
+                el.textContent = 'Réveil du serveur...';
                 await new Promise(r => setTimeout(r, 5000));
             }
         }
     }
-    el.textContent = '⬤ Serveur hors ligne';
+    el.textContent = 'Serveur hors ligne';
     el.className = 'server-status offline';
 }
 
@@ -62,9 +55,12 @@ function setupElementButtons() {
     const buttons = document.querySelectorAll('.element-btn');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            buttons.forEach(b => {
+                b.classList.toggle('active', b === btn);
+                b.setAttribute('aria-pressed', b === btn);
+            });
             selectedElement = btn.dataset.element;
+            document.getElementById('searchBtn').disabled = false;
             gtag('event', 'select_element', { element: selectedElement });
         });
     });
@@ -111,27 +107,14 @@ async function runOptimization() {
     const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
     const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
 
-    const basePA = playerLevel >= 100 ? 7 : 6;
-    const basePM = 3;
-    const maxItemPA = Math.max(0, totalPA - basePA - exoPA);
-    const maxItemPM = Math.max(0, totalPM - basePM - exoPM);
-
     setLoading(true);
     try {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                element: selectedElement,
-                maxLevel: playerLevel,
-                minPA: maxItemPA,
-                minPM: maxItemPM,
-                maxPA: maxItemPA,
-                maxPM: maxItemPM
-            })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM })
         });
         const results = await response.json();
-        results.forEach(r => { r.basePA = basePA; r.basePM = basePM; r.exoPA = exoPA; r.exoPM = exoPM; });
 
         gtag('event', 'search', {
             element: selectedElement,
@@ -170,7 +153,7 @@ const STAT_DISPLAY_ORDER = [
     // Combat
     'crit', 'fail_crit', 'dmg_return', 'pa_drain', 'pm_drain', 'heals', 'range',
     // Misc
-    'initiative', 'prospection', 'pods', 'summons'
+    'initiative', 'pods', 'summons'
 ];
 
 const STAT_LABELS_JS = {
@@ -189,42 +172,59 @@ const STAT_LABELS_JS = {
     crit: 'Coups Critiques', fail_crit: 'Échec Critique',
     dmg_return: 'Renvoi Dom.', pa_drain: 'PA Retirés', pm_drain: 'PM Retirés',
     heals: 'Soins', range: 'Portée', initiative: 'Initiative',
-    prospection: 'Prospection', pods: 'Pods', summons: 'Invocations'
+    pods: 'Pods', summons: 'Invocations'
 };
 
-const STAT_COLORS = {
-    pct_dmg: '#E67E22', dmg: '#E67E22',
-    dmg_fire: '#E74C3C', dmg_water: '#3498DB', dmg_earth: '#8B6914',
-    dmg_air: '#F1C40F', dmg_neutral: '#95A5A6', dmg_trap: '#E67E22', pct_dmg_trap: '#E67E22',
-    pct_res_neutral: '#2ECC71', pct_res_earth: '#2ECC71', pct_res_fire: '#2ECC71',
-    pct_res_water: '#2ECC71', pct_res_air: '#2ECC71',
-    res_neutral: '#27AE60', res_earth: '#27AE60', res_fire: '#27AE60',
-    res_water: '#27AE60', res_air: '#27AE60',
-    pct_weak_neutral: '#E74C3C', pct_weak_earth: '#E74C3C', pct_weak_fire: '#E74C3C',
-    pct_weak_water: '#E74C3C', pct_weak_air: '#E74C3C',
-    steal: '#9B59B6', steal_fire: '#9B59B6', steal_water: '#9B59B6',
-    steal_earth: '#9B59B6', steal_air: '#9B59B6', steal_neutral: '#9B59B6',
-    crit: '#F1C40F', fail_crit: '#E74C3C', dmg_return: '#E67E22',
-    pa_drain: '#3498DB', pm_drain: '#2ECC71',
-    heals: '#2ECC71', range: '#F4E4BC', initiative: '#F4E4BC',
-    prospection: '#F1C40F', pods: '#F4E4BC', summons: '#9B59B6'
-};
+function signed(val) {
+    return `${val > 0 ? '+' : ''}${val}`;
+}
 
-function renderExtraStats(stats, compact = false) {
-    if (!stats || Object.keys(stats).length === 0) return '';
-    const rows = STAT_DISPLAY_ORDER
-        .filter(k => stats[k] !== undefined && stats[k] !== 0)
-        .map(k => {
-            const val = stats[k];
-            const label = STAT_LABELS_JS[k] || k;
-            const color = STAT_COLORS[k] || '#F4E4BC';
-            const prefix = val > 0 ? '+' : '';
-            if (compact) {
-                return `<div class="istat"><span class="istat-name" style="color:${color};">${label}</span><span class="istat-val" style="color:${color};">${prefix}${val}</span></div>`;
-            }
-            return `<div class="modal-stat-row"><span style="color:${color};">${label}</span><span style="color:${color};font-weight:600;">${prefix}${val}</span></div>`;
-        });
-    return rows.join('');
+function statRow(label, val, color = 'var(--muted)') {
+    return `<div class="stat"><span style="color:${color};">${label}</span><span class="${val < 0 ? 'neg' : ''}">${signed(val)}</span></div>`;
+}
+
+function renderExtraStats(stats) {
+    return STAT_DISPLAY_ORDER
+        .filter(k => stats?.[k])
+        .map(k => statRow(STAT_LABELS_JS[k] || k, stats[k]))
+        .join('');
+}
+
+function renderItemStats(item) {
+    return [
+        item.pa ? statRow('PA', item.pa, 'var(--pa)') : '',
+        item.pm ? statRow('PM', item.pm, 'var(--pm)') : '',
+        ...ALL_ELEMENTS.filter(el => item.elements[el]).map(el => statRow(ELEMENT_NAMES[el], item.elements[el], `var(--${el})`)),
+        renderExtraStats(item.stats)
+    ].join('');
+}
+
+function renderWeaponStats(ws) {
+    if (!ws) return '';
+    return `
+        <div class="tags">
+            ${ws.AP        ? `<span class="tag">Coût: ${ws.AP} PA</span>` : ''}
+            ${ws.scope     ? `<span class="tag">Portée: ${ws.scope}</span>` : ''}
+            ${ws.critical_hit_prob ? `<span class="tag">CC: 1/${ws.critical_hit_prob} (+${ws.critical_hit_bonus || 0})</span>` : ''}
+        </div>`;
+}
+
+function itemCard(item, showRequirements) {
+    const reqHtml = showRequirements && item.requirements?.length > 0 ? `
+        <div class="tags">${item.requirements.map(req => `<span class="tag req">${req.type} ${req.value}</span>`).join('')}</div>` : '';
+
+    return `
+        <div class="item-card">
+            <div class="item-header">
+                <span>${getTypeName(item.type)}</span>
+                <span>Niv. ${item.level}</span>
+            </div>
+            <div class="item-name">${item.name}</div>
+            ${item.set ? `<div class="item-set">${item.set}</div>` : ''}
+            ${reqHtml}
+            ${renderWeaponStats(item.weapon_stats)}
+            <div class="item-stats">${renderItemStats(item)}</div>
+        </div>`;
 }
 
 function displayResults(results) {
@@ -241,106 +241,50 @@ function displayResults(results) {
     }
 
     emptyState.style.display = 'none';
-    resultsCount.textContent = 'Meilleure combinaison (MILP Optimal)';
+    resultsCount.textContent = 'Solution optimale (MILP)';
     resultsList.innerHTML = '';
 
     results.forEach((r, i) => {
-        const itemPA  = r.items.reduce((s, it) => s + (it.pa || 0), 0);
-        const itemPM  = r.items.reduce((s, it) => s + (it.pm || 0), 0);
-        const totalPA = (r.basePA || 6) + (r.exoPA || 0) + itemPA;
-        const totalPM = (r.basePM || 3) + (r.exoPM || 0) + itemPM;
-
-        // Total stats summary row — show all 6 elements always
+        // Total stats summary row — show all elements always
         const summaryHtml = ALL_ELEMENTS.map(el => {
             const total = r.totalStats[el] || 0;
             const setB  = r.setBonuses[el] || 0;
-            const base  = r.baseStats[el] || 0;
-            const color = total > 0 ? ELEMENT_COLORS[el] : total < 0 ? '#888' : 'var(--text-secondary)';
-            const prefix = total > 0 ? '+' : '';
-            const setNote = setB !== 0 ? `<div class="summary-set-note">${base > 0 ? '+' : ''}${base} + ${setB > 0 ? '+' : ''}${setB} set</div>` : '';
             return `
-                <div class="summary-stat">
-                    <div class="summary-stat-name" style="color:${ELEMENT_COLORS[el]};">${ELEMENT_NAMES[el]}</div>
-                    <div class="summary-stat-value" style="color:${color};">${prefix}${total}</div>
-                    ${setNote}
+                <div class="summary-stat${el === selectedElement ? ' is-target' : ''}">
+                    <div class="summary-stat-name" style="color:var(--${el});">${ELEMENT_NAMES[el]}</div>
+                    <div class="summary-stat-value ${total === 0 ? 'zero' : total < 0 ? 'neg' : ''}">${signed(total)}</div>
+                    ${setB !== 0 ? `<div class="summary-set-note">dont ${signed(setB)} panoplie</div>` : ''}
                 </div>`;
         }).join('');
-
-        // Item cards — show all non-zero stats
-        const itemsHtml = r.items.map(item => {
-            const elStats = ALL_ELEMENTS
-                .filter(el => (item.elements[el] || 0) !== 0)
-                .map(el => {
-                    const val = item.elements[el];
-                    const prefix = val > 0 ? '+' : '';
-                    const color = val > 0 ? ELEMENT_COLORS[el] : '#888';
-                    return `<div class="istat"><span class="istat-name" style="color:${ELEMENT_COLORS[el]};">${ELEMENT_NAMES[el]}</span><span class="istat-val" style="color:${color};">${prefix}${val}</span></div>`;
-                }).join('');
-
-            const paPm = [
-                item.pa ? `<div class="istat"><span class="istat-name" style="color:#3498DB;">PA</span><span class="istat-val" style="color:#3498DB;">+${item.pa}</span></div>` : '',
-                item.pm ? `<div class="istat"><span class="istat-name" style="color:#2ECC71;">PM</span><span class="istat-val" style="color:#2ECC71;">+${item.pm}</span></div>` : ''
-            ].join('');
-
-            const ws = item.weapon_stats;
-            const weaponHtml = ws ? `
-                <div class="weapon-stats">
-                    ${ws.AP        ? `<span class="wtag">Coût: ${ws.AP} PA</span>` : ''}
-                    ${ws.scope     ? `<span class="wtag">Portée: ${ws.scope}</span>` : ''}
-                    ${ws.critical_hit_prob ? `<span class="wtag">CC: 1/${ws.critical_hit_prob} (+${ws.critical_hit_bonus || 0})</span>` : ''}
-                </div>` : '';
-
-            const extraStats = renderExtraStats(item.stats, true);
-
-            return `
-                <div class="item-card-full">
-                    <div class="item-header">
-                        <span class="item-type">${getTypeAbbrev(item.type)}</span>
-                        <span class="item-level">Lvl ${item.level}</span>
-                    </div>
-                    <div class="item-name">${item.name}</div>
-                    ${item.set ? `<div class="item-set">${item.set}</div>` : ''}
-                    ${weaponHtml}
-                    <div class="item-stats-list">${paPm}${elStats}${extraStats}</div>
-                </div>`;
-        }).join('');
-
-        const setMetaHtml = r.setBonus > 0 ? `<span class="meta-set">+${r.setBonus} set</span>` : '';
 
         const html = `
-            <div class="result-card-new" data-result-idx="${i}">
+            <article class="result">
                 <div class="result-header">
-                    <div class="result-rank">#${i + 1}</div>
-                    <div class="result-main-stat">
-                        <span class="stat-name">${ELEMENT_NAMES[selectedElement]}</span>
-                        <span class="stat-value" style="color:${ELEMENT_COLORS[selectedElement]};">${r.totalElement}</span>
+                    <div>
+                        <span class="stat-name">${ELEMENT_NAMES[selectedElement]} totale</span>
+                        <span class="stat-value" style="color:var(--${selectedElement});">${r.totalElement}</span>
+                    </div>
+                    <div class="result-meta">
+                        <span class="meta">PA <b>${r.totalPA}</b></span>
+                        <span class="meta">PM <b>${r.totalPM}</b></span>
+                        ${r.setBonus > 0 ? `<span class="meta">Panoplie <b>+${r.setBonus}</b></span>` : ''}
+                        <button type="button" class="details-btn" data-result-idx="${i}">Voir le détail</button>
                     </div>
                 </div>
-                <div class="result-meta">
-                    <span class="meta-pa">PA: ${totalPA}</span>
-                    <span class="meta-pm">PM: ${totalPM}</span>
-                    ${setMetaHtml}
-                    <span class="meta-details-btn">Voir détails →</span>
-                </div>
                 <div class="result-summary-grid">${summaryHtml}</div>
-                <div class="result-items-grid">${itemsHtml}</div>
-            </div>`;
+                <div class="result-items-grid">${r.items.map(item => itemCard(item, false)).join('')}</div>
+            </article>`;
 
         resultsList.insertAdjacentHTML('beforeend', html);
     });
 
-    resultsList.querySelectorAll('.result-card-new').forEach(card => {
-        card.addEventListener('click', () => {
-            const idx = parseInt(card.dataset.resultIdx);
+    resultsList.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = parseInt(btn.dataset.resultIdx);
             gtag('event', 'view_result', { element: selectedElement, score: results[idx]?.totalElement });
             openModal(results[idx]);
         });
     });
-}
-
-function getTypeAbbrev(type) {
-    const abbrevs = { weapon: 'ARME', hat: 'CHAP', cloak: 'CAPE', amulet: 'AMUL', ring: 'BAGU', belt: 'CEIN', boots: 'BOTT', shield: 'BOUC' };
-    return abbrevs[type] || type.slice(0, 4).toUpperCase();
 }
 
 function getTypeName(type) {
@@ -352,105 +296,44 @@ function openModal(result) {
     const content = document.getElementById('modalContent');
     const overlay = document.getElementById('modalOverlay');
 
-    const itemPA  = result.items.reduce((s, it) => s + (it.pa || 0), 0);
-    const itemPM  = result.items.reduce((s, it) => s + (it.pm || 0), 0);
-    const totalPA = (result.basePA || 6) + (result.exoPA || 0) + itemPA;
-    const totalPM = (result.basePM || 3) + (result.exoPM || 0) + itemPM;
-
     const setDetailsHtml = result.setDetails?.length > 0 ? `
-        <div class="modal-set-details">
-            <h4>Bonus des Sets</h4>
-            ${result.setDetails.map(s => `
-                <div class="set-detail-row">
-                    <span class="set-detail-name">${s.setName}</span>
-                    <span class="set-detail-pieces">${s.pieces} pièces</span>
-                    <div class="set-detail-bonuses">
-                        ${ALL_ELEMENTS.filter(el => s.bonus[el]).map(el =>
-                            `<span style="color:${ELEMENT_COLORS[el]};">+${s.bonus[el]} ${ELEMENT_NAMES[el]}</span>`
-                        ).join('')}
-                    </div>
-                </div>`).join('')}
-        </div>` : '';
+        <h4>Bonus de panoplie</h4>
+        ${result.setDetails.map(s => `
+            <div class="set-detail-row">
+                <span class="set-detail-name">${s.setName} <span class="set-detail-pieces">${s.pieces} pièces</span></span>
+                <div class="set-detail-bonuses">
+                    ${s.bonus.pa ? `<span style="color:var(--pa);">${signed(s.bonus.pa)} PA</span>` : ''}
+                    ${s.bonus.pm ? `<span style="color:var(--pm);">${signed(s.bonus.pm)} PM</span>` : ''}
+                    ${ALL_ELEMENTS.filter(el => s.bonus[el]).map(el =>
+                        `<span style="color:var(--${el});">${signed(s.bonus[el])} ${ELEMENT_NAMES[el]}</span>`
+                    ).join('')}
+                </div>
+            </div>`).join('')}` : '';
 
     // Full totals table in modal
     const totalsHtml = `
         <div class="modal-totals">
-            <div class="modal-totals-row">
-                <span class="modal-totals-label">PA total</span>
-                <span class="modal-totals-value" style="color:#3498DB;">${totalPA}</span>
-            </div>
-            <div class="modal-totals-row">
-                <span class="modal-totals-label">PM total</span>
-                <span class="modal-totals-value" style="color:#2ECC71;">${totalPM}</span>
-            </div>
-            ${ALL_ELEMENTS.map(el => {
-                const total = result.totalStats[el] || 0;
-                const base  = result.baseStats[el] || 0;
+            <div class="modal-totals-row"><span>PA</span><b style="color:var(--pa);">${result.totalPA}</b></div>
+            <div class="modal-totals-row"><span>PM</span><b style="color:var(--pm);">${result.totalPM}</b></div>
+            ${ALL_ELEMENTS.filter(el => result.totalStats[el]).map(el => {
+                const total = result.totalStats[el];
                 const setB  = result.setBonuses[el] || 0;
-                if (total === 0) return '';
-                const prefix = total > 0 ? '+' : '';
-                const color  = total > 0 ? ELEMENT_COLORS[el] : '#888';
-                const note   = setB !== 0 ? ` <small style="color:var(--text-secondary);">(${base > 0 ? '+' : ''}${base} items + ${setB > 0 ? '+' : ''}${setB} set)</small>` : '';
+                const note  = setB !== 0 ? ` <small>(dont ${signed(setB)} panoplie)</small>` : '';
                 return `
                     <div class="modal-totals-row">
-                        <span class="modal-totals-label" style="color:${ELEMENT_COLORS[el]};">${ELEMENT_NAMES[el]}</span>
-                        <span class="modal-totals-value" style="color:${color};">${prefix}${total}${note}</span>
+                        <span style="color:var(--${el});">${ELEMENT_NAMES[el]}</span>
+                        <b class="${total < 0 ? 'neg' : ''}">${signed(total)}${note}</b>
                     </div>`;
             }).join('')}
         </div>`;
 
     content.innerHTML = `
-        <h2 class="modal-title">Combinaison Optimale — ${ELEMENT_NAMES[selectedElement]}</h2>
+        <h2 class="modal-title" id="modalTitle">Combinaison optimale — ${ELEMENT_NAMES[selectedElement]}</h2>
         ${totalsHtml}
         ${setDetailsHtml}
-        <h4 class="modal-items-title">Équipements</h4>
-        <div class="modal-items">
-            ${result.items.map(item => createModalItem(item)).join('')}
-        </div>`;
+        <h4>Équipements</h4>
+        <div class="result-items-grid">${result.items.map(item => itemCard(item, true)).join('')}</div>`;
 
     overlay.classList.add('active');
-}
-
-function createModalItem(item) {
-    const elStats = ALL_ELEMENTS
-        .filter(el => (item.elements[el] || 0) !== 0)
-        .map(el => {
-            const val = item.elements[el];
-            const prefix = val > 0 ? '+' : '';
-            const color  = val > 0 ? ELEMENT_COLORS[el] : '#888';
-            return `<div class="modal-stat-row"><span style="color:${ELEMENT_COLORS[el]};">${ELEMENT_NAMES[el]}</span><span style="color:${color};font-weight:600;">${prefix}${val}</span></div>`;
-        }).join('');
-
-    const paPm = [
-        item.pa ? `<div class="modal-stat-row"><span style="color:#3498DB;">PA</span><span style="color:#3498DB;font-weight:600;">+${item.pa}</span></div>` : '',
-        item.pm ? `<div class="modal-stat-row"><span style="color:#2ECC71;">PM</span><span style="color:#2ECC71;font-weight:600;">+${item.pm}</span></div>` : ''
-    ].join('');
-
-    const ws = item.weapon_stats;
-    const weaponHtml = ws ? `
-        <div class="modal-weapon-stats">
-            ${ws.AP             ? `<span class="wtag">Coût: ${ws.AP} PA</span>` : ''}
-            ${ws.scope          ? `<span class="wtag">Portée: ${ws.scope}</span>` : ''}
-            ${ws.critical_hit_prob ? `<span class="wtag">CC: 1/${ws.critical_hit_prob} (+${ws.critical_hit_bonus || 0})</span>` : ''}
-        </div>` : '';
-
-    const reqHtml = item.requirements?.length > 0 ? `
-        <div class="modal-requirements">
-            ${item.requirements.map(req => `<span class="req-tag">${req.type} ${req.value}</span>`).join('')}
-        </div>` : '';
-
-    return `
-        <div class="modal-item">
-            <div class="modal-item-header">
-                <div class="modal-item-title">
-                    <span class="modal-item-type">${getTypeName(item.type)}</span>
-                    <span class="modal-item-name">${item.name}</span>
-                    <span class="modal-item-level">Niv. ${item.level}</span>
-                </div>
-                ${item.set ? `<span class="modal-item-set">${item.set}</span>` : ''}
-            </div>
-            ${reqHtml}
-            ${weaponHtml}
-            <div class="modal-stat-list">${paPm}${elStats}${renderExtraStats(item.stats)}</div>
-        </div>`;
+    document.getElementById('modalClose').focus();
 }

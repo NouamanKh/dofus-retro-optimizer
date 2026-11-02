@@ -121,12 +121,34 @@ class OptimizeTest(unittest.TestCase):
 
 class DamageTest(unittest.TestCase):
     def best(self, cat, element='force', base=30):
-        return optimize(cat, element, level=50, total_pa=6, total_pm=3, damage_base=base)
+        return optimize(cat, element, level=50, total_pa=6, total_pm=3, damage_range=(base, base))
 
     def test_formula_rounds_multiplied_part_down_then_adds_flat(self):
         cat = Catalog([dmg_item('A', 'hat', {'dmg': 5, 'pct_dmg': 3}, force=7)], [])
         # floor(33 x (100 + 7 + 3) / 100) + 5 = floor(36.3) + 5
         self.assertEqual(self.best(cat, base=33)['totalElement'], 41)
+
+    def test_each_end_of_the_range_is_estimated(self):
+        cat = Catalog([dmg_item('A', 'hat', {'dmg': 5, 'pct_dmg': 3}, force=7)], [])
+        build = optimize(cat, 'force', level=50, total_pa=6, total_pm=3, damage_range=(33, 50))
+        # floor(33 x 1.10) + 5 and floor(50 x 1.10) + 5
+        self.assertEqual(build['damageRange'], [41, 60])
+        self.assertEqual(list(build['spellRoll']), [33, 50])
+        # The average roll, 41.5: floor(41.5 x 1.10) + 5
+        self.assertEqual(build['totalElement'], 50)
+
+    def test_average_roll_decides_the_build(self):
+        cat = Catalog([item('S', 'hat', force=100), dmg_item('F', 'hat', {'dmg': 40})], [])
+        # Both ends sit on either side of the break-even point of 40: only the average matters
+        pick = lambda low, high: [i['id'] for i in optimize(
+            cat, 'force', level=50, total_pa=6, total_pm=3, damage_range=(low, high))['items']]
+        self.assertEqual(pick(10, 90), ['S'])  # average 50
+        self.assertEqual(pick(10, 50), ['F'])  # average 30
+
+    def test_stat_search_has_no_damage_range(self):
+        build = optimize(Catalog([item('S', 'hat', force=1)], []), 'force', level=50, total_pa=6, total_pm=3)
+        self.assertIsNone(build['damageRange'])
+        self.assertIsNone(build['spellRoll'])
 
     def test_spell_base_decides_between_stat_and_flat(self):
         cat = Catalog([item('S', 'hat', force=100), dmg_item('F', 'hat', {'dmg': 40})], [])
@@ -214,17 +236,21 @@ class AdapterTest(unittest.TestCase):
         self.assertLessEqual(again['totalElement'], first['totalElement'])
 
     def test_damage_endpoint_reports_the_estimate(self):
-        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageBase': 30}
+        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageMin': 20, 'damageMax': 40}
         build = self.client.post('/api/optimize', json=body).get_json()[0]
-        self.assertEqual(build['damageBase'], 30)
-        multiplied = 30 * (100 + build['totalStats']['force'] + build['totalPctDmg']) // 100
-        self.assertEqual(build['totalElement'], multiplied + build['totalDmg'])
+        self.assertEqual(build['spellRoll'], [20, 40])
+        multiplier = 100 + build['totalStats']['force'] + build['totalPctDmg']
+        self.assertEqual(build['damageRange'], [roll * multiplier // 100 + build['totalDmg'] for roll in (20, 40)])
 
     def test_bad_damage_requests_are_400(self):
-        for body in [{'element': 'vitalite', 'damageBase': 30},
-                     {'element': 'force', 'damageBase': -1},
-                     {'element': 'force', 'damageBase': 1000},
-                     {'element': 'force', 'damageBase': 'x'}]:
+        for body in [{'element': 'vitalite', 'damageMin': 20, 'damageMax': 40},
+                     {'element': 'force', 'damageMin': 40, 'damageMax': 20},
+                     {'element': 'force', 'damageMin': -1, 'damageMax': 20},
+                     {'element': 'force', 'damageMin': 0, 'damageMax': 20},
+                     {'element': 'force', 'damageMin': 20},
+                     {'element': 'force', 'damageMax': 20},
+                     {'element': 'force', 'damageMin': 20, 'damageMax': 1000},
+                     {'element': 'force', 'damageMin': 'x', 'damageMax': 20}]:
             self.assertEqual(self.client.post('/api/optimize', json=body).status_code, 400, body)
 
     def test_bad_excluded_ids_is_400(self):

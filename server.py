@@ -27,22 +27,25 @@ def api_optimize():
     if element not in ALL_ELEMENTS:
         return jsonify({'error': f'element inconnu: {element}'}), 400
     try:
-        level, total_pa, total_pm, exo_pa, exo_pm, damage_base = (
+        level, total_pa, total_pm, exo_pa, exo_pm, damage_min, damage_max = (
             int(data.get(key, default)) for key, default in
-            [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0), ('damageBase', 0)]
+            [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0), ('damageMin', 0), ('damageMax', 0)]
         )
     except (TypeError, ValueError):
-        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM, damageBase doivent etre des entiers'}), 400
-    if not 0 <= damage_base <= 999:
-        return jsonify({'error': 'damageBase doit etre entre 0 et 999'}), 400
-    if damage_base and element not in DAMAGE_ELEMENTS:
-        return jsonify({'error': f'pas de dommages pour: {element}'}), 400
+        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax doivent etre des entiers'}), 400
+    damage_range = None
+    if damage_min or damage_max:
+        if not 1 <= damage_min <= damage_max <= 999:
+            return jsonify({'error': 'il faut 1 <= damageMin <= damageMax <= 999'}), 400
+        if element not in DAMAGE_ELEMENTS:
+            return jsonify({'error': f'pas de dommages pour: {element}'}), 400
+        damage_range = (damage_min, damage_max)
 
     excluded_ids = data.get('excludedIds', [])
     if not isinstance(excluded_ids, list) or not all(isinstance(i, str) for i in excluded_ids):
         return jsonify({'error': 'excludedIds doit etre une liste de chaines'}), 400
 
-    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_base)
+    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range)
     return jsonify([build] if build else [])
 
 

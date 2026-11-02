@@ -92,6 +92,12 @@ function setupDamageMode() {
     });
 }
 
+function readSpellRoll() {
+    // Clamped and sorted here so a typo gives a search, not a server error
+    const read = (id, fallback) => Math.min(999, Math.max(1, parseInt(document.getElementById(id).value) || fallback));
+    return [read('spellMin', 20), read('spellMax', 40)].sort((a, b) => a - b);
+}
+
 function setupExclusions() {
     // Delegated: cards and chips are re-rendered by every search, and cards also appear in the modal
     document.addEventListener('click', async (e) => {
@@ -152,16 +158,14 @@ async function runOptimization() {
     const totalPM     = parseInt(document.getElementById('totalPM').value) || 3;
     const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
     const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
-    const damageBase  = document.getElementById('damageMode').checked
-        ? Math.min(999, Math.max(1, parseInt(document.getElementById('spellBase').value) || 30))
-        : 0;
+    const [damageMin, damageMax] = document.getElementById('damageMode').checked ? readSpellRoll() : [0, 0];
 
     setLoading(true);
     try {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageBase, excludedIds: excludedItems.map(i => i.id) })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, excludedIds: excludedItems.map(i => i.id) })
         });
         const results = await response.json();
 
@@ -307,14 +311,14 @@ function displayResults(results) {
             <article class="result">
                 <div class="result-header">
                     <div>
-                        <span class="stat-name">${r.damageBase ? `Dommages ${ELEMENT_NAMES[selectedElement]} estimés` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
-                        <span class="stat-value" style="color:var(--${selectedElement});">${r.totalElement}</span>
+                        <span class="stat-name">${r.damageRange ? `Dommages ${ELEMENT_NAMES[selectedElement]} estimés` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
+                        <span class="stat-value" style="color:var(--${selectedElement});">${r.damageRange ? `${r.damageRange[0]} à ${r.damageRange[1]}` : r.totalElement}</span>
                     </div>
                     <div class="result-meta">
                         <span class="meta">PA <b>${r.totalPA}</b></span>
                         <span class="meta">PM <b>${r.totalPM}</b></span>
-                        ${r.damageBase ? `
-                            <span class="meta">Base <b>${r.damageBase}</b></span>
+                        ${r.damageRange ? `
+                            <span class="meta">Sort <b>${r.spellRoll[0]} à ${r.spellRoll[1]}</b></span>
                             <span class="meta">Dommages <b>${signed(r.totalDmg)}</b></span>
                             <span class="meta">% Dommages <b>${signed(r.totalPctDmg)}</b></span>` : ''}
                         ${r.setBonus > 0 ? `<span class="meta">Panoplie <b>+${r.setBonus}</b></span>` : ''}

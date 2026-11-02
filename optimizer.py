@@ -32,17 +32,18 @@ def _score(stats, element, damage_base=0):
     return stats.get(element, 0)
 
 
-def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_base=0):
+def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_range=None):
     """Best Build for `element` reaching at least the player's total PA/PM without the excluded items, or None if none can.
 
-    With damage_base (a spell's base damage), maximises that spell's estimated damage in `element`.
+    With damage_range (a spell's min and max damage), maximises its average estimated damage in `element`.
     """
     gear_pa = max(0, total_pa - base_pa(level) - exo_pa)
     gear_pm = max(0, total_pm - BASE_PM - exo_pm)
+    damage_base = sum(damage_range) / 2 if damage_range else 0
     selected = _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
     if not selected:
         return None
-    return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm, damage_base)
+    return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm, damage_base, damage_range)
 
 
 def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base):
@@ -126,7 +127,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
     return selected
 
 
-def _build(catalog, selected, element, extra_pa, extra_pm, damage_base):
+def _build(catalog, selected, element, extra_pa, extra_pm, damage_base, damage_range):
     """Build a result dict from selected items; extra_pa/extra_pm are the character's base + exo PA/PM."""
     base_stats = {el: 0 for el in ALL_ELEMENTS}
     for item in selected:
@@ -152,12 +153,13 @@ def _build(catalog, selected, element, extra_pa, extra_pm, damage_base):
     total_stats = {el: base_stats[el] + set_bonus_stats[el] for el in ALL_ELEMENTS}
     total_dmg = set_bonus_stats['dmg'] + sum(item['stats'].get('dmg', 0) for item in selected)
     total_pct_dmg = set_bonus_stats['pct_dmg'] + sum(item['stats'].get('pct_dmg', 0) for item in selected)
-    score = _score({**total_stats, 'dmg': total_dmg, 'pct_dmg': total_pct_dmg}, element, damage_base)
+    totals = {**total_stats, 'dmg': total_dmg, 'pct_dmg': total_pct_dmg}
 
     return {
         'items': selected,
-        'totalElement': math.floor(damage_base + score),  # the estimated damage when damage_base is set
-        'damageBase': damage_base,
+        'totalElement': math.floor(damage_base + _score(totals, element, damage_base)),  # for the average roll when damage_base is set
+        'spellRoll': damage_range,
+        'damageRange': [math.floor(roll + _score(totals, element, roll)) for roll in damage_range] if damage_range else None,
         'totalDmg': total_dmg,
         'totalPctDmg': total_pct_dmg,
         'baseElement': base_stats[element],

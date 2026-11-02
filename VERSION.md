@@ -1,5 +1,9 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.10.1 (2026-11-02)
+- Spell damage is now a min and max instead of one base value. Results show the estimated damage from min to max, and the search maximises the average roll
+- API: damageBase replaced by damageMin and damageMax (1 <= min <= max <= 999); results return spellRoll and damageRange
+
 ## v1.10.0 (2026-11-02)
 - New: "Maximiser les dommages d'un sort" searches for the most damage on a spell in one element, given its base damage. Estimate: floor(base x (100 + element + % Dommages) / 100) + Dommages, gear only (source: forums.jeuxonline.info/sujet/801243, not Retro-specific)
 - Set bonuses now include Dommages and % Dommages, shown in the build details

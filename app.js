@@ -13,10 +13,12 @@ const ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 
 const API_URL = 'https://dofus-retro-optimizer.onrender.com';
 
 let selectedElement = null;
+let excludedItems = []; // [{ id, name }], kept across searches until the player puts them back
 
 document.addEventListener('DOMContentLoaded', () => {
     setupElementButtons();
     setupModal();
+    setupExclusions();
     checkServerStatus();
     // Keep server alive during the session — ping every 10 minutes
     setInterval(() => fetch(`${API_URL}/api/health`).catch(() => {}), 10 * 60 * 1000);
@@ -74,12 +76,40 @@ function setupModal() {
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
 }
 
+function setupExclusions() {
+    // Delegated: cards and chips are re-rendered by every search, and cards also appear in the modal
+    document.addEventListener('click', async (e) => {
+        const excludeBtn = e.target.closest('.exclude-btn');
+        const chip = e.target.closest('.excluded-chip');
+        if (!excludeBtn && !chip) return;
+
+        if (excludeBtn) {
+            excludedItems.push({ id: excludeBtn.dataset.itemId, name: excludeBtn.dataset.itemName });
+        } else {
+            excludedItems = excludedItems.filter(i => i.id !== chip.dataset.itemId);
+        }
+        renderExcludedItems();
+        document.getElementById('modalOverlay').classList.remove('active');
+        await runOptimization();
+        // The clicked button no longer exists: keep keyboard focus and bring the new result into view
+        document.getElementById('resultsCount').focus();
+    });
+}
+
+function renderExcludedItems() {
+    document.getElementById('excludedItems').innerHTML = excludedItems.length === 0 ? '' : `
+        <span>Exclus :</span>
+        ${excludedItems.map(i => `<button type="button" class="excluded-chip" data-item-id="${i.id}" aria-label="Réintégrer ${i.name}" title="Réintégrer cet objet">${i.name} &times;</button>`).join('')}`;
+}
+
 function setLoading(isLoading) {
     const btn = document.getElementById('searchBtn');
     const spinner = document.getElementById('loadingSpinner');
     btn.disabled = isLoading;
     btn.textContent = isLoading ? 'Recherche en cours...' : 'Rechercher';
     if (spinner) spinner.style.display = isLoading ? 'flex' : 'none';
+    // Also prevents overlapping searches, whose responses could arrive out of order
+    document.querySelectorAll('.exclude-btn, .excluded-chip').forEach(b => { b.disabled = isLoading; });
 }
 
 async function fetchWithRetry(url, options, retries = 2) {
@@ -112,7 +142,7 @@ async function runOptimization() {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, excludedIds: excludedItems.map(i => i.id) })
         });
         const results = await response.json();
 
@@ -224,6 +254,7 @@ function itemCard(item, showRequirements) {
             ${reqHtml}
             ${renderWeaponStats(item.weapon_stats)}
             <div class="item-stats">${renderItemStats(item)}</div>
+            <button type="button" class="exclude-btn" data-item-id="${item.id}" data-item-name="${item.name}" aria-label="Chercher sans ${item.name}">Chercher sans cet objet</button>
         </div>`;
 }
 
@@ -233,7 +264,7 @@ function displayResults(results) {
 
     if (!results || results.length === 0 || !results[0]?.items?.length) {
         resultsCount.textContent = '0 combinaisons trouvées';
-        resultsList.innerHTML = '<div class="empty-state"><p>Aucune combinaison ne respecte ces PA/PM à ce niveau.</p></div>';
+        resultsList.innerHTML = `<div class="empty-state"><p>Aucune combinaison ne respecte ces PA/PM à ce niveau${excludedItems.length ? ' sans les objets exclus' : ''}.</p></div>`;
         return;
     }
 

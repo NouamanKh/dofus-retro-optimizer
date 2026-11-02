@@ -286,6 +286,20 @@ a { color: var(--accent); }
   color: var(--muted);
 }
 
+.results-count:focus { outline: none; }
+
+.excluded-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.excluded-items:empty { display: none; }
+
 .empty-state {
   display: flex;
   justify-content: center;
@@ -342,7 +356,9 @@ a { color: var(--accent); }
 
 .meta b { color: var(--ink); }
 
-.details-btn {
+.details-btn,
+.exclude-btn,
+.excluded-chip {
   padding: 4px 12px;
   font: inherit;
   font-size: 0.9rem;
@@ -353,9 +369,23 @@ a { color: var(--accent); }
   cursor: pointer;
 }
 
-.details-btn:hover {
+.details-btn:hover,
+.exclude-btn:hover:not(:disabled),
+.excluded-chip:hover:not(:disabled) {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+.exclude-btn,
+.excluded-chip {
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+.exclude-btn:disabled,
+.excluded-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* 1px gaps over a line-coloured background draw the cell borders, even when the grid wraps */
@@ -405,6 +435,8 @@ a { color: var(--accent); }
 }
 
 .item-card {
+  display: flex;
+  flex-direction: column;
   padding: 10px 12px;
   background: var(--card);
   border: 1px solid var(--line);
@@ -433,10 +465,13 @@ a { color: var(--accent); }
 }
 
 .item-stats {
-  margin-top: 8px;
+  margin: 8px 0 10px;
   padding-top: 6px;
   border-top: 1px solid var(--line);
 }
+
+/* Bottom of the card, so buttons line up across a row of unequal cards */
+.exclude-btn { margin-top: auto; }
 
 .stat {
   display: flex;

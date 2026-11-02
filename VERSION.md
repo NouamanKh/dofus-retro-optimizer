@@ -1,5 +1,10 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.9.0 (2026-11-02)
+- New: "Chercher sans cet objet" button on each item re-runs the search without it. Exclusions add up across searches and are listed above the results, where a click puts an item back
+- Excluding an item also excludes its copies with the same name and type (the catalog has 11 identical "Patte d'Ecaflip")
+- API: POST /api/optimize accepts an optional excludedIds list of item ids
+
 ## v1.8.0 (2026-10-14)
 - New slots: Familier (pet) and Monture (mount); a build gets at most one of the two, as in game
 - Pets: every feeding option at its max bonus is a separate choice, so the solver picks the best feeding for the target (source: millenium.org guide 345339)

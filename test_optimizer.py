@@ -84,6 +84,36 @@ class OptimizeTest(unittest.TestCase):
         self.assertEqual([i['id'] for i in build['items']], ['Q'])
         self.assertEqual(build['totalElement'], 7)
 
+    def test_excluded_item_is_replaced_by_next_best(self):
+        cat = Catalog([item('X', 'hat', vitalite=50), item('Y', 'hat', vitalite=10)], [])
+        build = optimize(cat, 'vitalite', level=50, total_pa=6, total_pm=3, excluded_ids={'X'})
+        self.assertEqual([i['id'] for i in build['items']], ['Y'])
+
+    def test_excluding_covers_copies_with_same_name_and_type_only(self):
+        # Real case: 11 identical "Patte d'Ecaflip" weapons, and "Nomoon" is both a weapon and a pet
+        cat = Catalog(
+            [dict(item('W1', 'weapon', vitalite=50), name='Same'),
+             dict(item('W2', 'weapon', vitalite=50), name='Same'),
+             dict(item('P', 'pet', vitalite=20), name='Same'),
+             item('B', 'weapon', vitalite=10)], [])
+        build = optimize(cat, 'vitalite', level=50, total_pa=6, total_pm=3, excluded_ids={'W1'})
+        self.assertEqual(sorted(i['id'] for i in build['items']), ['B', 'P'])
+
+    def test_excluded_piece_breaks_set_bonus(self):
+        cat = Catalog(
+            [item('A', 'hat', set='S', vitalite=10),
+             item('B', 'boots', set='S', vitalite=10),
+             item('C', 'hat', vitalite=5)],
+            [{'name': 'S', 'items': [], 'bonuses': {'2': {'vitalite': 20}}}])
+        build = optimize(cat, 'vitalite', level=50, total_pa=6, total_pm=3, excluded_ids={'A'})
+        self.assertEqual(sorted(i['id'] for i in build['items']), ['B', 'C'])
+        self.assertEqual(build['setBonus'], 0)
+        self.assertEqual(build['totalElement'], 15)
+
+    def test_excluding_only_way_to_reach_pa_gives_no_build(self):
+        cat = Catalog([item('X', 'hat', pa=1, vitalite=5), item('Y', 'hat', vitalite=50)], [])
+        self.assertIsNone(optimize(cat, 'vitalite', level=50, total_pa=7, total_pm=3, excluded_ids={'X'}))
+
 
 class RealDataTest(unittest.TestCase):
     def test_real_catalog(self):
@@ -115,6 +145,19 @@ class AdapterTest(unittest.TestCase):
         resp = self.client.post('/api/optimize', json={'element': 'nope'})
         self.assertEqual(resp.status_code, 400)
         self.assertIn('error', resp.get_json())
+
+    def test_excluded_ids_reach_the_optimizer(self):
+        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3}
+        first = self.client.post('/api/optimize', json=body).get_json()[0]
+        banned = first['items'][0]
+        again = self.client.post('/api/optimize', json={**body, 'excludedIds': [banned['id']]}).get_json()[0]
+        self.assertNotIn((banned['name'], banned['type']), [(i['name'], i['type']) for i in again['items']])
+        self.assertLessEqual(again['totalElement'], first['totalElement'])
+
+    def test_bad_excluded_ids_is_400(self):
+        for bad in ['retro_1', [1], {'a': 1}, [['retro_1']]]:
+            resp = self.client.post('/api/optimize', json={'element': 'force', 'excludedIds': bad})
+            self.assertEqual(resp.status_code, 400, bad)
 
 
 if __name__ == '__main__':

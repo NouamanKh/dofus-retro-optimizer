@@ -25,24 +25,28 @@ def _score(stats, element):
     return stats.get(element, 0)
 
 
-def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0):
-    """Best Build for `element` reaching at least the player's total PA/PM, or None if none can."""
+def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=()):
+    """Best Build for `element` reaching at least the player's total PA/PM without the excluded items, or None if none can."""
     gear_pa = max(0, total_pa - base_pa(level) - exo_pa)
     gear_pm = max(0, total_pm - BASE_PM - exo_pm)
-    selected = _solve(catalog, element, level, gear_pa, gear_pm)
+    selected = _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids)
     if not selected:
         return None
     return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm)
 
 
-def _solve(catalog, element, level, gear_pa, gear_pm):
+def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids):
     """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible."""
+
+    # Same name and type is one item to the player: the catalog repeats some (11 identical "Patte d'Ecaflip")
+    excluded = {(item['name'], item['type']) for item in catalog.items if item['id'] in excluded_ids}
 
     # Filter items by level upfront
     valid_items = {
         item['id']: item for item in catalog.items
         if item['type'] in SLOT_LIMITS
         and 1 <= item['level'] <= level
+        and (item['name'], item['type']) not in excluded
     }
     if not valid_items:
         return None

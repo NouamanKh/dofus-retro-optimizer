@@ -34,7 +34,11 @@ def api_optimize():
     except (TypeError, ValueError):
         return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM doivent etre des entiers'}), 400
 
-    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm)
+    excluded_ids = data.get('excludedIds', [])
+    if not isinstance(excluded_ids, list) or not all(isinstance(i, str) for i in excluded_ids):
+        return jsonify({'error': 'excludedIds doit etre une liste de chaines'}), 400
+
+    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids))
     return jsonify([build] if build else [])
 
 

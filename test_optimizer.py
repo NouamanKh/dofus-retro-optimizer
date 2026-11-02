@@ -12,6 +12,10 @@ def item(id, type, level=1, set=None, pa=0, pm=0, **elements):
             'pa': pa, 'pm': pm, 'stats': {}, 'set': set}
 
 
+def dmg_item(id, type, stats, set=None, **elements):
+    return dict(item(id, type, set=set, **elements), stats=stats)
+
+
 class ActiveBonusTest(unittest.TestCase):
     def test_active_bonus_picks_highest_reached_tier(self):
         cat = Catalog([], [{'name': 'S', 'items': [], 'bonuses': {'2': {'vitalite': 10}, '4': {'vitalite': 30}}}])
@@ -115,6 +119,48 @@ class OptimizeTest(unittest.TestCase):
         self.assertIsNone(optimize(cat, 'vitalite', level=50, total_pa=7, total_pm=3, excluded_ids={'X'}))
 
 
+class DamageTest(unittest.TestCase):
+    def best(self, cat, element='force', base=30):
+        return optimize(cat, element, level=50, total_pa=6, total_pm=3, damage_base=base)
+
+    def test_formula_rounds_multiplied_part_down_then_adds_flat(self):
+        cat = Catalog([dmg_item('A', 'hat', {'dmg': 5, 'pct_dmg': 3}, force=7)], [])
+        # floor(33 x (100 + 7 + 3) / 100) + 5 = floor(36.3) + 5
+        self.assertEqual(self.best(cat, base=33)['totalElement'], 41)
+
+    def test_spell_base_decides_between_stat_and_flat(self):
+        cat = Catalog([item('S', 'hat', force=100), dmg_item('F', 'hat', {'dmg': 40})], [])
+        self.assertEqual([i['id'] for i in self.best(cat, base=50)['items']], ['S'])
+        self.assertEqual([i['id'] for i in self.best(cat, base=30)['items']], ['F'])
+
+    def test_percent_counts_like_the_element_stat(self):
+        cat = Catalog([item('S', 'hat', force=10), dmg_item('P', 'hat', {'pct_dmg': 20})], [])
+        self.assertEqual([i['id'] for i in self.best(cat)['items']], ['P'])
+
+    def test_only_the_chosen_element_counts(self):
+        cat = Catalog([item('C', 'hat', chance=500), item('S', 'hat', force=10)], [])
+        self.assertEqual([i['id'] for i in self.best(cat)['items']], ['S'])
+        self.assertEqual([i['id'] for i in self.best(cat, element='chance')['items']], ['C'])
+
+    def test_set_damage_bonuses_count(self):
+        cat = Catalog(
+            [item('A', 'hat', set='S', force=10),
+             item('B', 'boots', set='S', force=10),
+             item('C', 'hat', force=30)],
+            [{'name': 'S', 'items': [], 'bonuses': {'2': {'dmg': 20, 'pct_dmg': 10}}}])
+        build = self.best(cat, base=100)
+        self.assertEqual(sorted(i['id'] for i in build['items']), ['A', 'B'])
+        self.assertEqual((build['totalDmg'], build['totalPctDmg']), (20, 10))
+        # floor(100 x (100 + 20 + 10) / 100) + 20
+        self.assertEqual(build['totalElement'], 150)
+
+    def test_stat_search_ignores_damage(self):
+        cat = Catalog([dmg_item('F', 'hat', {'dmg': 500}), item('S', 'hat', force=1)], [])
+        build = optimize(cat, 'force', level=50, total_pa=6, total_pm=3)
+        self.assertEqual([i['id'] for i in build['items']], ['S'])
+        self.assertEqual(build['totalElement'], 1)
+
+
 class RealDataTest(unittest.TestCase):
     def test_real_catalog(self):
         cat = catalog.load()
@@ -125,6 +171,19 @@ class RealDataTest(unittest.TestCase):
         mounts = {i['name']: i for i in cat.items if i['type'] == 'mount'}
         self.assertEqual(pets['Nomoon']['elements']['prospection'], 80)
         self.assertEqual(mounts['Dragodinde Emeraude/Rousse']['pm'], 1)
+
+    def test_real_damage_data(self):
+        cat = catalog.load()
+        by_name = {i['name']: i for i in cat.items}
+        # Class items: "Dommage" beside spell lines applies to one spell
+        self.assertNotIn('dmg', by_name['Cape Aillé']['stats'])
+        # "Renvois de dommages" is not damage
+        self.assertEqual(by_name['Sulik']['stats'].get('dmg_return'), 11)
+        self.assertNotIn('dmg', by_name['Sulik']['stats'])
+        # Set bonuses: flat and % stay apart ("% Dommages" used to read as flat)
+        tiers = [t for bonuses in cat.set_bonuses.values() for t in bonuses.values()]
+        self.assertEqual(sum('dmg' in t for t in tiers), 153)
+        self.assertEqual(sum('pct_dmg' in t for t in tiers), 19)
 
 
 class AdapterTest(unittest.TestCase):
@@ -153,6 +212,20 @@ class AdapterTest(unittest.TestCase):
         again = self.client.post('/api/optimize', json={**body, 'excludedIds': [banned['id']]}).get_json()[0]
         self.assertNotIn((banned['name'], banned['type']), [(i['name'], i['type']) for i in again['items']])
         self.assertLessEqual(again['totalElement'], first['totalElement'])
+
+    def test_damage_endpoint_reports_the_estimate(self):
+        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageBase': 30}
+        build = self.client.post('/api/optimize', json=body).get_json()[0]
+        self.assertEqual(build['damageBase'], 30)
+        multiplied = 30 * (100 + build['totalStats']['force'] + build['totalPctDmg']) // 100
+        self.assertEqual(build['totalElement'], multiplied + build['totalDmg'])
+
+    def test_bad_damage_requests_are_400(self):
+        for body in [{'element': 'vitalite', 'damageBase': 30},
+                     {'element': 'force', 'damageBase': -1},
+                     {'element': 'force', 'damageBase': 1000},
+                     {'element': 'force', 'damageBase': 'x'}]:
+            self.assertEqual(self.client.post('/api/optimize', json=body).status_code, 400, body)
 
     def test_bad_excluded_ids_is_400(self):
         for bad in ['retro_1', [1], {'a': 1}, [['retro_1']]]:

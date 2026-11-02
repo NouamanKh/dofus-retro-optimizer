@@ -10,6 +10,7 @@ const ELEMENT_NAMES = {
 };
 
 const ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection'];
+const DAMAGE_ELEMENTS = ['force', 'intelligence', 'chance', 'agilite'];
 const API_URL = 'https://dofus-retro-optimizer.onrender.com';
 
 let selectedElement = null;
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupElementButtons();
     setupModal();
     setupExclusions();
+    setupDamageMode();
     checkServerStatus();
     // Keep server alive during the session — ping every 10 minutes
     setInterval(() => fetch(`${API_URL}/api/health`).catch(() => {}), 10 * 60 * 1000);
@@ -74,6 +76,20 @@ function setupModal() {
     closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+}
+
+function setupDamageMode() {
+    const toggle = document.getElementById('damageMode');
+    toggle.addEventListener('change', () => {
+        document.getElementById('damageOptions').hidden = !toggle.checked;
+        // Switch rather than clear: exclusion buttons on the current results need an element to search with
+        if (toggle.checked && selectedElement && !DAMAGE_ELEMENTS.includes(selectedElement)) {
+            document.querySelector('.element-btn[data-element="force"]').click();
+        }
+        document.querySelectorAll('.element-btn').forEach(btn => {
+            btn.disabled = toggle.checked && !DAMAGE_ELEMENTS.includes(btn.dataset.element);
+        });
+    });
 }
 
 function setupExclusions() {
@@ -136,13 +152,16 @@ async function runOptimization() {
     const totalPM     = parseInt(document.getElementById('totalPM').value) || 3;
     const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
     const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
+    const damageBase  = document.getElementById('damageMode').checked
+        ? Math.min(999, Math.max(1, parseInt(document.getElementById('spellBase').value) || 30))
+        : 0;
 
     setLoading(true);
     try {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, excludedIds: excludedItems.map(i => i.id) })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageBase, excludedIds: excludedItems.map(i => i.id) })
         });
         const results = await response.json();
 
@@ -288,12 +307,16 @@ function displayResults(results) {
             <article class="result">
                 <div class="result-header">
                     <div>
-                        <span class="stat-name">${ELEMENT_NAMES[selectedElement]} totale</span>
+                        <span class="stat-name">${r.damageBase ? `Dommages ${ELEMENT_NAMES[selectedElement]} estimés` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
                         <span class="stat-value" style="color:var(--${selectedElement});">${r.totalElement}</span>
                     </div>
                     <div class="result-meta">
                         <span class="meta">PA <b>${r.totalPA}</b></span>
                         <span class="meta">PM <b>${r.totalPM}</b></span>
+                        ${r.damageBase ? `
+                            <span class="meta">Base <b>${r.damageBase}</b></span>
+                            <span class="meta">Dommages <b>${signed(r.totalDmg)}</b></span>
+                            <span class="meta">% Dommages <b>${signed(r.totalPctDmg)}</b></span>` : ''}
                         ${r.setBonus > 0 ? `<span class="meta">Panoplie <b>+${r.setBonus}</b></span>` : ''}
                         <button type="button" class="details-btn" data-result-idx="${i}">Voir le détail</button>
                     </div>
@@ -331,6 +354,8 @@ function openModal(result) {
                 <div class="set-detail-bonuses">
                     ${s.bonus.pa ? `<span style="color:var(--pa);">${signed(s.bonus.pa)} PA</span>` : ''}
                     ${s.bonus.pm ? `<span style="color:var(--pm);">${signed(s.bonus.pm)} PM</span>` : ''}
+                    ${s.bonus.dmg ? `<span>${signed(s.bonus.dmg)} Dommages</span>` : ''}
+                    ${s.bonus.pct_dmg ? `<span>${signed(s.bonus.pct_dmg)} % Dommages</span>` : ''}
                     ${ALL_ELEMENTS.filter(el => s.bonus[el]).map(el =>
                         `<span style="color:var(--${el});">${signed(s.bonus[el])} ${ELEMENT_NAMES[el]}</span>`
                     ).join('')}
@@ -342,6 +367,8 @@ function openModal(result) {
         <div class="modal-totals">
             <div class="modal-totals-row"><span>PA</span><b style="color:var(--pa);">${result.totalPA}</b></div>
             <div class="modal-totals-row"><span>PM</span><b style="color:var(--pm);">${result.totalPM}</b></div>
+            ${[['Dommages', result.totalDmg], ['% Dommages', result.totalPctDmg]].filter(([, val]) => val).map(([label, val]) => `
+                <div class="modal-totals-row"><span>${label}</span><b class="${val < 0 ? 'neg' : ''}">${signed(val)}</b></div>`).join('')}
             ${ALL_ELEMENTS.filter(el => result.totalStats[el]).map(el => {
                 const total = result.totalStats[el];
                 const setB  = result.setBonuses[el] || 0;

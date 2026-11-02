@@ -1,5 +1,13 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.10.0 (2026-11-02)
+- New: "Maximiser les dommages d'un sort" searches for the most damage on a spell in one element, given its base damage. Estimate: floor(base x (100 + element + % Dommages) / 100) + Dommages, gear only (source: forums.jeuxonline.info/sujet/801243, not Retro-specific)
+- Set bonuses now include Dommages and % Dommages, shown in the build details
+- Fix "Renvois de dommages" read as Dommages (3 items, e.g. Sulik)
+- Fix set "% Dommages" labels, which would have read as flat Dommages
+- Class items: fixed "Dommage" beside spell-specific lines no longer counts as general Dommages (18 items, e.g. Cape Aillé showed +55); assumed to apply to one spell, whose name is missing from the raw data
+- API: POST /api/optimize accepts an optional damageBase (0-999, Force/Intelligence/Chance/Agilité only)
+
 ## v1.9.0 (2026-11-02)
 - New: "Chercher sans cet objet" button on each item re-runs the search without it. Exclusions add up across searches and are listed above the results, where a click puts an item back
 - Excluding an item also excludes its copies with the same name and type (the catalog has 11 identical "Patte d'Ecaflip")

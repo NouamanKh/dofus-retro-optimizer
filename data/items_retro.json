@@ -8491,7 +8491,7 @@
     "pa": 0,
     "pm": 0,
     "stats": {
-      "dmg": 1
+      "dmg_return": 1
     },
     "set": "Panoplie Prespic",
     "recipe": [
@@ -12910,9 +12910,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 10
-    },
+    "stats": {},
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -12967,9 +12965,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 20
-    },
+    "stats": {},
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -23430,7 +23426,7 @@
     "pa": 0,
     "pm": 0,
     "stats": {
-      "dmg": 1
+      "dmg_return": 1
     },
     "set": "Panoplie Prespic",
     "recipe": [
@@ -27610,9 +27606,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -27722,9 +27716,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 25
-    },
+    "stats": {},
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -27834,9 +27826,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Xelor",
     "recipe": [
       {
@@ -32834,9 +32824,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Sadida",
     "recipe": [
       {
@@ -32989,9 +32977,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 40
-    },
+    "stats": {},
     "set": "Panoplie Classe Enutrof",
     "recipe": [
       {
@@ -33354,9 +33340,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -33407,9 +33391,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 55
-    },
+    "stats": {},
     "set": "Panoplie Classe Ecaflip",
     "recipe": [
       {
@@ -37697,9 +37679,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Feca",
     "recipe": [
       {
@@ -37871,9 +37851,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 25
-    },
+    "stats": {},
     "set": "Panoplie Classe Pandawa",
     "recipe": [
       {
@@ -37959,9 +37937,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Sram",
     "recipe": [
       {
@@ -38004,9 +37980,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 10
-    },
+    "stats": {},
     "set": "Panoplie Classe Osamodas",
     "recipe": [
       {
@@ -38093,7 +38067,6 @@
     "pa": 0,
     "pm": 0,
     "stats": {
-      "dmg": 20,
       "heals": 30
     },
     "set": "Panoplie Classe Enutrof",
@@ -38296,9 +38269,7 @@
     },
     "pa": 0,
     "pm": 0,
-    "stats": {
-      "dmg": 15
-    },
+    "stats": {},
     "set": "Panoplie Classe Eniripsa",
     "recipe": [
       {
@@ -43909,7 +43880,7 @@
     "pa": 0,
     "pm": 0,
     "stats": {
-      "dmg": 11
+      "dmg_return": 11
     },
     "set": null,
     "recipe": [
@@ -49381,9 +49352,7 @@
     },
     "pa": 0,
     "pm": 1,
-    "stats": {
-      "dmg": 30
-    },
+    "stats": {},
     "set": "Panoplie Classe Iop",
     "recipe": [
       {
@@ -49691,9 +49660,7 @@
     },
     "pa": 0,
     "pm": 1,
-    "stats": {
-      "dmg": 10
-    },
+    "stats": {},
     "set": null,
     "recipe": [
       {
@@ -49744,9 +49711,7 @@
     },
     "pa": 0,
     "pm": 1,
-    "stats": {
-      "dmg": 10
-    },
+    "stats": {},
     "set": "Panoplie Classe Sram",
     "recipe": [
       {

@@ -4,6 +4,7 @@ import json
 import os
 
 ALL_ELEMENTS = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection']
+DAMAGE_ELEMENTS = ['force', 'intelligence', 'chance', 'agilite']
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 

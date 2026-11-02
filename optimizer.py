@@ -18,24 +18,34 @@ def base_pa(level):
     return 7 if level >= 100 else 6
 
 
-def _score(stats, element):
-    """Target value of a stat dict. Prospection also gets 1 per 10 Chance, as in game."""
+def _score(stats, element, damage_base=0):
+    """Target value of a stat dict. Prospection also gets 1 per 10 Chance, as in game.
+
+    With a spell's base damage, it is the gear's share of
+    floor(base x (100 + element + % damage) / 100) + flat damage.
+    The character's own stat points are a constant here, so they can't change which gear wins.
+    """
+    if damage_base:
+        return damage_base * (stats.get(element, 0) + stats.get('pct_dmg', 0)) / 100 + stats.get('dmg', 0)
     if element == 'prospection':
         return stats.get('prospection', 0) + stats.get('chance', 0) / 10
     return stats.get(element, 0)
 
 
-def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=()):
-    """Best Build for `element` reaching at least the player's total PA/PM without the excluded items, or None if none can."""
+def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_base=0):
+    """Best Build for `element` reaching at least the player's total PA/PM without the excluded items, or None if none can.
+
+    With damage_base (a spell's base damage), maximises that spell's estimated damage in `element`.
+    """
     gear_pa = max(0, total_pa - base_pa(level) - exo_pa)
     gear_pm = max(0, total_pm - BASE_PM - exo_pm)
-    selected = _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids)
+    selected = _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
     if not selected:
         return None
-    return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm)
+    return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm, damage_base)
 
 
-def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids):
+def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base):
     """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible."""
 
     # Same name and type is one item to the player: the catalog repeats some (11 identical "Patte d'Ecaflip")
@@ -74,7 +84,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids):
             z = pulp.LpVariable(f"z_{safe_name}_{tier}", cat="Binary")
             model += tier * z <= worn, f"reach_{safe_name}_{tier}"
             model += worn - (tier - 1) <= len(iids) * z, f"auto_{safe_name}_{tier}"
-            set_score.append(z * (_score(bonus, element) - _score(prev, element)))
+            set_score.append(z * (_score(bonus, element, damage_base) - _score(prev, element, damage_base)))
             set_pa.append(z * (bonus.get('pa', 0) - prev.get('pa', 0)))
             set_pm.append(z * (bonus.get('pm', 0) - prev.get('pm', 0)))
             prev = bonus
@@ -82,7 +92,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids):
     # --- Objective ---
     obj_terms = []
     for iid, item in valid_items.items():
-        val = _score(item['elements'], element)
+        val = _score({**item['elements'], **item['stats']}, element, damage_base)
         if val != 0:
             obj_terms.append(x[iid] * val)
     model += pulp.lpSum(obj_terms + set_score)
@@ -111,12 +121,12 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids):
         return None
 
     selected = [valid_items[iid] for iid, var in x.items() if var.value() and var.value() > 0.5]
-    total_el = sum(_score(i['elements'], element) for i in selected)
+    total_el = sum(_score({**i['elements'], **i['stats']}, element, damage_base) for i in selected)
     print(f"[MILP] {len(selected)} items | {element}: {total_el} | {[i['name'] for i in selected]}")
     return selected
 
 
-def _build(catalog, selected, element, extra_pa, extra_pm):
+def _build(catalog, selected, element, extra_pa, extra_pm, damage_base):
     """Build a result dict from selected items; extra_pa/extra_pm are the character's base + exo PA/PM."""
     base_stats = {el: 0 for el in ALL_ELEMENTS}
     for item in selected:
@@ -129,7 +139,7 @@ def _build(catalog, selected, element, extra_pa, extra_pm):
         if item.get('set'):
             set_counts[item['set']] = set_counts.get(item['set'], 0) + 1
 
-    set_bonus_stats = {el: 0 for el in ALL_ELEMENTS + ['pa', 'pm']}
+    set_bonus_stats = {el: 0 for el in ALL_ELEMENTS + ['pa', 'pm', 'dmg', 'pct_dmg']}
     set_details = []
     for set_name, count in set_counts.items():
         bonus = catalog.active_bonus(set_name, count)
@@ -140,10 +150,16 @@ def _build(catalog, selected, element, extra_pa, extra_pm):
         set_details.append({'setName': set_name, 'pieces': count, 'bonus': bonus})
 
     total_stats = {el: base_stats[el] + set_bonus_stats[el] for el in ALL_ELEMENTS}
+    total_dmg = set_bonus_stats['dmg'] + sum(item['stats'].get('dmg', 0) for item in selected)
+    total_pct_dmg = set_bonus_stats['pct_dmg'] + sum(item['stats'].get('pct_dmg', 0) for item in selected)
+    score = _score({**total_stats, 'dmg': total_dmg, 'pct_dmg': total_pct_dmg}, element, damage_base)
 
     return {
         'items': selected,
-        'totalElement': math.floor(_score(total_stats, element)),
+        'totalElement': math.floor(damage_base + score),  # the estimated damage when damage_base is set
+        'damageBase': damage_base,
+        'totalDmg': total_dmg,
+        'totalPctDmg': total_pct_dmg,
         'baseElement': base_stats[element],
         'setBonus': set_bonus_stats[element],
         'setDetails': set_details,

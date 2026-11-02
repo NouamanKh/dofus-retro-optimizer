@@ -71,7 +71,8 @@
       },
       "4": {
         "sagesse": 30,
-        "intelligence": 15
+        "intelligence": 15,
+        "dmg": 1
       }
     }
   },
@@ -90,11 +91,13 @@
       },
       "3": {
         "agilite": 20,
-        "vitalite": 10
+        "vitalite": 10,
+        "dmg": 1
       },
       "4": {
         "agilite": 30,
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 2
       }
     }
   },
@@ -169,13 +172,16 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 3
       },
       "3": {
-        "vitalite": 40
+        "vitalite": 40,
+        "dmg": 5
       },
       "4": {
-        "vitalite": 50
+        "vitalite": 50,
+        "dmg": 7
       }
     }
   },
@@ -188,18 +194,23 @@
       "Corbalame"
     ],
     "bonuses": {
-      "2": {},
+      "2": {
+        "dmg": 3
+      },
       "3": {
-        "pa": 1
+        "pa": 1,
+        "dmg": 3
       },
       "4": {
         "pa": 1,
-        "pm": 1
+        "pm": 1,
+        "dmg": 5
       },
       "5": {
         "pa": 1,
         "pm": 1,
-        "sagesse": 30
+        "sagesse": 30,
+        "dmg": 10
       }
     }
   },
@@ -225,19 +236,23 @@
       },
       "4": {
         "force": 10,
-        "intelligence": 10
+        "intelligence": 10,
+        "dmg": 2
       },
       "5": {
         "force": 30,
-        "intelligence": 30
+        "intelligence": 30,
+        "dmg": 4
       },
       "6": {
         "force": 40,
-        "intelligence": 40
+        "intelligence": 40,
+        "dmg": 4
       },
       "7": {
         "force": 50,
         "intelligence": 50,
+        "dmg": 4,
         "sagesse": 20,
         "pa": 1
       }
@@ -481,17 +496,21 @@
         "vitalite": 20
       },
       "4": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 3
       },
       "5": {
-        "vitalite": 40
+        "vitalite": 40,
+        "dmg": 4
       },
       "6": {
         "vitalite": 50,
+        "dmg": 5,
         "pm": 1
       },
       "7": {
         "vitalite": 60,
+        "dmg": 6,
         "pm": 1,
         "pa": 1
       }
@@ -506,11 +525,15 @@
       "Coiffe du Prespic"
     ],
     "bonuses": {
-      "2": {},
+      "2": {
+        "dmg": 2
+      },
       "3": {
+        "dmg": 5,
         "sagesse": 15
       },
       "4": {
+        "dmg": 8,
         "sagesse": 30
       }
     }
@@ -695,7 +718,8 @@
       },
       "4": {
         "vitalite": 30,
-        "agilite": 30
+        "agilite": 30,
+        "dmg": 3
       }
     }
   },
@@ -766,13 +790,16 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 10
+        "vitalite": 10,
+        "dmg": 2
       },
       "3": {
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 4
       },
       "4": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 8
       }
     }
   },
@@ -791,11 +818,13 @@
       },
       "3": {
         "vitalite": 20,
-        "force": 20
+        "force": 20,
+        "dmg": 4
       },
       "4": {
         "vitalite": 30,
-        "force": 30
+        "force": 30,
+        "dmg": 8
       }
     }
   },
@@ -818,6 +847,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -829,6 +859,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -840,6 +871,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -852,6 +884,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -878,6 +911,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -889,6 +923,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -900,6 +935,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -912,6 +948,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -938,6 +975,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -949,6 +987,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -960,6 +999,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -972,6 +1012,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -998,6 +1039,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1009,6 +1051,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1020,6 +1063,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1032,6 +1076,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1058,6 +1103,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1069,6 +1115,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1080,6 +1127,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1092,6 +1140,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1118,6 +1167,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1129,6 +1179,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1140,6 +1191,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1152,6 +1204,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1178,6 +1231,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1189,6 +1243,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1200,6 +1255,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1212,6 +1268,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1238,6 +1295,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1249,6 +1307,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1260,6 +1319,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1272,6 +1332,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1298,6 +1359,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1309,6 +1371,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1320,6 +1383,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1332,6 +1396,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1358,6 +1423,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1369,6 +1435,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1380,6 +1447,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1392,6 +1460,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1418,6 +1487,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1429,6 +1499,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1440,6 +1511,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1452,6 +1524,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1478,6 +1551,7 @@
       },
       "3": {
         "vitalite": 100,
+        "dmg": 3,
         "prospection": 10
       },
       "4": {
@@ -1489,6 +1563,7 @@
       },
       "5": {
         "vitalite": 200,
+        "dmg": 7,
         "prospection": 20
       },
       "6": {
@@ -1500,6 +1575,7 @@
       },
       "7": {
         "vitalite": 500,
+        "dmg": 12,
         "prospection": 30
       },
       "8": {},
@@ -1512,6 +1588,7 @@
       },
       "10": {
         "vitalite": 800,
+        "dmg": 20,
         "prospection": 40
       },
       "11": {
@@ -1638,10 +1715,12 @@
     ],
     "bonuses": {
       "2": {
-        "chance": 15
+        "chance": 15,
+        "dmg": 2
       },
       "3": {
         "chance": 30,
+        "dmg": 4,
         "prospection": 15
       }
     }
@@ -1655,10 +1734,12 @@
     ],
     "bonuses": {
       "2": {
-        "force": 10
+        "force": 10,
+        "dmg": 2
       },
       "3": {
-        "force": 30
+        "force": 30,
+        "dmg": 4
       }
     }
   },
@@ -1701,19 +1782,25 @@
         "vitalite": 20
       },
       "3": {
-        "vitalite": 40
+        "vitalite": 40,
+        "dmg": 1
       },
       "4": {
         "vitalite": 60,
+        "dmg": 2,
         "sagesse": 10
       },
       "5": {
         "vitalite": 80,
-        "sagesse": 20
+        "dmg": 3,
+        "sagesse": 20,
+        "pct_dmg": 10
       },
       "6": {
         "vitalite": 100,
+        "dmg": 4,
         "sagesse": 30,
+        "pct_dmg": 20,
         "pm": 1
       }
     }
@@ -1777,14 +1864,17 @@
     ],
     "bonuses": {
       "2": {
+        "dmg": 2,
         "prospection": 10,
         "sagesse": 10
       },
       "3": {
+        "dmg": 4,
         "prospection": 20,
         "sagesse": 20
       },
       "4": {
+        "dmg": 6,
         "prospection": 30,
         "sagesse": 30
       }
@@ -1797,7 +1887,9 @@
       "Hache du Guerrier Zoth"
     ],
     "bonuses": {
-      "2": {}
+      "2": {
+        "dmg": 8
+      }
     }
   },
   {
@@ -1812,20 +1904,25 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 2
       },
       "3": {
-        "vitalite": 40
+        "vitalite": 40,
+        "dmg": 4
       },
       "4": {
-        "vitalite": 60
+        "vitalite": 60,
+        "dmg": 6
       },
       "5": {
-        "vitalite": 80
+        "vitalite": 80,
+        "dmg": 7
       },
       "6": {
         "pa": 1,
-        "vitalite": 100
+        "vitalite": 100,
+        "dmg": 8
       }
     }
   },
@@ -1839,13 +1936,16 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 2
       },
       "3": {
-        "vitalite": 50
+        "vitalite": 50,
+        "dmg": 3
       },
       "4": {
         "vitalite": 80,
+        "dmg": 6,
         "sagesse": 20
       }
     }
@@ -1861,11 +1961,26 @@
       "Abrature Ancestral"
     ],
     "bonuses": {
-      "2": {},
-      "3": {},
-      "4": {},
-      "5": {},
-      "6": {}
+      "2": {
+        "pct_dmg": 5,
+        "dmg": 1
+      },
+      "3": {
+        "pct_dmg": 10,
+        "dmg": 2
+      },
+      "4": {
+        "pct_dmg": 15,
+        "dmg": 3
+      },
+      "5": {
+        "pct_dmg": 20,
+        "dmg": 4
+      },
+      "6": {
+        "pct_dmg": 25,
+        "dmg": 5
+      }
     }
   },
   {
@@ -1883,32 +1998,42 @@
         "force": 5,
         "agilite": 5,
         "intelligence": 5,
-        "chance": 5
+        "chance": 5,
+        "pct_dmg": 5
       },
-      "3": {},
+      "3": {
+        "dmg": 1
+      },
       "4": {
         "force": 20,
         "agilite": 20,
         "intelligence": 20,
-        "chance": 20
+        "chance": 20,
+        "pct_dmg": 20
       },
-      "5": {},
+      "5": {
+        "dmg": 2
+      },
       "6": {
         "force": 30,
         "agilite": 30,
         "intelligence": 30,
-        "chance": 30
+        "chance": 30,
+        "pct_dmg": 30
       },
       "7": {
+        "dmg": 3,
         "sagesse": 10
       },
       "8": {
         "force": 40,
         "agilite": 40,
         "intelligence": 40,
-        "chance": 40
+        "chance": 40,
+        "pct_dmg": 40
       },
       "9": {
+        "dmg": 4,
         "sagesse": 20
       },
       "10": {
@@ -1916,9 +2041,11 @@
         "force": 50,
         "agilite": 50,
         "intelligence": 50,
-        "chance": 50
+        "chance": 50,
+        "pct_dmg": 50
       },
       "11": {
+        "dmg": 5,
         "sagesse": 30
       }
     }
@@ -2280,8 +2407,11 @@
       "Branche de l'Abrakleur Sombre"
     ],
     "bonuses": {
-      "2": {},
+      "2": {
+        "dmg": 3
+      },
       "3": {
+        "dmg": 6,
         "vitalite": 40
       }
     }
@@ -2296,13 +2426,16 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 10
+        "vitalite": 10,
+        "dmg": 1
       },
       "3": {
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 2
       },
       "4": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 4
       }
     }
   },
@@ -2352,27 +2485,33 @@
         "vitalite": 10
       },
       "3": {
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 2
       },
       "4": {
         "vitalite": 40,
-        "force": 10
+        "force": 10,
+        "dmg": 4
       },
       "5": {
         "vitalite": 60,
-        "force": 20
+        "force": 20,
+        "dmg": 6
       },
       "6": {
         "vitalite": 100,
-        "force": 40
+        "force": 40,
+        "dmg": 8
       },
       "7": {
         "vitalite": 150,
-        "force": 60
+        "force": 60,
+        "dmg": 10
       },
       "8": {
         "vitalite": 250,
         "force": 80,
+        "dmg": 12,
         "pa": 1
       }
     }
@@ -2436,10 +2575,12 @@
         "sagesse": 20
       },
       "3": {
-        "sagesse": 40
+        "sagesse": 40,
+        "dmg": 4
       },
       "4": {
         "sagesse": 60,
+        "dmg": 8,
         "pa": 1
       }
     }
@@ -2726,25 +2867,30 @@
         "vitalite": 20
       },
       "3": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 2
       },
       "4": {
         "vitalite": 40,
-        "force": 40
+        "force": 40,
+        "dmg": 3
       },
       "5": {
         "vitalite": 50,
-        "force": 50
+        "force": 50,
+        "dmg": 4
       },
       "6": {
         "vitalite": 60,
         "force": 60,
-        "intelligence": 60
+        "intelligence": 60,
+        "dmg": 5
       },
       "7": {
         "vitalite": 70,
         "force": 70,
         "intelligence": 70,
+        "dmg": 6,
         "pa": 1
       }
     }
@@ -2868,11 +3014,13 @@
       },
       "3": {
         "chance": 70,
-        "prospection": 20
+        "prospection": 20,
+        "dmg": 3
       },
       "4": {
         "chance": 80,
-        "prospection": 30
+        "prospection": 30,
+        "dmg": 6
       }
     }
   },
@@ -2906,24 +3054,30 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 20
+        "vitalite": 20,
+        "dmg": 1
       },
       "3": {
-        "vitalite": 30
+        "vitalite": 30,
+        "dmg": 2
       },
       "4": {
-        "vitalite": 40
+        "vitalite": 40,
+        "dmg": 3
       },
       "5": {
         "vitalite": 50,
+        "dmg": 4,
         "sagesse": 20
       },
       "6": {
         "vitalite": 60,
+        "dmg": 5,
         "sagesse": 40
       },
       "7": {
         "vitalite": 80,
+        "dmg": 10,
         "sagesse": 60
       }
     }
@@ -2973,18 +3127,22 @@
       "2": {},
       "3": {},
       "4": {
-        "prospection": 10
+        "prospection": 10,
+        "dmg": 5
       },
       "5": {
         "prospection": 10,
+        "dmg": 5,
         "pm": 1
       },
       "6": {
         "prospection": 10,
+        "dmg": 8,
         "pm": 1
       },
       "7": {
         "prospection": 16,
+        "dmg": 16,
         "pm": 2
       }
     }
@@ -3036,11 +3194,13 @@
       "3": {
         "agilite": 50,
         "vitalite": 50,
+        "dmg": 5,
         "prospection": 20
       },
       "4": {
         "agilite": 60,
         "vitalite": 60,
+        "dmg": 7,
         "prospection": 20,
         "pm": 1
       }
@@ -3068,19 +3228,23 @@
       },
       "4": {
         "agilite": 20,
-        "chance": 20
+        "chance": 20,
+        "dmg": 2
       },
       "5": {
         "agilite": 30,
-        "chance": 30
+        "chance": 30,
+        "dmg": 3
       },
       "6": {
         "agilite": 40,
-        "chance": 40
+        "chance": 40,
+        "dmg": 4
       },
       "7": {
         "agilite": 70,
         "chance": 70,
+        "dmg": 7,
         "sagesse": 30,
         "pa": 1
       }
@@ -3096,13 +3260,16 @@
     ],
     "bonuses": {
       "2": {
-        "vitalite": 25
+        "vitalite": 25,
+        "pct_dmg": 15
       },
       "3": {
-        "vitalite": 50
+        "vitalite": 50,
+        "pct_dmg": 30
       },
       "4": {
-        "vitalite": 100
+        "vitalite": 100,
+        "pct_dmg": 60
       }
     }
   },
@@ -3314,7 +3481,8 @@
     ],
     "bonuses": {
       "2": {
-        "agilite": 50
+        "agilite": 50,
+        "dmg": 5
       }
     }
   },
@@ -3350,6 +3518,7 @@
         "force": 50
       },
       "9": {
+        "dmg": 4,
         "pa": 1
       }
     }
@@ -3426,25 +3595,32 @@
       "Baguette du Tofu"
     ],
     "bonuses": {
-      "2": {},
+      "2": {
+        "dmg": 2
+      },
       "3": {
+        "dmg": 3,
         "agilite": 5,
         "vitalite": 5
       },
       "4": {
+        "dmg": 4,
         "agilite": 10,
         "vitalite": 10
       },
       "5": {
+        "dmg": 5,
         "agilite": 20,
         "vitalite": 20
       },
       "6": {
+        "dmg": 6,
         "agilite": 40,
         "vitalite": 40,
         "sagesse": 15
       },
       "7": {
+        "dmg": 7,
         "agilite": 60,
         "vitalite": 60,
         "sagesse": 30
@@ -3473,21 +3649,25 @@
       },
       "4": {
         "vitalite": 15,
-        "agilite": 15
+        "agilite": 15,
+        "pct_dmg": 5
       },
       "5": {
         "vitalite": 20,
-        "agilite": 20
+        "agilite": 20,
+        "pct_dmg": 10
       },
       "6": {},
       "7": {
         "vitalite": 25,
-        "agilite": 25
+        "agilite": 25,
+        "pct_dmg": 15
       },
       "8": {},
       "9": {
         "vitalite": 30,
-        "agilite": 30
+        "agilite": 30,
+        "pct_dmg": 20
       },
       "10": {
         "pa": 1
@@ -3551,21 +3731,25 @@
       },
       "4": {
         "vitalite": 30,
-        "chance": 15
+        "chance": 15,
+        "dmg": 1
       },
       "5": {
         "vitalite": 40,
         "chance": 20,
+        "dmg": 3,
         "sagesse": 10
       },
       "6": {
         "vitalite": 50,
         "chance": 25,
+        "dmg": 5,
         "sagesse": 20
       },
       "7": {
         "vitalite": 60,
         "chance": 30,
+        "dmg": 7,
         "sagesse": 40
       }
     }

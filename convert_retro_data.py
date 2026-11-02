@@ -64,8 +64,11 @@ def classify(raw_type):
     if t == 'pm':        return ('pm',  'PM')
 
     # ── Damages ──
+    # Before the 'dommage' catch-all below: items say "renvois de dommages"
+    if 'renvoi'             in t: return ('dmg_return',    'Renvoi Dommages')
     if '% de dommage au pi' in t: return ('pct_dmg_trap',  '% Dommages Pièges')
-    if '% de dommage'      in t:  return ('pct_dmg',       '% Dommages')
+    # Items say "% de dommage", sets say "% Dommages"
+    if '%' in t and 'dommage' in t: return ('pct_dmg',     '% Dommages')
     if 'dommage au pi'     in t:  return ('dmg_trap',      'Dommages Pièges')
     if 'dommages air'      in t:  return ('dmg_air',       'Dommages Air')
     if 'dommages eau'      in t:  return ('dmg_water',     'Dommages Eau')
@@ -113,7 +116,6 @@ def classify(raw_type):
     # ── Other combat stats ──
     if 'coup critique'  in t or 'cc' == t: return ('crit',        'Coups Critiques')
     if 'echec critique' in t:              return ('fail_crit',   'Échec Critique')
-    if 'renvoi'         in t:              return ('dmg_return',  'Renvoi Dommages')
     if 'pa perdu'       in t:              return ('pa_drain',    'PA Retirés')
     if 'pm perdu'       in t:              return ('pm_drain',    'PM Retirés')
     if 'soins'          in t:              return ('heals',       'Soins')
@@ -131,6 +133,8 @@ def parse_all_stats(bonuses):
     stats = {}
     if not bonuses or not isinstance(bonuses, list):
         return stats
+    # Class items: their "Dommage" lines apply to one spell (the raw data lost its name), not to all damage
+    has_spell_lines = any(bonus and 'sort ' in clean(bonus.get('type')) for bonus in bonuses)
     for bonus in bonuses:
         if not bonus or 'type' not in bonus:
             continue
@@ -138,6 +142,8 @@ def parse_all_stats(bonuses):
         if result is None:
             continue
         key, _ = result
+        if key == 'dmg' and has_spell_lines:
+            continue
         val = get_value(bonus)
         if val == 0:
             continue
@@ -145,8 +151,8 @@ def parse_all_stats(bonuses):
     return stats
 
 def decode_set_bonuses(raw_bonus):
-    """Decode raw set tiers into {"pieces": {stat: value}} for the 7 target stats plus PA/PM."""
-    targets = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection', 'pa', 'pm']
+    """Decode raw set tiers into {"pieces": {stat: value}} for the 7 target stats plus PA/PM and damage."""
+    targets = ['vitalite', 'sagesse', 'force', 'intelligence', 'chance', 'agilite', 'prospection', 'pa', 'pm', 'dmg', 'pct_dmg']
     bonuses = {}
     for idx, arr in enumerate(raw_bonus):
         tier = {}

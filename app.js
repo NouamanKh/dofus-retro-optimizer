@@ -158,14 +158,16 @@ async function runOptimization() {
     const totalPM     = parseInt(document.getElementById('totalPM').value) || 3;
     const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
     const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
-    const [damageMin, damageMax] = document.getElementById('damageMode').checked ? readSpellRoll() : [0, 0];
+    const damageMode  = document.getElementById('damageMode').checked;
+    const [damageMin, damageMax] = damageMode ? readSpellRoll() : [0, 0];
+    const withSagesse = damageMode && document.getElementById('withSagesse').checked;
 
     setLoading(true);
     try {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, excludedIds: excludedItems.map(i => i.id) })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, withSagesse, excludedIds: excludedItems.map(i => i.id) })
         });
         const results = await response.json();
 
@@ -291,7 +293,8 @@ function displayResults(results) {
         return;
     }
 
-    resultsCount.textContent = 'Solution optimale (MILP)';
+    const isTradeoff = results.length > 1;
+    resultsCount.textContent = isTradeoff ? `${results.length} compromis, du plus de dommages au plus de Sagesse` : 'Solution optimale (MILP)';
     resultsList.innerHTML = '';
 
     results.forEach((r, i) => {
@@ -300,19 +303,28 @@ function displayResults(results) {
             const total = r.totalStats[el] || 0;
             const setB  = r.setBonuses[el] || 0;
             return `
-                <div class="summary-stat${el === selectedElement ? ' is-target' : ''}">
+                <div class="summary-stat${el === selectedElement || (isTradeoff && el === 'sagesse') ? ' is-target' : ''}">
                     <div class="summary-stat-name" style="color:var(--${el});">${ELEMENT_NAMES[el]}</div>
                     <div class="summary-stat-value ${total === 0 ? 'zero' : total < 0 ? 'neg' : ''}">${signed(total)}</div>
                     ${setB !== 0 ? `<div class="summary-set-note">dont ${signed(setB)} panoplie</div>` : ''}
                 </div>`;
         }).join('');
 
+        const itemsHtml = `<div class="result-items-grid">${r.items.map(item => itemCard(item, false)).join('')}</div>`;
+
         const html = `
             <article class="result">
                 <div class="result-header">
-                    <div>
-                        <span class="stat-name">${r.damageRange ? `Dommages ${ELEMENT_NAMES[selectedElement]} estimés` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
-                        <span class="stat-value" style="color:var(--${selectedElement});">${r.damageRange ? `${r.damageRange[0]} à ${r.damageRange[1]}` : r.totalElement}</span>
+                    <div class="result-headlines">
+                        <div>
+                            <span class="stat-name">${r.damageRange ? `Dommages ${ELEMENT_NAMES[selectedElement]} estimés` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
+                            <span class="stat-value" style="color:var(--${selectedElement});">${r.damageRange ? `${r.damageRange[0]} à ${r.damageRange[1]}` : r.totalElement}</span>
+                        </div>
+                        ${isTradeoff ? `
+                            <div>
+                                <span class="stat-name">Sagesse totale</span>
+                                <span class="stat-value" style="color:var(--sagesse);">${r.totalStats.sagesse}</span>
+                            </div>` : ''}
                     </div>
                     <div class="result-meta">
                         <span class="meta">PA <b>${r.totalPA}</b></span>
@@ -326,7 +338,11 @@ function displayResults(results) {
                     </div>
                 </div>
                 <div class="result-summary-grid">${summaryHtml}</div>
-                <div class="result-items-grid">${r.items.map(item => itemCard(item, false)).join('')}</div>
+                ${isTradeoff ? `
+                    <details class="result-items"${i === 0 ? ' open' : ''}>
+                        <summary>Voir les ${r.items.length} équipements</summary>
+                        ${itemsHtml}
+                    </details>` : itemsHtml}
             </article>`;
 
         resultsList.insertAdjacentHTML('beforeend', html);

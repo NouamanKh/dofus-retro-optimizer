@@ -12,6 +12,8 @@ SLOT_LIMITS = {
     "ring": 2, "belt": 1, "boots": 1, "shield": 1, "pet": 1, "mount": 1
 }
 BASE_PM = 3
+# Weight of the other objective, so it only settles ties: 1000 Sagesse is worth 0.1 damage
+TIE_BREAK = 1e-4
 
 
 def base_pa(level):
@@ -46,8 +48,37 @@ def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, ex
     return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm, damage_base, damage_range)
 
 
-def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base):
-    """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible."""
+def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_range=(1, 1), count=5):
+    """Up to `count` Builds from the most damage to the most Sagesse, each with the most damage for its Sagesse."""
+    gear_pa = max(0, total_pa - base_pa(level) - exo_pa)
+    gear_pm = max(0, total_pm - BASE_PM - exo_pm)
+    damage_base = sum(damage_range) / 2
+
+    def solve(**goal):
+        return _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base, **goal)
+
+    def build(selected):
+        return _build(catalog, selected, element, base_pa(level) + exo_pa, BASE_PM + exo_pm, damage_base, damage_range)
+
+    most_damage = solve(weights=(1, TIE_BREAK))
+    if not most_damage:
+        return []
+    builds = [build(selected) for selected in (most_damage, solve(weights=(TIE_BREAK, 1))) if selected]
+    low, high = builds[0]['totalStats']['sagesse'], builds[-1]['totalStats']['sagesse']
+    if high > low:
+        for step in range(1, count - 1):
+            selected = solve(weights=(1, TIE_BREAK), sagesse_min=low + (high - low) * step / (count - 1))
+            if selected:
+                builds.append(build(selected))
+    unique = {(b['totalStats']['sagesse'], b['totalElement']): b for b in builds}
+    return sorted(unique.values(), key=lambda b: b['totalStats']['sagesse'])
+
+
+def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base, weights=(1, 0), sagesse_min=None):
+    """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible.
+
+    Maximises weights[0] x the target score + weights[1] x Sagesse, with at least sagesse_min Sagesse.
+    """
 
     # Same name and type is one item to the player: the catalog repeats some (11 identical "Patte d'Ecaflip")
     excluded = {(item['name'], item['type']) for item in catalog.items if item['id'] in excluded_ids}
@@ -76,7 +107,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
     # --- Set bonuses ---
     # z = 1 exactly when at least `tier` pieces are worn; the worn bonus is the highest reached
     # tier's, written as the sum of each reached tier's increment over the previous one.
-    set_score, set_pa, set_pm = [], [], []
+    set_score, set_pa, set_pm, set_sagesse = [], [], [], []
     for set_name, iids in set_item_ids.items():
         safe_name = re.sub(r'[^a-zA-Z0-9_]', '_', set_name)
         worn = pulp.lpSum(x[iid] for iid in iids)
@@ -88,6 +119,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
             set_score.append(z * (_score(bonus, element, damage_base) - _score(prev, element, damage_base)))
             set_pa.append(z * (bonus.get('pa', 0) - prev.get('pa', 0)))
             set_pm.append(z * (bonus.get('pm', 0) - prev.get('pm', 0)))
+            set_sagesse.append(z * (bonus.get('sagesse', 0) - prev.get('sagesse', 0)))
             prev = bonus
 
     # --- Objective ---
@@ -96,7 +128,10 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base)
         val = _score({**item['elements'], **item['stats']}, element, damage_base)
         if val != 0:
             obj_terms.append(x[iid] * val)
-    model += pulp.lpSum(obj_terms + set_score)
+    sagesse = pulp.lpSum(item['elements'].get('sagesse', 0) * x[iid] for iid, item in valid_items.items()) + pulp.lpSum(set_sagesse)
+    model += weights[0] * pulp.lpSum(obj_terms + set_score) + weights[1] * sagesse
+    if sagesse_min is not None:
+        model += sagesse >= sagesse_min, "sagesse_min"
 
     # --- Slot constraints ---
     for slot, limit in SLOT_LIMITS.items():

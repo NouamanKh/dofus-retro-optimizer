@@ -9,7 +9,7 @@ from flask_cors import CORS
 import os
 
 from catalog import ALL_ELEMENTS, DAMAGE_ELEMENTS, load as load_catalog
-from optimizer import optimize
+from optimizer import optimize, optimize_tradeoffs
 
 app = Flask(__name__)
 CORS(app)
@@ -44,6 +44,12 @@ def api_optimize():
     excluded_ids = data.get('excludedIds', [])
     if not isinstance(excluded_ids, list) or not all(isinstance(i, str) for i in excluded_ids):
         return jsonify({'error': 'excludedIds doit etre une liste de chaines'}), 400
+
+    with_sagesse = data.get('withSagesse', False)
+    if not isinstance(with_sagesse, bool) or (with_sagesse and not damage_range):
+        return jsonify({'error': 'withSagesse doit etre un booleen et demande damageMin et damageMax'}), 400
+    if with_sagesse:
+        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range))
 
     build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range)
     return jsonify([build] if build else [])

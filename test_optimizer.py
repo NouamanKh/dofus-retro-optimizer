@@ -2,7 +2,7 @@ import unittest
 
 import catalog
 from catalog import ALL_ELEMENTS, Catalog
-from optimizer import optimize
+from optimizer import optimize, optimize_tradeoffs
 
 
 def item(id, type, level=1, set=None, pa=0, pm=0, **elements):
@@ -183,6 +183,57 @@ class DamageTest(unittest.TestCase):
         self.assertEqual(build['totalElement'], 1)
 
 
+class TradeoffTest(unittest.TestCase):
+    def builds(self, cat, roll=(100, 100), **kwargs):
+        kwargs = {'total_pa': 6, 'total_pm': 3, **kwargs}
+        return optimize_tradeoffs(cat, 'force', 50, damage_range=roll, **kwargs)
+
+    def test_goes_from_most_damage_to_most_sagesse(self):
+        cat = Catalog([item('D', 'hat', force=100), item('M', 'hat', force=50, sagesse=50), item('W', 'hat', sagesse=100)], [])
+        self.assertEqual([[i['id'] for i in b['items']] for b in self.builds(cat)], [['D'], ['M'], ['W']])
+
+    def test_each_build_has_the_most_damage_for_its_sagesse(self):
+        cat = Catalog(
+            [item('D', 'hat', force=100), item('W', 'hat', sagesse=100),
+             item('Worse', 'hat', force=10, sagesse=50), item('Better', 'hat', force=60, sagesse=50)], [])
+        ids = [b['items'][0]['id'] for b in self.builds(cat)]
+        self.assertEqual(ids, ['D', 'Better', 'W'])
+
+    def test_slots_without_damage_are_filled_with_sagesse(self):
+        cat = Catalog([item('F', 'hat', force=100), item('B', 'boots', sagesse=30), item('E', 'boots')], [])
+        builds = self.builds(cat)
+        self.assertEqual(len(builds), 1)
+        self.assertEqual(sorted(i['id'] for i in builds[0]['items']), ['B', 'F'])
+
+    def test_no_conflict_gives_one_build(self):
+        cat = Catalog([item('A', 'hat', force=100, sagesse=100), item('C', 'hat', force=1)], [])
+        self.assertEqual([i['id'] for i in self.builds(cat)[0]['items']], ['A'])
+        self.assertEqual(len(self.builds(cat)), 1)
+
+    def test_set_sagesse_counts(self):
+        cat = Catalog(
+            [item('A', 'hat', set='S'), item('B', 'boots', set='S'), item('C', 'hat', sagesse=20), item('F', 'hat', force=5)],
+            [{'name': 'S', 'items': [], 'bonuses': {'2': {'sagesse': 50}}}])
+        last = self.builds(cat)[-1]
+        self.assertEqual(sorted(i['id'] for i in last['items']), ['A', 'B'])
+        self.assertEqual(last['totalStats']['sagesse'], 50)
+
+    def test_pa_and_exclusions_apply_to_every_build(self):
+        cat = Catalog(
+            [item('P', 'hat', pa=1, force=5), item('D', 'hat', force=100), item('W', 'boots', sagesse=50, pa=1), item('V', 'boots', sagesse=90)], [])
+        builds = self.builds(cat, total_pa=7, excluded_ids={'V'})
+        self.assertTrue(builds)
+        for build in builds:
+            self.assertGreaterEqual(build['totalPA'], 7)
+            self.assertNotIn('V', [i['id'] for i in build['items']])
+
+    def test_impossible_requirement_gives_nothing(self):
+        self.assertEqual(self.builds(Catalog([item('F', 'hat', force=1)], []), total_pa=7), [])
+
+    def test_nothing_useful_gives_nothing(self):
+        self.assertEqual(self.builds(Catalog([item('E', 'hat')], [])), [])
+
+
 class RealDataTest(unittest.TestCase):
     def test_real_catalog(self):
         cat = catalog.load()
@@ -193,6 +244,17 @@ class RealDataTest(unittest.TestCase):
         mounts = {i['name']: i for i in cat.items if i['type'] == 'mount'}
         self.assertEqual(pets['Nomoon']['elements']['prospection'], 80)
         self.assertEqual(mounts['Dragodinde Emeraude/Rousse']['pm'], 1)
+
+    def test_real_tradeoffs_end_on_the_single_objective_optimum(self):
+        cat = catalog.load()
+        args = {'total_pa': 6, 'total_pm': 3}
+        builds = optimize_tradeoffs(cat, 'force', 100, damage_range=(20, 40), **args)
+        self.assertGreater(len(builds), 1)
+        self.assertEqual(builds[0]['totalElement'], optimize(cat, 'force', 100, damage_range=(20, 40), **args)['totalElement'])
+        self.assertEqual(builds[-1]['totalStats']['sagesse'], optimize(cat, 'sagesse', 100, **args)['totalElement'])
+        for less, more in zip(builds, builds[1:]):
+            self.assertLess(less['totalStats']['sagesse'], more['totalStats']['sagesse'])
+            self.assertGreater(less['totalElement'], more['totalElement'])
 
     def test_real_damage_data(self):
         cat = catalog.load()
@@ -252,6 +314,17 @@ class AdapterTest(unittest.TestCase):
                      {'element': 'force', 'damageMin': 20, 'damageMax': 1000},
                      {'element': 'force', 'damageMin': 'x', 'damageMax': 20}]:
             self.assertEqual(self.client.post('/api/optimize', json=body).status_code, 400, body)
+
+    def test_with_sagesse_returns_several_builds(self):
+        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageMin': 20, 'damageMax': 40, 'withSagesse': True}
+        builds = self.client.post('/api/optimize', json=body).get_json()
+        self.assertGreater(len(builds), 1)
+        self.assertEqual(len(self.client.post('/api/optimize', json={**body, 'withSagesse': False}).get_json()), 1)
+
+    def test_bad_with_sagesse_is_400(self):
+        roll = {'element': 'force', 'damageMin': 20, 'damageMax': 40}
+        self.assertEqual(self.client.post('/api/optimize', json={**roll, 'withSagesse': 'yes'}).status_code, 400)
+        self.assertEqual(self.client.post('/api/optimize', json={'element': 'force', 'withSagesse': True}).status_code, 400)
 
     def test_bad_excluded_ids_is_400(self):
         for bad in ['retro_1', [1], {'a': 1}, [['retro_1']]]:

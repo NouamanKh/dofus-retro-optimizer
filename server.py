@@ -27,12 +27,12 @@ def api_optimize():
     if element not in ALL_ELEMENTS:
         return jsonify({'error': f'element inconnu: {element}'}), 400
     try:
-        level, total_pa, total_pm, exo_pa, exo_pm, damage_min, damage_max = (
+        level, total_pa, total_pm, exo_pa, exo_pm, damage_min, damage_max, spell_pa, casts_max = (
             int(data.get(key, default)) for key, default in
-            [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0), ('damageMin', 0), ('damageMax', 0)]
+            [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0), ('damageMin', 0), ('damageMax', 0), ('spellPA', 0), ('castsMax', 99)]
         )
     except (TypeError, ValueError):
-        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax doivent etre des entiers'}), 400
+        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, spellPA, castsMax doivent etre des entiers'}), 400
     damage_range = None
     if damage_min or damage_max:
         if not 1 <= damage_min <= damage_max <= 999:
@@ -40,6 +40,8 @@ def api_optimize():
         if element not in DAMAGE_ELEMENTS:
             return jsonify({'error': f'pas de dommages pour: {element}'}), 400
         damage_range = (damage_min, damage_max)
+    if not 0 <= spell_pa <= 20 or not 1 <= casts_max <= 99 or (spell_pa and not damage_range):
+        return jsonify({'error': 'il faut 0 <= spellPA <= 20, 1 <= castsMax <= 99, et spellPA demande damageMin et damageMax'}), 400
 
     excluded_ids = data.get('excludedIds', [])
     if not isinstance(excluded_ids, list) or not all(isinstance(i, str) for i in excluded_ids):
@@ -49,9 +51,9 @@ def api_optimize():
     if not isinstance(with_sagesse, bool) or (with_sagesse and not damage_range):
         return jsonify({'error': 'withSagesse doit etre un booleen et demande damageMin et damageMax'}), 400
     if with_sagesse:
-        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range))
+        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range, spell_pa, casts_max))
 
-    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range)
+    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range, spell_pa, casts_max)
     return jsonify([build] if build else [])
 
 

@@ -1,5 +1,12 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.12.0 (2026-11-03)
+- Damage mode now searches for the most damage per round. New fields: "Coût en PA" and "Lancers max par tour". Casts per round = total PA / spell cost, rounded down, so gear that gives PA can beat gear that hits harder. Results show the damage per round, the casts and the damage per cast
+- "Et maximiser la Sagesse" compares damage per round too
+- Faster solves: set-less items beaten on damage, PA, PM and Sagesse by enough others in their slot no longer reach the solver
+- Gunicorn worker timeout raised to 120 seconds (gunicorn.conf.py), as a trade-off search takes several solves per cast count
+- API: POST /api/optimize accepts spellPA (0-20, requires damageMin and damageMax; 0 counts one cast) and castsMax (1-99, default 99); results return spellPA, casts, roundDamage and roundAverage
+
 ## v1.11.0 (2026-11-02)
 - New: "Et maximiser la Sagesse" in damage mode shows up to 5 builds from the most damage to the most Sagesse, each with the most damage possible for its Sagesse. Slots that add no damage are filled with Sagesse gear
 - API: POST /api/optimize accepts withSagesse (requires damageMin and damageMax) and can then return several builds

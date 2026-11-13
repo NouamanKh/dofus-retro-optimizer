@@ -121,6 +121,61 @@ class OptimizeTest(unittest.TestCase):
         self.assertIsNone(optimize(cat, 'vitalite', level=50, total_pa=7, total_pm=3, excluded_ids={'X'}))
 
 
+def needs(it, *requirements):
+    return dict(it, requirements=[{'type': t, 'value': v} if v is not None else {'type': t} for t, v in requirements])
+
+
+class RequirementTest(unittest.TestCase):
+    def worn(self, items, sets=(), element='vitalite', **args):
+        build = optimize(Catalog(items, list(sets)), element, **{'level': 50, 'total_pa': 6, 'total_pm': 3, **args})
+        return sorted(i['id'] for i in build['items'])
+
+    def test_unmet_requirement_leaves_the_item_out(self):
+        sword = needs(item('SWORD', 'weapon', vitalite=100), ('Force >', 50))
+        self.assertEqual(self.worn([sword, item('STICK', 'weapon', vitalite=10), item('HAT', 'hat', vitalite=1, force=50)]), ['HAT', 'STICK'])
+
+    def test_requirement_is_met_by_the_rest_of_the_gear(self):
+        sword = needs(item('SWORD', 'weapon', vitalite=100), ('Force >', 50))
+        # WEAK gives more of the target, but only STRONG lets the sword be worn
+        self.assertEqual(self.worn([sword, item('WEAK', 'hat', vitalite=20), item('STRONG', 'hat', force=51)]), ['STRONG', 'SWORD'])
+
+    def test_own_stats_do_not_meet_its_requirement(self):
+        sword = needs(item('SWORD', 'weapon', vitalite=100, force=99), ('Force >', 50))
+        self.assertEqual(self.worn([sword, item('STICK', 'weapon', vitalite=10)]), ['STICK'])
+
+    def test_set_bonus_counts_toward_a_requirement(self):
+        sword = needs(item('SWORD', 'weapon', vitalite=100), ('Force >', 50))
+        pieces = [item('A', 'hat', set='S'), item('B', 'boots', set='S')]
+        sets = [{'name': 'S', 'items': [], 'bonuses': {'2': {'force': 51}}}]
+        self.assertEqual(self.worn([sword, *pieces], sets), ['A', 'B', 'SWORD'])
+
+    def test_every_requirement_must_be_met(self):
+        sword = needs(item('SWORD', 'weapon', vitalite=100), ('Force >', 50), ('Agilité >', 50))
+        self.assertEqual(self.worn([sword, item('HAT', 'hat', vitalite=1, force=51)]), ['HAT'])
+
+    def test_requirement_the_search_cannot_check_leaves_the_item_out(self):
+        for requirement in [('Classe doit etre Iop', None), ('Alignement doit etre Bonta', None), ('Grace >', 2), ('Force <', 40)]:
+            sword = needs(item('SWORD', 'weapon', vitalite=100), requirement)
+            self.assertEqual(self.worn([sword, item('STICK', 'weapon', vitalite=10)]), ['STICK'])
+
+    def test_pm_requirement_counts_base_and_exo_pm(self):
+        items = [needs(item('SWORD', 'weapon', vitalite=100), ('PM >', 3)), item('STICK', 'weapon', vitalite=10)]
+        self.assertEqual(self.worn(items), ['STICK'])
+        self.assertEqual(self.worn(items, total_pm=4, exo_pm=1), ['SWORD'])
+
+    def test_real_builds_meet_their_requirements(self):
+        cat = catalog.load()
+        stat = {'Vitalité >': 'vitalite', 'Sagesse >': 'sagesse', 'Force >': 'force', 'Intelligence >': 'intelligence', 'Chance >': 'chance', 'Agilité >': 'agilite'}
+        conditional = 0
+        for element, level in itertools.product(['force', 'intelligence', 'chance', 'agilite', 'vitalite', 'sagesse'], [60, 120, 200]):
+            build = optimize(cat, element, level, total_pa=6, total_pm=3)
+            for worn in build['items']:
+                for req in worn.get('requirements') or []:
+                    conditional += 1
+                    self.assertGreater(build['totalStats'][stat[req['type']]] - worn['elements'][stat[req['type']]], req['value'], worn['name'])
+        self.assertGreater(conditional, 0)
+
+
 class DamageTest(unittest.TestCase):
     def best(self, cat, element='force', base=30):
         return optimize(cat, element, level=50, total_pa=6, total_pm=3, damage_range=(base, base))
@@ -385,6 +440,11 @@ class WithoutDominatedTest(unittest.TestCase):
         value = lambda i: (i['elements']['force'], i['pa'])
         items = [item('A', 'hat', force=9), item('B', 'hat', force=5, pa=1)]
         self.assertEqual(len(_without_dominated(items, value)), 2)
+
+    def test_items_with_requirements_never_drop_another(self):
+        sword = needs(item('SWORD', 'weapon', force=50), ('Agilité >', 10))
+        self.assertEqual(self.kept(sword, item('STICK', 'weapon', force=10)), ['STICK', 'SWORD'])
+        self.assertEqual(self.kept(sword, item('AXE', 'weapon', force=50)), ['AXE'])
 
     def test_set_pieces_never_compete(self):
         # Wearing a set piece can change a bonus, so neither side of the comparison can be one

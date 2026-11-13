@@ -14,10 +14,25 @@ SLOT_LIMITS = {
 BASE_PM = 3
 # Weight of the other objective, so it only settles ties: 1000 Sagesse is worth 0.1 damage
 TIE_BREAK = 1e-4
+# The requirements the search can check, and the stat each asks more of. An item with any other
+# (class, alignment, sex, job, rank, kamas, a stat under a value) is left out: nothing here tells if the character meets it
+REQUIRED_STAT = {
+    'Vitalité >': 'vitalite', 'Sagesse >': 'sagesse', 'Force >': 'force', 'Intelligence >': 'intelligence',
+    'Chance >': 'chance', 'Agilité >': 'agilite', 'PM >': 'pm'
+}
+BIG = 10_000  # More than any stat total or required value (highest in the data: 1200)
 
 
 def base_pa(level):
     return 7 if level >= 100 else 6
+
+
+def _requirements(item):
+    return item.get('requirements') or []
+
+
+def _stat(item, stat):
+    return item['elements'].get(stat) or item.get(stat) or 0
 
 
 def _score(stats, element, damage_base=0):
@@ -76,7 +91,7 @@ def _round_search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, e
     damage_base = sum(damage_range) / 2 if damage_range else 0
 
     def solve(casts, **goal):
-        selected = _solve(catalog, element, level, max(gear_pa, casts * spell_pa - extra_pa), gear_pm, excluded_ids, damage_base, **goal)
+        selected = _solve(catalog, element, level, max(gear_pa, casts * spell_pa - extra_pa), gear_pm, excluded_ids, damage_base, {'pm': BASE_PM + exo_pm}, **goal)
         return selected and _build(catalog, selected, element, extra_pa, BASE_PM + exo_pm, damage_base, damage_range, spell_pa, casts_max)
 
     # Every build has at least this many casts, or needs at least one to count
@@ -128,39 +143,55 @@ def _most_with_sagesse(by_casts, solve, sagesse_min):
 
 
 def _without_dominated(items, value):
-    """Drops items a build never needs: set-less ones that fill their slot's places with set-less items at least as good on every value.
+    """Drops items a build never needs: set-less ones whose slot's places can be filled with free items at least as good on every value.
 
     Set pieces stay on both sides, as wearing one can change a set bonus.
+    Items with requirements can be dropped but never drop another, as a build may not get to wear them.
     """
+    def beaten(item):
+        return sum(all(a >= b for a, b in zip(value(rival), value(item))) for rival in kept.get(item['type'], ())) >= SLOT_LIMITS[item['type']]
+
     kept = {}
-    for item in sorted((i for i in items if not i.get('set')), key=value, reverse=True):
-        better = kept.setdefault(item['type'], [])
-        if sum(all(a >= b for a, b in zip(value(rival), value(item))) for rival in better) < SLOT_LIMITS[item['type']]:
-            better.append(item)
-    return [i for i in items if i.get('set')] + [i for better in kept.values() for i in better]
+    for item in sorted((i for i in items if not i.get('set') and not _requirements(i)), key=value, reverse=True):
+        if not beaten(item):
+            kept.setdefault(item['type'], []).append(item)
+    return ([i for i in items if i.get('set') or (_requirements(i) and not beaten(i))]
+            + [i for better in kept.values() for i in better])
 
 
-def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base, weights=(1, 0), sagesse_min=None):
+def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base, own=None, weights=(1, 0), sagesse_min=None):
     """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible.
 
     Maximises weights[0] x the target score + weights[1] x Sagesse, with at least sagesse_min Sagesse.
+    `own` is what the character has without gear, which counts toward item requirements.
     """
+    # shortcut: only PM is known, so stat points count as 0 and a build must meet requirements on gear alone; pass the points here once the app asks for them
+    own = own or {}
 
     # Same name and type is one item to the player: the catalog repeats some (11 identical "Patte d'Ecaflip")
     excluded = {(item['name'], item['type']) for item in catalog.items if item['id'] in excluded_ids}
 
     # Filter items by level upfront
+    candidates = [
+        item for item in catalog.items
+        if item['type'] in SLOT_LIMITS
+        and 1 <= item['level'] <= level
+        and (item['name'], item['type']) not in excluded
+        and all(req['type'] in REQUIRED_STAT for req in _requirements(item))
+    ]
     def value(item):
-        return (_score({**item['elements'], **item['stats']}, element, damage_base), item.get('pa', 0) or 0, item.get('pm', 0) or 0, item['elements'].get('sagesse', 0))
+        return (_score({**item['elements'], **item['stats']}, element, damage_base), _stat(item, 'pa'), _stat(item, 'pm'), _stat(item, 'sagesse'),
+                *(_stat(item, stat) for stat in required))
 
-    valid_items = {
-        item['id']: item for item in _without_dominated([
-            item for item in catalog.items
-            if item['type'] in SLOT_LIMITS
-            and 1 <= item['level'] <= level
-            and (item['name'], item['type']) not in excluded
-        ], value)
-    }
+    # A stat a kept item requires is worth having, so it keeps more items: repeat until no new stat is required
+    required = []
+    while True:
+        kept = _without_dominated(candidates, value)
+        missing = {REQUIRED_STAT[req['type']] for item in kept for req in _requirements(item)} - set(required)
+        if not missing:
+            break
+        required += sorted(missing)
+    valid_items = {item['id']: item for item in kept}
     if not valid_items:
         return None
 
@@ -178,7 +209,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
     # --- Set bonuses ---
     # z = 1 exactly when at least `tier` pieces are worn; the worn bonus is the highest reached
     # tier's, written as the sum of each reached tier's increment over the previous one.
-    set_score, set_pa, set_pm, set_sagesse = [], [], [], []
+    set_score, tiers = [], []
     for set_name, iids in set_item_ids.items():
         safe_name = re.sub(r'[^a-zA-Z0-9_]', '_', set_name)
         worn = pulp.lpSum(x[iid] for iid in iids)
@@ -188,10 +219,13 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
             model += tier * z <= worn, f"reach_{safe_name}_{tier}"
             model += worn - (tier - 1) <= len(iids) * z, f"auto_{safe_name}_{tier}"
             set_score.append(z * (_score(bonus, element, damage_base) - _score(prev, element, damage_base)))
-            set_pa.append(z * (bonus.get('pa', 0) - prev.get('pa', 0)))
-            set_pm.append(z * (bonus.get('pm', 0) - prev.get('pm', 0)))
-            set_sagesse.append(z * (bonus.get('sagesse', 0) - prev.get('sagesse', 0)))
+            tiers.append((z, bonus, prev))
             prev = bonus
+
+    def total(stat):
+        """What the worn gear gives of `stat`, set bonuses included."""
+        return (pulp.lpSum(_stat(item, stat) * x[iid] for iid, item in valid_items.items())
+                + pulp.lpSum(z * (bonus.get(stat, 0) - prev.get(stat, 0)) for z, bonus, prev in tiers))
 
     # --- Objective ---
     obj_terms = []
@@ -199,7 +233,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
         val = _score({**item['elements'], **item['stats']}, element, damage_base)
         if val != 0:
             obj_terms.append(x[iid] * val)
-    sagesse = pulp.lpSum(item['elements'].get('sagesse', 0) * x[iid] for iid, item in valid_items.items()) + pulp.lpSum(set_sagesse)
+    sagesse = total('sagesse')
     model += weights[0] * pulp.lpSum(obj_terms + set_score) + weights[1] * sagesse
     if sagesse_min is not None:
         model += sagesse >= sagesse_min, "sagesse_min"
@@ -213,10 +247,21 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
     model += pulp.lpSum(x[iid] for iid, item in valid_items.items() if item['type'] in ('pet', 'mount')) <= 1, "pet_or_mount"
 
     # --- PA/PM minimum from gear (items + set bonuses) ---
-    pa_expr = pulp.lpSum((item.get('pa', 0) or 0) * x[iid] for iid, item in valid_items.items())
-    pm_expr = pulp.lpSum((item.get('pm', 0) or 0) * x[iid] for iid, item in valid_items.items())
-    model += pa_expr + pulp.lpSum(set_pa) >= gear_pa, "pa_min"
-    model += pm_expr + pulp.lpSum(set_pm) >= gear_pm, "pm_min"
+    model += total('pa') >= gear_pa, "pa_min"
+    model += total('pm') >= gear_pm, "pm_min"
+
+    # --- Item requirements ---
+    # An item is put on with the rest of the build already worn, so its own stats don't help it.
+    # shortcut: a set bonus the item completes still counts for it, and two items may each lean on the other; subtract those if a build ever shows it
+    # One variable per total keeps each requirement's row short: the solver is several times slower on rows that repeat the whole sum
+    totals = {stat: pulp.LpVariable(f"total_{stat}", -BIG, BIG) for stat in required}
+    for stat, var in totals.items():
+        model += var == total(stat), f"total_{stat}"
+    for iid, item in valid_items.items():
+        for n, req in enumerate(_requirements(item)):
+            stat = REQUIRED_STAT[req['type']]
+            model += (own.get(stat, 0) + totals[stat] - _stat(item, stat) * x[iid]
+                      >= req['value'] + 1 - BIG * (1 - x[iid])), f"req_{n}_{iid}"
 
     # Solver output — set msg=0 to suppress
     model.solve(pulp.PULP_CBC_CMD(msg=1))

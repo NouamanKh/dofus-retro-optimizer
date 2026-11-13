@@ -1,5 +1,10 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.12.1 (2026-11-13)
+- Fix: item requirements were never checked, so a build could hold items the character can't wear (455 of the 1581 items have one). An item needing "Force > 100" is now worn only if the rest of the build gives more than 100 Force, set bonuses included; its own stats don't count, as it has to be put on first. "PM >" counts the base 3 PM and exo PM
+- Stat points are not known to the app, so they count as 0: a requirement has to be met on gear alone
+- Items with a requirement the app can't check are left out: class, alignment, sex, job, rank (30 shields), kamas, and a stat under a value (5 items)
+
 ## v1.12.0 (2026-11-03)
 - Damage mode now searches for the most damage per round. New fields: "Coût en PA" and "Lancers max par tour". Casts per round = total PA / spell cost, rounded down, so gear that gives PA can beat gear that hits harder. Results show the damage per round, the casts and the damage per cast
 - "Et maximiser la Sagesse" compares damage per round too

@@ -4,7 +4,7 @@ import unittest
 
 import catalog
 from catalog import ALL_ELEMENTS, Catalog
-from optimizer import _without_dominated, optimize, optimize_tradeoffs
+from optimizer import _without_dominated, optimize, optimize_per_pa, optimize_tradeoffs
 
 
 def item(id, type, level=1, set=None, pa=0, pm=0, **elements):
@@ -394,6 +394,45 @@ class RoundDamageTest(unittest.TestCase):
         self.assertEqual([b['roundDamage'] for b in builds], [[220, 220], [200, 200]])
 
 
+class PerPATest(unittest.TestCase):
+    STRONG = item('STRONG', 'hat', force=100)
+    QUICK = item('QUICK', 'hat', pa=2, force=10)
+    # 1 PA with spare force, in case a search only looked at the PA it was asked for
+    MIDDLE = item('MIDDLE', 'hat', pa=1, force=50)
+
+    def builds(self, items, spells, **kwargs):
+        found = optimize_per_pa(Catalog(list(items), []), 'force', 50, 6, 3, spells=spells, **kwargs)
+        return [(b['totalPA'], [i['id'] for i in b['items']], b['roundDamage'][0]) for b in found]
+
+    def test_one_build_for_each_pa_total_worth_stopping_at(self):
+        # 4 PA spell: 8 PA cast it twice, 7 and 6 PA once
+        self.assertEqual(self.builds([self.STRONG, self.QUICK, self.MIDDLE], [spell(100, 100, 4, 99)]),
+                         [(8, ['QUICK'], 220), (6, ['STRONG'], 200)])
+
+    def test_pa_that_add_no_damage_are_not_shown(self):
+        self.assertEqual(self.builds([self.STRONG, self.QUICK], [spell(100, 100, 5, 99)]), [(6, ['STRONG'], 200)])
+
+    def test_less_pa_can_need_an_item_a_pa_item_beats(self):
+        twin = item('TWIN', 'hat', pa=1, force=100)  # As good as STRONG with a PA more, so STRONG only matters under a limit
+        self.assertEqual(self.builds([self.STRONG, twin], [spell(100, 100, 7, 99), spell(10, 10, 6, 99, 'WEAK')]),
+                         [(7, ['TWIN'], 200), (6, ['STRONG'], 20)])
+
+    def test_asked_pa_is_still_a_minimum(self):
+        found = optimize_per_pa(Catalog([self.STRONG, self.QUICK, self.MIDDLE], []), 'force', 50, 7, 3, spells=[spell(100, 100, 4, 99)])
+        self.assertEqual([b['totalPA'] for b in found], [8, 7])
+
+    def test_tradeoffs_at_each_pa_total(self):
+        # WASTE's 2 PA buy a second cast, but STRONG does as much on 6 PA with more Sagesse
+        items = [self.STRONG, self.QUICK, item('SAGE', 'hat', sagesse=50), item('QUICKSAGE', 'hat', pa=2, sagesse=40),
+                 item('WASTE', 'hat', pa=2, force=-5, sagesse=-1)]
+        found = optimize_per_pa(Catalog(items, []), 'force', 50, 6, 3, spells=[spell(100, 100, 4, 99)], tradeoffs=True)
+        self.assertEqual([(b['totalPA'], [i['id'] for i in b['items']]) for b in found],
+                         [(8, ['QUICK']), (8, ['QUICKSAGE']), (6, ['STRONG']), (6, ['SAGE'])])
+
+    def test_nothing_castable_gives_nothing(self):
+        self.assertEqual(self.builds([self.STRONG], [spell(100, 100, 9, 99)]), [])
+
+
 def random_catalog(rng):
     gear = [('hat', 3), ('ring', 4), ('boots', 2)]
     items = [dmg_item(f'{slot}{n}', slot, {'pct_dmg': rng.choice([0, 0, 10]), 'dmg': rng.choice([0, 0, 15])},
@@ -602,7 +641,7 @@ class AdapterTest(unittest.TestCase):
 
     def test_damage_endpoint_casts_the_class_spells(self):
         body = {'element': 'force', 'level': 101, 'totalPA': 6, 'totalPM': 3, 'spellClass': 'Iop'}
-        build = self.client.post('/api/optimize', json=body).get_json()[0]
+        build = self.client.post('/api/optimize', json=body).get_json()[0]  # The most PA first
         self.assertEqual([s['name'] for s in build['spells']], ['Pression', 'Intimidation', 'Concentration', 'Epée de Iop', 'Colère de Iop'])
         multiplier = 100 + build['totalStats']['force'] + build['totalPctDmg']
         for cast in build['spells']:
@@ -623,8 +662,12 @@ class AdapterTest(unittest.TestCase):
     def test_with_sagesse_returns_several_builds(self):
         body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'spellClass': 'Iop', 'withSagesse': True}
         builds = self.client.post('/api/optimize', json=body).get_json()
-        self.assertGreater(len(builds), 1)
-        self.assertEqual(len(self.client.post('/api/optimize', json={**body, 'withSagesse': False}).get_json()), 1)
+        plain = self.client.post('/api/optimize', json={**body, 'withSagesse': False}).get_json()
+        self.assertGreater(len(builds), len(plain))
+        # Without Sagesse: fewer PA, less damage, down the list
+        self.assertGreater(len(plain), 1)
+        for more, less in zip(plain, plain[1:]):
+            self.assertTrue(more['totalPA'] > less['totalPA'] and more['roundAverage'] > less['roundAverage'])
 
     def test_bad_with_sagesse_is_400(self):
         self.assertEqual(self.client.post('/api/optimize', json={'element': 'force', 'spellClass': 'Iop', 'withSagesse': 'yes'}).status_code, 400)

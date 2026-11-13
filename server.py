@@ -9,7 +9,7 @@ from flask_cors import CORS
 import os
 
 from catalog import ALL_ELEMENTS, DAMAGE_ELEMENTS, class_spells, load as load_catalog, load_spells
-from optimizer import optimize, optimize_tradeoffs
+from optimizer import optimize, optimize_per_pa
 
 app = Flask(__name__)
 CORS(app)
@@ -49,10 +49,10 @@ def api_optimize():
     with_sagesse = data.get('withSagesse', False)
     if not isinstance(with_sagesse, bool) or (with_sagesse and not spell_class):
         return jsonify({'error': 'withSagesse doit etre un booleen et demande spellClass'}), 400
-    if with_sagesse:
-        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), spells))
+    if spells:
+        return jsonify(optimize_per_pa(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), spells, with_sagesse))
 
-    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), spells)
+    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids))
     return jsonify([build] if build else [])
 
 

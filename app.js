@@ -173,7 +173,7 @@ async function runOptimization() {
             result_score: results[0]?.totalElement ?? 0
         });
 
-        displayResults(results);
+        displayResults(results, withSagesse);
     } catch (err) {
         console.error('Optimization error:', err);
         showError('Le serveur ne répond pas. Il est peut-être en train de redémarrer — réessayez dans 30 secondes.');
@@ -277,7 +277,7 @@ function itemCard(item, showRequirements) {
         </div>`;
 }
 
-function displayResults(results) {
+function displayResults(results, withSagesse) {
     const resultsList  = document.getElementById('resultsList');
     const resultsCount = document.getElementById('resultsCount');
 
@@ -287,8 +287,10 @@ function displayResults(results) {
         return;
     }
 
-    const isTradeoff = results.length > 1;
-    resultsCount.textContent = isTradeoff ? `${results.length} compromis, du plus de dommages au plus de Sagesse` : 'Solution optimale (MILP)';
+    const isTradeoff = !!withSagesse;
+    const perPA = !!results[0].roundDamage;
+    resultsCount.textContent = !perPA ? 'Solution optimale (MILP)'
+        : `${results.length} combinaison${results.length > 1 ? 's' : ''}, du plus au moins de PA${isTradeoff ? ', et pour chaque total de PA du plus de dommages au plus de Sagesse' : ''}`;
     resultsList.innerHTML = '';
 
     results.forEach((r, i) => {
@@ -314,6 +316,11 @@ function displayResults(results) {
                             <span class="stat-name">${r.roundDamage ? `Dommages ${ELEMENT_NAMES[selectedElement]} par tour` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
                             <span class="stat-value" style="color:var(--${selectedElement});">${r.roundDamage ? `${r.roundDamage[0]} à ${r.roundDamage[1]}` : r.totalElement}</span>
                         </div>
+                        ${perPA ? `
+                            <div>
+                                <span class="stat-name">PA</span>
+                                <span class="stat-value" style="color:var(--pa);">${r.totalPA}</span>
+                            </div>` : ''}
                         ${isTradeoff ? `
                             <div>
                                 <span class="stat-name">Sagesse totale</span>
@@ -321,7 +328,7 @@ function displayResults(results) {
                             </div>` : ''}
                     </div>
                     <div class="result-meta">
-                        <span class="meta">PA <b>${r.totalPA}</b></span>
+                        ${perPA ? '' : `<span class="meta">PA <b>${r.totalPA}</b></span>`}
                         <span class="meta">PM <b>${r.totalPM}</b></span>
                         ${r.roundDamage ? `
                             ${castSpells(r).map(s => `<span class="meta">${s.casts} × ${s.name} <b>${s.damageRange[0]} à ${s.damageRange[1]}</b></span>`).join('')}
@@ -332,7 +339,7 @@ function displayResults(results) {
                     </div>
                 </div>
                 <div class="result-summary-grid">${summaryHtml}</div>
-                ${isTradeoff ? `
+                ${results.length > 1 ? `
                     <details class="result-items"${i === 0 ? ' open' : ''}>
                         <summary>Voir les ${r.items.length} équipements</summary>
                         ${itemsHtml}

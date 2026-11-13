@@ -1,5 +1,11 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.14.0 (2026-11-13)
+- Every damage search now gives one build per PA total worth stopping at, from the most PA down, since PA are the costly part: you see what each PA less costs in damage. A build is only shown if no other does as much damage on as few PA
+- With "Et maximiser la Sagesse", each PA total gets its most damage, its most Sagesse and one build in between (it was 5 builds over all PA totals)
+- "PA Min" still applies: no build goes under it
+- API: POST /api/optimize with spellClass returns a list of builds, most PA first
+
 ## v1.13.0 (2026-11-13)
 - Damage mode now knows the spells: pick a class and an element, and the search chooses the gear and the spells to cast together, for the most damage in one round on one target. It can mix spells (e.g. 2 × Pression + 3 × Concentration) and results list each spell cast with its damage per cast
 - The manual spell fields (min, max, PA cost, casts) are gone

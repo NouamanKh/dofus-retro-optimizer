@@ -60,15 +60,43 @@ def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, ex
 
 def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), spells=(), count=5):
     """Up to `count` Builds from the most damage to the most Sagesse, each with the most damage for its Sagesse."""
+    return _tradeoffs(_search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells), count)
+
+
+def optimize_per_pa(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), spells=(), tradeoffs=False):
+    """The damage Builds worth comparing, from the most PA down: PA cost the most, so each total a build can stop at gets its best.
+
+    A Build is only there if no other does as much damage on as few PA. With tradeoffs, each PA total gets
+    its most damage, its most Sagesse and one in between, and Sagesse counts too.
+    """
     solve = _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells)
-    builds = [solve(weights=(1, TIE_BREAK))]
+    builds, pa_max = [], None
+    while True:
+        found = _tradeoffs(solve, 3, pa_max=pa_max) if tradeoffs else [b for b in [solve(pa_max=pa_max)] if b]
+        if not found:
+            break
+        builds += found
+        # No build found goes over this, so the totals in between would give the same builds again
+        pa_max = max(b['totalPA'] for b in found) - 1
+
+    def worth(build):
+        return (-build['totalPA'], build['roundAverage'], *([build['totalStats']['sagesse']] if tradeoffs else []))
+
+    best = {worth(b): b for b in builds}
+    return [b for w, b in sorted(best.items(), reverse=True, key=lambda wb: (-wb[0][0], *wb[0][1:]))
+            if not any(o != w and all(x >= y for x, y in zip(o, w)) for o in best)]
+
+
+def _tradeoffs(solve, count, **limits):
+    builds = [solve(weights=(1, TIE_BREAK), **limits)]
     if not builds[0]:
         return []
     low = builds[0]['totalStats']['sagesse']
-    most_sagesse = solve(weights=(TIE_BREAK, 1))
+    most_sagesse = solve(weights=(TIE_BREAK, 1), **limits)
     high = most_sagesse['totalStats']['sagesse'] if most_sagesse else low
     if high > low:
-        builds += [solve(weights=(1, TIE_BREAK), sagesse_min=low + (high - low) * step / (count - 1)) for step in range(1, count)]
+        steps = [solve(weights=(1, TIE_BREAK), sagesse_min=low + (high - low) * step / (count - 1), **limits) for step in range(1, count)]
+        builds += [b for b in steps if b]
     # Highest Sagesse first: a build only stays if it does more damage than every build with more Sagesse
     kept = []
     for build in sorted(builds, key=lambda b: (b['totalStats']['sagesse'], b['roundAverage']), reverse=True):
@@ -78,7 +106,7 @@ def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, ex
 
 
 def _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells):
-    """Returns solve(**goal), the best Build for that goal or None."""
+    """Returns solve(pa_max=None, **goal), the best Build for that goal on at most pa_max PA, or None."""
     extra_pa = base_pa(level) + exo_pa
     extra_pm = BASE_PM + exo_pm
     limits = (catalog, level, max(0, total_pa - extra_pa), max(0, total_pm - extra_pm), excluded_ids, {'pa': extra_pa, 'pm': extra_pm})
@@ -90,8 +118,11 @@ def _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, exclude
         if not rounds:
             return lambda **goal: None
 
-    def solve(**goal):
-        found = _solve(element, *limits, rounds, **goal)
+    def solve(pa_max=None, **goal):
+        castable = rounds if pa_max is None else [r for r in rounds if r[0] <= pa_max]
+        if rounds and not castable:
+            return None
+        found = _solve(element, *limits, castable, None if pa_max is None else pa_max - extra_pa, **goal)
         # No gear is no build, even when the bare character can cast
         return _build(catalog, *found, element, extra_pa, extra_pm, spells) if found and found[0] else None
 
@@ -143,10 +174,10 @@ def _without_dominated(items, value):
             + [i for better in kept.values() for i in better])
 
 
-def _solve(element, catalog, level, gear_pa, gear_pm, excluded_ids, own=None, rounds=(), weights=(1, 0), sagesse_min=None):
+def _solve(element, catalog, level, gear_pa, gear_pm, excluded_ids, own=None, rounds=(), gear_pa_max=None, weights=(1, 0), sagesse_min=None):
     """Solve the MILP and return the optimal (selected item dicts, casts of each spell), or None if infeasible.
 
-    Maximises weights[0] x the target + weights[1] x Sagesse, with at least sagesse_min Sagesse.
+    Maximises weights[0] x the target + weights[1] x Sagesse, with at least sagesse_min Sagesse and at most gear_pa_max PA from gear.
     The target is the element's score, or with rounds (see _rounds) the average damage of the best of them.
     `own` is what the character has without gear, which counts toward item requirements and casts.
     """
@@ -167,7 +198,9 @@ def _solve(element, catalog, level, gear_pa, gear_pm, excluded_ids, own=None, ro
     def value(item):
         # Spells weigh the stat and flat damage differently, so damage takes both
         target = (_stat(item, element) + _stat(item, 'pct_dmg'), _stat(item, 'dmg')) if rounds else (_score({**item['elements'], **item['stats']}, element),)
-        return (*target, _stat(item, 'pa'), _stat(item, 'pm'), _stat(item, 'sagesse'), *(_stat(item, stat) for stat in required))
+        # Under a PA limit less PA can be what a build needs, so only an item with the same PA can stand in for another
+        return (*target, _stat(item, 'pa'), *([-_stat(item, 'pa')] if gear_pa_max is not None else []), _stat(item, 'pm'), _stat(item, 'sagesse'),
+                *(_stat(item, stat) for stat in required))
 
     # A stat a kept item requires is worth having, so it keeps more items: repeat until no new stat is required
     required = []
@@ -260,6 +293,8 @@ def _solve(element, catalog, level, gear_pa, gear_pm, excluded_ids, own=None, ro
 
     # --- PA/PM minimum from gear (items + set bonuses) ---
     model += total('pa') >= gear_pa, "pa_min"
+    if gear_pa_max is not None:
+        model += total('pa') <= gear_pa_max, "pa_max"
     model += total('pm') >= gear_pm, "pm_min"
 
     # --- Item requirements ---

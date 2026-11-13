@@ -32,7 +32,7 @@ def _requirements(item):
 
 
 def _stat(item, stat):
-    return item['elements'].get(stat) or item.get(stat) or 0
+    return item['elements'].get(stat) or item['stats'].get(stat) or item.get(stat) or 0
 
 
 def _score(stats, element, damage_base=0):
@@ -49,32 +49,26 @@ def _score(stats, element, damage_base=0):
     return stats.get(element, 0)
 
 
-def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_range=None, spell_pa=0, casts_max=99):
+def optimize(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), spells=()):
     """Best Build for `element` reaching at least the player's total PA/PM without the excluded items, or None if none can.
 
-    With damage_range (a spell's min and max damage), maximises its average estimated damage in `element`.
-    With spell_pa (what a cast costs) too, maximises that damage over a round, cast up to casts_max times.
+    With spells, maximises the average estimated damage in `element` of the best round the build can cast:
+    any mix of the spells that its PA pay for. A spell is {'damageMin', 'damageMax', 'pa', 'castsMax'}, castsMax being per round.
     """
-    solve, first = _round_search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, damage_range, spell_pa, casts_max)
-    by_casts = _best_by_casts(solve, first, casts_max if spell_pa else 1)
-    return max(by_casts.values(), key=lambda b: b['roundAverage']) if by_casts else None
+    return _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells)()
 
 
-def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), damage_range=(1, 1), spell_pa=0, casts_max=99, count=5):
+def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, exo_pm=0, excluded_ids=(), spells=(), count=5):
     """Up to `count` Builds from the most damage to the most Sagesse, each with the most damage for its Sagesse."""
-    solve, first = _round_search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, damage_range, spell_pa, casts_max)
-    by_casts = _best_by_casts(solve, first, casts_max if spell_pa else 1, weights=(1, TIE_BREAK))
-    if not by_casts:
+    solve = _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells)
+    builds = [solve(weights=(1, TIE_BREAK))]
+    if not builds[0]:
         return []
-    builds = [max(by_casts.values(), key=lambda b: b['roundAverage'])]
     low = builds[0]['totalStats']['sagesse']
-    most_sagesse = solve(first, weights=(TIE_BREAK, 1))
+    most_sagesse = solve(weights=(TIE_BREAK, 1))
     high = most_sagesse['totalStats']['sagesse'] if most_sagesse else low
     if high > low:
-        for step in range(1, count):
-            build = _most_with_sagesse(by_casts, solve, low + (high - low) * step / (count - 1))
-            if build:
-                builds.append(build)
+        builds += [solve(weights=(1, TIE_BREAK), sagesse_min=low + (high - low) * step / (count - 1)) for step in range(1, count)]
     # Highest Sagesse first: a build only stays if it does more damage than every build with more Sagesse
     kept = []
     for build in sorted(builds, key=lambda b: (b['totalStats']['sagesse'], b['roundAverage']), reverse=True):
@@ -83,63 +77,53 @@ def optimize_tradeoffs(catalog, element, level, total_pa, total_pm, exo_pa=0, ex
     return kept[::-1]
 
 
-def _round_search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, damage_range, spell_pa, casts_max):
-    """Returns solve(casts, **goal), the best Build with PA for at least `casts` casts, and the fewest casts to look at."""
+def _search(catalog, element, level, total_pa, total_pm, exo_pa, exo_pm, excluded_ids, spells):
+    """Returns solve(**goal), the best Build for that goal or None."""
     extra_pa = base_pa(level) + exo_pa
-    gear_pa = max(0, total_pa - extra_pa)
-    gear_pm = max(0, total_pm - BASE_PM - exo_pm)
-    damage_base = sum(damage_range) / 2 if damage_range else 0
+    extra_pm = BASE_PM + exo_pm
+    limits = (catalog, level, max(0, total_pa - extra_pa), max(0, total_pm - extra_pm), excluded_ids, {'pa': extra_pa, 'pm': extra_pm})
+    rounds = ()
+    if spells:
+        # The most PA a build can have bounds the rounds to look at
+        most_pa = _solve('pa', *limits)
+        rounds = most_pa and _rounds(spells, extra_pa + _gear_total(catalog, most_pa[0], 'pa'))
+        if not rounds:
+            return lambda **goal: None
 
-    def solve(casts, **goal):
-        selected = _solve(catalog, element, level, max(gear_pa, casts * spell_pa - extra_pa), gear_pm, excluded_ids, damage_base, {'pm': BASE_PM + exo_pm}, **goal)
-        return selected and _build(catalog, selected, element, extra_pa, BASE_PM + exo_pm, damage_base, damage_range, spell_pa, casts_max)
+    def solve(**goal):
+        found = _solve(element, *limits, rounds, **goal)
+        # No gear is no build, even when the bare character can cast
+        return _build(catalog, *found, element, extra_pa, extra_pm, spells) if found and found[0] else None
 
-    # Every build has at least this many casts, or needs at least one to count
-    first = max(1, min(casts_max, max(total_pa, extra_pa) // spell_pa)) if spell_pa else 1
-    return solve, first
-
-
-def _best_by_casts(solve, first, last, **goal):
-    """Best Build at each reachable cast count: casts x damage isn't linear, so the solver gets one count at a time."""
-    by_casts = {}
-    casts = first
-    while casts <= last:
-        build = solve(casts, **goal)
-        if not build:
-            break
-        _record(by_casts, casts, build)
-        casts = build['casts'] + 1
-    return by_casts
+    return solve
 
 
-def _record(by_casts, casts, build):
-    """With PA to spare, the most damage per cast at `casts` is also the most at every higher count it reaches."""
-    for reached in range(casts, build['casts'] + 1):
-        by_casts[reached] = build
+def _gear_total(catalog, selected, stat):
+    pieces = {}
+    for item in selected:
+        if item.get('set'):
+            pieces[item['set']] = pieces.get(item['set'], 0) + 1
+    return sum(_stat(item, stat) for item in selected) + sum(catalog.active_bonus(name, count).get(stat, 0) for name, count in pieces.items())
 
 
-def _most_with_sagesse(by_casts, solve, sagesse_min):
-    """Most damage per round with at least sagesse_min Sagesse, updating by_casts for the next, higher sagesse_min.
+def _rounds(spells, pa_max):
+    """The rounds worth casting with up to pa_max PA, as (PA, casts, summed base damage, casts of each spell).
 
-    Damage per cast can only fall as sagesse_min rises, so a count whose last damage can't win needs no solve.
+    A round does base x (100 + stat + % damage) / 100 + casts x flat damage, so for a cost and a number of casts only the most base damage matters.
+    A round is dropped when another costs no more with as many casts and as much base damage: a cast is taken never to hurt.
     """
-    def ceiling(casts):
-        build = by_casts[casts]
-        return casts * build['roundAverage'] / build['casts']
-
-    best = None
-    for casts in sorted(by_casts, key=ceiling, reverse=True):
-        if best and ceiling(casts) <= best['roundAverage']:
-            continue
-        if by_casts[casts]['totalStats']['sagesse'] < sagesse_min:
-            build = solve(casts, weights=(1, TIE_BREAK), sagesse_min=sagesse_min)
-            if not build:
-                del by_casts[casts]
-                continue
-            _record(by_casts, casts, build)
-        if not best or by_casts[casts]['roundAverage'] > best['roundAverage']:
-            best = by_casts[casts]
-    return best
+    best = {(0, 0): (0, ())}
+    for spell in spells:
+        base = (spell['damageMin'] + spell['damageMax']) / 2
+        step = {}
+        for (pa, casts), (damage, counts) in best.items():
+            for n in range(min(spell['castsMax'], (pa_max - pa) // spell['pa']) + 1):
+                key = (pa + n * spell['pa'], casts + n)
+                if key not in step or damage + n * base > step[key][0]:
+                    step[key] = (damage + n * base, counts + (n,))
+        best = step
+    rounds = [(pa, casts, damage, counts) for (pa, casts), (damage, counts) in best.items() if casts]
+    return [r for r in rounds if not any(o != r and o[0] <= r[0] and o[1] >= r[1] and o[2] >= r[2] for o in rounds)]
 
 
 def _without_dominated(items, value):
@@ -159,13 +143,14 @@ def _without_dominated(items, value):
             + [i for better in kept.values() for i in better])
 
 
-def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base, own=None, weights=(1, 0), sagesse_min=None):
-    """Solve the MILP and return the optimal list of selected item dicts, or None if infeasible.
+def _solve(element, catalog, level, gear_pa, gear_pm, excluded_ids, own=None, rounds=(), weights=(1, 0), sagesse_min=None):
+    """Solve the MILP and return the optimal (selected item dicts, casts of each spell), or None if infeasible.
 
-    Maximises weights[0] x the target score + weights[1] x Sagesse, with at least sagesse_min Sagesse.
-    `own` is what the character has without gear, which counts toward item requirements.
+    Maximises weights[0] x the target + weights[1] x Sagesse, with at least sagesse_min Sagesse.
+    The target is the element's score, or with rounds (see _rounds) the average damage of the best of them.
+    `own` is what the character has without gear, which counts toward item requirements and casts.
     """
-    # shortcut: only PM is known, so stat points count as 0 and a build must meet requirements on gear alone; pass the points here once the app asks for them
+    # shortcut: only PA and PM are known, so stat points count as 0 and a build must meet requirements on gear alone; pass the points here once the app asks for them
     own = own or {}
 
     # Same name and type is one item to the player: the catalog repeats some (11 identical "Patte d'Ecaflip")
@@ -180,8 +165,9 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
         and all(req['type'] in REQUIRED_STAT for req in _requirements(item))
     ]
     def value(item):
-        return (_score({**item['elements'], **item['stats']}, element, damage_base), _stat(item, 'pa'), _stat(item, 'pm'), _stat(item, 'sagesse'),
-                *(_stat(item, stat) for stat in required))
+        # Spells weigh the stat and flat damage differently, so damage takes both
+        target = (_stat(item, element) + _stat(item, 'pct_dmg'), _stat(item, 'dmg')) if rounds else (_score({**item['elements'], **item['stats']}, element),)
+        return (*target, _stat(item, 'pa'), _stat(item, 'pm'), _stat(item, 'sagesse'), *(_stat(item, stat) for stat in required))
 
     # A stat a kept item requires is worth having, so it keeps more items: repeat until no new stat is required
     required = []
@@ -209,7 +195,7 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
     # --- Set bonuses ---
     # z = 1 exactly when at least `tier` pieces are worn; the worn bonus is the highest reached
     # tier's, written as the sum of each reached tier's increment over the previous one.
-    set_score, tiers = [], []
+    tiers = []
     for set_name, iids in set_item_ids.items():
         safe_name = re.sub(r'[^a-zA-Z0-9_]', '_', set_name)
         worn = pulp.lpSum(x[iid] for iid in iids)
@@ -218,23 +204,49 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
             z = pulp.LpVariable(f"z_{safe_name}_{tier}", cat="Binary")
             model += tier * z <= worn, f"reach_{safe_name}_{tier}"
             model += worn - (tier - 1) <= len(iids) * z, f"auto_{safe_name}_{tier}"
-            set_score.append(z * (_score(bonus, element, damage_base) - _score(prev, element, damage_base)))
             tiers.append((z, bonus, prev))
             prev = bonus
 
-    def total(stat):
-        """What the worn gear gives of `stat`, set bonuses included."""
-        return (pulp.lpSum(_stat(item, stat) * x[iid] for iid, item in valid_items.items())
-                + pulp.lpSum(z * (bonus.get(stat, 0) - prev.get(stat, 0)) for z, bonus, prev in tiers))
+    def total(*stats):
+        """What the worn gear gives of these stats together, set bonuses included."""
+        return (pulp.lpSum(sum(_stat(item, stat) for stat in stats) * x[iid] for iid, item in valid_items.items())
+                + pulp.lpSum(z * sum(bonus.get(stat, 0) - prev.get(stat, 0) for stat in stats) for z, bonus, prev in tiers))
+
+    def reach(*stats):
+        """At least as far from 0 as any build's total of these stats."""
+        by_slot = {}
+        for item in valid_items.values():
+            by_slot.setdefault(item['type'], []).append(abs(sum(_stat(item, stat) for stat in stats)))
+        by_set = [max((abs(sum(bonus.get(stat, 0) for stat in stats)) for bonus in catalog.set_bonuses.get(name, {}).values()), default=0)
+                  for name in set_item_ids]
+        # A build wears at most one set per place
+        places = sum(SLOT_LIMITS.values())
+        return sum(sum(sorted(values)[-SLOT_LIMITS[slot]:]) for slot, values in by_slot.items()) + sum(sorted(by_set)[-places:])
 
     # --- Objective ---
-    obj_terms = []
-    for iid, item in valid_items.items():
-        val = _score({**item['elements'], **item['stats']}, element, damage_base)
-        if val != 0:
-            obj_terms.append(x[iid] * val)
+    chosen = []
+    if rounds:
+        percent, flat = total(element, 'pct_dmg'), total('dmg')
+        most_percent, most_flat = reach(element, 'pct_dmg'), reach('dmg')
+        # A round's damage multiplies its casts by the gear's totals, which isn't linear.
+        # So each round gets its own copy of the totals, held at 0 unless the round is chosen: the copies add up to the totals.
+        parts = []
+        for r, (pa, casts, base, _) in enumerate(rounds):
+            chosen.append(pulp.LpVariable(f"round_{r}", cat="Binary"))
+            for name, most, weight in (("percent", most_percent, base / 100), ("flat", most_flat, casts)):
+                part = pulp.LpVariable(f"{name}_{r}", -most, most)
+                model += part <= most * chosen[r], f"{name}_high_{r}"
+                model += part >= -most * chosen[r], f"{name}_low_{r}"
+                parts.append((name, weight, part))
+        model += pulp.lpSum(chosen) == 1, "one_round"
+        model += pulp.lpSum(part for name, _, part in parts if name == "percent") == percent, "percent_parts"
+        model += pulp.lpSum(part for name, _, part in parts if name == "flat") == flat, "flat_parts"
+        model += pulp.lpSum(pa * c for (pa, *_), c in zip(rounds, chosen)) <= own.get('pa', 0) + total('pa'), "round_pa"
+        target = pulp.lpSum(base * c for (_, _, base, _), c in zip(rounds, chosen)) + pulp.lpSum(weight * part for _, weight, part in parts)
+    else:
+        target = total(element) + (total('chance') / 10 if element == 'prospection' else 0)
     sagesse = total('sagesse')
-    model += weights[0] * pulp.lpSum(obj_terms + set_score) + weights[1] * sagesse
+    model += weights[0] * target + weights[1] * sagesse
     if sagesse_min is not None:
         model += sagesse >= sagesse_min, "sagesse_min"
 
@@ -273,13 +285,12 @@ def _solve(catalog, element, level, gear_pa, gear_pm, excluded_ids, damage_base,
         return None
 
     selected = [valid_items[iid] for iid, var in x.items() if var.value() and var.value() > 0.5]
-    total_el = sum(_score({**i['elements'], **i['stats']}, element, damage_base) for i in selected)
-    print(f"[MILP] {len(selected)} items | {element}: {total_el} | {[i['name'] for i in selected]}")
-    return selected
+    print(f"[MILP] {len(selected)} items | {element}: {pulp.value(target)} | {[i['name'] for i in selected]}")
+    return selected, next((counts for (*_, counts), c in zip(rounds, chosen) if c.value() > 0.5), ())
 
 
-def _build(catalog, selected, element, extra_pa, extra_pm, damage_base, damage_range, spell_pa=0, casts_max=99):
-    """Build a result dict from selected items; extra_pa/extra_pm are the character's base + exo PA/PM."""
+def _build(catalog, selected, casts, element, extra_pa, extra_pm, spells):
+    """Build a result dict from selected items and the casts of each spell; extra_pa/extra_pm are the character's base + exo PA/PM."""
     base_stats = {el: 0 for el in ALL_ELEMENTS}
     for item in selected:
         for el in ALL_ELEMENTS:
@@ -305,20 +316,20 @@ def _build(catalog, selected, element, extra_pa, extra_pm, damage_base, damage_r
     total_dmg = set_bonus_stats['dmg'] + sum(item['stats'].get('dmg', 0) for item in selected)
     total_pct_dmg = set_bonus_stats['pct_dmg'] + sum(item['stats'].get('pct_dmg', 0) for item in selected)
     totals = {**total_stats, 'dmg': total_dmg, 'pct_dmg': total_pct_dmg}
-    total_pa = extra_pa + set_bonus_stats['pa'] + sum(item.get('pa', 0) or 0 for item in selected)
-    casts = min(total_pa // spell_pa, casts_max) if spell_pa else 1
-    average = damage_base + _score(totals, element, damage_base)  # per cast when damage_base is set
-    damage = [math.floor(roll + _score(totals, element, roll)) for roll in damage_range] if damage_range else None
+    # Each cast rounds on its own, as in game
+    cast_spells = [
+        {**spell, 'casts': count, 'damageRange': [math.floor(roll + _score(totals, element, roll)) for roll in (spell['damageMin'], spell['damageMax'])]}
+        for spell, count in zip(spells, casts)
+    ]
+    bases = [(spell['damageMin'] + spell['damageMax']) / 2 for spell in spells]
+    average = sum(count * (base + _score(totals, element, base)) for base, count in zip(bases, casts)) if spells else _score(totals, element)
 
     return {
         'items': selected,
         'totalElement': math.floor(average),
-        'spellRoll': damage_range,
-        'spellPA': spell_pa,
-        'casts': casts,
-        'damageRange': damage,
-        'roundDamage': [casts * d for d in damage] if damage else None,
-        'roundAverage': round(casts * average, 6),  # Rounded so equal builds compare equal
+        'spells': cast_spells,
+        'roundDamage': [sum(s['casts'] * s['damageRange'][end] for s in cast_spells) for end in (0, 1)] if spells else None,
+        'roundAverage': round(average, 6),  # Rounded so equal builds compare equal
         'totalDmg': total_dmg,
         'totalPctDmg': total_pct_dmg,
         'baseElement': base_stats[element],
@@ -327,7 +338,7 @@ def _build(catalog, selected, element, extra_pa, extra_pm, damage_base, damage_r
         'baseStats': base_stats,
         'setBonuses': {el: set_bonus_stats[el] for el in ALL_ELEMENTS},
         'totalStats': total_stats,
-        'totalPA': total_pa,
+        'totalPA': extra_pa + set_bonus_stats['pa'] + sum(item.get('pa', 0) or 0 for item in selected),
         'totalPM': extra_pm + set_bonus_stats['pm'] + sum(item.get('pm', 0) or 0 for item in selected),
         'avgLevel': round(sum(i['level'] for i in selected) / len(selected))
     }

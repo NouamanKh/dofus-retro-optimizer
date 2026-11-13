@@ -1,5 +1,14 @@
 # Dofus Retro Optimizer - Version History
 
+## v1.13.0 (2026-11-13)
+- Damage mode now knows the spells: pick a class and an element, and the search chooses the gear and the spells to cast together, for the most damage in one round on one target. It can mix spells (e.g. 2 × Pression + 3 × Concentration) and results list each spell cast with its damage per cast
+- The manual spell fields (min, max, PA cost, casts) are gone
+- Spell data: 99 damaging class spells with their 6 grades in data/spells_retro.json, read from Ankama's Dofus Retro client files (spells_fr_1254.swf, dated 2025-07-23). This is the live Retro data, not a frozen 1.29 copy
+- A spell is taken at the highest grade the character's level allows (grade 5, then 6 from its level). Casts per turn and per target are respected, and a spell with a cooldown is cast once
+- Not counted: critical hits, poisons, traps, glyphs, a spell's damage in another element, damage based on life (Punition, Roue de la Fortune). An outcome with a chance counts for its share (Bluff, Esprit Félin)
+- One solve now picks the round and the gear, instead of one solve per number of casts
+- API: POST /api/optimize takes spellClass (one of the 12 class names, with element Force/Intelligence/Chance/Agilité) in place of damageMin, damageMax, spellPA and castsMax; results return spells (name, grade, pa, castsMax, damageMin, damageMax, casts, damageRange) in place of spellRoll, spellPA, casts and damageRange
+
 ## v1.12.1 (2026-11-13)
 - Fix: item requirements were never checked, so a build could hold items the character can't wear (455 of the 1581 items have one). An item needing "Force > 100" is now worn only if the rest of the build gives more than 100 Force, set bonuses included; its own stats don't count, as it has to be put on first. "PM >" counts the base 3 PM and exo PM
 - Stat points are not known to the app, so they count as 0: a requirement has to be met on gear alone

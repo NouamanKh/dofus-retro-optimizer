@@ -14,6 +14,14 @@ def item(id, type, level=1, set=None, pa=0, pm=0, **elements):
             'pa': pa, 'pm': pm, 'stats': {}, 'set': set}
 
 
+def spell(low, high, pa=1, casts_max=1, name='SPELL'):
+    return {'name': name, 'damageMin': low, 'damageMax': high, 'pa': pa, 'castsMax': casts_max}
+
+
+def casts(build):
+    return [s['casts'] for s in build['spells']]
+
+
 def dmg_item(id, type, stats, set=None, **elements):
     return dict(item(id, type, set=set, **elements), stats=stats)
 
@@ -178,7 +186,7 @@ class RequirementTest(unittest.TestCase):
 
 class DamageTest(unittest.TestCase):
     def best(self, cat, element='force', base=30):
-        return optimize(cat, element, level=50, total_pa=6, total_pm=3, damage_range=(base, base))
+        return optimize(cat, element, level=50, total_pa=6, total_pm=3, spells=[spell(base, base)])
 
     def test_formula_rounds_multiplied_part_down_then_adds_flat(self):
         cat = Catalog([dmg_item('A', 'hat', {'dmg': 5, 'pct_dmg': 3}, force=7)], [])
@@ -187,10 +195,9 @@ class DamageTest(unittest.TestCase):
 
     def test_each_end_of_the_range_is_estimated(self):
         cat = Catalog([dmg_item('A', 'hat', {'dmg': 5, 'pct_dmg': 3}, force=7)], [])
-        build = optimize(cat, 'force', level=50, total_pa=6, total_pm=3, damage_range=(33, 50))
+        build = optimize(cat, 'force', level=50, total_pa=6, total_pm=3, spells=[spell(33, 50)])
         # floor(33 x 1.10) + 5 and floor(50 x 1.10) + 5
-        self.assertEqual(build['damageRange'], [41, 60])
-        self.assertEqual(list(build['spellRoll']), [33, 50])
+        self.assertEqual(build['spells'], [{**spell(33, 50), 'casts': 1, 'damageRange': [41, 60]}])
         # The average roll, 41.5: floor(41.5 x 1.10) + 5
         self.assertEqual(build['totalElement'], 50)
 
@@ -198,14 +205,14 @@ class DamageTest(unittest.TestCase):
         cat = Catalog([item('S', 'hat', force=100), dmg_item('F', 'hat', {'dmg': 40})], [])
         # Both ends sit on either side of the break-even point of 40: only the average matters
         pick = lambda low, high: [i['id'] for i in optimize(
-            cat, 'force', level=50, total_pa=6, total_pm=3, damage_range=(low, high))['items']]
+            cat, 'force', level=50, total_pa=6, total_pm=3, spells=[spell(low, high)])['items']]
         self.assertEqual(pick(10, 90), ['S'])  # average 50
         self.assertEqual(pick(10, 50), ['F'])  # average 30
 
-    def test_stat_search_has_no_damage_range(self):
+    def test_stat_search_has_no_spells(self):
         build = optimize(Catalog([item('S', 'hat', force=1)], []), 'force', level=50, total_pa=6, total_pm=3)
-        self.assertIsNone(build['damageRange'])
-        self.assertIsNone(build['spellRoll'])
+        self.assertEqual(build['spells'], [])
+        self.assertIsNone(build['roundDamage'])
 
     def test_spell_base_decides_between_stat_and_flat(self):
         cat = Catalog([item('S', 'hat', force=100), dmg_item('F', 'hat', {'dmg': 40})], [])
@@ -243,7 +250,7 @@ class DamageTest(unittest.TestCase):
 class TradeoffTest(unittest.TestCase):
     def builds(self, cat, roll=(100, 100), **kwargs):
         kwargs = {'total_pa': 6, 'total_pm': 3, **kwargs}
-        return optimize_tradeoffs(cat, 'force', 50, damage_range=roll, **kwargs)
+        return optimize_tradeoffs(cat, 'force', 50, spells=[spell(*roll)], **kwargs)
 
     def test_goes_from_most_damage_to_most_sagesse(self):
         cat = Catalog([item('D', 'hat', force=100), item('M', 'hat', force=50, sagesse=50), item('W', 'hat', sagesse=100)], [])
@@ -300,9 +307,9 @@ class RoundDamageTest(unittest.TestCase):
     STRONG = item('STRONG', 'hat', force=100)  # 200 a cast on 6 PA
     QUICK = item('QUICK', 'hat', pa=2, force=10)  # 110 a cast on 8 PA
 
-    def best(self, spell_pa, items=(STRONG, QUICK), roll=(100, 100), **kwargs):
+    def best(self, spell_pa, items=(STRONG, QUICK), roll=(100, 100), casts_max=99, **kwargs):
         kwargs = {'total_pa': 6, 'total_pm': 3, **kwargs}
-        return optimize(Catalog(list(items), []), 'force', 50, damage_range=roll, spell_pa=spell_pa, **kwargs)
+        return optimize(Catalog(list(items), []), 'force', 50, spells=[spell(*roll, spell_pa, casts_max)], **kwargs)
 
     def ids(self, build):
         return [i['id'] for i in build['items']]
@@ -310,26 +317,26 @@ class RoundDamageTest(unittest.TestCase):
     def test_extra_cast_can_beat_a_harder_hit(self):
         build = self.best(4)
         self.assertEqual(self.ids(build), ['QUICK'])
-        self.assertEqual((build['casts'], build['roundDamage'], build['damageRange']), (2, [220, 220], [110, 110]))
+        self.assertEqual((casts(build), build['roundDamage'], build['spells'][0]['damageRange']), ([2], [220, 220], [110, 110]))
 
     def test_pa_that_adds_no_cast_is_worth_nothing(self):
         build = self.best(5)
-        self.assertEqual((self.ids(build), build['casts']), (['STRONG'], 1))
+        self.assertEqual((self.ids(build), casts(build)), (['STRONG'], [1]))
 
     def test_cast_limit_caps_the_round(self):
         build = self.best(4, casts_max=1)
-        self.assertEqual((self.ids(build), build['casts'], build['roundDamage']), (['STRONG'], 1, [200, 200]))
+        self.assertEqual((self.ids(build), casts(build), build['roundDamage']), (['STRONG'], [1], [200, 200]))
 
     def test_cast_limit_caps_a_build_with_spare_pa(self):
-        self.assertEqual(self.best(2, casts_max=2)['casts'], 2)
+        self.assertEqual(casts(self.best(2, casts_max=2)), [2])
 
     def test_exo_pa_counts_toward_casts(self):
         build = self.best(4, exo_pa=2)
-        self.assertEqual((self.ids(build), build['casts']), (['STRONG'], 2))
+        self.assertEqual((self.ids(build), casts(build)), (['STRONG'], [2]))
 
     def test_pa_min_still_applies(self):
         build = self.best(6, total_pa=8)
-        self.assertEqual((self.ids(build), build['casts']), (['QUICK'], 1))
+        self.assertEqual((self.ids(build), casts(build)), (['QUICK'], [1]))
 
     def test_gear_is_required_when_the_base_cannot_cast_once(self):
         self.assertEqual(self.ids(self.best(7)), ['QUICK'])
@@ -344,19 +351,45 @@ class RoundDamageTest(unittest.TestCase):
 
     def test_range_and_average_cover_the_whole_round(self):
         build = self.best(4, roll=(100, 200))
-        self.assertEqual((build['damageRange'], build['roundDamage'], build['roundAverage']), ([110, 220], [220, 440], 330))
+        self.assertEqual((build['spells'][0]['damageRange'], build['roundDamage'], build['roundAverage']), ([110, 220], [220, 440], 330))
 
     def test_more_pa_than_asked_for_counts_every_cast(self):
         build = self.best(4, items=[item('A', 'hat', pa=6, force=10)])
-        self.assertEqual(build['casts'], 3)
+        self.assertEqual(casts(build), [3])
 
-    def test_spell_cost_is_optional(self):
-        build = self.best(0)
-        self.assertEqual((self.ids(build), build['casts'], build['roundDamage']), (['STRONG'], 1, build['damageRange']))
+    def round(self, spells, items=(STRONG, QUICK), **kwargs):
+        return optimize(Catalog(list(items), []), 'force', 50, 6, 3, spells=spells, **kwargs)
+
+    def test_round_mixes_spells_to_use_the_pa(self):
+        # 6 PA at 2 damage a point of base: HEAVY and LIGHT do 280, three LIGHT 240, HEAVY alone 200
+        build = self.round([spell(100, 100, 4, 99, 'HEAVY'), spell(40, 40, 2, 99, 'LIGHT')], items=[self.STRONG])
+        self.assertEqual((casts(build), build['roundDamage']), ([1, 1], [280, 280]))
+
+    def test_cast_limit_sends_spare_pa_to_another_spell(self):
+        build = self.round([spell(100, 100, 2, 1, 'ONCE'), spell(10, 10, 2, 99, 'FILLER')], items=[self.STRONG])
+        self.assertEqual((casts(build), build['roundDamage']), ([1, 2], [240, 240]))
+
+    def test_spell_not_worth_its_pa_is_not_cast(self):
+        build = self.round([spell(100, 100, 3, 99, 'GOOD'), spell(100, 100, 4, 99, 'COSTLY')], items=[self.STRONG])
+        self.assertEqual(casts(build), [2, 0])
+
+    def test_gear_and_spells_are_chosen_together(self):
+        # STRONG casts BIG once for 400; QUICK's 8 PA cast SMALL twice for 2 x 209
+        build = self.round([spell(200, 200, 6, 1, 'BIG'), spell(190, 190, 4, 99, 'SMALL')])
+        self.assertEqual((self.ids(build), casts(build)), (['QUICK'], [0, 2]))
+        # With SMALL limited to one cast, BIG on STRONG wins again
+        build = self.round([spell(200, 200, 6, 1, 'BIG'), spell(190, 190, 4, 1, 'SMALL')])
+        self.assertEqual((self.ids(build), casts(build)), (['STRONG'], [1, 0]))
+
+    def test_flat_damage_favours_many_small_casts(self):
+        flat = dmg_item('FLAT', 'hat', {'dmg': 50})
+        spells = [spell(60, 60, 6, 99, 'BIG'), spell(10, 10, 2, 99, 'SMALL')]
+        self.assertEqual(casts(self.round(spells, items=[flat])), [0, 3])  # 3 x 60 against 110
+        self.assertEqual(casts(self.round(spells, items=[self.STRONG])), [1, 0])  # 120 against 3 x 20
 
     def test_tradeoffs_compare_damage_per_round(self):
         cat = Catalog([self.QUICK, self.STRONG, item('SAGE', 'hat', pa=2, sagesse=50)], [])
-        builds = optimize_tradeoffs(cat, 'force', 50, 6, 3, damage_range=(100, 100), spell_pa=4)
+        builds = optimize_tradeoffs(cat, 'force', 50, 6, 3, spells=[spell(100, 100, 4, 99)])
         self.assertEqual([self.ids(b) for b in builds], [['QUICK'], ['SAGE']])
         self.assertEqual([b['roundDamage'] for b in builds], [[220, 220], [200, 200]])
 
@@ -372,8 +405,18 @@ def random_catalog(rng):
     return Catalog(items, sets)
 
 
-def every_round(cat, roll, spell_pa, casts_max):
-    """(damage per round, Sagesse) of every legal build that can cast the spell, worked out without the optimizer."""
+def best_round(spells, total_pa, percent, flat):
+    """Most damage a round of these spells does on total_pa, trying every number of casts of each; None if none can be cast."""
+    best = None
+    for counts in itertools.product(*(range(min(s['castsMax'], total_pa // s['pa']) + 1) for s in spells)):
+        if any(counts) and sum(n * s['pa'] for n, s in zip(counts, spells)) <= total_pa:
+            damage = sum(n * ((s['damageMin'] + s['damageMax']) / 2 * (100 + percent) / 100 + flat) for n, s in zip(counts, spells))
+            best = damage if best is None else max(best, damage)
+    return best
+
+
+def every_round(cat, spells):
+    """(damage per round, Sagesse) of every legal build that can cast a spell, worked out without the optimizer."""
     of_type = lambda slot: [i for i in cat.items if i['type'] == slot]
     choices = [[(), *((i,) for i in of_type('hat'))],
                [pair for n in range(3) for pair in itertools.combinations(of_type('ring'), n)],
@@ -389,31 +432,32 @@ def every_round(cat, roll, spell_pa, casts_max):
         force = sum(i['elements']['force'] for i in worn) + sum(b.get('force', 0) for b in bonuses)
         sagesse = sum(i['elements']['sagesse'] for i in worn) + sum(b.get('sagesse', 0) for b in bonuses)
         total_pa = 6 + sum(i['pa'] for i in worn) + sum(b.get('pa', 0) for b in bonuses)
-        casts = min(total_pa // spell_pa, casts_max)
-        if casts:
-            percent = force + sum(i['stats']['pct_dmg'] for i in worn)
-            rounds.append((casts * (roll * (100 + percent) / 100 + sum(i['stats']['dmg'] for i in worn)), sagesse))
+        damage = best_round(spells, total_pa, force + sum(i['stats']['pct_dmg'] for i in worn), sum(i['stats']['dmg'] for i in worn))
+        if damage is not None:
+            rounds.append((damage, sagesse))
     return rounds
 
 
 class RoundDamageAgainstBruteForceTest(unittest.TestCase):
-    ROLL = 100  # Whole damage, so the small Sagesse tie-break can't change which build wins
-
     def cases(self):
         for seed in range(12):
             rng = random.Random(seed)
-            yield seed, random_catalog(rng), rng.choice([2, 3, 4, 5]), rng.choice([1, 2, 99])
+            # Rolls of whole hundreds give whole damage, so the small Sagesse tie-break can't change which build wins
+            spells = [spell(roll, roll, rng.choice([2, 3, 4, 5]), rng.choice([1, 2, 99]), n)
+                      for n, roll in enumerate(rng.sample([100, 200, 300], rng.choice([1, 2, 3])))]
+            yield seed, random_catalog(rng), spells
 
     def test_single_search_finds_the_most_damage_per_round(self):
-        for seed, cat, spell_pa, casts_max in self.cases():
-            rounds = every_round(cat, self.ROLL, spell_pa, casts_max)
-            build = optimize(cat, 'force', 50, 6, 3, damage_range=(self.ROLL, self.ROLL), spell_pa=spell_pa, casts_max=casts_max)
+        for seed, cat, spells in self.cases():
+            rounds = every_round(cat, spells)
+            build = optimize(cat, 'force', 50, 6, 3, spells=spells)
             self.assertAlmostEqual(build['roundAverage'], max(d for d, _ in rounds), msg=seed)
+            self.assertLessEqual(sum(s['casts'] * s['pa'] for s in build['spells']), build['totalPA'], seed)
 
     def test_tradeoffs_are_never_beaten_on_both_objectives(self):
-        for seed, cat, spell_pa, casts_max in self.cases():
-            rounds = every_round(cat, self.ROLL, spell_pa, casts_max)
-            builds = optimize_tradeoffs(cat, 'force', 50, 6, 3, damage_range=(self.ROLL, self.ROLL), spell_pa=spell_pa, casts_max=casts_max)
+        for seed, cat, spells in self.cases():
+            rounds = every_round(cat, spells)
+            builds = optimize_tradeoffs(cat, 'force', 50, 6, 3, spells=spells)
             points = [(b['roundAverage'], b['totalStats']['sagesse']) for b in builds]
             self.assertAlmostEqual(points[0][0], max(d for d, _ in rounds), msg=seed)
             self.assertEqual(points[-1][1], max(s for _, s in rounds), seed)
@@ -422,6 +466,47 @@ class RoundDamageAgainstBruteForceTest(unittest.TestCase):
             for damage, sagesse in points:
                 best = max(d for d, s in rounds if s >= sagesse)
                 self.assertAlmostEqual(damage, best, msg=(seed, points))
+
+
+class ClassSpellsTest(unittest.TestCase):
+    def grade(self, level, pa=3, per_turn=0, per_target=0, cooldown=0, damage=({'element': 'terre', 'min': 10, 'max': 20},)):
+        return {'level': level, 'pa': pa, 'castsPerTurn': per_turn, 'castsPerTarget': per_target, 'cooldown': cooldown, 'damage': list(damage)}
+
+    def found(self, grades, element='force', level=50, class_name='Iop'):
+        return catalog.class_spells([{'class': 'Iop', 'name': 'S', 'grades': grades}], class_name, element, level)
+
+    def test_takes_the_highest_grade_the_level_allows(self):
+        grades = [self.grade(10, pa=5), self.grade(10, pa=4), self.grade(110, pa=3)]
+        self.assertEqual(self.found(grades, level=9), [])
+        self.assertEqual([(s['grade'], s['pa']) for s in self.found(grades, level=109)], [(2, 4)])
+        self.assertEqual([(s['grade'], s['pa']) for s in self.found(grades, level=110)], [(3, 3)])
+
+    def test_only_the_class_and_the_stat_s_elements(self):
+        lines = [{'element': 'terre', 'min': 10, 'max': 20}, {'element': 'neutre', 'min': 1, 'max': 2}, {'element': 'feu', 'min': 5, 'max': 6}]
+        grades = [self.grade(1, damage=lines)]
+        self.assertEqual([(s['damageMin'], s['damageMax']) for s in self.found(grades)], [(11, 22)])
+        self.assertEqual([(s['damageMin'], s['damageMax']) for s in self.found(grades, element='intelligence')], [(5, 6)])
+        self.assertEqual(self.found(grades, element='chance'), [])
+        self.assertEqual(self.found(grades, class_name='Sram'), [])
+
+    def test_poisons_traps_and_glyphs_are_left_out_and_a_chance_counts_for_its_share(self):
+        lines = [{'element': 'terre', 'min': 10, 'max': 20, 'chance': 50}, {'element': 'terre', 'min': 99, 'max': 99, 'duration': 2},
+                 {'element': 'terre', 'min': 99, 'max': 99, 'via': 'piege'}]
+        self.assertEqual([(s['damageMin'], s['damageMax']) for s in self.found([self.grade(1, damage=lines)])], [(5, 10)])
+
+    def test_casts_are_limited_for_one_round_on_one_target(self):
+        limit = lambda **limits: self.found([self.grade(1, **limits)])[0]['castsMax']
+        self.assertEqual(limit(), 99)
+        self.assertEqual(limit(per_turn=3, per_target=2), 2)
+        self.assertEqual(limit(per_turn=3, cooldown=4), 1)
+
+    def test_real_spells(self):
+        spells = catalog.load_spells()
+        self.assertEqual(len({s['class'] for s in spells}), 12)
+        pression = lambda level: next(s for s in catalog.class_spells(spells, 'Iop', 'force', level) if s['name'] == 'Pression')
+        # Checked against wiki-dofus.eu's Pression page
+        self.assertEqual(pression(100), {'name': 'Pression', 'grade': 5, 'pa': 3, 'castsMax': 99, 'damageMin': 8, 'damageMax': 12})
+        self.assertEqual(pression(101), {'name': 'Pression', 'grade': 6, 'pa': 2, 'castsMax': 99, 'damageMin': 9, 'damageMax': 13})
 
 
 class WithoutDominatedTest(unittest.TestCase):
@@ -466,9 +551,9 @@ class RealDataTest(unittest.TestCase):
     def test_real_tradeoffs_end_on_the_single_objective_optimum(self):
         cat = catalog.load()
         args = {'total_pa': 6, 'total_pm': 3}
-        builds = optimize_tradeoffs(cat, 'force', 100, damage_range=(20, 40), **args)
+        builds = optimize_tradeoffs(cat, 'force', 100, spells=[spell(20, 40)], **args)
         self.assertGreater(len(builds), 1)
-        self.assertEqual(builds[0]['totalElement'], optimize(cat, 'force', 100, damage_range=(20, 40), **args)['totalElement'])
+        self.assertEqual(builds[0]['totalElement'], optimize(cat, 'force', 100, spells=[spell(20, 40)], **args)['totalElement'])
         self.assertEqual(builds[-1]['totalStats']['sagesse'], optimize(cat, 'sagesse', 100, **args)['totalElement'])
         for less, more in zip(builds, builds[1:]):
             self.assertLess(less['totalStats']['sagesse'], more['totalStats']['sagesse'])
@@ -515,47 +600,34 @@ class AdapterTest(unittest.TestCase):
         self.assertNotIn((banned['name'], banned['type']), [(i['name'], i['type']) for i in again['items']])
         self.assertLessEqual(again['totalElement'], first['totalElement'])
 
-    def test_damage_endpoint_reports_the_estimate(self):
-        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageMin': 20, 'damageMax': 40}
+    def test_damage_endpoint_casts_the_class_spells(self):
+        body = {'element': 'force', 'level': 101, 'totalPA': 6, 'totalPM': 3, 'spellClass': 'Iop'}
         build = self.client.post('/api/optimize', json=body).get_json()[0]
-        self.assertEqual(build['spellRoll'], [20, 40])
+        self.assertEqual([s['name'] for s in build['spells']], ['Pression', 'Intimidation', 'Concentration', 'Epée de Iop', 'Colère de Iop'])
         multiplier = 100 + build['totalStats']['force'] + build['totalPctDmg']
-        self.assertEqual(build['damageRange'], [roll * multiplier // 100 + build['totalDmg'] for roll in (20, 40)])
+        for cast in build['spells']:
+            self.assertEqual(cast['damageRange'], [roll * multiplier // 100 + build['totalDmg'] for roll in (cast['damageMin'], cast['damageMax'])])
+            self.assertLessEqual(cast['casts'], cast['castsMax'])
+        self.assertLessEqual(sum(s['casts'] * s['pa'] for s in build['spells']), build['totalPA'])
+        self.assertEqual(build['roundDamage'], [sum(s['casts'] * s['damageRange'][end] for s in build['spells']) for end in (0, 1)])
+
+    def test_class_without_a_spell_in_the_element_gives_nothing(self):
+        body = {'element': 'chance', 'level': 1, 'spellClass': 'Sram'}
+        self.assertEqual(self.client.post('/api/optimize', json=body).get_json(), [])
 
     def test_bad_damage_requests_are_400(self):
-        for body in [{'element': 'vitalite', 'damageMin': 20, 'damageMax': 40},
-                     {'element': 'force', 'damageMin': 40, 'damageMax': 20},
-                     {'element': 'force', 'damageMin': -1, 'damageMax': 20},
-                     {'element': 'force', 'damageMin': 0, 'damageMax': 20},
-                     {'element': 'force', 'damageMin': 20},
-                     {'element': 'force', 'damageMax': 20},
-                     {'element': 'force', 'damageMin': 20, 'damageMax': 1000},
-                     {'element': 'force', 'damageMin': 'x', 'damageMax': 20}]:
+        for body in [{'element': 'vitalite', 'spellClass': 'Iop'}, {'element': 'force', 'spellClass': 'Nope'}, {'element': 'force', 'spellClass': 3},
+                     {'element': 'force', 'spellClass': ['Iop']}]:
             self.assertEqual(self.client.post('/api/optimize', json=body).status_code, 400, body)
 
     def test_with_sagesse_returns_several_builds(self):
-        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageMin': 20, 'damageMax': 40, 'withSagesse': True}
+        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'spellClass': 'Iop', 'withSagesse': True}
         builds = self.client.post('/api/optimize', json=body).get_json()
         self.assertGreater(len(builds), 1)
         self.assertEqual(len(self.client.post('/api/optimize', json={**body, 'withSagesse': False}).get_json()), 1)
 
-    def test_round_damage_endpoint(self):
-        body = {'element': 'force', 'level': 100, 'totalPA': 6, 'totalPM': 3, 'damageMin': 20, 'damageMax': 40, 'spellPA': 4}
-        build = self.client.post('/api/optimize', json=body).get_json()[0]
-        self.assertEqual(build['casts'], build['totalPA'] // 4)
-        self.assertEqual(build['roundDamage'], [build['casts'] * d for d in build['damageRange']])
-        limited = self.client.post('/api/optimize', json={**body, 'castsMax': 1}).get_json()[0]
-        self.assertEqual(limited['casts'], 1)
-
-    def test_bad_round_damage_requests_are_400(self):
-        roll = {'element': 'force', 'damageMin': 20, 'damageMax': 40}
-        for extra in [{'spellPA': -1}, {'spellPA': 21}, {'spellPA': 'x'}, {'castsMax': 0}, {'castsMax': 100}, {'castsMax': 'x'}]:
-            self.assertEqual(self.client.post('/api/optimize', json={**roll, **extra}).status_code, 400, extra)
-        self.assertEqual(self.client.post('/api/optimize', json={'element': 'force', 'spellPA': 4}).status_code, 400)
-
     def test_bad_with_sagesse_is_400(self):
-        roll = {'element': 'force', 'damageMin': 20, 'damageMax': 40}
-        self.assertEqual(self.client.post('/api/optimize', json={**roll, 'withSagesse': 'yes'}).status_code, 400)
+        self.assertEqual(self.client.post('/api/optimize', json={'element': 'force', 'spellClass': 'Iop', 'withSagesse': 'yes'}).status_code, 400)
         self.assertEqual(self.client.post('/api/optimize', json={'element': 'force', 'withSagesse': True}).status_code, 400)
 
     def test_bad_excluded_ids_is_400(self):

@@ -8,13 +8,15 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 
-from catalog import ALL_ELEMENTS, DAMAGE_ELEMENTS, load as load_catalog
+from catalog import ALL_ELEMENTS, DAMAGE_ELEMENTS, class_spells, load as load_catalog, load_spells
 from optimizer import optimize, optimize_tradeoffs
 
 app = Flask(__name__)
 CORS(app)
 
 CATALOG = load_catalog()
+SPELLS = load_spells()
+CLASSES = {spell['class'] for spell in SPELLS}
 
 
 @app.route('/api/optimize', methods=['POST'])
@@ -27,33 +29,30 @@ def api_optimize():
     if element not in ALL_ELEMENTS:
         return jsonify({'error': f'element inconnu: {element}'}), 400
     try:
-        level, total_pa, total_pm, exo_pa, exo_pm, damage_min, damage_max, spell_pa, casts_max = (
-            int(data.get(key, default)) for key, default in
-            [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0), ('damageMin', 0), ('damageMax', 0), ('spellPA', 0), ('castsMax', 99)]
+        level, total_pa, total_pm, exo_pa, exo_pm = (
+            int(data.get(key, default)) for key, default in [('level', 100), ('totalPA', 6), ('totalPM', 3), ('exoPA', 0), ('exoPM', 0)]
         )
     except (TypeError, ValueError):
-        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, spellPA, castsMax doivent etre des entiers'}), 400
-    damage_range = None
-    if damage_min or damage_max:
-        if not 1 <= damage_min <= damage_max <= 999:
-            return jsonify({'error': 'il faut 1 <= damageMin <= damageMax <= 999'}), 400
-        if element not in DAMAGE_ELEMENTS:
-            return jsonify({'error': f'pas de dommages pour: {element}'}), 400
-        damage_range = (damage_min, damage_max)
-    if not 0 <= spell_pa <= 20 or not 1 <= casts_max <= 99 or (spell_pa and not damage_range):
-        return jsonify({'error': 'il faut 0 <= spellPA <= 20, 1 <= castsMax <= 99, et spellPA demande damageMin et damageMax'}), 400
+        return jsonify({'error': 'level, totalPA, totalPM, exoPA, exoPM doivent etre des entiers'}), 400
+    # With a class, the search is for the damage of that class's spells in the element
+    spell_class = data.get('spellClass')
+    if spell_class is not None and (not isinstance(spell_class, str) or spell_class not in CLASSES or element not in DAMAGE_ELEMENTS):
+        return jsonify({'error': f'spellClass doit etre une classe ({", ".join(sorted(CLASSES))}) et element un de {", ".join(DAMAGE_ELEMENTS)}'}), 400
+    spells = class_spells(SPELLS, spell_class, element, level) if spell_class else []
+    if spell_class and not spells:
+        return jsonify([])
 
     excluded_ids = data.get('excludedIds', [])
     if not isinstance(excluded_ids, list) or not all(isinstance(i, str) for i in excluded_ids):
         return jsonify({'error': 'excludedIds doit etre une liste de chaines'}), 400
 
     with_sagesse = data.get('withSagesse', False)
-    if not isinstance(with_sagesse, bool) or (with_sagesse and not damage_range):
-        return jsonify({'error': 'withSagesse doit etre un booleen et demande damageMin et damageMax'}), 400
+    if not isinstance(with_sagesse, bool) or (with_sagesse and not spell_class):
+        return jsonify({'error': 'withSagesse doit etre un booleen et demande spellClass'}), 400
     if with_sagesse:
-        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range, spell_pa, casts_max))
+        return jsonify(optimize_tradeoffs(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), spells))
 
-    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), damage_range, spell_pa, casts_max)
+    build = optimize(CATALOG, element, level, total_pa, total_pm, exo_pa, exo_pm, set(excluded_ids), spells)
     return jsonify([build] if build else [])
 
 

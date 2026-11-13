@@ -92,15 +92,6 @@ function setupDamageMode() {
     });
 }
 
-// Clamped here so a typo gives a search, not a server error
-function readSpellNumber(id, fallback, max) {
-    return Math.min(max, Math.max(1, parseInt(document.getElementById(id).value) || fallback));
-}
-
-function readSpellRoll() {
-    return [readSpellNumber('spellMin', 20, 999), readSpellNumber('spellMax', 40, 999)].sort((a, b) => a - b);
-}
-
 function setupExclusions() {
     // Delegated: cards and chips are re-rendered by every search, and cards also appear in the modal
     document.addEventListener('click', async (e) => {
@@ -162,17 +153,15 @@ async function runOptimization() {
     const exoPA       = parseInt(document.getElementById('exoPA').value) || 0;
     const exoPM       = parseInt(document.getElementById('exoPM').value) || 0;
     const damageMode  = document.getElementById('damageMode').checked;
-    const [damageMin, damageMax] = damageMode ? readSpellRoll() : [0, 0];
+    const spellClass  = damageMode ? document.getElementById('spellClass').value : undefined;
     const withSagesse = damageMode && document.getElementById('withSagesse').checked;
-    const spellPA     = damageMode ? readSpellNumber('spellPA', 4, 20) : 0;
-    const castsMax    = readSpellNumber('castsMax', 99, 99);
 
     setLoading(true);
     try {
         const response = await fetchWithRetry(`${API_URL}/api/optimize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, damageMin, damageMax, spellPA, castsMax, withSagesse, excludedIds: excludedItems.map(i => i.id) })
+            body: JSON.stringify({ element: selectedElement, level: playerLevel, totalPA, totalPM, exoPA, exoPM, spellClass, withSagesse, excludedIds: excludedItems.map(i => i.id) })
         });
         const results = await response.json();
 
@@ -294,7 +283,7 @@ function displayResults(results) {
 
     if (!results || results.length === 0 || !results[0]?.items?.length) {
         resultsCount.textContent = '0 combinaisons trouvées';
-        resultsList.innerHTML = `<div class="empty-state"><p>Aucune combinaison ne respecte ces PA/PM${document.getElementById('damageMode').checked ? ' ou le coût du sort' : ''} à ce niveau${excludedItems.length ? ' sans les objets exclus' : ''}.</p></div>`;
+        resultsList.innerHTML = `<div class="empty-state"><p>Aucune combinaison ne respecte ces PA/PM${document.getElementById('damageMode').checked ? ', ou cette classe n\'a aucun sort à lancer dans cet élément' : ''} à ce niveau${excludedItems.length ? ' sans les objets exclus' : ''}.</p></div>`;
         return;
     }
 
@@ -322,8 +311,8 @@ function displayResults(results) {
                 <div class="result-header">
                     <div class="result-headlines">
                         <div>
-                            <span class="stat-name">${r.damageRange ? `Dommages ${ELEMENT_NAMES[selectedElement]} par tour` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
-                            <span class="stat-value" style="color:var(--${selectedElement});">${r.damageRange ? `${r.roundDamage[0]} à ${r.roundDamage[1]}` : r.totalElement}</span>
+                            <span class="stat-name">${r.roundDamage ? `Dommages ${ELEMENT_NAMES[selectedElement]} par tour` : `${ELEMENT_NAMES[selectedElement]} totale`}</span>
+                            <span class="stat-value" style="color:var(--${selectedElement});">${r.roundDamage ? `${r.roundDamage[0]} à ${r.roundDamage[1]}` : r.totalElement}</span>
                         </div>
                         ${isTradeoff ? `
                             <div>
@@ -334,10 +323,8 @@ function displayResults(results) {
                     <div class="result-meta">
                         <span class="meta">PA <b>${r.totalPA}</b></span>
                         <span class="meta">PM <b>${r.totalPM}</b></span>
-                        ${r.damageRange ? `
-                            <span class="meta">Lancers <b>${r.casts}</b></span>
-                            <span class="meta">Par lancer <b>${r.damageRange[0]} à ${r.damageRange[1]}</b></span>
-                            <span class="meta">Sort <b>${r.spellRoll[0]} à ${r.spellRoll[1]}, ${r.spellPA} PA</b></span>
+                        ${r.roundDamage ? `
+                            ${castSpells(r).map(s => `<span class="meta">${s.casts} × ${s.name} <b>${s.damageRange[0]} à ${s.damageRange[1]}</b></span>`).join('')}
                             <span class="meta">Dommages <b>${signed(r.totalDmg)}</b></span>
                             <span class="meta">% Dommages <b>${signed(r.totalPctDmg)}</b></span>` : ''}
                         ${r.setBonus > 0 ? `<span class="meta">Panoplie <b>+${r.setBonus}</b></span>` : ''}
@@ -362,6 +349,11 @@ function displayResults(results) {
             openModal(results[idx]);
         });
     });
+}
+
+// The spells the round casts, in the order the search was given them
+function castSpells(result) {
+    return result.spells.filter(s => s.casts > 0);
 }
 
 function getTypeName(type) {
@@ -394,7 +386,9 @@ function openModal(result) {
         <div class="modal-totals">
             <div class="modal-totals-row"><span>PA</span><b style="color:var(--pa);">${result.totalPA}</b></div>
             <div class="modal-totals-row"><span>PM</span><b style="color:var(--pm);">${result.totalPM}</b></div>
-            ${result.damageRange ? `<div class="modal-totals-row"><span>Dommages par tour</span><b>${result.roundDamage[0]} à ${result.roundDamage[1]} (${result.casts} lancer${result.casts > 1 ? 's' : ''})</b></div>` : ''}
+            ${result.roundDamage ? `<div class="modal-totals-row"><span>Dommages par tour</span><b>${result.roundDamage[0]} à ${result.roundDamage[1]}</b></div>` : ''}
+            ${castSpells(result).map(s => `
+                <div class="modal-totals-row"><span>${s.casts} × ${s.name} (niveau ${s.grade}, ${s.pa} PA)</span><b>${s.damageRange[0]} à ${s.damageRange[1]} par lancer</b></div>`).join('')}
             ${[['Dommages', result.totalDmg], ['% Dommages', result.totalPctDmg]].filter(([, val]) => val).map(([label, val]) => `
                 <div class="modal-totals-row"><span>${label}</span><b class="${val < 0 ? 'neg' : ''}">${signed(val)}</b></div>`).join('')}
             ${ALL_ELEMENTS.filter(el => result.totalStats[el]).map(el => {
